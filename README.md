@@ -34,6 +34,8 @@ These tiles appear throughout the repo to indicate the altitude of each module.
 
 ---
 
+<pre> 
+  
 📁 Repository Structure
 
 `
@@ -62,6 +64,7 @@ These tiles appear throughout the repo to indicate the altitude of each module.
 └── README.md               # ← You are here
 `
 
+</pre>
 ---
 
 🧠 Constellation Runtime (A3)
