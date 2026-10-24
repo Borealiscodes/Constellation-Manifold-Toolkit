@@ -32,11 +32,15 @@ This runtime is the operational counterpart to constellation ontology.
 Directory Structure
 
 `
+<pre> 
+
 /manifold/
     specification.tex        # Formal A3 membrane definition
     embedding.py             # Python runtime controller + operators
     julia/geometry.jl        # High‑performance Julia geometry engine
     README.md                # This document
+
+</pre>
 `
 
 ---
