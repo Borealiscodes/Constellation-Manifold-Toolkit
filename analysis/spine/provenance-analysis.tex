@@ -1,0 +1,114 @@
+\section{Provenance Analysis and Source Integrity}
+
+Let $\mathcal{M} = (\mathcal{O}, \mathcal{R}, \rho)$ denote the ontology
+manifold equipped with resonance adjacency matrix $A$ and root-semantics
+mapping $\rho$. This module defines provenance operators, provenance
+stability, provenance drift, and provenance-collapse criteria.
+
+\subsection{Provenance Mapping}
+
+Define the provenance mapping:
+\[
+\pi : \mathcal{O} \to P,
+\]
+where $P$ is the provenance space.
+
+Each ontology object $O_i$ has a provenance anchor $\pi(O_i)$.
+
+\subsection{Provenance Stability}
+
+Provenance is stable under resonance propagation when:
+\[
+\pi(O_i) = \pi(A O_i).
+\]
+
+Define provenance stability condition:
+\[
+\pi(A O_i) - \pi(O_i) = 0.
+\]
+
+\subsection{Provenance Drift}
+
+Define provenance drift:
+\[
+D_{\pi}(O_i) = \pi(O_i) - \pi(A O_i).
+\]
+
+Define drift magnitude:
+\[
+\|D_{\pi}\| = \sum_i \left\| \pi(O_i) - \pi(A O_i) \right\|.
+\]
+
+Provenance drift indicates displacement of source identity under resonance
+transport.
+
+\subsection{Iterated Provenance Drift}
+
+Define iterated drift:
+\[
+D_{\pi}^{(n)}(O_i)
+  = \pi(O_i) - \pi(A^n O_i).
+\]
+
+Define iterated drift magnitude:
+\[
+\|D_{\pi}^{(n)}\|
+  = \sum_i \left\| \pi(O_i) - \pi(A^n O_i) \right\|.
+\]
+
+Iterated drift measures long-range provenance displacement.
+
+\subsection{Provenance Collapse}
+
+Provenance collapse occurs when:
+\[
+\|D_{\pi}^{(n)}\| \to 0,
+\]
+and simultaneously:
+\[
+A^n \to \mathbf{1} v,
+\]
+where $v$ is the dominant eigenvector of $A$.
+
+This condition indicates absorption of provenance anchors into a dominant
+resonance basin.
+
+\subsection{Cluster-Level Provenance}
+
+For a resonance cluster $\mathcal{C}_k$, define cluster provenance:
+\[
+\pi(\mathcal{C}_k) = \{ \pi(O_i) : O_i \in \mathcal{C}_k \}.
+\]
+
+Define cluster provenance drift:
+\[
+D_{\pi}(\mathcal{C}_k)
+  = \left\| \pi(\mathcal{C}_k) - \pi(A \mathcal{C}_k) \right\|.
+\]
+
+Cluster drift indicates displacement of source identity at the cluster level.
+
+\subsection{Provenance Continuity}
+
+Define provenance continuity on the manifold:
+\[
+\pi(O_i(p)) \text{ continuous in } p.
+\]
+
+Discontinuity indicates provenance tearing.
+
+\subsection{Provenance Tensor}
+
+Define the provenance tensor:
+\[
+T^{\pi}_{ij} = \pi(O_i) - \pi(A O_j).
+\]
+
+The provenance tensor measures cross-object source displacement.
+
+\section{Conclusion}
+
+This module defines provenance mapping, stability, drift, iterated drift,
+collapse criteria, cluster-level provenance behavior, continuity, and
+provenance tensors. These diagnostics form the foundation for coherence
+failure analysis and final firewall evaluation.
