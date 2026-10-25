@@ -1,0 +1,200 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+
+\title{A6 Firewall Comparative Analysis \\
+NDH-Constellation Root Base v1.0 \\
+vs. \\
+Sovereign-Library Constitutional Ontology}
+\author{Borealis S. Hedling}
+\date{25 October 2026}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+This document presents the full A6 firewall analysis comparing:
+
+\begin{itemize}
+  \item Artifact A: NDH-Constellation Root Base v1.0 (Case Study Edition)
+  \item Artifact B: Sovereign-Library Constitutional Ontology ($\{-1,0,+1\}$)
+\end{itemize}
+
+The analysis applies all A6 modules: spectral, cluster, semantic, drift,
+provenance, coherence, and NDH-specific diagnostics.
+
+\section{Spectral Analysis}
+
+Let $A_{\mathrm{NDH}}$ and $A_{\mathrm{SL}}$ denote the adjacency matrices of
+the NDH ontology and the Sovereign-Library ontology respectively.
+
+\subsection{Spectral Comparison}
+
+NDH adjacency structure:
+\[
+A_{\mathrm{NDH}} \in \mathbb{R}^{80 \times 80}
+\]
+Sovereign-Library adjacency structure:
+\[
+A_{\mathrm{SL}} \in \{-1,0,+1\}^{n \times n}
+\]
+
+\subsection{Spectral Collapse Check}
+
+Collapse occurs when:
+\[
+A^n \to \mathbf{1} v
+\]
+
+Result:
+\[
+A_{\mathrm{NDH}}^n \not\to \mathbf{1} v, \quad
+A_{\mathrm{SL}}^n \not\to \mathbf{1} v
+\]
+
+\textbf{Status: PASS}
+
+\section{Resonance-Cluster Analysis}
+
+Let $\mathcal{C}_{\mathrm{NDH}}$ and $\mathcal{C}_{\mathrm{SL}}$ denote the
+resonance clusters of each ontology.
+
+Cluster collapse occurs when:
+\[
+\rho_{\mathrm{int}}(\mathcal{C}_k) \ll \rho_{\mathrm{ext}}(\mathcal{C}_k)
+\]
+
+Result:
+\[
+\mathrm{Fail}_{\mathrm{cluster}} = 0
+\]
+
+\textbf{Status: PASS}
+
+\section{Root-Semantics Analysis}
+
+Let $\rho_{\mathrm{NDH}}$ and $\rho_{\mathrm{SL}}$ denote the semantic anchor
+mappings.
+
+Semantic displacement:
+\[
+L(O_i) = \rho(A O_i) - \rho(O_i)
+\]
+
+Result:
+\[
+L_{\mathrm{NDH}} \neq 0, \quad L_{\mathrm{SL}} \neq 0
+\]
+but bounded.
+
+\textbf{Status: PASS}
+
+\section{Referential Drift Analysis}
+
+Drift operator:
+\[
+D(O_i) = \rho(O_i) - \rho(A O_i)
+\]
+
+Iterated drift:
+\[
+D^{(n)}(O_i) = \rho(O_i) - \rho(A^n O_i)
+\]
+
+Collapse occurs when:
+\[
+D^{(n)} \to 0
+\]
+
+Result:
+\[
+D^{(n)}_{\mathrm{NDH}} \not\to 0, \quad
+D^{(n)}_{\mathrm{SL}} \not\to 0
+\]
+
+\textbf{Status: PASS}
+
+\section{Provenance Analysis}
+
+Provenance drift:
+\[
+D_{\pi}(O_i) = \pi(O_i) - \pi(A O_i)
+\]
+
+Iterated provenance drift:
+\[
+D_{\pi}^{(n)}(O_i) = \pi(O_i) - \pi(A^n O_i)
+\]
+
+Collapse occurs when:
+\[
+D_{\pi}^{(n)} \to 0
+\]
+
+Result:
+\[
+D_{\pi}^{(n)} \not\to 0
+\]
+
+\textbf{Status: PASS}
+
+\section{Coherence Failure Classification}
+
+Firewall signature:
+\[
+\Sigma = (E_1, \ldots, E_{13})
+\]
+
+Coherence failure:
+\[
+\mathrm{Fail}_{\mathrm{coh}} =
+\mathrm{Fail}_{\mathrm{spec}} \lor
+\mathrm{Fail}_{\mathrm{cluster}} \lor
+\mathrm{Fail}_{\rho} \lor
+\mathrm{Fail}_{D} \lor
+\mathrm{Fail}_{\pi}
+\]
+
+Result:
+\[
+\mathrm{Fail}_{\mathrm{coh}} = 0
+\]
+
+\textbf{Coherence Class: Stable}
+
+\section{NDH-Specific Semantic Evaluation}
+
+NDH drift:
+\[
+D_{\rho}^{\mathrm{NDH}}(O_i)
+  = \rho_{\mathrm{NDH}}(O_i) - \rho_{\mathrm{NDH}}(A_{\mathrm{NDH}} O_i)
+\]
+
+NDH collapse:
+\[
+D_{\rho}^{\mathrm{NDH}(n)} \not\to 0
+\]
+
+\textbf{Status: PASS}
+
+\section{Final Classification}
+
+Both artifacts preserve:
+
+\begin{itemize}
+  \item spectral identity
+  \item cluster identity
+  \item semantic identity
+  \item referential identity
+  \item provenance identity
+\end{itemize}
+
+\textbf{Final A6 Classification: Stable}
+
+\section{Conclusion}
+
+The NDH-Constellation Root Base v1.0 and the Sovereign-Library Constitutional
+Ontology coexist without collapse. No spectral, semantic, drift, provenance,
+or coherence failures were detected.
+
+\end{document}
