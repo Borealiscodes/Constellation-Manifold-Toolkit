@@ -1,0 +1,128 @@
+\section{Resonance Clusters in Ontology Manifolds}
+
+Let $\mathcal{M} = (\mathcal{O}, \mathcal{R}, \rho)$ denote the ontology
+manifold equipped with resonance relations. This module defines resonance
+clusters, cluster boundaries, cluster stability, and cluster interaction
+operators.
+
+\subsection{Cluster Definition}
+
+Define a resonance cluster $\mathcal{C}_k$ as a subset of ontology objects
+satisfying:
+\[
+\forall O_i, O_j \in \mathcal{C}_k : \mathrm{Res}(O_i, O_j) > 0.
+\]
+
+Define the cluster indicator function:
+\[
+\chi_k(O_i) =
+\begin{cases}
+1 & O_i \in \mathcal{C}_k, \\
+0 & O_i \notin \mathcal{C}_k.
+\end{cases}
+\]
+
+\subsection{Cluster Boundary}
+
+Define the cluster boundary:
+\[
+\partial \mathcal{C}_k = \{ O_i \in \mathcal{C}_k :
+\exists O_j \notin \mathcal{C}_k, \ \mathrm{Res}(O_i, O_j) > 0 \}.
+\]
+
+Cluster boundaries identify objects with external resonance connections.
+
+\subsection{Cluster Adjacency Operator}
+
+Define the cluster adjacency operator:
+\[
+A^{(k)}_{ij} =
+\begin{cases}
+A_{ij} & O_i, O_j \in \mathcal{C}_k, \\
+0 & \text{otherwise}.
+\end{cases}
+\]
+
+Define the external adjacency operator:
+\[
+A^{(\mathrm{ext})}_{ij} =
+\begin{cases}
+A_{ij} & O_i \in \mathcal{C}_k, \ O_j \notin \mathcal{C}_k, \\
+0 & \text{otherwise}.
+\end{cases}
+\]
+
+\subsection{Cluster Stability}
+
+Define the internal spectral radius:
+\[
+\rho_{\mathrm{int}}(\mathcal{C}_k)
+  = \max_{\lambda \in \mathrm{Spec}(A^{(k)})} |\lambda|.
+\]
+
+Define the external spectral radius:
+\[
+\rho_{\mathrm{ext}}(\mathcal{C}_k)
+  = \max_{\lambda \in \mathrm{Spec}(A^{(\mathrm{ext})})} |\lambda|.
+\]
+
+A cluster is stable when:
+\[
+\rho_{\mathrm{int}}(\mathcal{C}_k) > \rho_{\mathrm{ext}}(\mathcal{C}_k).
+\]
+
+\subsection{Cluster Collapse}
+
+Cluster collapse occurs when:
+\[
+\rho_{\mathrm{int}}(\mathcal{C}_k) \ll \rho_{\mathrm{ext}}(\mathcal{C}_k),
+\]
+or when:
+\[
+A^{(k)n} \to \mathbf{1} v,
+\]
+where $v$ is the dominant eigenvector of the full adjacency matrix $A$.
+
+This condition indicates absorption into a dominant resonance basin.
+
+\subsection{Cluster Interaction}
+
+Define the cluster interaction operator:
+\[
+I_{kl} = \sum_{O_i \in \mathcal{C}_k}
+          \sum_{O_j \in \mathcal{C}_l}
+          A_{ij}.
+\]
+
+Cluster interaction strength is:
+\[
+S_{kl} = \| I_{kl} \|.
+\]
+
+Clusters are independent when:
+\[
+S_{kl} = 0.
+\]
+
+Clusters are coupled when:
+\[
+S_{kl} > 0.
+\]
+
+\subsection{Cluster Drift}
+
+Define cluster drift magnitude:
+\[
+D_{\mathrm{cluster}}(\mathcal{C}_k)
+  = \left\| \rho(A \mathcal{C}_k) - \rho(\mathcal{C}_k) \right\|.
+\]
+
+Cluster drift indicates semantic displacement under resonance propagation.
+
+\section{Conclusion}
+
+This module defines resonance clusters, cluster boundaries, adjacency
+operators, stability conditions, collapse criteria, interaction operators,
+and drift metrics. These structures provide the cluster-level diagnostics
+required for spectral analysis, referential drift evaluation, and
+provenance-collapse detection.
