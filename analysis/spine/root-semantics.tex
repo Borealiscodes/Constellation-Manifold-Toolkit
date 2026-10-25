@@ -1,0 +1,113 @@
+\section{Root Semantics and Referential Anchoring}
+
+Let $\mathcal{M} = (\mathcal{O}, \mathcal{R}, \rho)$ denote the ontology
+manifold equipped with a root-semantics mapping $\rho : \mathcal{O} \to S$,
+where $S$ is the semantic space. This module defines root-semantics
+structure, anchoring behavior, stability conditions, and collapse criteria.
+
+\subsection{Root-Semantics Mapping}
+
+Define the root-semantics mapping:
+\[
+\rho(O_i) \in S.
+\]
+
+The mapping $\rho$ assigns each ontology object a semantic anchor.
+
+\subsection{Anchoring Stability}
+
+Define anchoring stability under resonance propagation:
+\[
+\rho(O_i) = \rho(A O_i).
+\]
+
+Anchoring is stable when:
+\[
+\rho(A O_i) - \rho(O_i) = 0.
+\]
+
+\subsection{Anchoring Drift}
+
+Define anchoring drift:
+\[
+D_{\rho}(O_i) = \rho(O_i) - \rho(A O_i).
+\]
+
+Define drift magnitude:
+\[
+\|D_{\rho}\| = \sum_i \| \rho(O_i) - \rho(A O_i) \|.
+\]
+
+Anchoring drift indicates semantic displacement under resonance adjacency.
+
+\subsection{Root-Semantics Collapse}
+
+Root-semantics collapse occurs when:
+\[
+\|D_{\rho}\| \to 0,
+\]
+and simultaneously:
+\[
+A^n \to \mathbf{1} v,
+\]
+where $v$ is the dominant eigenvector of the resonance adjacency matrix $A$.
+
+This condition implies absorption of semantic anchors into a dominant
+resonance basin.
+
+\subsection{Semantic Lift}
+
+Define semantic lift under resonance propagation:
+\[
+L(O_i) = \rho(A O_i) - \rho(O_i).
+\]
+
+Semantic lift measures the semantic displacement induced by resonance
+transport.
+
+Lift is zero under stable anchoring.
+
+\subsection{Root-Semantics Continuity}
+
+Define continuity of root semantics on the manifold:
+\[
+\rho(O_i(p)) \text{ continuous in } p.
+\]
+
+Discontinuity indicates semantic tearing.
+
+\subsection{Cluster-Level Root Semantics}
+
+For a resonance cluster $\mathcal{C}_k$, define cluster root semantics:
+\[
+\rho(\mathcal{C}_k) = \{ \rho(O_i) : O_i \in \mathcal{C}_k \}.
+\]
+
+Define cluster root-semantics drift:
+\[
+D_{\rho}(\mathcal{C}_k)
+  = \left\| \rho(A \mathcal{C}_k) - \rho(\mathcal{C}_k) \right\|.
+\]
+
+Cluster drift indicates semantic displacement at the cluster level.
+
+\subsection{Semantic Collapse Criterion}
+
+Semantic collapse occurs when:
+\[
+D_{\rho}(\mathcal{C}_k) \to 0,
+\]
+and:
+\[
+\rho(\mathcal{C}_k) \to \rho(v),
+\]
+where $v$ is the dominant eigenvector of $A$.
+
+This condition indicates semantic absorption into a dominant cluster.
+
+\section{Conclusion}
+
+This module defines the mathematical structure of root semantics, including
+anchoring stability, drift, lift, continuity, cluster-level semantics, and
+collapse criteria. These diagnostics form the semantic foundation for
+referential drift analysis and provenance-collapse evaluation.
