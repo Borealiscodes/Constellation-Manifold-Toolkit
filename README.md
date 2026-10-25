@@ -1,7 +1,6 @@
 # 📘 Constellation Manifold Toolkit
 
-Altitude‑Layered Runtime • Membrane Geometry • Diagnostic Notebooks
-
+Altitude‑Layered Runtime • Membrane Geometry • Diagnostic Notebooks  
 + Research Analysis Series • Sovereign‑Library Epistemic Layer • Bill Nye Tile Deck
 
 The Constellation Manifold Toolkit is an altitude‑layered geometric runtime for  
@@ -17,6 +16,36 @@ This repository now also includes:
 - NDH‑Core + UMA Platform Alignment — manifold interoperability  
 
 All additions preserve the original runtime architecture.
+
+---
+
+🔗 Fork Provenance & DOI
+
+The Constellation Manifold Toolkit is an independent research fork of the original Sovereignty Library, created by Christopher Chenoweth and Peter Lodri as part of the 8b research project.
+
+Original project:  
+https://github.com/8b-is/sovereign-library
+
+This technical note and analysis series are archived on Zenodo:
+
+DOI: https://doi.org/10.5281/zenodo.23632881
+
+This fork is:
+
+- analytical, not collaborative  
+- interpretive, not derivative  
+- altitude‑separated, not architecture‑merged  
+
+The Sovereignty Library remains a constitutional ontology with its own invariants, dignity manifold, and witness‑sovereignty rules.  
+The Constellation Manifold Toolkit remains a geometric runtime with operator physics, membrane geometry, and diagnostic surfaces.
+
+The A6 Analysis Series documents cross‑architecture resonance between these systems while preserving strict domain boundaries:
+
+- NDH → mathematical contextuality  
+- UMM/UMA → reflective epistemics  
+- Sovereignty Library → constitutional meaning  
+
+This demonstrates that research forks can produce academically defensible analysis without Shared‑Horizon interactions.
 
 ---
 
@@ -173,15 +202,15 @@ Provenance provides a complete, structured timeline of runtime behavior.
 
 📚 Notebook Suite (A2/A1)
 
-🟦🟩 01 — Embedding Diagnostics 🔬  
-🟩 02 — Flow‑Field Explorer 🌬️  
-🟩 03 — Holonomy Geometry Lab 🔄  
-🟩 04 — Collapse Gradient Analyzer ⚡  
-🟩🟨 05 — Manifold Flow Simulation 🌀  
-🟩🟨 06 — Membrane Stress Analysis 🧱  
-🟩🟨 07 — Ternary Surface Geometry 🗺️  
-🟥🟩 08 — Provenance Telemetry 📜  
-🟦🟩🟨 09 — Operator Interaction Lab 🎛️  
+🟦🟩 01 — Embedding Diagnostics  
+🟩 02 — Flow‑Field Explorer  
+🟩 03 — Holonomy Geometry Lab  
+🟩 04 — Collapse Gradient Analyzer  
+🟩🟨 05 — Manifold Flow Simulation  
+🟩🟨 06 — Membrane Stress Analysis  
+🟩🟨 07 — Ternary Surface Geometry  
+🟥🟩 08 — Provenance Telemetry  
+🟦🟩🟨 09 — Operator Interaction Lab
 
 These notebooks form the complete diagnostic and visualization layer.
 
@@ -196,7 +225,7 @@ The A6 altitude introduces:
 - A6 Firewall Analysis  
 - NDH Root‑Semantics Module  
 - Cross‑Ontology Resonance Report  
-- NDH‑Core + UMA platform alignment
+- NDH‑Core + UMA platform alignment  
 
 This altitude explains how NDH interacts with external ontologies  
 while maintaining semantic stability.
@@ -217,7 +246,7 @@ Accessible explainers for collaborators and students:
 
 🟫 Sovereign‑Library: Mathematical + Epistemic Summary
 
-The Sovereign‑Library is a constitutional ontology defined by:
+The Sovereignty Library is a constitutional ontology defined by:
 
 🔺 Balanced Ternary Manifold
 \[
@@ -247,7 +276,7 @@ NDH‑Core + UMA maintain coherence because both systems:
 - treat meaning as governed  
 
 NDH stabilizes meaning.  
-Sovereign‑Library liberates meaning.  
+Sovereignty Library liberates meaning.  
 A6 confirms resonance without collapse.
 
 ---
@@ -270,4 +299,3 @@ are complete.
 Next altitude: Lean or Rust, depending on your research direction.
 
 ---
-
