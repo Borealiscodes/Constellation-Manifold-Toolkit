@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+
+\title{Comparison Harness for Root-Semantics Ontologies Using the A6 Dual-Algebra Firewall}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Purpose}
+
+This harness defines the formal comparison structure for evaluating two
+independent ontologies:
+
+\begin{itemize}
+  \item $\mathcal{S}$ — the Sovereign-Library citation ontology.
+  \item $\mathcal{N}$ — the NDH-Constellation Root Base v1.0 analysis.
+\end{itemize}
+
+Both artifacts are held lightly and evaluated through the A6 dual-algebra
+boundary conditions. No fusion or harmonization is performed.
+
+\section{Manifold Definitions}
+
+Define the two ontology manifolds:
+\[
+\mathcal{M}_S = (\mathcal{O}_S, \mathcal{R}_S, \rho_S),
+\qquad
+\mathcal{M}_N = (\mathcal{O}_N, \mathcal{R}_N, \rho_N).
+\]
+
+Each manifold is treated as an independent mathematical object.
+
+\section{Firewall Evaluation}
+
+Let $\mathcal{F}_i$ denote the $i$-th A6 constructive fix.
+
+Define the firewall evaluation operator:
+\[
+E_i(\mathcal{M}) =
+\begin{cases}
+1 & \text{if } \mathcal{M} \text{ satisfies } \mathcal{F}_i, \\
+0 & \text{otherwise}.
+\end{cases}
+\]
+
+Define the firewall signature:
+\[
+\Sigma(\mathcal{M}) = (E_1(\mathcal{M}), \ldots, E_{13}(\mathcal{M})).
+\]
+
+\section{Spectral Comparison}
+
+Let $A_S$ and $A_N$ denote the resonance adjacency matrices for $\mathcal{M}_S$
+and $\mathcal{M}_N$ respectively.
+
+Define the spectral deviation:
+\[
+D_{\mathrm{spec}} = \left\| \mathrm{Spec}(A_S) - \mathrm{Spec}(A_N) \right\|.
+\]
+
+Cluster stability is determined by the dominant eigenvalues of each matrix.
+
+\section{Root-Semantics Comparison}
+
+Define the root-semantics deviation:
+\[
+D_{\rho} = \sum_{i} \left\| \rho_S(O_{S,i}) - \rho_N(O_{N,i}) \right\|.
+\]
+
+Root-semantics collapse is detected when:
+\[
+D_{\rho} \to 0.
+\]
+
+\section{Referential Drift Comparison}
+
+Define the referential drift operator:
+\[
+D(O_i) = \rho(O_i) - \rho(A O_i).
+\]
+
+Define drift magnitude:
+\[
+\|D\| = \sum_i \left\| \rho(O_i) - \rho(A O_i) \right\|.
+\]
+
+Drift instability occurs when:
+\[
+\|D\| \to 0 \quad \text{and} \quad A^n \to \mathbf{1} v.
+\]
+
+\section{Failure Mode Detection}
+
+A firewall failure mode is detected when:
+\[
+\Sigma(\mathcal{M}) \text{ contains a zero entry}.
+\]
+
+A spectral collapse is detected when:
+\[
+D_{\mathrm{spec}} \to 0.
+\]
+
+A root-semantics collapse is detected when:
+\[
+D_{\rho} \to 0.
+\]
+
+A referential drift collapse is detected when:
+\[
+\|D\| \to 0.
+\]
+
+\section{Conclusion}
+
+This harness provides the formal mathematical structure required to compare the
+Sovereign-Library ontology and the NDH-Constellation artifact using the A6
+dual-algebra firewall. All diagnostics—firewall signatures, spectral deviation,
+root-semantics deviation, and referential drift—are defined independently of the
+artifact contents.
+
+\end{document}
