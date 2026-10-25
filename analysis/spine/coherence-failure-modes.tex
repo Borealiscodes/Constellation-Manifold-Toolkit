@@ -1,0 +1,129 @@
+\section{Coherence Failure Modes Under A6 Firewall Diagnostics}
+
+Let $\mathcal{M} = (\mathcal{O}, \mathcal{R}, \rho)$ denote the ontology
+manifold equipped with resonance adjacency matrix $A$, root-semantics
+mapping $\rho$, and provenance mapping $\pi$. This module defines coherence
+failure modes arising from spectral, semantic, drift, and provenance
+collapse.
+
+\subsection{Firewall Signature}
+
+Let $\Sigma(\mathcal{M}) = (E_1, \ldots, E_{13})$ denote the A6 firewall
+signature, where:
+\[
+E_i =
+\begin{cases}
+1 & \mathcal{M} \text{ satisfies constructive fix } \mathcal{F}_i, \\
+0 & \text{otherwise}.
+\end{cases}
+\]
+
+A firewall failure occurs when:
+\[
+\exists i : E_i = 0.
+\]
+
+\subsection{Spectral Failure}
+
+Spectral failure occurs when:
+\[
+A^n \to \mathbf{1} v,
+\]
+where $v$ is the dominant eigenvector of $A$.
+
+Define spectral collapse condition:
+\[
+D_{\mathrm{spec}} = \left\| \mathrm{Spec}(A) - \mathrm{Spec}(A_{\mathrm{ref}}) \right\| \to 0.
+\]
+
+Spectral collapse indicates absorption into a dominant resonance basin.
+
+\subsection{Cluster Failure}
+
+Cluster failure occurs when:
+\[
+\rho_{\mathrm{int}}(\mathcal{C}_k) \ll \rho_{\mathrm{ext}}(\mathcal{C}_k),
+\]
+or when:
+\[
+A^{(k)n} \to \mathbf{1} v.
+\]
+
+Cluster collapse indicates loss of internal resonance structure.
+
+\subsection{Root-Semantics Failure}
+
+Root-semantics failure occurs when:
+\[
+\|D_{\rho}\| = \sum_i \left\| \rho(O_i) - \rho(A O_i) \right\| \to 0,
+\]
+and:
+\[
+\rho(\mathcal{C}_k) \to \rho(v).
+\]
+
+Semantic collapse indicates absorption of semantic anchors into a dominant
+cluster.
+
+\subsection{Referential Drift Failure}
+
+Referential drift failure occurs when:
+\[
+\|D^{(n)}\| = \sum_i \left\| \rho(O_i) - \rho(A^n O_i) \right\| \to 0,
+\]
+and:
+\[
+A^n \to \mathbf{1} v.
+\]
+
+Drift collapse indicates loss of referential anchoring.
+
+\subsection{Provenance Failure}
+
+Provenance failure occurs when:
+\[
+\|D_{\pi}^{(n)}\| = \sum_i \left\| \pi(O_i) - \pi(A^n O_i) \right\| \to 0,
+\]
+and:
+\[
+\pi(\mathcal{C}_k) \to \pi(v).
+\]
+
+Provenance collapse indicates loss of source identity under resonance
+transport.
+
+\subsection{Coherence Failure}
+
+Define coherence failure as the conjunction of collapse conditions:
+\[
+\mathrm{Fail}_{\mathrm{coh}}(\mathcal{M}) =
+\mathrm{Fail}_{\mathrm{spec}}
+\lor \mathrm{Fail}_{\mathrm{cluster}}
+\lor \mathrm{Fail}_{\rho}
+\lor \mathrm{Fail}_{D}
+\lor \mathrm{Fail}_{\pi}.
+\]
+
+Full coherence failure occurs when:
+\[
+\mathrm{Fail}_{\mathrm{coh}}(\mathcal{M}) = 1.
+\]
+
+\subsection{Firewall-Level Coherence Classification}
+
+Define coherence class:
+\[
+\mathrm{Class}(\mathcal{M}) =
+\begin{cases}
+\mathrm{Stable} & \Sigma(\mathcal{M}) = \mathbf{1}, \\
+\mathrm{Boundary\text{-}Unstable} & \exists i : E_i = 0, \\
+\mathrm{Collapsed} & \mathrm{Fail}_{\mathrm{coh}}(\mathcal{M}) = 1.
+\end{cases}
+\]
+
+\section{Conclusion}
+
+This module defines coherence failure modes arising from spectral collapse,
+cluster collapse, root-semantics collapse, referential drift collapse, and
+provenance collapse. These diagnostics provide the final A6 firewall
+classification for ontology coherence.
