@@ -1,0 +1,87 @@
+\section{Spectral Decomposition of Resonance Adjacency Operators}
+
+Let $A$ denote the resonance adjacency matrix associated with the ontology
+manifold $\mathcal{M} = (\mathcal{O}, \mathcal{R}, \rho)$. This module defines
+the spectral decomposition of $A$ and the associated stability diagnostics.
+
+\subsection{Eigenstructure}
+
+The spectral decomposition of $A$ is defined by:
+\[
+A v_k = \lambda_k v_k,
+\]
+where $\lambda_k$ are the eigenvalues and $v_k$ are the corresponding
+eigenvectors.
+
+Define the spectral radius:
+\[
+\rho(A) = \max_k |\lambda_k|.
+\]
+
+\subsection{Spectral Projection Operators}
+
+Define the spectral projection operator for eigenvalue $\lambda_k$:
+\[
+P_k = v_k v_k^\top.
+\]
+
+The matrix $A$ admits the decomposition:
+\[
+A = \sum_k \lambda_k P_k.
+\]
+
+\subsection{Cluster Stability}
+
+Define the cluster stability envelope:
+\[
+E_k = |\lambda_k|.
+\]
+
+A resonance cluster is stable when:
+\[
+E_k < \rho(A).
+\]
+
+A dominant cluster satisfies:
+\[
+E_k = \rho(A).
+\]
+
+\subsection{Spectral Collapse}
+
+Spectral collapse occurs when:
+\[
+A^n \to \mathbf{1} v,
+\]
+where $v$ is the dominant eigenvector.
+
+This condition implies:
+\[
+\lambda_{\max} \text{ is unique and } |\lambda_{\max}| \gg |\lambda_k| \text{ for } k \ne \max.
+\]
+
+\subsection{Spectral Drift}
+
+Define spectral drift between two resonance matrices $A$ and $B$:
+\[
+D_{\mathrm{spec}} = \left\| \mathrm{Spec}(A) - \mathrm{Spec}(B) \right\|.
+\]
+
+Spectral drift measures deviation in cluster structure.
+
+\subsection{Spectral Continuity}
+
+Define spectral continuity on the manifold:
+\[
+\mathrm{Spec}(A(p)) \text{ continuous in } p.
+\]
+
+Spectral discontinuity indicates resonance tearing.
+
+\section{Conclusion}
+
+This module defines the spectral decomposition of the resonance adjacency
+operator, including eigenstructure, projection operators, cluster stability,
+spectral collapse, spectral drift, and spectral continuity. These diagnostics
+form the spectral foundation for subsequent analysis of resonance clusters,
+root semantics, referential drift, and provenance collapse.
