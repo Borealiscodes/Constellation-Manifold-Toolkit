@@ -1,0 +1,111 @@
+\section{Referential Drift Analysis}
+
+Let $\mathcal{M} = (\mathcal{O}, \mathcal{R}, \rho)$ denote the ontology
+manifold equipped with resonance adjacency matrix $A$ and root-semantics
+mapping $\rho$. This module defines referential drift, drift operators,
+drift magnitude, drift stability, and drift collapse criteria.
+
+\subsection{Referential Drift Operator}
+
+Define the referential drift operator:
+\[
+D(O_i) = \rho(O_i) - \rho(A O_i).
+\]
+
+The operator $D$ measures semantic displacement induced by resonance
+propagation.
+
+\subsection{Drift Magnitude}
+
+Define drift magnitude:
+\[
+\|D\| = \sum_i \left\| \rho(O_i) - \rho(A O_i) \right\|.
+\]
+
+Drift magnitude quantifies global semantic displacement.
+
+\subsection{Drift Stability}
+
+Referential anchoring is stable when:
+\[
+\|D\| = 0.
+\]
+
+Anchoring is unstable when:
+\[
+\|D\| > 0.
+\]
+
+\subsection{Drift Under Iterated Resonance}
+
+Define iterated drift:
+\[
+D^{(n)}(O_i) = \rho(O_i) - \rho(A^n O_i).
+\]
+
+Define iterated drift magnitude:
+\[
+\|D^{(n)}\| = \sum_i \left\| \rho(O_i) - \rho(A^n O_i) \right\|.
+\]
+
+Iterated drift measures long-range semantic displacement.
+
+\subsection{Drift Collapse}
+
+Drift collapse occurs when:
+\[
+\|D^{(n)}\| \to 0,
+\]
+and simultaneously:
+\[
+A^n \to \mathbf{1} v,
+\]
+where $v$ is the dominant eigenvector of $A$.
+
+This condition indicates absorption of semantic anchors into a dominant
+resonance basin.
+
+\subsection{Cluster-Level Drift}
+
+For a resonance cluster $\mathcal{C}_k$, define cluster drift:
+\[
+D(\mathcal{C}_k)
+  = \left\| \rho(\mathcal{C}_k) - \rho(A \mathcal{C}_k) \right\|.
+\]
+
+Cluster drift measures semantic displacement at the cluster level.
+
+\subsection{Drift Continuity}
+
+Define drift continuity on the manifold:
+\[
+D(O_i(p)) \text{ continuous in } p.
+\]
+
+Discontinuity indicates semantic tearing.
+
+\subsection{Drift Gradient}
+
+Define the drift gradient:
+\[
+\nabla D(O_i) = D(O_{i+1}) - D(O_i).
+\]
+
+A large drift gradient indicates rapid semantic displacement.
+
+\subsection{Drift Tensor}
+
+Define the drift tensor:
+\[
+T_{ij} = \rho(O_i) - \rho(A O_j).
+\]
+
+The drift tensor measures cross-object semantic displacement.
+
+\section{Conclusion}
+
+This module defines referential drift operators, drift magnitude,
+iterated drift, drift collapse criteria, cluster-level drift, drift
+continuity, drift gradients, and drift tensors. These diagnostics form
+the foundation for provenance-collapse analysis and coherence failure
+evaluation.
