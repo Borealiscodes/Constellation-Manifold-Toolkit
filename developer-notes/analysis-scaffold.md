@@ -29,7 +29,9 @@ using the A6 Dual‑Algebra Firewall.
 
 2. Folder Structure
 
-`
+` 
+<pre> 
+
 sovereign-library/
 │
 ├── analysis/
@@ -65,7 +67,7 @@ sovereign-library/
 │
 └── README-analysis.md
 `
-
+</pre>
 ---
 
 3. Altitude Separation
