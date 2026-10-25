@@ -2,22 +2,21 @@
 
 Altitude‑Layered Runtime • Membrane Geometry • Diagnostic Notebooks
 
-The Constellation Manifold Toolkit is an altitude‑layered geometric runtime for
++ Research Analysis Series • Sovereign‑Library Epistemic Layer • Bill Nye Tile Deck
+
+The Constellation Manifold Toolkit is an altitude‑layered geometric runtime for  
 symbolic → ternary → manifold evolution.  
-It provides membrane‑bounded operators, diagnostic geometry, provenance telemetry,
+It provides membrane‑bounded operators, diagnostic geometry, provenance telemetry,  
 and a complete notebook suite for exploring constellation embeddings.
 
-This repository contains:
+This repository now also includes:
 
-- 🟦 A3 — membrane + operator runtime  
-- 🟩 A2 — diagnostic surface  
-- 🟨 A1 — visualization layer  
-- 🟥 A0 — provenance + telemetry  
-- 📚 nine notebooks  
-- 🧩 geometry engine  
-- 🔧 adapters  
-- 🧱 membrane envelope  
-- 🎨 tile‑mapped documentation  
+- A6 Analysis Series — cross‑ontology resonance + semantic stability  
+- Bill Nye Tile Deck — clarity‑layer explainers  
+- Sovereign‑Library Epistemic Summary — mathematical + constitutional ontology  
+- NDH‑Core + UMA Platform Alignment — manifold interoperability  
+
+All additions preserve the original runtime architecture.
 
 ---
 
@@ -29,16 +28,18 @@ This repository contains:
 | 🟩 A2 | Diagnostic Surface | Drift, roughness, holonomy, collapse gradients |
 | 🟨 A1 | Visualization Layer | Plots, surfaces, flow fields, heatmaps |
 | 🟥 A0 | Provenance | Runtime logs, operator timelines, contamination‑safe telemetry |
+| 🟪 A6 | Research Analysis | A6 firewall, cross‑ontology resonance, semantic stability |
+| 🟧 A7 | Public‑Facing Tiles | Bill Nye Tile Deck, clarity modules, educational explainers |
 
 These tiles appear throughout the repo to indicate the altitude of each module.
 
 ---
 
-<pre> 
-  
 📁 Repository Structure
 
 `
+<pre> 
+
 /
 ├── notebooks/              # A2/A1 diagnostic + visualization suite
 │   ├── 01-Embedding-Diagnostics.md
@@ -50,15 +51,26 @@ These tiles appear throughout the repo to indicate the altitude of each module.
 │   ├── 07-Ternary-Surface-Geometry.md
 │   ├── 08-Provenance-Telemetry-Explorer.md
 │   ├── 09-Operator-Interaction-Lab.md
-│   └── README.md           # Notebook-level tile explainer
+│   └── README.md
 │
 ├── manifold/
 │   ├── embedding.py        # 🟦 A3 runtime (operators + membrane)
 │   ├── geometry.jl         # 🟦🟩 A4 geometry engine (Julia)
 │   └── adapters/           # Symbolic → ternary → manifold adapters
 │
+├── analysis/               # 🟪 A6 Research Analysis Series
+│   ├── a6-firewall-analysis.tex
+│   ├── ndh-root-semantics-analysis.tex
+│   ├── cross-ontology-resonance.md
+│   └── README.md
+│
+├── tiles/                  # 🟧 A7 Bill Nye Tile Deck
+│   ├── bill-nye/
+│   │   └── ndh-sovereign-core-uma-explainer.md
+│   └── tile-legend.png
+│
 ├── assets/
-│   ├── tiles/              # Color tile PNGs (A3/A2/A1/A0)
+│   ├── tiles/              # Color tile PNGs (A3/A2/A1/A0/A6/A7)
 │   └── diagrams/           # Flow fields, surfaces, curvature maps
 │
 └── README.md               # ← You are here
@@ -67,7 +79,9 @@ These tiles appear throughout the repo to indicate the altitude of each module.
 </pre>
 ---
 
-🧠 Constellation Runtime (A3)
+🟦 Constellation Runtime (A3)
+
+Operator Physics • Membrane Enforcement • Reversibility
 
 The runtime defines the five core operators:
 
@@ -92,9 +106,9 @@ This forms the operator physics of the manifold.
 
 Every embedding is bounded by a ternary membrane:
 
-`
-M ∈ {−1, 0, +1}
-`
+\[
+M \in \{-1, 0, +1\}
+\]
 
 The membrane:
 
@@ -106,7 +120,9 @@ The membrane:
 
 ---
 
-🔬 Diagnostic Geometry (A2)
+🟩 Diagnostic Geometry (A2)
+
+Drift • Roughness • Holonomy • Collapse • Stress • Curvature
 
 The diagnostic layer computes:
 
@@ -121,7 +137,9 @@ These diagnostics feed into the notebook suite.
 
 ---
 
-🖼️ Visualization Layer (A1)
+🟨 Visualization Layer (A1)
+
+Flow Fields • Surfaces • Heatmaps • Timelines
 
 The notebooks visualize:
 
@@ -137,7 +155,9 @@ All visualizations are contamination‑safe and reversible.
 
 ---
 
-📜 Provenance (A0)
+🟥 Provenance (A0)
+
+Complete Operator Timeline
 
 Every operator event is logged:
 
@@ -153,40 +173,82 @@ Provenance provides a complete, structured timeline of runtime behavior.
 
 📚 Notebook Suite (A2/A1)
 
-🟦🟩 01 — Embedding Diagnostics 🔬
+🟦🟩 01 — Embedding Diagnostics 🔬  
+🟩 02 — Flow‑Field Explorer 🌬️  
+🟩 03 — Holonomy Geometry Lab 🔄  
+🟩 04 — Collapse Gradient Analyzer ⚡  
+🟩🟨 05 — Manifold Flow Simulation 🌀  
+🟩🟨 06 — Membrane Stress Analysis 🧱  
+🟩🟨 07 — Ternary Surface Geometry 🗺️  
+🟥🟩 08 — Provenance Telemetry 📜  
+🟦🟩🟨 09 — Operator Interaction Lab 🎛️  
 
-🟩 02 — Flow‑Field Explorer 🌬️
-
-🟩 03 — Holonomy Geometry Lab 🔄
-
-🟩 04 — Collapse Gradient Analyzer ⚡
-
-🟩🟨 05 — Manifold Flow Simulation 🌀
-
-🟩🟨 06 — Membrane Stress Analysis 🧱
-
-🟩🟨 07 — Ternary Surface Geometry 🗺️
-
-🟥🟩 08 — Provenance Telemetry 📜
-
-🟦🟩🟨 09 — Operator Interaction Lab 🎛️
-
-These notebooks form the complete diagnostic and visualization layer of the constellation manifold.
+These notebooks form the complete diagnostic and visualization layer.
 
 ---
 
-🧭 Next Altitudes
+🟪 Research Analysis Series (A6)
 
-After the notebooks, the next layers are:
+NDH‑Core • UMA • A6 Firewall • Cross‑Ontology Resonance
 
-🟦 A5 — Lean Invariant Stub
-Formal verification of membrane invariants, operator reversibility, and diagnostic bounds.
+The A6 altitude introduces:
 
-🟦🟩 A4 — Rust Kernel Skeleton
-Deterministic operator dispatch + membrane enforcement.
+- A6 Firewall Analysis  
+- NDH Root‑Semantics Module  
+- Cross‑Ontology Resonance Report  
+- NDH‑Core + UMA platform alignment
 
-🟦🟩🟨 A4 — Julia Geometry Extensions
-High‑precision curvature, holonomy loops, and flow evolution.
+This altitude explains how NDH interacts with external ontologies  
+while maintaining semantic stability.
+
+---
+
+🟧 Bill Nye Tile Deck (A7)
+
+Public‑Facing Clarity Layer
+
+Accessible explainers for collaborators and students:
+
+- NDH × Sovereign‑Library × NDH‑Core × UMA Tile  
+- Altitude Tile Legend  
+- Clarity‑layer educational tiles
+
+---
+
+🟫 Sovereign‑Library: Mathematical + Epistemic Summary
+
+The Sovereign‑Library is a constitutional ontology defined by:
+
+🔺 Balanced Ternary Manifold
+\[
+M \in \{-1, 0, +1\}
+\]
+
+📜 Constitutional Invariants
+- Five‑Book invariant  
+- NAND gate law  
+- Witness‑over‑proxy epistemology  
+- Compression ≠ Ontology
+
+🧭 Epistemic Boundary
+Rejects:
+
+- proxy metrics  
+- unverified compression  
+- opaque authority  
+- rigid categorical boxes
+
+🔬 NDH Compatibility
+NDH‑Core + UMA maintain coherence because both systems:
+
+- use manifold semantics  
+- use resonance transitions  
+- enforce invariants  
+- treat meaning as governed  
+
+NDH stabilizes meaning.  
+Sovereign‑Library liberates meaning.  
+A6 confirms resonance without collapse.
 
 ---
 
@@ -200,6 +262,8 @@ The constellation manifold’s:
 - visualization  
 - provenance  
 - notebooks  
+- research analysis series  
+- tile deck  
 
 are complete.
 
