@@ -1,0 +1,104 @@
+\section{NDH Root-Semantics Analysis Layer}
+
+Let \mathcal{M}_{\mathrm{NDH}} = (\mathcal{O}_{\mathrm{NDH}}, \mathcal{R},
+\rho_{\mathrm{NDH}}) denote the NDH-Constellation ontology manifold equipped
+with resonance adjacency matrix A_{\mathrm{NDH}} and NDH-specific
+root-semantics mapping \rho_{\mathrm{NDH}}. This module defines NDH anchor
+mapping, NDH drift operators, NDH semantic displacement metrics, and NDH
+collapse criteria.
+
+\subsection{NDH Root-Semantics Mapping}
+
+Define the NDH root-semantics mapping:
+\[
+\rho_{\mathrm{NDH}} : \mathcal{O}_{\mathrm{NDH}} \to S_{\mathrm{NDH}},
+\]
+where S_{\mathrm{NDH}} is the NDH semantic anchor space.
+
+Each NDH object O_i has a semantic anchor \rho_{\mathrm{NDH}}(O_i).
+
+\subsection{NDH Anchoring Stability}
+
+Anchoring is stable under NDH resonance propagation when:
+\[
+\rho_{\mathrm{NDH}}(O_i) = \rho_{\mathrm{NDH}}(A_{\mathrm{NDH}} O_i).
+\]
+
+Define NDH anchoring stability condition:
+\[
+\rho_{\mathrm{NDH}}(A_{\mathrm{NDH}} O_i) - \rho_{\mathrm{NDH}}(O_i) = 0.
+\]
+
+\subsection{NDH Anchoring Drift}
+
+Define NDH anchoring drift:
+\[
+D_{\rho}^{\mathrm{NDH}}(O_i)
+  = \rho_{\mathrm{NDH}}(O_i) - \rho_{\mathrm{NDH}}(A_{\mathrm{NDH}} O_i).
+\]
+
+Define drift magnitude:
+\[
+\|D_{\rho}^{\mathrm{NDH}}\|
+  = \sum_i \left\| \rho_{\mathrm{NDH}}(O_i)
+  - \rho_{\mathrm{NDH}}(A_{\mathrm{NDH}} O_i) \right\|.
+\]
+
+\subsection{NDH Iterated Drift}
+
+Define iterated NDH drift:
+\[
+D_{\rho}^{\mathrm{NDH}(n)}(O_i)
+  = \rho_{\mathrm{NDH}}(O_i)
+  - \rho_{\mathrm{NDH}}(A_{\mathrm{NDH}}^n O_i).
+\]
+
+Define iterated drift magnitude:
+\[
+\|D_{\rho}^{\mathrm{NDH}(n)}\|
+  = \sum_i \left\| \rho_{\mathrm{NDH}}(O_i)
+  - \rho_{\mathrm{NDH}}(A_{\mathrm{NDH}}^n O_i) \right\|.
+\]
+
+\subsection{NDH Semantic Displacement}
+
+Define NDH semantic displacement:
+\[
+L_{\mathrm{NDH}}(O_i)
+  = \rho_{\mathrm{NDH}}(A_{\mathrm{NDH}} O_i)
+  - \rho_{\mathrm{NDH}}(O_i).
+\]
+
+Displacement measures semantic transport under NDH resonance.
+
+\subsection{NDH Semantic Continuity}
+
+Define continuity of NDH semantics:
+\[
+\rho_{\mathrm{NDH}}(O_i(p)) \text{ continuous in } p.
+\]
+
+Discontinuity indicates NDH semantic tearing.
+
+\subsection{NDH Collapse Criterion}
+
+NDH semantic collapse occurs when:
+\[
+\|D_{\rho}^{\mathrm{NDH}(n)}\| \to 0,
+\]
+and:
+\[
+\rho_{\mathrm{NDH}}(\mathcal{C}_k) \to \rho_{\mathrm{NDH}}(v_{\mathrm{NDH}}),
+\]
+where v_{\mathrm{NDH}} is the dominant eigenvector of A_{\mathrm{NDH}}.
+
+Collapse indicates absorption of NDH semantic anchors into a dominant
+resonance basin.
+
+\section{Conclusion}
+
+This module defines NDH-specific root-semantics mapping, anchoring
+stability, drift, iterated drift, semantic displacement, continuity, and
+collapse criteria. These diagnostics form the NDH semantic evaluation layer
+required for analyzing NDH-Constellation Root Base v1.0 under A6 firewall
+constraints.
