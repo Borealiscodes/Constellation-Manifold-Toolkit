@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{The MEDUSA Triad Algebra}
+\author{Borealis S. Hedling}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+This document formalizes the algebraic structure of the ESP32--S3 MEDUSA Triad
+telemetry system as implemented in \texttt{wiglewww.py}. The Triad Algebra
+describes the passive RF observation manifold, the classification operators,
+the envelope aggregation rules, the node-state overwrite semantics, the
+command algebra, and the privacy membrane.
+
+\section{Triad Input Space}
+Each incoming telemetry line has the form:
+\[
+L = P \mid bssid \mid ssid \mid auth \mid ch \mid rssi \mid band
+\]
+where
+\[
+P \in \{W, B, A\}.
+\]
+
+The full input space is:
+\[
+\mathcal{T}_{in}
+= \{W,B,A\}
+\times \mathcal{BSSID}
+\times \mathcal{SSID}
+\times \mathcal{Auth}
+\times \mathbb{Z}
+\times \mathbb{Z}
+\times \mathcal{Band}.
+\]
+
+\section{Triad Classification Operator}
+Define the classifier:
+\[
+\chi : \mathcal{T}_{in} \to \{WIFI, BLE, AIRPLAY\}
+\]
+by
+\[
+\chi(W)=WIFI,\qquad
+\chi(B)=BLE,\qquad
+\chi(A)=AIRPLAY.
+\]
+
+\section{Beacon Envelope Algebra}
+The Triad maintains a dictionary of best observations:
+\[
+\text{BEACONS} : bssid \mapsto r.
+\]
+
+The update rule is:
+\[
+\text{BEACONS}[bssid] =
+\begin{cases}
+r & \text{if } bssid \notin \text{BEACONS},\\[6pt]
+r & \text{if } rssi(r) > rssi(\text{BEACONS}[bssid]),\\[6pt]
+\text{BEACONS}[bssid] & \text{otherwise}.
+\end{cases}
+\]
+
+Thus the envelope operator is:
+\[
+\mathcal{T}_{env}(bssid)
+= \max_{t \in \mathcal{T}_{in}(bssid)} rssi(t).
+\]
+
+\section{Node-State Overwrite Algebra}
+JSON telemetry lines update the node cache:
+\[
+\mathcal{N}(node) = obj.
+\]
+
+The overwrite rule is:
+\[
+\mathcal{N}_{t+1}(node) = obj_t.
+\]
+
+\section{Triad Output Manifold}
+The Triad output JSON is:
+\[
+\mathcal{T}_{out}
+= (\mathcal{N},\; \mathcal{T}_{env},\; \mathcal{T}_{raw}),
+\]
+where
+\begin{itemize}
+\item $\mathcal{N}$ is the node-state algebra,
+\item $\mathcal{T}_{env}$ is the beacon envelope algebra,
+\item $\mathcal{T}_{raw}$ is the raw serial and CoreWLAN output.
+\end{itemize}
+
+\section{Command Algebra}
+Allowed commands:
+\[
+\mathcal{C} = \{STATUS,\; JSON,\; SCAN,\; TRIAD,\; PING\}.
+\]
+
+Define the command operator:
+\[
+\Phi : \mathcal{C} \to \mathcal{T}_{out},
+\]
+where each command produces a different projection of the Triad manifold.
+
+\section{Privacy Membrane Algebra}
+Requests are allowed iff:
+\[
+\mathcal{M}
+= (\text{SameOrigin} \land \text{LoopbackOnly} \land \neg\text{Upload}).
+\]
+
+If $\mathcal{M}=0$, the system returns HTTP 403.
+
+\section{Final Definition}
+The Triad Algebra is the tuple:
+\[
+\boxed{
+\mathfrak{T} =
+(\mathcal{T}_{in},\;
+\chi,\;
+\mathcal{T}_{env},\;
+\mathcal{N},\;
+\mathcal{T}_{out},\;
+\Phi,\;
+\mathcal{M})
+}
+\]
+which fully characterizes the MEDUSA Triad telemetry system.
+
+\end{document}
