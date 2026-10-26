@@ -1,0 +1,194 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Triad Algebra v5.0: Runtime, Operator-Interface, State-Machine, and NDH-Altitude Formalization}
+\author{Borealis S. Hedling}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+Triad Algebra v5.0 extends the bidirectional, geometric, spectral, and holonomy-
+curvature Triad operator (v4.0) into a fully specified runtime subsystem suitable
+for Sovereignty-Library integration and NDH altitude execution. This version
+introduces operator interface specifications, a formal runtime state machine,
+operator scheduling rules, runtime privacy membrane enforcement, altitude-aware
+execution bindings, tensor-projection runtime semantics, and incremental holonomy-
+curvature update rules. Triad v5.0 is the first version designed explicitly for
+runtime implementation.
+
+\section{Triad Input Space}
+RF observations remain:
+\[
+L = P \mid bssid \mid ssid \mid auth \mid ch \mid rssi \mid band,
+\]
+with
+\[
+P \in \{W, B, A\}.
+\]
+
+Thus:
+\[
+\mathcal{T}_{in}
+= \{W,B,A\}
+\times \mathcal{BSSID}
+\times \mathcal{SSID}
+\times \mathcal{Auth}
+\times \mathbb{Z}
+\times \mathbb{Z}
+\times \mathcal{Band}.
+\]
+
+\section{Classification Operator}
+\[
+\chi : \mathcal{T}_{in} \to \{WIFI, BLE, AIRPLAY\}.
+\]
+
+\section{Temporal Envelope Algebra}
+\[
+\mathcal{T}_{env}^{t}(bssid,t)
+= \max_{t' \le t} rssi(t').
+\]
+
+Temporal derivative:
+\[
+\mathcal{D}(bssid,t) = \frac{d}{dt} rssi(t).
+\]
+
+Stability:
+\[
+\mathcal{S}(bssid,t) = \mathrm{Var}(rssi(t-\Delta t \ldots t)).
+\]
+
+\section{Geometric Lift Operator}
+\[
+\Lambda : \mathcal{T}_{env}^{t} \to \mathcal{M}_{RF},
+\]
+with embedding:
+\[
+p(bssid,t) = (rssi(t), \mathcal{D}(t), \mathcal{S}(t)).
+\]
+
+\section{Spectral Transform}
+\[
+\mathcal{F}_{spec}(bssid) = \mathcal{F}\{rssi(t)\}.
+\]
+
+\section{Holonomy and Curvature}
+Holonomy:
+\[
+\mathcal{H}(bssid) = \oint rssi(t)\, dt.
+\]
+
+Curvature:
+\[
+\mathcal{K}(bssid) = \frac{d}{dt}\mathcal{H}(bssid).
+\]
+
+Incremental curvature update:
+\[
+\mathcal{K}_{t+1}(bssid)
+= \mathcal{K}_{t}(bssid) + \Delta\mathcal{H}(bssid).
+\]
+
+\section{Fusion Tensor Algebra}
+Fusion tensor:
+\[
+\mathcal{F}_{tensor}(bssid) =
+\begin{bmatrix}
+W(bssid) \\
+B(bssid) \\
+A(bssid)
+\end{bmatrix}.
+\]
+
+Runtime tensor projection:
+\[
+\Pi_{runtime}(bssid) = P_{runtime}(\mathcal{F}_{tensor}(bssid)).
+\]
+
+\section{Geometric Topology Graph}
+\[
+\mathcal{G}^{\ast} = (V,E,w,\kappa),
+\]
+with curvature $\kappa$ induced by holonomy and spectral structure.
+
+\section{Passive Triangulation}
+\[
+\mathcal{L}(device)
+= f(\mathcal{T}_{env}^{t},\mathcal{F}_{spec},\mathcal{G}^{\ast},
+\mathcal{H},\mathcal{K}).
+\]
+
+\section{Runtime Stability}
+\[
+\Sigma(bssid) = \lim_{t\to\infty} \mathcal{S}(bssid,t).
+\]
+
+\section{Bidirectional Manifold Operators}
+Forward:
+\[
+\mathfrak{T}^{3.0} : \mathcal{M}_{RF} \to \mathcal{M}_{Topo}^{\ast}.
+\]
+
+Inverse:
+\[
+\mathfrak{T}^{4.0^{-1}} : \mathcal{M}_{Topo}^{\ast} \to \mathcal{M}_{RF}.
+\]
+
+\section{Operator Interface Specification}
+Define:
+\[
+\mathcal{I}_{Triad}
+= \{\text{init},\text{update},\text{project},\text{invert},
+\text{stabilize},\text{schedule}\}.
+\]
+
+\section{Runtime State Machine}
+\[
+\mathcal{R}_{Triad} = (S, T, \delta),
+\]
+where:
+\begin{itemize}
+\item $S$ = runtime states,
+\item $T$ = transitions,
+\item $\delta$ = transition function.
+\end{itemize}
+
+\section{Operator Scheduling}
+\[
+\text{schedule}(\mathfrak{T}^{5.0})
+= \{\Lambda, \mathcal{F}_{spec}, \mathcal{H}, \mathcal{K},
+\Pi_{runtime}, \mathcal{G}^{\ast}, \Sigma\}.
+\]
+
+\section{NDH Altitude Runtime Binding}
+\[
+\mathcal{A}_{runtime} :
+\mathfrak{T}^{5.0} \to \text{NDH}_{A3-A5}.
+\]
+
+\section{Privacy Membrane v5.0}
+\[
+\mathcal{M}^{5.0}
+= \mathcal{M}^{4.0}
+\land \neg(\mathcal{A}_{runtime}(\text{location}))
+\land \neg(\mathfrak{T}^{4.0^{-1}}(\text{location})).
+\]
+
+\section{Final Definition}
+\[
+\boxed{
+\mathfrak{T}^{5.0} =
+(\mathcal{T}_{in},\chi,\mathcal{T}_{env}^{t},\Lambda,
+\mathcal{F}_{spec},\mathcal{H},\mathcal{K},
+\mathcal{F}_{tensor},\Pi_{runtime},
+\mathcal{G}^{\ast},\mathcal{L},\Sigma,
+\mathfrak{T}^{4.0^{-1}},
+\mathcal{I}_{Triad},\mathcal{R}_{Triad},
+\text{schedule},\mathcal{A}_{runtime},\mathcal{M}^{5.0})
+}.
+\]
+
+\end{document}
