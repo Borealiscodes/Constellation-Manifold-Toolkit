@@ -1,0 +1,168 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Triad Algebra v3.0: Geometric, Spectral, Holonomy-Lifted Telemetry Manifold}
+\author{Borealis S. Hedling}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+Triad Algebra v3.0 elevates the MEDUSA Triad telemetry system from a passive RF
+manifold into a geometric, spectral, holonomy-compatible operator suitable for
+Sovereignty-Library research and NDH-adjacent architectures. This version introduces
+geometric lift operators, spectral transforms, holonomy integrals, fusion tensors,
+geometric topology graphs, passive triangulation, typed manifold projections, and a
+privacy membrane expressed as a geometric constraint.
+
+\section{Triad Input Space}
+Incoming RF observations remain:
+\[
+L = P \mid bssid \mid ssid \mid auth \mid ch \mid rssi \mid band,
+\]
+with prefix
+\[
+P \in \{W, B, A\}.
+\]
+
+Thus:
+\[
+\mathcal{T}_{in}
+= \{W,B,A\}
+\times \mathcal{BSSID}
+\times \mathcal{SSID}
+\times \mathcal{Auth}
+\times \mathbb{Z}
+\times \mathbb{Z}
+\times \mathcal{Band}.
+\]
+
+\section{Classification Operator}
+\[
+\chi : \mathcal{T}_{in} \to \{WIFI, BLE, AIRPLAY\},
+\]
+with
+\[
+\chi(W)=WIFI,\quad
+\chi(B)=BLE,\quad
+\chi(A)=AIRPLAY.
+\]
+
+\section{Temporal Envelope Algebra}
+The temporal envelope operator is:
+\[
+\mathcal{T}_{env}^{t}(bssid,t)
+= \max_{t' \le t} rssi(t').
+\]
+
+Temporal derivative:
+\[
+\mathcal{D}(bssid,t) = \frac{d}{dt} rssi(t).
+\]
+
+Stability metric:
+\[
+\mathcal{S}(bssid,t) = \mathrm{Var}(rssi(t-\Delta t \ldots t)).
+\]
+
+\section{Geometric Lift Operator}
+Define the geometric lift:
+\[
+\Lambda : \mathcal{T}_{env}^{t} \to \mathcal{M}_{RF},
+\]
+where each beacon becomes a point:
+\[
+p(bssid,t) = (rssi(t), \mathcal{D}(t), \mathcal{S}(t)).
+\]
+
+This embeds temporal RF behavior into a geometric manifold.
+
+\section{Spectral Transform Operator}
+Define the spectral transform:
+\[
+\mathcal{F}_{spec}(bssid) = \mathcal{F}\{rssi(t)\},
+\]
+where $\mathcal{F}$ is a Fourier, wavelet, or holonomy-compatible spectral operator.
+
+\section{Holonomy Operator}
+Define the holonomy integral:
+\[
+\mathcal{H}(bssid) = \oint rssi(t)\, dt.
+\]
+
+This captures loop stability, periodicity, and manifold curvature.
+
+\section{Fusion Tensor Algebra}
+Fusion tensor:
+\[
+\mathcal{F}_{tensor}(bssid) =
+\begin{bmatrix}
+W(bssid) \\
+B(bssid) \\
+A(bssid)
+\end{bmatrix}.
+\]
+
+Fusion signature:
+\[
+\sigma(bssid) = \mathrm{hash}(W \parallel B \parallel A).
+\]
+
+\section{Geometric Topology Graph}
+Define the geometric topology graph:
+\[
+\mathcal{G}^{\ast} = (V,E,w,\kappa),
+\]
+where:
+\begin{itemize}
+\item $V$ = nodes,
+\item $E$ = edges representing shared RF observations,
+\item $w$ = RF adjacency weights,
+\item $\kappa$ = curvature induced by holonomy and spectral signatures.
+\end{itemize}
+
+\section{Passive Triangulation Operator}
+Define the passive triangulation estimate:
+\[
+\mathcal{L}(device)
+= f(\mathcal{T}_{env}^{t},\mathcal{F}_{spec},\mathcal{G}^{\ast},\mathcal{H}).
+\]
+
+This uses temporal, spectral, and topological structure to infer device position
+without active scanning.
+
+\section{Typed Command Projection}
+Command categories:
+\[
+\mathcal{C}_{obs} = \{JSON, SCAN\},\quad
+\mathcal{C}_{diag} = \{STATUS, PING\},\quad
+\mathcal{C}_{manifold} = \{TRIAD\}.
+\]
+
+Typed projection:
+\[
+\Phi^{3.0} : \mathcal{C}_{type} \to \mathcal{M}_{Topo}^{\ast}.
+\]
+
+\section{Privacy Membrane v3.0}
+Define:
+\[
+\mathcal{M}^{3.0}
+= \mathcal{M}^{+} \land \neg(\Lambda^{-1}(\text{location})).
+\]
+
+This prohibits geometric location inference while allowing geometric lift.
+
+\section{Final Definition}
+The Triad Algebra v3.0 is:
+\[
+\boxed{
+\mathfrak{T}^{3.0} =
+(\mathcal{T}_{in},\chi,\mathcal{T}_{env}^{t},\Lambda,
+\mathcal{F}_{spec},\mathcal{H},\mathcal{F}_{tensor},
+\mathcal{G}^{\ast},\mathcal{L},\Phi^{3.0},\mathcal{M}^{3.0})
+}.
+\]
+
+\end{document}
