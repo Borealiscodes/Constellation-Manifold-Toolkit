@@ -1,0 +1,160 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Triad Algebra v4.0: Bidirectional, Runtime-Stable, Holonomy-Curvature Telemetry Operator}
+\author{Borealis S. Hedling}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+Triad Algebra v4.0 extends the geometric, spectral, and holonomy-lifted Triad
+manifold (v3.0) into a bidirectional, runtime-stable operator suitable for
+Sovereignty-Library integration and NDH altitude binding. This version introduces
+inverse manifold operators, runtime stability functions, holonomy curvature,
+tensor projection operators, and altitude-aware command projections. Triad v4.0
+is the first version that functions as a full structural operator rather than a
+telemetry subsystem.
+
+\section{Triad Input Space}
+RF observations remain:
+\[
+L = P \mid bssid \mid ssid \mid auth \mid ch \mid rssi \mid band,
+\]
+with
+\[
+P \in \{W, B, A\}.
+\]
+
+Thus:
+\[
+\mathcal{T}_{in}
+= \{W,B,A\}
+\times \mathcal{BSSID}
+\times \mathcal{SSID}
+\times \mathcal{Auth}
+\times \mathbb{Z}
+\times \mathbb{Z}
+\times \mathcal{Band}.
+\]
+
+\section{Classification Operator}
+\[
+\chi : \mathcal{T}_{in} \to \{WIFI, BLE, AIRPLAY\}.
+\]
+
+\section{Temporal Envelope Algebra}
+\[
+\mathcal{T}_{env}^{t}(bssid,t)
+= \max_{t' \le t} rssi(t').
+\]
+
+Temporal derivative:
+\[
+\mathcal{D}(bssid,t) = \frac{d}{dt} rssi(t).
+\]
+
+Stability:
+\[
+\mathcal{S}(bssid,t) = \mathrm{Var}(rssi(t-\Delta t \ldots t)).
+\]
+
+\section{Geometric Lift Operator}
+\[
+\Lambda : \mathcal{T}_{env}^{t} \to \mathcal{M}_{RF},
+\]
+with geometric embedding:
+\[
+p(bssid,t) = (rssi(t), \mathcal{D}(t), \mathcal{S}(t)).
+\]
+
+\section{Spectral Transform}
+\[
+\mathcal{F}_{spec}(bssid) = \mathcal{F}\{rssi(t)\},
+\]
+where $\mathcal{F}$ is a Fourier, wavelet, or holonomy-compatible transform.
+
+\section{Holonomy Operator}
+\[
+\mathcal{H}(bssid) = \oint rssi(t)\, dt.
+\]
+
+Holonomy curvature:
+\[
+\mathcal{K}(bssid) = \frac{d}{dt}\mathcal{H}(bssid).
+\]
+
+\section{Fusion Tensor Algebra}
+\[
+\mathcal{F}_{tensor}(bssid) =
+\begin{bmatrix}
+W(bssid) \\
+B(bssid) \\
+A(bssid)
+\end{bmatrix}.
+\]
+
+Tensor projection:
+\[
+\Pi(bssid) = P(\mathcal{F}_{tensor}(bssid)),
+\]
+where $P$ is a projection into geometric, spectral, or NDH altitude space.
+
+\section{Geometric Topology Graph}
+\[
+\mathcal{G}^{\ast} = (V,E,w,\kappa),
+\]
+with curvature $\kappa$ induced by holonomy and spectral structure.
+
+\section{Passive Triangulation}
+\[
+\mathcal{L}(device)
+= f(\mathcal{T}_{env}^{t},\mathcal{F}_{spec},\mathcal{G}^{\ast},\mathcal{H},\mathcal{K}).
+\]
+
+\section{Runtime Stability Operator}
+Long-term stability:
+\[
+\Sigma(bssid) = \lim_{t\to\infty} \mathcal{S}(bssid,t).
+\]
+
+\section{Bidirectional Manifold Operator}
+Forward operator:
+\[
+\mathfrak{T}^{3.0} : \mathcal{M}_{RF} \to \mathcal{M}_{Topo}^{\ast}.
+\]
+
+Inverse operator:
+\[
+\mathfrak{T}^{4.0^{-1}} : \mathcal{M}_{Topo}^{\ast} \to \mathcal{M}_{RF}.
+\]
+
+\section{Typed Command Projection}
+\[
+\Phi^{4.0} : \mathcal{C}_{type} \to \mathcal{M}_{Topo}^{\ast},
+\]
+with altitude binding:
+\[
+\mathcal{A}_{Triad} : \Phi^{4.0} \to \text{NDH}_{A3-A5}.
+\]
+
+\section{Privacy Membrane v4.0}
+\[
+\mathcal{M}^{4.0}
+= \mathcal{M}^{3.0} \land \neg(\Lambda^{-1}(\text{location})) \land \neg(\mathfrak{T}^{4.0^{-1}}(\text{location})).
+\]
+
+\section{Final Definition}
+\[
+\boxed{
+\mathfrak{T}^{4.0} =
+(\mathcal{T}_{in},\chi,\mathcal{T}_{env}^{t},\Lambda,
+\mathcal{F}_{spec},\mathcal{H},\mathcal{K},
+\mathcal{F}_{tensor},\Pi,
+\mathcal{G}^{\ast},\mathcal{L},\Sigma,
+\mathfrak{T}^{4.0^{-1}},\Phi^{4.0},\mathcal{A}_{Triad},\mathcal{M}^{4.0})
+}.
+\]
+
+\end{document}
