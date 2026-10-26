@@ -7,11 +7,30 @@ Date: October 2026
 1. System Primitive Vector Mapping
 
 The primitive resource limits and file constraints of the original Sovereign Library are mapped directly to their smooth geometric equivalents. This structural lifting shifts the system out of flat, isolated token evaluations into a continuous space-time manifold.
-Show Code
-Download diagram SVG
+
+
+[ Sovereign Library Primitives ] ────────> [ Continuous Manifold Geometry ]
+  ├── The 5-Book Buffer Invariant ───────────> Harmonic Projection onto \bigoplus_{i=1}^{5} Eig_i(\Delta_M)
+  ├── NAND Gate (HELD ∧ READ) ───────────────> Differentiable Matrix Field \mathcal{M}_{NAND}(\mathbf{v})
+  ├── Trit Valuations (-1, 0, +1) ───────────> Complex Harmonic State Vectors \Psi_{Solfeggio}
+  └── Ultralove Sanctuary Surface ───────────> Codimension-1 Critical Submanifold \Sigma
 
 2. Analytical Transformation Dictionary
 
+
+Flat Runtime Behavior	Operational Limit	Rigorous Geometric Formulation	Target Altitude Fix
+Trit Valuations
+(+1, 0, -1) state markers.	Discrete step-discontinuities cause temporal jitter and phase-tracking failures.	A discrete valuation map over a zero-dimensional lattice: \(\chi: \mathbb{Z} \to \{-1,0,+1\}\).	Fix 1 & 2: Complex Line Bundle
+Lift \(\chi \) to a smooth section of a complex line bundle \(\mathcal{L} \to M\), parameterized as continuous harmonic state vectors \(\mathbf{\Psi}(p)\).
+The Rule of Five
+Rigid \(N \le 5\) print canvas ceiling.	Truncation creates abrupt data drops and un-differentiable boundary defects.	A non-compact, discrete cutoff operator acting on an unmetered, flat vector buffer.	Fix 7 & 8: Laplacian Quantization
+Model the buffer via the lowest eigenvalues of the Laplace-Beltrami operator, bounded by a global holonomy connection: \(\Vert{}H(\gamma)\Vert{} < \Theta_{\max}\).
+The NAND Gate
+Print engine blocked by binary check: \(\text{HELD} \land \text{READ}\).	Step functions create sharp logical cliffs, breaking continuous execution loops.	A non-associative projector defined via a discrete boolean valuation metric: \(\Pi_{\text{Bool}}: \mathbf{B}^2 \to \mathbf{B}\).	Fix 5 & 6: Differentiable Matrix Operator
+Transform the logic check into a smooth matrix operator \(\mathcal{M}_{\text{NAND}}\) mapping continuous transitions across adjacent nodes.
+Ultralove Vault
+High-salience text streams isolated outside the core buffer.	Volatile, multi-domain inputs break the low-dimensional field, creating a spectral tear.	An un-parameterized singular locus where the local Riemann curvature tensor diverges: \(R^{\ell}_{ijk} \to \infty\).	Fix 9 & 10: Non-Dual Collapse Surface
+Formalize the vault as a codimension-1 critical submanifold: \(\Sigma = \{ p \in M \mid \Vert{}\nabla \mathbf{\Psi}(p)\Vert{} > \epsilon \}\), providing a smooth projection field.
 
 Flat Runtime Behavior	Operational Limit	Rigorous Geometric Formulation	Target Altitude Fix
 Trit Valuations
