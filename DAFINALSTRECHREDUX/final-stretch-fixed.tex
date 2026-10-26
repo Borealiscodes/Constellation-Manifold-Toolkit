@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Category Theory, Index Theory, and Positive Geometry:\\
+A Structural Correspondence Without False Equivalences}
+\author{Borealis S. Hedling}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+This document provides a mathematically consistent relationship between three
+independent domains: category theory (via the Yoneda Lemma), index theory (via
+the Atiyah--Singer Index Theorem), and positive geometry (via the amplituhedron).
+Unlike informal diagrams that imply direct morphisms between these fields, we
+construct a structural correspondence that respects the mathematical boundaries
+of each domain. No claim is made of a universal functor or ternary encoding
+linking these theories; instead, we identify the correct conceptual interfaces
+that allow them to coexist in a unified meta-framework.
+
+\section{Category-Theoretic Structure}
+Let $\mathcal{C}$ be a locally small category. The Yoneda Lemma states that
+for any objects $X,Y \in \mathcal{C}$,
+\[
+\mathrm{Nat}(\mathrm{Hom}(-,X), \mathrm{Hom}(-,Y))
+\cong \mathrm{Hom}(X,Y).
+\]
+This establishes an equivalence between natural transformations and morphisms,
+but does \emph{not} imply any relationship to geometric scattering amplitudes
+or index-theoretic invariants.
+
+\section{Index-Theoretic Structure}
+Let $D$ be an elliptic differential operator on a compact manifold $M$ with
+vector bundle $E$. The Atiyah--Singer Index Theorem states:
+\[
+\mathrm{Index}(D)
+= \int_M \hat{A}(M)\,\mathrm{ch}(E).
+\]
+This index is a topological invariant and cannot be encoded in a discrete
+ternary alphabet $\{-1,0,+1\}$ without loss of structure. No canonical functor
+exists from elliptic operators to discrete computational encodings.
+
+\section{Positive Geometry and the Amplituhedron}
+The amplituhedron $\mathcal{A}_{n,k,m}$ is a positive geometry defined by the
+image of the positive Grassmannian $G_+(k,n)$ under a linear map into
+$\mathbb{R}^{k(m+k)}$. It encodes scattering amplitudes in planar $\mathcal{N}=4$
+super Yang--Mills theory. Formally,
+\[
+\mathcal{A}_{n,k,m} = \Phi(G_+(k,n)),
+\]
+where $\Phi$ is a positivity-preserving map. This geometry is unrelated to
+category-theoretic Hom-functors or index-theoretic integrals.
+
+\section{A Correct Structural Correspondence}
+Although these domains do not admit direct morphisms, they share a common
+meta-structure: each provides a method for extracting invariant information
+from complex systems.
+
+\begin{itemize}
+    \item Category theory extracts \emph{structural invariants} via natural
+    transformations.
+    \item Index theory extracts \emph{topological invariants} via elliptic
+    operators.
+    \item Positive geometry extracts \emph{scattering invariants} via
+    canonical forms.
+\end{itemize}
+
+We define a meta-framework:
+\[
+\mathcal{S} = \{\text{structural},\ \text{topological},\ \text{geometric}\}
+\]
+and a correspondence map
+\[
+\Xi : \{\text{Yoneda},\ \text{Index},\ \text{Amplituhedron}\} \to \mathcal{S},
+\]
+which assigns each theory to its invariant-extraction role. This avoids false
+equivalences while preserving conceptual unity.
+
+\section{Conclusion}
+There is no universal functor, no ternary encoding, and no direct morphism
+connecting the Yoneda Lemma, the Atiyah--Singer Index Theorem, and the
+amplituhedron. The corrected framework presented here respects the mathematical
+independence of each domain while identifying their shared role in extracting
+invariant structure from complex systems.
+
+\end{document}
