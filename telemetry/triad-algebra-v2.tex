@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{Triad Algebra v2: Temporal, Topological, Fusion, Command, and Privacy Extensions}
+\author{Borealis S. Hedling}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+This document defines the improved Triad Algebra v2 for the ESP32--S3 MEDUSA Triad
+telemetry system. The algebra extends the original passive RF manifold with temporal
+envelope operators, multi-band fusion signatures, node-topology graphs, typed command
+categories, and a formal privacy membrane. The resulting structure is suitable for
+Sovereignty-Library research, NDH-adjacent systems, and geometric-AI runtime scaffolds.
+
+\section{Triad Input Space}
+Incoming telemetry lines have the form:
+\[
+L = P \mid bssid \mid ssid \mid auth \mid ch \mid rssi \mid band,
+\]
+with prefix
+\[
+P \in \{W, B, A\}.
+\]
+
+Thus the input space is:
+\[
+\mathcal{T}_{in}
+= \{W,B,A\}
+\times \mathcal{BSSID}
+\times \mathcal{SSID}
+\times \mathcal{Auth}
+\times \mathbb{Z}
+\times \mathbb{Z}
+\times \mathcal{Band}.
+\]
+
+\section{Classification Operator}
+The triad classifier is:
+\[
+\chi : \mathcal{T}_{in} \to \{WIFI, BLE, AIRPLAY\},
+\]
+defined by
+\[
+\chi(W)=WIFI,\qquad
+\chi(B)=BLE,\qquad
+\chi(A)=AIRPLAY.
+\]
+
+\section{Temporal Envelope Algebra}
+The original envelope operator is extended to include time:
+\[
+\mathcal{T}_{env}^{t}(bssid,t)
+= \max_{t' \le t} rssi(t').
+\]
+
+Define the temporal derivative:
+\[
+\mathcal{D}(bssid,t) = \frac{d}{dt} rssi(t),
+\]
+and the stability metric:
+\[
+\mathcal{S}(bssid,t) = \mathrm{Var}(rssi(t-\Delta t \ldots t)).
+\]
+
+These enable motion inference, signal stability analysis, and temporal clustering.
+
+\section{Node-State Overwrite Algebra}
+JSON telemetry updates node state:
+\[
+\mathcal{N}(node) = obj,
+\]
+with overwrite rule:
+\[
+\mathcal{N}_{t+1}(node) = obj_t.
+\]
+
+\section{Node-Topology Algebra}
+Define the triad topology graph:
+\[
+\mathcal{G} = (V,E),
+\]
+where $V$ is the set of nodes and edges $E$ represent shared RF observations.
+
+Edge weights:
+\[
+w(i,j)
+= \alpha \cdot \text{shared\_bssids}
++ \beta \cdot \text{shared\_channels}
++ \gamma \cdot \text{temporal\_overlap}.
+\]
+
+This produces RF adjacency graphs and multi-node topology structures.
+
+\section{Multi-Band Fusion Algebra}
+Define the fusion operator:
+\[
+\mathcal{F}(bssid) = (W(bssid), B(bssid), A(bssid)).
+\]
+
+Fusion signature:
+\[
+\sigma(bssid) = \mathrm{hash}(W \parallel B \parallel A).
+\]
+
+This enables multi-band device fingerprinting and cross-band identity inference.
+
+\section{Improved Triad Output Manifold}
+The extended output manifold is:
+\[
+\mathcal{T}_{out}^{+}
+= (\mathcal{N},\mathcal{T}_{env}^{t},\mathcal{G},\mathcal{F},\mathcal{T}_{raw}).
+\]
+
+\section{Typed Command Algebra}
+Command categories:
+\[
+\mathcal{C}_{obs} = \{JSON, SCAN\},
+\]
+\[
+\mathcal{C}_{diag} = \{STATUS, PING\},
+\]
+\[
+\mathcal{C}_{manifold} = \{TRIAD\}.
+\]
+
+Typed command operator:
+\[
+\Phi^{\ast} : \mathcal{C}_{type} \to \mathcal{T}_{out}^{+}.
+\]
+
+\section{Privacy Membrane Algebra v2}
+Define the improved membrane:
+\[
+\mathcal{M}^{+}
+= \mathcal{M}_{hard} \land \mathcal{M}_{soft}.
+\]
+
+Hard invariants:
+\[
+\mathcal{M}_{hard}
+= (\neg \text{LocationFabrication})
+\land (\neg \text{ExternalUpload}).
+\]
+
+Soft invariants:
+\[
+\mathcal{M}_{soft}
+= (\text{BeaconAggregationOnly})
+\land (\text{TemporalDecayAllowed}).
+\]
+
+\section{Final Definition}
+The improved Triad Algebra v2 is:
+\[
+\boxed{
+\mathfrak{T}^{+} =
+(\mathcal{T}_{in},\chi,\mathcal{T}_{env}^{t},\mathcal{N},\mathcal{G},
+\mathcal{F},\mathcal{T}_{out}^{+},\Phi^{\ast},\mathcal{M}^{+})
+}.
+\]
+
+\end{document}
