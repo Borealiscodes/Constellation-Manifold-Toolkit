@@ -1,0 +1,137 @@
+% ------------------------------------------------------------
+% A6.x Substrate Uplift Module E — Economic Trajectory Invariants (v0.1)
+% Author: Borealis S. Hedling
+% Altitude: A6.x (Substrate Uplift Layer)
+% Purpose: Define the trajectory-invariant substrate required
+%          for semantic stability, provenance stability, modal
+%          continuity, and collapse-compatible trajectory geometry.
+% ------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{A6.x Substrate Uplift Module E: Economic Trajectory Invariants}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This module defines the economic trajectory invariant substrate required for
+A6 altitude geometry. Trajectory invariants provide the stability and continuity
+structure required by the A6 Constructive Fixes and the A7 Composite Substrate
+Operator Algebra.
+
+% ------------------------------------------------------------
+\section{Trajectory Definition}
+
+Let $\gamma : [0,1] \to M$ be a smooth trajectory.
+
+\textbf{Definition (Trajectory).}
+\[
+\gamma(t) \in M, \quad \gamma(0) = p, \quad \gamma(1) = q.
+\]
+
+% ------------------------------------------------------------
+\section{Economic Trajectory Invariant}
+
+Define the economic invariant:
+\[
+I_{\mathrm{econ}}(\gamma) = \int_0^1 \Phi(\gamma(t)) \, dt,
+\]
+where $\Phi$ is a potential function.
+
+\textbf{Theorem (Invariance).}
+If $\Phi$ is smooth, then:
+\[
+I_{\mathrm{econ}}(\gamma) \text{ invariant under reparameterization}.
+\]
+
+This enforces Fix 12 (semantic lift preservation).
+
+% ------------------------------------------------------------
+\section{Trajectory Stability}
+
+Define trajectory stability:
+\[
+S(\gamma) = \sup_{t \in [0,1]} \|\dot{\gamma}(t)\|.
+\]
+
+\textbf{Theorem (Stability Bound).}
+If $S(\gamma) < \sigma_{\max}$, then:
+\[
+\gamma \text{ stable}.
+\]
+
+This enforces Fix 9 (stability envelope monotonicity).
+
+% ------------------------------------------------------------
+\section{Modal Trajectory Lift}
+
+Let $\mu$ be the modal map.
+
+\textbf{Definition (Modal Lift).}
+\[
+\mu(\gamma(t)) \leadsto \mu(\gamma(t+\epsilon)).
+\]
+
+\textbf{Theorem (Lift Preservation).}
+If $\gamma$ is stable, modal truth lifts along $\gamma$.
+
+This enforces Fix 10 (modal lift preservation).
+
+% ------------------------------------------------------------
+\section{Provenance Trajectory Lift}
+
+Define provenance lift:
+\[
+I_{\mathrm{prov}}(\gamma(t)).
+\]
+
+\textbf{Theorem (Provenance Stability).}
+If $\gamma$ is stable, provenance lifts along $\gamma$.
+
+This enforces Fix 11 (provenance lift preservation).
+
+% ------------------------------------------------------------
+\section{Collapse-Surface Compatibility}
+
+Let $\Sigma$ be the collapse surface.
+
+\textbf{Definition (Collapse-Compatible Trajectory).}
+\[
+\gamma(t) \in \Sigma \Rightarrow S(\gamma) = 0.
+\]
+
+\textbf{Theorem (Local Detectability).}
+If $\gamma$ intersects $\Sigma$, collapse is locally detectable.
+
+This enforces Fix 8 (collapse locality).
+
+% ------------------------------------------------------------
+\section{Spectral Trajectory Compatibility}
+
+Define:
+\[
+\mathcal{S}_{\gamma}(t) = \mathrm{Spec}(L(\gamma(t))).
+\]
+
+\textbf{Theorem (Spectral Continuity).}
+If $\gamma$ is stable, then:
+\[
+\mathcal{S}_{\gamma}(t) \text{ continuous in } t.
+\]
+
+This enforces Fix 5 (spectral continuity).
+
+% ------------------------------------------------------------
+\section{Conclusion}
+
+The economic trajectory invariant substrate defined here provides the semantic,
+provenance, modal, collapse-compatible, and spectral stability structures
+required for A6 Constructive Fixes and A7 Composite Substrate Operator Algebra.
+It is the fifth foundational substrate module in the A6.x uplift sequence.
+
+\end{document}
