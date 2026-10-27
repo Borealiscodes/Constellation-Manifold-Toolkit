@@ -1,0 +1,140 @@
+% =====================================================================
+% Academic-Galactic — main.tex (v1.2 → v1.3 Spine)
+% =====================================================================
+
+\documentclass[11pt]{article}
+
+% ---------------------------------------------------------------------
+% Packages
+% ---------------------------------------------------------------------
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{cite}
+
+\geometry{margin=1in}
+
+% ---------------------------------------------------------------------
+% Color Tiles (Engineering / Geometrist / Accessible)
+% ---------------------------------------------------------------------
+\definecolor{eng}{RGB}{0, 90, 150}
+\definecolor{geo}{RGB}{120, 40, 120}
+\definecolor{acc}{RGB}{30, 120, 30}
+
+\newcommand{\tileEng}[1]{\colorbox{eng!15}{\textbf{#1}}}
+\newcommand{\tileGeo}[1]{\colorbox{geo!15}{\textbf{#1}}}
+\newcommand{\tileAcc}[1]{\colorbox{acc!15}{\textbf{#1}}}
+
+% ---------------------------------------------------------------------
+% Citation Ontology
+% ---------------------------------------------------------------------
+\input{citations/CitationOntology.tex}
+
+% ---------------------------------------------------------------------
+% Title + Metadata
+% ---------------------------------------------------------------------
+\title{\textbf{Academic-Galactic Architecture v1.2}\\
+\large Soft 80D Manifold, A7 Operator Altitude, and Filtration-Based Documentation Spine}
+
+\author{Borealis S. Hedling}
+\date{Version 1.2 — \today}
+
+% =====================================================================
+\begin{document}
+\maketitle
+
+% ---------------------------------------------------------------------
+% Abstract
+% ---------------------------------------------------------------------
+\begin{abstract}
+The Academic-Galactic architecture provides a modular, altitude-aware LaTeX
+documentation system for the Soft 80-dimensional manifold and the A7 operator
+altitude. This document integrates the filtration hierarchy, fiber bundle
+structure, spectral bundle structure, collapse-surface stratification,
+composite operator algebra, dual compatibility, reprojection functor, and
+completion conditions. All modules are citation-ontology aligned and
+Lean-compatible.
+\end{abstract}
+
+% ---------------------------------------------------------------------
+% Altitude Map Overview
+% ---------------------------------------------------------------------
+\section*{Altitude Map}
+\begin{center}
+\begin{tikzpicture}[node distance=1.2cm]
+\node (A6) [rectangle, draw, fill=eng!15] {A6 — Filtration Altitude};
+\node (A7) [rectangle, draw, fill=geo!15, below=of A6] {A7 — Operator Altitude};
+\node (A8) [rectangle, draw, fill=acc!15, below=of A7] {A8 — Completion Altitude};
+\draw[->, thick] (A6) -- (A7);
+\draw[->, thick] (A7) -- (A8);
+\end{tikzpicture}
+\end{center}
+
+% ---------------------------------------------------------------------
+% Soft 80D Manifold Overview
+% ---------------------------------------------------------------------
+\section*{Soft 80D Manifold Overview}
+The Soft 80-dimensional manifold $\mathcal{M}^{80}$ is defined by a filtration
+hierarchy, fiber bundle geometry, spectral bundle continuity, collapse-surface
+stratification, and operator-induced reprojection. The manifold supports the
+Axiom-Quant operator ladder (Φ₅, Φ₇, Φ₈, Φ₈ᵗ, Φ₉) and the domain, altitude,
+compatibility, and reprojection operators.
+
+% ---------------------------------------------------------------------
+% Module Summaries
+% ---------------------------------------------------------------------
+\section*{Module Summaries}
+
+\begin{itemize}[leftmargin=1.2cm]
+    \item \tileEng{01 Filtration Structure} — Defines altitude transitions and
+    filtration layers using category-theoretic and topos-theoretic foundations.
+
+    \item \tileGeo{02 Fiber Bundle Structure} — Defines curvature envelopes,
+    holonomy transport, and geometric connective tissue.
+
+    \item \tileGeo{03 Spectral Bundle Structure} — Defines spectral continuity,
+    operator spectra, and invariant stability.
+
+    \item \tileGeo{04 Collapse-Surface Stratification} — Defines topology
+    modulation, collapse surfaces, and stratified submanifolds.
+
+    \item \tileEng{05 Composite Operator Algebra} — Defines operator
+    composition, Lie bracket closure, and Lean-compatible operator algebra.
+
+    \item \tileEng{06 Dual Compatibility} — Defines cotangent structure and
+    dual-operator compatibility.
+
+    \item \tileEng{07 Reprojection Functor} — Defines idempotent reprojection
+    and geometric consistency restoration.
+
+    \item \tileAcc{08 Completion Conditions} — Defines invariant extraction,
+    spectral-dual alignment, and completion conditions.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+% Module Includes
+% ---------------------------------------------------------------------
+\input{modules/01_FiltrationStructure.tex}
+\input{modules/02_FiberBundleStructure.tex}
+\input{modules/03_SpectralBundleStructure.tex}
+\input{modules/04_CollapseSurfaceStratification.tex}
+\input{modules/05_CompositeOperatorAlgebra.tex}
+\input{modules/06_DualCompatibility.tex}
+\input{modules/07_ReprojectionFunctor.tex}
+\input{modules/08_CompletionConditions.tex}
+
+% ---------------------------------------------------------------------
+% Bibliography
+% ---------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{citations/APA_Bibliography}
+
+% ---------------------------------------------------------------------
+\end{document}
+% =====================================================================
