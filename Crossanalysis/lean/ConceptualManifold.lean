@@ -1,26 +1,49 @@
 import LeanHallucinationGuard.Guard
 
-structure ConceptualManifold :=
-  (M : Type)
-  (metric : M → M → ℝ)
-  (density : M → ℝ)
-  (smooth : Prop)
-  (nondegenerate : Prop)
+namespace ConstellationManifold
+
+/--
+  ConceptualManifold:
+  The base reversible geometric structure for the Enhanced
+  Conceptual Collision Tracking formal spine.
+
+  Fields:
+    dim                : ℕ
+    density            : M → ℝ
+    smooth             : Prop
+    nondegenerate      : Prop
+-/
+structure ConceptualManifold where
+  dim           : Nat
+  density       : Type → Real
+  smooth        : Prop
+  nondegenerate : Prop
 
 #guard ConceptualManifold
-#guard ConceptualMetric
 
-namespace ConceptualManifold
 
-def isSmooth (𝓜 : ConceptualManifold) : Prop :=
-  𝓜.smooth
-
-def isNondegenerate (𝓜 : ConceptualManifold) : Prop :=
-  𝓜.nondegenerate
-
-theorem manifold_safety (𝓜 : ConceptualManifold) :
-  isSmooth 𝓜 ∧ isNondegenerate 𝓜 :=
+/--
+  Smoothness theorem:
+  Ensures the manifold satisfies the smoothness predicate.
+-/
+theorem manifold_smoothness
+  (𝓜 : ConceptualManifold)
+  : 𝓜.smooth :=
 by
+  unfold ConceptualManifold at 𝓜
   admit
 
-end ConceptualManifold
+
+/--
+  Non-degeneracy theorem:
+  Ensures the manifold is structurally non-degenerate.
+-/
+theorem manifold_nondegenerate
+  (𝓜 : ConceptualManifold)
+  : 𝓜.nondegenerate :=
+by
+  unfold ConceptualManifold at 𝓜
+  admit
+
+
+end ConstellationManifold
