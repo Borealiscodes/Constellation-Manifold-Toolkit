@@ -1,0 +1,148 @@
+% ------------------------------------------------------------
+% A6.x Substrate Uplift Module D — Sheaf-Cognition Gluing (v0.1)
+% Author: Borealis S. Hedling
+% Altitude: A6.x (Substrate Uplift Layer)
+% Purpose: Define the sheaf-cognition gluing substrate required
+%          for semantic lift, provenance lift, and modal truth
+%          continuity across the A6 manifold.
+% ------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{A6.x Substrate Uplift Module D: Sheaf-Cognition Gluing}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This module defines the sheaf-cognition gluing substrate required for A6
+altitude geometry. Sheaf-cognition provides the semantic and provenance
+continuity structure required by the A6 Constructive Fixes and the A7 Composite
+Substrate Operator Algebra.
+
+% ------------------------------------------------------------
+\section{Sheaf Structure}
+
+Let $\mathcal{F}$ be a sheaf over the manifold $M$.
+
+\textbf{Definition (Sheaf).}
+\[
+\mathcal{F}(U) = \text{sections over } U \subseteq M.
+\]
+
+For open sets $U \subseteq V$:
+\[
+\mathrm{res}_{V,U} : \mathcal{F}(V) \to \mathcal{F}(U).
+\]
+
+% ------------------------------------------------------------
+\section{Cognitive Sheaf}
+
+Define the cognitive sheaf:
+\[
+\mathcal{C}(U) = \text{cognitive states over } U.
+\]
+
+\textbf{Definition (Cognitive Section).}
+A cognitive section $s \in \mathcal{C}(U)$ assigns:
+\[
+s(p) = (\mu(p), I_{\mathrm{sem}}(p), I_{\mathrm{prov}}(p)).
+\]
+
+% ------------------------------------------------------------
+\section{Gluing Condition}
+
+Let $\{U_i\}$ be an open cover of $U$.
+
+\textbf{Definition (Gluing).}
+If $s_i \in \mathcal{C}(U_i)$ satisfy:
+\[
+s_i|_{U_i \cap U_j} = s_j|_{U_i \cap U_j},
+\]
+then there exists a unique:
+\[
+s \in \mathcal{C}(U)
+\]
+such that:
+\[
+s|_{U_i} = s_i.
+\]
+
+\textbf{Theorem (Semantic Gluing).}
+If semantic sections agree locally, they glue globally.
+
+This enforces Fix 12 (semantic lift preservation).
+
+% ------------------------------------------------------------
+\section{Provenance Gluing}
+
+Define provenance section:
+\[
+I_{\mathrm{prov}}(p) \in \mathcal{C}(U).
+\]
+
+\textbf{Theorem (Provenance Lift).}
+If $I_{\mathrm{prov}}$ agrees on overlaps, then:
+\[
+I_{\mathrm{prov}}(M) \Rightarrow I_{\mathrm{prov}}(\mathcal{A}(M,S)).
+\]
+
+This enforces Fix 11 (provenance lift preservation).
+
+% ------------------------------------------------------------
+\section{Modal Truth Gluing}
+
+Let $\mu$ be the modal map.
+
+\textbf{Theorem (Modal Lift).}
+If $\mu$ agrees on overlaps, then modal truth lifts globally:
+\[
+\mu(p) \leadsto \mu(q).
+\]
+
+This enforces Fix 10 (modal lift preservation).
+
+% ------------------------------------------------------------
+\section{Collapse-Surface Compatibility}
+
+Let $\Sigma$ be the collapse surface.
+
+\textbf{Definition (Sheaf Collapse Section).}
+\[
+\mathcal{C}_\Sigma(U) = \{s \in \mathcal{C}(U) : s(p) \text{ collapses on } \Sigma\}.
+\]
+
+\textbf{Theorem (Local Detectability).}
+If collapse sections agree locally, then $\Sigma$ is locally detectable.
+
+This enforces Fix 8 (collapse locality).
+
+% ------------------------------------------------------------
+\section{Stability Envelope}
+
+Define:
+\[
+E_{\mathrm{sheaf}}(p) = \|s(p)\|.
+\]
+
+\textbf{Theorem (Monotonicity).}
+If $E(p) \le E(q)$, then:
+\[
+E_{\mathrm{sheaf}}(p) \le E_{\mathrm{sheaf}}(q).
+\]
+
+This enforces Fix 9 (stability envelope monotonicity).
+
+% ------------------------------------------------------------
+\section{Conclusion}
+
+The sheaf-cognition gluing substrate defined here provides the semantic,
+provenance, modal, collapse-compatible, and stability structures required for
+A6 Constructive Fixes and A7 Composite Substrate Operator Algebra. It is the
+fourth foundational substrate module in the A6.x uplift sequence.
+
+\end{document}
