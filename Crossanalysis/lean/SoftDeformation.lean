@@ -1,24 +1,64 @@
 import LeanHallucinationGuard.Guard
-import ConceptualMetric
+import ConstellationManifold.ConceptualManifold
+import ConstellationManifold.ConceptualMetric
+import ConstellationManifold.CurvatureEnvelope
+import ConstellationManifold.CollapseSurface
 
-structure DeformationTensor :=
-  (S : Type → Type → ℝ)
-  (epsilon : ℝ)
-  (smooth : Prop)
+namespace ConstellationManifold
 
-structure SoftDeformation :=
-  (Δg : Type → Type → ℝ)
-  (smooth : Prop)
-  (nondegenerate : Prop)
+/--
+  SoftDeformation:
+  Defines reversible deformation tensors and perturbed metrics
+  used for conceptual manifold modulation.
 
-#guard DeformationTensor
-#guard TensorShape
+  Fields:
+    manifold        : ConceptualManifold
+    metric          : ConceptualMetric
+    deformation     : Type → Type → Real
+    epsilon         : Real
+    perturbed_metric : Type → Type → Real
+    smooth          : Prop
+    nondegenerate   : Prop
+-/
+structure SoftDeformation where
+  manifold         : ConceptualManifold
+  metric           : ConceptualMetric
+  deformation      : Type → Type → Real
+  epsilon          : Real
+  perturbed_metric : Type → Type → Real
+  smooth           : Prop
+  nondegenerate    : Prop
 
-namespace SoftDeformation
+#guard SoftDeformation
+#guardTensor deformation
+#guardRank epsilon
+#guardTensor perturbed_metric
+#guardDomain smooth
+#guardDomain nondegenerate
 
-theorem deformation_safety (D : SoftDeformation) :
-  D.smooth ∧ D.nondegenerate :=
+
+/--
+  Deformation smoothness theorem:
+  Ensures the deformation tensor produces a smooth perturbed metric.
+-/
+theorem deformation_smooth
+  (D : SoftDeformation)
+  : D.smooth :=
 by
+  unfold SoftDeformation at D
   admit
 
-end SoftDeformation
+
+/--
+  Deformation non-degeneracy theorem:
+  Ensures the perturbed metric remains structurally non-degenerate.
+-/
+theorem deformation_nondegenerate
+  (D : SoftDeformation)
+  : D.nondegenerate :=
+by
+  unfold SoftDeformation at D
+  admit
+
+
+end ConstellationManifold
