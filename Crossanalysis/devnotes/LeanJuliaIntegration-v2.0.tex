@@ -1,0 +1,181 @@
+% =====================================================================
+% Lean–Julia Integration Notes v2.0
+% Constellation-Manifold-Toolkit — crossanalysis/devnotes
+% =====================================================================
+
+\section{Lean–Julia Integration Notes v2.0}
+\label{sec:LeanJuliaIntegrationV2}
+
+This document provides updated integration guidance for Lean formal modules
+and Julia runtime modules in light of the Enhanced Conceptual Collision
+Tracking framework, including Φ7 curvature envelopes, Φ8 drift semigroup
+evolution, Φ9 invariant extraction, collapse-surface diagnostics, and
+hallucination-guard constraints.
+
+% ---------------------------------------------------------------------
+\subsection{Lean Module Population Strategy (v2.0)}
+
+Lean modules must be populated before Julia runtime modules. Lean provides:
+
+\begin{itemize}
+  \item formal invariants for conceptual manifolds,
+  \item curvature-envelope safety proofs,
+  \item drift-semigroup semigroup properties,
+  \item invariant-extraction correctness,
+  \item deformation-tensor safety,
+  \item collision-avoidance theorems.
+\end{itemize}
+
+Lean-Hallucination-Guard v2.0 must be applied to every definition:
+
+\[
+\#guard\; ConceptualManifold,\quad
+\#guard\; CurvatureEnvelope,\quad
+\#guard\; DriftSemigroup,\quad
+\#guard\; InvariantExtraction,\quad
+\#guard\; DeformationTensor,\quad
+\#guard\; CollisionInvariant.
+\]
+
+This prevents implicit type inference, operator drift, and altitude contamination.
+
+% ---------------------------------------------------------------------
+\subsection{Lean Module Structure (Updated)}
+
+Lean modules required for v2.0:
+
+\begin{verbatim}
+crossanalysis/lean/
+  ConceptualManifold.lean
+  CurvatureEnvelope.lean
+  CollapseSurface.lean
+  DriftSemigroup.lean
+  InvariantExtraction.lean
+  SoftDeformation.lean
+  PhaseShiftOperator.lean
+  EnvelopeSafety.lean
+  CollisionInvariant.lean
+\end{verbatim}
+
+New modules in v2.0:
+
+\begin{itemize}
+  \item CollapseSurface.lean
+  \item DriftSemigroup.lean (Φ8)
+  \item InvariantExtraction.lean (Φ9)
+\end{itemize}
+
+These correspond to the enhanced conceptual collision tracking spine.
+
+% ---------------------------------------------------------------------
+\subsection{Julia Runtime Integration (v2.0)}
+
+Julia modules must mirror Lean modules:
+
+\begin{verbatim}
+crossanalysis/julia/
+  ConceptualManifold.jl
+  CurvatureEnvelope.jl
+  CollapseSurface.jl
+  DriftSemigroup.jl
+  InvariantExtraction.jl
+  SoftDeformation.jl
+  PhaseShiftOperator.jl
+  EnvelopeSafety.jl
+  CollisionRuntime.jl
+\end{verbatim}
+
+Julia must enforce Lean-verified invariants:
+
+\[
+\text{assert}(R'^{(c)} < R_{\text{crit}}),\quad
+\text{assert}(D_c(t) < D_{\text{crit}}),\quad
+\text{assert}(\det(g'^{(c)}) \neq 0).
+\]
+
+Julia must not infer operator signatures or tensor ranks.
+
+Julia must not introduce new invariants.
+
+Julia must not mix altitudes.
+
+% ---------------------------------------------------------------------
+\subsection{Hallucination Guard v2.0 Requirements}
+
+Lean-Hallucination-Guard v2.0 introduces:
+
+\begin{itemize}
+  \item operator-rank verification,
+  \item tensor-shape verification,
+  \item curvature-envelope domain checks,
+  \item drift-semigroup closure checks,
+  \item invariant-extraction stability checks,
+  \item deformation-tensor smoothness checks.
+\end{itemize}
+
+Every Lean definition must be guarded.
+
+Every Julia runtime call must reference a Lean-verified invariant.
+
+% ---------------------------------------------------------------------
+\subsection{Enhanced Conceptual Collision Tracking Integration}
+
+Enhanced collision tracking requires:
+
+\[
+\Phi_7^{(c)}\ \text{(curvature envelope)},\quad
+\Phi_{8,c}^t\ \text{(drift semigroup)},\quad
+\Phi_{9,c}\ \text{(invariant extraction)}.
+\]
+
+Lean must prove:
+
+\[
+\lambda_{\min}(H_c(x)) < 0 \Rightarrow x \in \Sigma_c,
+\]
+\[
+D_c(t) > D_{\text{crit}} \Rightarrow \text{collision precursor},
+\]
+\[
+I_k(\rho_1) \approx I_k(\rho_2) \Rightarrow \text{invariant convergence}.
+\]
+
+Julia must implement:
+
+\begin{itemize}
+  \item curvature-envelope evaluation,
+  \item drift-semigroup evolution,
+  \item invariant-extraction runtime diagnostics,
+  \item collapse-surface scanning,
+  \item phase-shift steering,
+  \item deformation-tensor modulation.
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\subsection{Altitude Safety}
+
+Lean modules correspond to A0–A2 (reversible geometry).
+
+Julia modules correspond to A3–A4 (runtime physics and diagnostics).
+
+No module may cross altitudes.
+
+% =====================================================================
+% End Lean–Julia Integration Notes v2.0
+% =====================================================================
+
+---
+Provenance:
+Developed as part of the Constellation-Manifold-Toolkit cross-analysis expansion.
+Provides updated Lean–Julia integration guidance for Enhanced Conceptual Collision
+Tracking, incorporating Φ7 curvature envelopes, Φ8 drift semigroup evolution,
+Φ9 invariant extraction, collapse-surface diagnostics, and Hallucination Guard v2.0.
+Altitude-safe and operator-bounded. Not part of TISD governance, Anima-Vectorium
+runtime, or Vectorium A7–A9. Serves exclusively as technical developer documentation.
+
+Author:
+Borealis S. Hedling — Dublin, Ireland.
+
+Version:
+CMT-LJI-v2.0 — 27 October 2026, 21:14 IST
+---
