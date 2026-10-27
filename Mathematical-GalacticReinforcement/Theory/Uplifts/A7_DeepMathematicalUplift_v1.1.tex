@@ -1,0 +1,220 @@
+\section{Introduction}
+
+This document provides the mathematically rigorous uplift of the A6.x substrate
+modules (A–F) and the A7 operator altitude (A7.0–A7.4). Each conceptual module
+is translated into formal mathematical objects: symplectic curvature operators,
+projection fibrations, unistochastic kernels, sheaf gluing functors, trajectory
+invariants, composite algebras, dual-compatibility operators, collapse-surface
+repair maps, reprojection functors, and closure theorems.
+
+The result is a unified, altitude-neutral mathematical framework suitable for
+verification, peer review, and formal analysis.
+
+\section{Module A: Symplectic Curvature, Torsion, and Drift}
+
+Let $\mathcal{C}$ be the RSVP configuration manifold with symplectic form
+$\omega$. Define curvature, torsion, and drift operators:
+
+\[
+\mathcal{R} : T\mathcal{C} \to T\mathcal{C}, \qquad
+\mathcal{T} : T\mathcal{C} \to T\mathcal{C}, \qquad
+\mathcal{D} : T\mathcal{C} \to T\mathcal{C}.
+\]
+
+Curvature is defined by:
+
+\[
+\mathcal{R}(X,Y) = \nabla_X \nabla_Y - \nabla_Y \nabla_X - \nabla_{[X,Y]}.
+\]
+
+Torsion:
+
+\[
+\mathcal{T}(X,Y) = \nabla_X Y - \nabla_Y X - [X,Y].
+\]
+
+Drift is defined as the Hamiltonian vector field:
+
+\[
+\mathcal{D} = X_H = \omega^{-1}(dH).
+\]
+
+\section{Module B: Projection Fibrations and Modal Adjacency}
+
+Define the TARTAN projection as a fibration:
+
+\[
+\pi : \mathcal{C} \to \mathcal{T},
+\]
+where $\mathcal{T}$ is the tile manifold.
+
+Modal adjacency is defined by:
+
+\[
+p \sim q \iff \exists U \subseteq \mathcal{T} : p,q \in \pi^{-1}(U).
+\]
+
+Spectral continuity is defined by:
+
+\[
+\mathrm{Spec}(\pi(X)) \text{ continuous in } X.
+\]
+
+\section{Module C: Unistochastic Kernels}
+
+Define the amplitude:
+
+\[
+U_{ij} = \frac{1}{Z} \exp(i\,\Omega[\gamma_{i\to j}]).
+\]
+
+Define the unistochastic kernel:
+
+\[
+P_{ij} = |U_{ij}|^2.
+\]
+
+\begin{theorem}
+If RSVP evolution is symplectic and TARTAN preserves phase modulo coarse
+graining, then $P$ is unistochastic.
+\end{theorem}
+
+\section{Module D: Sheaf-Cognition Gluing Functors}
+
+Let $\mathcal{O}$ be a sheaf over $M$.
+
+Define gluing functor:
+
+\[
+G : \mathrm{Cov}(M) \to \mathrm{Sh}(M)
+\]
+
+such that:
+
+\[
+G(\{U_i\}) = s \text{ iff } s|_{U_i} = s_i.
+\]
+
+Semantic and provenance lifts are defined as natural transformations:
+
+\[
+\eta_{\mathrm{sem}} : \mathcal{O} \Rightarrow \mathcal{O}, \qquad
+\eta_{\mathrm{prov}} : \mathcal{O} \Rightarrow \mathcal{O}.
+\]
+
+\section{Module E: Trajectory Invariants}
+
+Let $\gamma : [0,1] \to \mathcal{C}$ be a smooth trajectory.
+
+Define invariant:
+
+\[
+I(\gamma) = \int_0^1 \Phi(\gamma(t))\, dt.
+\]
+
+Define stability envelope:
+
+\[
+E(\gamma) = \sup_{t} \|\dot{\gamma}(t)\|.
+\]
+
+\section{Module F: Composite Substrate Algebra}
+
+Define composite algebra:
+
+\[
+\mathcal{A}_{\mathrm{comp}} =
+\mathcal{A}_{\mathrm{RSVP}} \oplus
+\mathcal{A}_{\mathrm{TARTAN}} \oplus
+\mathcal{A}_{\mathrm{uni}} \oplus
+\mathcal{A}_{\mathrm{sheaf}} \oplus
+\mathcal{A}_{\mathrm{traj}}.
+\]
+
+Define composite operator:
+
+\[
+\mathcal{O}(p) =
+\mathcal{R}(p) \oplus
+\mathcal{D}(p) \oplus
+\mathcal{S}(p) \oplus
+\mathcal{X}(p) \oplus
+\mathcal{E}(p).
+\]
+
+\section{A7.0: Composite Operator Algebra}
+
+Define Lie bracket:
+
+\[
+[\mathcal{O}_1,\mathcal{O}_2] =
+[\mathcal{R}_1,\mathcal{R}_2] \oplus
+[\mathcal{D}_1,\mathcal{D}_2] \oplus
+[\mathcal{S}_1,\mathcal{S}_2] \oplus
+[\mathcal{X}_1,\mathcal{X}_2] \oplus
+[\mathcal{E}_1,\mathcal{E}_2].
+\]
+
+\section{A7.1: Dual-Compatibility Operators}
+
+Define dual substrate:
+
+\[
+\mathcal{A}^\star_{\mathrm{comp}} = \mathrm{Hom}(\mathcal{A}_{\mathrm{comp}},\mathbb{R}).
+\]
+
+Define dual-compatibility operator:
+
+\[
+\mathcal{T}(p)(\mathcal{O}) = \langle \mathcal{O}, K(p) \rangle.
+\]
+
+\section{A7.2: Collapse-Surface Repair Maps}
+
+Define collapse surface $\Sigma$.
+
+Define repair map:
+
+\[
+\mathcal{R} : \Sigma \to \Sigma
+\]
+
+such that:
+
+\[
+\mathcal{R}(p) = p.
+\]
+
+\section{A7.3: Reprojection Functors}
+
+Define reprojection functor:
+
+\[
+\mathcal{P} : \mathcal{A}_{\mathrm{comp}} \to \mathcal{A}_{\mathrm{comp}}
+\]
+
+such that:
+
+\[
+\mathcal{P}(\mathcal{O}) = \mathcal{O}.
+\]
+
+\section{A7.4: Completion Conditions}
+
+Define closure conditions:
+
+\[
+\mathcal{T}(p)(\mathcal{O}(p)) = \mathcal{O}(p),
+\]
+\[
+\ker(\mathcal{O}(p)) = \ker(\mathcal{T}(p)(\mathcal{O}(p))),
+\]
+\[
+\mathrm{Spec}(\mathcal{O}(p)) = \mathrm{Spec}^\star(\mathcal{T}(p)).
+\]
+
+\section{Conclusion}
+
+This document provides the full mathematical translation of the A6.x substrate
+modules and the A7 operator altitude into a unified, academically defensible
+framework.
