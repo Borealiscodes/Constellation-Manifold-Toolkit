@@ -1,0 +1,223 @@
+\appendix
+\section*{Appendix C: Julia Computational Realization of Altitude Constraints}
+
+\subsection*{C.0 Overview}
+
+This appendix presents the Julia computational structures implementing
+the altitude system of the Constellation–Manifold Toolkit.  
+The purpose is to define:
+\begin{itemize}
+    \item altitude identifiers,
+    \item allowed and forbidden transitions,
+    \item purity enforcement,
+    \item non-generativity enforcement,
+    \item boundedness enforcement,
+    \item runtime violation exceptions,
+    \item the unified Series V firewall operator.
+\end{itemize}
+
+All definitions correspond directly to the mathematical semantics of
+Appendix A and the Lean formalism of Appendix B.
+
+\subsection*{C.1 Altitude Identifiers}
+
+Julia represents altitudes using an enumeration:
+\[
+\texttt{@enum Altitude A0 A1 Phi7 D1 D2 D3 Phi8 Phi9 S1 I1}.
+\]
+
+This mirrors the inductive type defined in Appendix B.
+
+\subsection*{C.2 Allowed Transition Function}
+
+Define the computational transition predicate:
+\[
+T : \mathcal{A} \times \mathcal{A} \to \{0,1\}.
+\]
+
+In Julia:
+\[
+T(a,b) = 1 \iff (a,b) \text{ is in the allowed chain}.
+\]
+
+Explicitly:
+\[
+T(A_0,A_1)=1,\;
+T(A_1,\Phi_7)=1,\;
+T(\Phi_7,D_1)=1,\;
+T(D_1,D_2)=1,\;
+T(D_2,D_3)=1,
+\]
+\[
+T(D_3,\Phi_8)=1,\;
+T(\Phi_8,\Phi_9)=1,\;
+T(\Phi_9,S_1)=1,\;
+T(S_1,I_1)=1.
+\]
+
+Forbidden transitions:
+\[
+T(a,b)=0 \quad \text{otherwise}.
+\]
+
+\subsection*{C.3 Forbidden Transition Function}
+
+Define:
+\[
+F(a,b) := \neg T(a,b).
+\]
+
+In Julia:
+\[
+\texttt{forbidden\_transition(a,b) = !allowed\_transition(a,b)}.
+\]
+
+\subsection*{C.4 Purity Enforcement}
+
+Purity predicate:
+\[
+P : \mathcal{A} \to \{0,1\}.
+\]
+
+In Julia:
+\[
+P(a) = 1 \quad \forall a.
+\]
+
+Runtime enforcement:
+\[
+\texttt{enforce\_purity(a,f)} =
+\begin{cases}
+f(), & P(a)=1, \\
+\texttt{Violation}, & P(a)=0.
+\end{cases}
+\]
+
+\subsection*{C.5 Non-Generativity Enforcement}
+
+Non-generativity predicate:
+\[
+N : \mathcal{A} \to \{0,1\}.
+\]
+
+In Julia:
+\[
+N(a)=1 \quad \forall a.
+\]
+
+Runtime enforcement:
+\[
+\texttt{enforce\_non\_generativity(a,f)} =
+\begin{cases}
+f(), & N(a)=1, \\
+\texttt{Violation}, & N(a)=0.
+\end{cases}
+\]
+
+\subsection*{C.6 Boundedness Enforcement}
+
+Boundedness predicate:
+\[
+B : \mathcal{A} \to \{0,1\}.
+\]
+
+In Julia:
+\[
+B(a)=1 \quad \forall a.
+\]
+
+Runtime enforcement:
+\[
+\texttt{enforce\_boundedness(a,f)} =
+\begin{cases}
+f(), & B(a)=1, \\
+\texttt{Violation}, & B(a)=0.
+\end{cases}
+\]
+
+\subsection*{C.7 Runtime Violation Exception}
+
+Define the violation type:
+\[
+\texttt{struct AltitudeViolation <: Exception}.
+\]
+
+This is raised whenever:
+\[
+F(a,b)=1 \quad \text{or} \quad P(b)=0 \quad \text{or} \quad N(b)=0 \quad \text{or} \quad B(b)=0.
+\]
+
+\subsection*{C.8 Unified Firewall Operator}
+
+Define the computational firewall:
+\[
+\mathrm{Firewall}(a,b,f) =
+\begin{cases}
+f(), & T(a,b)=1 \land P(b) \land N(b) \land B(b), \\
+\mathrm{Violation}, & \text{otherwise}.
+\end{cases}
+\]
+
+In Julia:
+\[
+\texttt{firewall\_call(caller,callee,f)} =
+\texttt{enforce\_firewall}(a,b,f).
+\]
+
+Where:
+\[
+a = \texttt{altitude\_of(caller)},\quad
+b = \texttt{altitude\_of(callee)}.
+\]
+
+\subsection*{C.9 Altitude Mapping}
+
+Julia maps Series IV modules to altitude identifiers:
+\[
+\texttt{ReversibleGeometry} \mapsto A_0,
+\]
+\[
+\texttt{ConceptualMetric} \mapsto A_1,
+\]
+\[
+\texttt{CurvatureEnvelope} \mapsto \Phi_7,
+\]
+\[
+\texttt{CollapseSurface} \mapsto D_1,
+\]
+\[
+\texttt{SoftDeformation} \mapsto D_2,
+\]
+\[
+\texttt{EnvelopeSafety} \mapsto D_3,
+\]
+\[
+\texttt{DriftSemigroup} \mapsto \Phi_8,
+\]
+\[
+\texttt{InvariantExtraction} \mapsto \Phi_9,
+\]
+\[
+\texttt{PhaseShiftOperator} \mapsto S_1,
+\]
+\[
+\texttt{CollisionInvariant} \mapsto I_1.
+\]
+
+\subsection*{C.10 Collision Invariant Execution}
+
+The integration altitude produces:
+\[
+\Omega : X \to \{0,1\}.
+\]
+
+Runtime correctness:
+\[
+\Omega(x)=1 \iff \text{system is collision-safe}.
+\]
+
+\[
+\Omega(x)=0 \iff \text{violation detected}.
+\]
+
+This completes the computational appendix.
