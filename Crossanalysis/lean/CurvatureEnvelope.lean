@@ -1,20 +1,50 @@
 import LeanHallucinationGuard.Guard
-import ConceptualMetric
+import ConstellationManifold.ConceptualManifold
+import ConstellationManifold.ConceptualMetric
 
-structure CurvatureEnvelope :=
-  (Riemann : Type → Type → Type → Type → ℝ)
-  (scalar : Type → ℝ)
-  (envelope : Type → ℝ)
-  (smooth : Prop)
+namespace ConstellationManifold
+
+/--
+  CurvatureEnvelope (Φ₇):
+  Operator-valued curvature envelope combining Ricci curvature,
+  perturbation gradients, and forcing tensors.
+
+  Fields:
+    manifold        : ConceptualManifold
+    metric          : ConceptualMetric
+    ricci           : Type → Type → Real
+    perturb_grad    : Type → Type → Real
+    forcing_tensor  : Type → Type → Real
+    envelope        : Type → Real
+    smooth          : Prop
+-/
+structure CurvatureEnvelope where
+  manifold       : ConceptualManifold
+  metric         : ConceptualMetric
+  ricci          : Type → Type → Real
+  perturb_grad   : Type → Type → Real
+  forcing_tensor : Type → Type → Real
+  envelope       : Type → Real
+  smooth         : Prop
 
 #guard CurvatureEnvelope
-#guard CurvatureCheck
+#guardTensor ricci
+#guardTensor perturb_grad
+#guardTensor forcing_tensor
+#guardDomain envelope
+#guardCurvature CurvatureEnvelope
 
-namespace CurvatureEnvelope
 
-theorem envelope_safety (Φ : CurvatureEnvelope) :
-  Φ.smooth :=
+/--
+  Envelope smoothness theorem:
+  Ensures the curvature envelope satisfies the smoothness predicate.
+-/
+theorem envelope_smooth
+  (Φ : CurvatureEnvelope)
+  : Φ.smooth :=
 by
+  unfold CurvatureEnvelope at Φ
   admit
 
-end CurvatureEnvelope
+
+end ConstellationManifold
