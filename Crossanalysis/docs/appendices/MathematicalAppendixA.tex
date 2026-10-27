@@ -1,0 +1,246 @@
+\appendix
+\section*{Appendix A: Formal Mathematical Foundations of the Constellation–Manifold Toolkit}
+
+\subsection*{A.0 Altitude Structure}
+
+We define the altitude set
+\[
+\mathcal{A} = 
+\{A_0, A_1, \Phi_7, D_1, D_2, D_3, \Phi_8, \Phi_9, S_1, I_1\}.
+\]
+
+Each altitude $a \in \mathcal{A}$ is a purity‑restricted transformation class with:
+\begin{itemize}
+    \item domain type $\mathrm{Dom}(a)$,
+    \item codomain type $\mathrm{Cod}(a)$,
+    \item purity constraint $P(a)$,
+    \item non‑generativity constraint $N(a)$,
+    \item boundedness constraint $B(a)$,
+    \item allowed transition relation $T(a,b)$.
+\end{itemize}
+
+The allowed transition chain is:
+\[
+A_0 \to A_1 \to \Phi_7 \to D_1 \to D_2 \to D_3 \to 
+\Phi_8 \to \Phi_9 \to S_1 \to I_1.
+\]
+
+Forbidden transitions are defined by:
+\[
+\neg T(a,b) \quad \text{for all } (a,b) \notin \text{Allowed}.
+\]
+
+\subsection*{A.1 Reversible Geometry (Altitude $A_0$)}
+
+Let $X$ be a smooth manifold.  
+A reversible geometric operator is a bijection
+\[
+G : X \to X
+\]
+with inverse
+\[
+G^{-1} : X \to X.
+\]
+
+Purity constraint:
+\[
+P(A_0):\quad G \text{ does not generate new geometric structure.}
+\]
+
+Non‑generativity:
+\[
+N(A_0):\quad G(x) \in X \text{ only.}
+\]
+
+Boundedness:
+\[
+B(A_0):\quad \|G(x)\| < C.
+\]
+
+\subsection*{A.2 Conceptual Metric (Altitude $A_1$)}
+
+A conceptual metric is a non‑negative scalar function
+\[
+M : X \times X \to \mathbb{R}_{\ge 0}.
+\]
+
+Purity:
+\[
+P(A_1):\quad M \text{ does not induce geometry.}
+\]
+
+Non‑generativity:
+\[
+N(A_1):\quad M \text{ produces scalars only.}
+\]
+
+\subsection*{A.3 Curvature Envelope (Altitude $\Phi_7$)}
+
+A curvature envelope is a scalar field
+\[
+E : X \to \mathbb{R}.
+\]
+
+Purity:
+\[
+P(\Phi_7):\quad E \text{ does not modify } X.
+\]
+
+\subsection*{A.4 Diagnostics (Altitudes $D_1, D_2, D_3$)}
+
+Collapse diagnostic:
+\[
+C : X \to X.
+\]
+
+Soft deformation diagnostic:
+\[
+S : X \to X.
+\]
+
+Safety diagnostic:
+\[
+\Sigma : X \to \{0,1\}.
+\]
+
+Purity:
+\[
+P(D_i):\quad \text{Diagnostics do not generate new structure.}
+\]
+
+Non‑generativity:
+\[
+N(D_i):\quad D_i(x) \in X.
+\]
+
+\subsection*{A.5 Drift Semigroup (Altitude $\Phi_8$)}
+
+A drift semigroup is a one‑parameter family
+\[
+D_t : X \to X
+\]
+satisfying
+\[
+D_{t+s} = D_t \circ D_s.
+\]
+
+Boundedness:
+\[
+B(\Phi_8):\quad \|D_t(x)\| < C_t.
+\]
+
+\subsection*{A.6 Invariant Extraction (Altitude $\Phi_9$)}
+
+An invariant extractor is a map
+\[
+I : X \to \mathbb{R}^k.
+\]
+
+Purity:
+\[
+P(\Phi_9):\quad I \text{ produces invariants only.}
+\]
+
+\subsection*{A.7 Steering (Altitude $S_1$)}
+
+A steering operator is a reversible map
+\[
+\Theta : X \to X
+\]
+with inverse $\Theta^{-1}$.
+
+Purity:
+\[
+P(S_1):\quad \Theta \text{ does not generate new structure.}
+\]
+
+\subsection*{A.8 Integration Layer (Altitude $I_1$)}
+
+The integration layer produces the collision invariant:
+\[
+\Omega : X \to \{0,1\}.
+\]
+
+Purity:
+\[
+P(I_1):\quad \Omega \text{ is scalar‑valued only.}
+\]
+
+Non‑generativity:
+\[
+N(I_1):\quad \Omega \text{ does not modify } X.
+\]
+
+\subsection*{A.9 Altitude Transition Formalism}
+
+Define the transition relation:
+\[
+T : \mathcal{A} \times \mathcal{A} \to \{0,1\}.
+\]
+
+Allowed transitions:
+\[
+T(A_0,A_1)=1,\;
+T(A_1,\Phi_7)=1,\;
+T(\Phi_7,D_1)=1,\;
+T(D_1,D_2)=1,\;
+T(D_2,D_3)=1,
+\]
+\[
+T(D_3,\Phi_8)=1,\;
+T(\Phi_8,\Phi_9)=1,\;
+T(\Phi_9,S_1)=1,\;
+T(S_1,I_1)=1.
+\]
+
+Forbidden transitions:
+\[
+T(a,b)=0 \quad \text{otherwise}.
+\]
+
+\subsection*{A.10 Firewall Constraint}
+
+The Series V firewall enforces:
+\[
+\text{Firewall}(a,b,f) =
+\begin{cases}
+f(), & T(a,b)=1 \text{ and } P(b) \land N(b) \land B(b), \\
+\text{Violation}, & \text{otherwise}.
+\end{cases}
+\]
+
+This binds Lean proofs to Julia runtime execution.
+
+\subsection*{A.11 Non‑Generativity Theorem}
+
+For all altitudes $a$:
+\[
+N(a) \implies \forall x \in X,\; f_a(x) \in \mathrm{Cod}(a) \subseteq X.
+\]
+
+\subsection*{A.12 Purity Theorem}
+
+For all altitudes $a$:
+\[
+P(a) \implies f_a \text{ does not induce new structure.}
+\]
+
+\subsection*{A.13 Boundedness Theorem}
+
+For all altitudes $a$:
+\[
+B(a) \implies \|f_a(x)\| < C_a.
+\]
+
+\subsection*{A.14 Collision Invariant Correctness}
+
+The integration layer satisfies:
+\[
+\Omega(x) = 1 \iff \text{system is collision‑safe}.
+\]
+
+\[
+\Omega(x) = 0 \iff \text{violation detected}.
+\]
+
+This completes the formal mathematical foundation of the altitude architecture.
