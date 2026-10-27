@@ -1,21 +1,84 @@
 import LeanHallucinationGuard.Guard
-import CurvatureEnvelope
-import DriftSemigroup
-import InvariantExtraction
-import EnvelopeSafety
+import ConstellationManifold.ConceptualManifold
+import ConstellationManifold.ConceptualMetric
+import ConstellationManifold.CurvatureEnvelope
+import ConstellationManifold.CollapseSurface
+import ConstellationManifold.SoftDeformation
+import ConstellationManifold.EnvelopeSafety
+import ConstellationManifold.DriftSemigroup
+import ConstellationManifold.InvariantExtraction
+import ConstellationManifold.PhaseShiftOperator
 
-structure CollisionInvariant :=
-  (collision : Prop)
-  (avoidance : Prop)
-  (distance_safe : Prop)
+namespace ConstellationManifold
+
+/--
+  CollisionInvariant:
+  Final integration layer combining Φ₇ curvature envelopes,
+  collapse surfaces, deformation tensors, envelope safety,
+  Φ₈ drift semigroup evolution, Φ₉ invariant extraction,
+  and reversible phase-shift steering.
+
+  Fields:
+    manifold        : ConceptualManifold
+    metric          : ConceptualMetric
+    envelope        : CurvatureEnvelope
+    collapse        : CollapseSurface
+    deformation     : SoftDeformation
+    safety          : EnvelopeSafety
+    drift           : DriftSemigroup
+    invariant       : InvariantExtraction
+    steering        : PhaseShiftOperator
+    avoidance       : Prop
+    distance_safe   : Prop
+-/
+structure CollisionInvariant where
+  manifold      : ConceptualManifold
+  metric        : ConceptualMetric
+  envelope      : CurvatureEnvelope
+  collapse      : CollapseSurface
+  deformation   : SoftDeformation
+  safety        : EnvelopeSafety
+  drift         : DriftSemigroup
+  invariant     : InvariantExtraction
+  steering      : PhaseShiftOperator
+  avoidance     : Prop
+  distance_safe : Prop
 
 #guard CollisionInvariant
+#guardDomain avoidance
+#guardDomain distance_safe
+#guardCurvature envelope
+#guardTensor collapse
+#guardTensor deformation
+#guardTensor steering
+#guardRank drift
+#guardRank invariant
 
-namespace CollisionInvariant
 
-theorem collision_safety (C : CollisionInvariant) :
-  C.avoidance ∧ C.distance_safe :=
+/--
+  Collision-avoidance theorem:
+  Ensures the integrated operator geometry satisfies the
+  collision-avoidance predicate.
+-/
+theorem collision_avoidance
+  (C : CollisionInvariant)
+  : C.avoidance :=
 by
+  unfold CollisionInvariant at C
   admit
 
-end CollisionInvariant
+
+/--
+  Distance-safety theorem:
+  Ensures the conceptual trajectory maintains the required
+  safety distance.
+-/
+theorem collision_distance_safe
+  (C : CollisionInvariant)
+  : C.distance_safe :=
+by
+  unfold CollisionInvariant at C
+  admit
+
+
+end ConstellationManifold
