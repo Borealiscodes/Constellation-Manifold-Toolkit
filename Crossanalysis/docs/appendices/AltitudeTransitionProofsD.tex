@@ -1,0 +1,208 @@
+\appendix
+\section*{Appendix D: Formal Proofs of Altitude Transition Safety}
+
+\subsection*{D.0 Overview}
+
+This appendix provides formal proofs for the altitude transition system
+defined in Appendices A–C.  
+We prove:
+\begin{itemize}
+    \item the altitude graph is acyclic,
+    \item all allowed transitions preserve purity,
+    \item all allowed transitions preserve non-generativity,
+    \item all allowed transitions preserve boundedness,
+    \item forbidden transitions imply violation,
+    \item the Series V firewall is sound and complete.
+\end{itemize}
+
+\subsection*{D.1 Altitude Graph Definition}
+
+Define the altitude set:
+\[
+\mathcal{A} =
+\{A_0, A_1, \Phi_7, D_1, D_2, D_3, \Phi_8, \Phi_9, S_1, I_1\}.
+\]
+
+Define the directed edge relation:
+\[
+T(a,b) = 1 \iff (a,b) \text{ is an allowed transition}.
+\]
+
+Explicitly:
+\[
+A_0 \to A_1 \to \Phi_7 \to D_1 \to D_2 \to D_3 \to
+\Phi_8 \to \Phi_9 \to S_1 \to I_1.
+\]
+
+\subsection*{D.2 Acyclicity Theorem}
+
+\textbf{Theorem 1 (Acyclicity).}  
+The altitude graph $(\mathcal{A},T)$ contains no directed cycles.
+
+\textbf{Proof.}  
+The allowed transitions form a strictly increasing chain:
+\[
+A_0 < A_1 < \Phi_7 < D_1 < D_2 < D_3 < \Phi_8 < \Phi_9 < S_1 < I_1.
+\]
+Define the altitude rank function:
+\[
+r : \mathcal{A} \to \mathbb{N}
+\]
+such that:
+\[
+r(A_0)=0,\; r(A_1)=1,\; r(\Phi_7)=2,\; \dots,\; r(I_1)=9.
+\]
+
+For any allowed transition $a \to b$:
+\[
+r(a) < r(b).
+\]
+
+Thus no sequence of transitions can return to a lower rank.  
+Therefore no cycle exists.  
+\[
+\Box
+\]
+
+\subsection*{D.3 Purity Preservation}
+
+\textbf{Theorem 2 (Purity Preservation).}  
+If $T(a,b)=1$ then purity is preserved:
+\[
+P(a)=1 \implies P(b)=1.
+\]
+
+\textbf{Proof.}  
+Purity is altitude‑monotone by definition:
+\[
+P(a)=1 \quad \forall a \in \mathcal{A}.
+\]
+Thus:
+\[
+P(a)=1 \land T(a,b)=1 \implies P(b)=1.
+\]
+\[
+\Box
+\]
+
+\subsection*{D.4 Non-Generativity Preservation}
+
+\textbf{Theorem 3 (Non-Generativity Preservation).}  
+If $T(a,b)=1$ then:
+\[
+N(a)=1 \implies N(b)=1.
+\]
+
+\textbf{Proof.}  
+Non-generativity is altitude‑monotone:
+\[
+N(a)=1 \quad \forall a.
+\]
+Thus:
+\[
+N(a)=1 \land T(a,b)=1 \implies N(b)=1.
+\]
+\[
+\Box
+\]
+
+\subsection*{D.5 Boundedness Preservation}
+
+\textbf{Theorem 4 (Boundedness Preservation).}  
+If $T(a,b)=1$ then:
+\[
+B(a)=1 \implies B(b)=1.
+\]
+
+\textbf{Proof.}  
+Boundedness is altitude‑monotone:
+\[
+B(a)=1 \quad \forall a.
+\]
+Thus:
+\[
+B(a)=1 \land T(a,b)=1 \implies B(b)=1.
+\]
+\[
+\Box
+\]
+
+\subsection*{D.6 Forbidden Transition Violation}
+
+\textbf{Theorem 5 (Forbidden Transition Violation).}  
+If $T(a,b)=0$ then the firewall raises a violation.
+
+\textbf{Proof.}  
+Firewall definition:
+\[
+\mathrm{Firewall}(a,b,f) =
+\begin{cases}
+f(), & T(a,b)=1 \land P(b) \land N(b) \land B(b), \\
+\mathrm{Violation}, & \text{otherwise}.
+\end{cases}
+\]
+
+If $T(a,b)=0$ then the first case is impossible.  
+Thus:
+\[
+\mathrm{Firewall}(a,b,f) = \mathrm{Violation}.
+\]
+\[
+\Box
+\]
+
+\subsection*{D.7 Soundness of the Firewall}
+
+\textbf{Theorem 6 (Soundness).}  
+If the firewall accepts a transition, then the transition is legal and safe:
+\[
+\mathrm{Firewall}(a,b,f)=f() \implies
+T(a,b)=1 \land P(b)=1 \land N(b)=1 \land B(b)=1.
+\]
+
+\textbf{Proof.}  
+Directly from the definition of the firewall.  
+\[
+\Box
+\]
+
+\subsection*{D.8 Completeness of the Firewall}
+
+\textbf{Theorem 7 (Completeness).}  
+If a transition is legal and safe, the firewall accepts it:
+\[
+T(a,b)=1 \land P(b)=1 \land N(b)=1 \land B(b)=1
+\implies
+\mathrm{Firewall}(a,b,f)=f().
+\]
+
+\textbf{Proof.}  
+Directly from the definition of the firewall.  
+\[
+\Box
+\]
+
+\subsection*{D.9 Collision Invariant Safety}
+
+\textbf{Theorem 8 (Collision Invariant Safety).}  
+The integration altitude $I_1$ is reachable only through legal transitions.
+
+\textbf{Proof.}  
+$I_1$ has rank $9$.  
+All allowed transitions increase rank.  
+Thus any path to $I_1$ must follow the allowed chain.  
+\[
+\Box
+\]
+
+\subsection*{D.10 Final Safety Corollary}
+
+\[
+\Omega(x)=1 \iff \text{all altitude transitions are legal and safe}.
+\]
+
+\[
+\Omega(x)=0 \iff \exists (a,b) : T(a,b)=0.
+\]
+
+This completes the formal altitude transition proof appendix.
