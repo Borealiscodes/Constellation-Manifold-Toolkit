@@ -1,0 +1,138 @@
+% ------------------------------------------------------------
+% A6.x Substrate Uplift Module B — TARTAN Projection Algebra (v0.1)
+% Author: Borealis S. Hedling
+% Altitude: A6.x (Substrate Uplift Layer)
+% Purpose: Define the TARTAN projection algebra required for
+%          modal adjacency, spectral continuity, and collapse
+%          compatibility across the A6 manifold.
+% ------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{A6.x Substrate Uplift Module B: TARTAN Projection Algebra}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This module defines the TARTAN projection algebra required for A6 altitude
+geometry. TARTAN provides the modal adjacency, projection continuity, and
+collapse-surface compatibility required by the A6 Constructive Fixes and the
+A7 Composite Substrate Operator Algebra.
+
+% ------------------------------------------------------------
+\section{TARTAN Modal Projection}
+
+Let $\mu : M \to \mathcal{M}$ be the modal map.
+
+\textbf{Definition (TARTAN Projection).}
+\[
+\Pi_{\mathrm{T}}(p) = \mu^{-1}(\mu(p)).
+\]
+
+This defines the modal fiber through $p$.
+
+\textbf{Theorem (Adjacency Preservation).}
+If $p^+ \sim p^-$, then:
+\[
+\mu(p^+) \in \mathcal{N}(\mu(p^-)).
+\]
+
+This enforces Fix 4 (modal adjacency).
+
+% ------------------------------------------------------------
+\section{TARTAN Spectral Projection}
+
+Define the spectral operator:
+\[
+L_{\mathrm{T}} : TM \to TM.
+\]
+
+\textbf{Definition (Spectral Projection).}
+\[
+\Pi_{\mathrm{spec}}(p) = \mathrm{Spec}(L_{\mathrm{T}}(p)).
+\]
+
+\textbf{Theorem (Spectral Continuity).}
+\[
+\mathrm{Spec}(L_{\mathrm{T}}(p)) \text{ continuous in } p.
+\]
+
+This enforces Fix 5 (spectral continuity).
+
+% ------------------------------------------------------------
+\section{Spectral Mismatch Bound}
+
+Define spectral mismatch:
+\[
+\delta_{\mathrm{spec}}(p) = \|\Pi_{\mathrm{spec}}(p) - \Pi_{\mathrm{spec}}(q)\|.
+\]
+
+\textbf{Constraint.}
+\[
+\delta_{\mathrm{spec}}(p) < \epsilon.
+\]
+
+This enforces Fix 6 (spectral mismatch bound).
+
+% ------------------------------------------------------------
+\section{TARTAN Collapse Compatibility}
+
+Let $\Sigma$ be the collapse surface.
+
+\textbf{Definition (TARTAN Collapse Projection).}
+\[
+\Pi_{\Sigma}(p) = 
+\begin{cases}
+p, & p \in \Sigma \\
+\text{nearest point in } \Sigma, & p \notin \Sigma.
+\end{cases}
+\]
+
+\textbf{Theorem (Local Detectability).}
+\[
+p \in \Sigma \Rightarrow \exists \epsilon > 0 :
+B_\epsilon(p) \cap \Sigma \neq \emptyset.
+\]
+
+This enforces Fix 8 (collapse locality).
+
+% ------------------------------------------------------------
+\section{TARTAN Stability Envelope}
+
+Define:
+\[
+E_{\mathrm{T}}(p) = \|\Pi_{\mathrm{T}}(p)\|.
+\]
+
+\textbf{Theorem (Monotonicity).}
+If $E(p) \le E(q)$, then stability lifts monotonically.
+
+This enforces Fix 9 (stability envelope monotonicity).
+
+% ------------------------------------------------------------
+\section{TARTAN Modal Lift}
+
+Modal truth must lift through TARTAN:
+\[
+\mu(p) \leadsto \mu(q).
+\]
+
+\textbf{Theorem (Lift Preservation).}
+If $\Pi_{\mathrm{T}}(p) = \Pi_{\mathrm{T}}(q)$, then modal truth lifts.
+
+This enforces Fix 10 (modal lift preservation).
+
+% ------------------------------------------------------------
+\section{Conclusion}
+
+The TARTAN projection algebra defined here provides the modal adjacency,
+spectral continuity, collapse compatibility, and stability structures required
+for A6 Constructive Fixes and A7 Composite Substrate Operator Algebra. It is
+the second foundational substrate module in the A6.x uplift sequence.
+
+\end{document}
