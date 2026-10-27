@@ -1,0 +1,136 @@
+% ------------------------------------------------------------
+% A6.x Substrate Uplift Module C — Unistochastic Emergence (v0.1)
+% Author: Borealis S. Hedling
+% Altitude: A6.x (Substrate Uplift Layer)
+% Purpose: Define the unistochastic emergence substrate required
+%          for spectral continuity, modal lift, and collapse-
+%          compatible probabilistic geometry at A6 altitude.
+% ------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{A6.x Substrate Uplift Module C: Unistochastic Emergence}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This module defines the unistochastic emergence substrate required for A6
+altitude geometry. Unistochastic operators provide the probabilistic continuity
+and modal-preserving transition structure required by the A6 Constructive Fixes
+and the A7 Composite Substrate Operator Algebra.
+
+% ------------------------------------------------------------
+\section{Unistochastic Operator Definition}
+
+Let $U$ be a unitary matrix.
+
+\textbf{Definition (Unistochastic Operator).}
+\[
+B_{ij} = |U_{ij}|^2.
+\]
+
+The matrix $B$ is unistochastic.
+
+\textbf{Theorem (Stochasticity).}
+\[
+\sum_j B_{ij} = 1, \quad \sum_i B_{ij} = 1.
+\]
+
+Thus $B$ defines a probability-preserving operator.
+
+% ------------------------------------------------------------
+\section{Unistochastic Continuity}
+
+Let $U(p)$ vary smoothly over the manifold.
+
+\textbf{Theorem (Continuity).}
+If $U(p)$ is smooth, then:
+\[
+B(p) \text{ continuous in } p.
+\]
+
+This enforces Fix 5 (spectral continuity).
+
+% ------------------------------------------------------------
+\section{Spectral Compatibility}
+
+Define the spectral operator:
+\[
+\mathcal{S}_{\mathrm{uni}}(p) = \mathrm{Spec}(B(p)).
+\]
+
+\textbf{Theorem (Spectral Mismatch Bound).}
+\[
+\|\mathcal{S}_{\mathrm{uni}}(p) - \mathcal{S}_{\mathrm{uni}}(q)\| < \epsilon.
+\]
+
+This enforces Fix 6 (spectral mismatch bound).
+
+% ------------------------------------------------------------
+\section{Modal Lift Compatibility}
+
+Let $\mu$ be the modal map.
+
+\textbf{Definition (Unistochastic Modal Lift).}
+\[
+\mu(p) \leadsto \mu(q) \quad \text{if} \quad B_{pq} > 0.
+\]
+
+\textbf{Theorem (Lift Preservation).}
+If $B_{pq} > 0$, then:
+\[
+\mu(p) \leadsto \mu(q).
+\]
+
+This enforces Fix 10 (modal lift preservation).
+
+% ------------------------------------------------------------
+\section{Collapse-Surface Compatibility}
+
+Let $\Sigma$ be the collapse surface.
+
+\textbf{Definition (Collapse-Compatible Unistochasticity).}
+\[
+p \in \Sigma \Rightarrow B_{pp} = 1.
+\]
+
+\textbf{Theorem (Local Detectability).}
+If $B_{pp} = 1$, then:
+\[
+p \in \Sigma \Rightarrow \exists \epsilon > 0 :
+B_\epsilon(p) \cap \Sigma \neq \emptyset.
+\]
+
+This enforces Fix 8 (collapse locality).
+
+% ------------------------------------------------------------
+\section{Stability Envelope}
+
+Define:
+\[
+E_{\mathrm{uni}}(p) = \|B(p)\|.
+\]
+
+\textbf{Theorem (Monotonicity).}
+If $E(p) \le E(q)$, then:
+\[
+E_{\mathrm{uni}}(p) \le E_{\mathrm{uni}}(q).
+\]
+
+This enforces Fix 9 (stability envelope monotonicity).
+
+% ------------------------------------------------------------
+\section{Conclusion}
+
+The unistochastic emergence substrate defined here provides the probabilistic
+continuity, modal lift preservation, spectral stability, and collapse
+compatibility required for A6 Constructive Fixes and A7 Composite Substrate
+Operator Algebra. It is the third foundational substrate module in the A6.x
+uplift sequence.
+
+\end{document}
