@@ -1,0 +1,180 @@
+\appendix
+\section*{Appendix B: Lean Formalization of Altitude Constraints}
+
+\subsection*{B.0 Overview}
+
+This appendix presents the formal Lean-style mathematical structures
+underlying the altitude system of the Constellation–Manifold Toolkit.
+The purpose is to define:
+\begin{itemize}
+    \item altitude identifiers,
+    \item allowed and forbidden transitions,
+    \item purity constraints,
+    \item non-generativity constraints,
+    \item boundedness constraints,
+    \item violation theorems,
+    \item the Series V firewall binding.
+\end{itemize}
+
+All definitions are altitude-pure and correspond directly to the
+Series IV mathematical semantics and Series V enforcement layer.
+
+\subsection*{B.1 Altitude Type}
+
+We define the altitude type as an inductive set:
+\[
+\mathcal{A} =
+\{A_0, A_1, \Phi_7, D_1, D_2, D_3, \Phi_8, \Phi_9, S_1, I_1\}.
+\]
+
+Formally:
+\[
+\text{Altitude} :=
+A_0 \mid A_1 \mid \Phi_7 \mid D_1 \mid D_2 \mid D_3 \mid
+\Phi_8 \mid \Phi_9 \mid S_1 \mid I_1.
+\]
+
+\subsection*{B.2 Allowed Transition Relation}
+
+Define the allowed transition predicate:
+\[
+T : \mathcal{A} \times \mathcal{A} \to \{0,1\}.
+\]
+
+Allowed transitions:
+\[
+T(A_0,A_1)=1,\;
+T(A_1,\Phi_7)=1,\;
+T(\Phi_7,D_1)=1,\;
+T(D_1,D_2)=1,\;
+T(D_2,D_3)=1,
+\]
+\[
+T(D_3,\Phi_8)=1,\;
+T(\Phi_8,\Phi_9)=1,\;
+T(\Phi_9,S_1)=1,\;
+T(S_1,I_1)=1.
+\]
+
+Forbidden transitions:
+\[
+T(a,b)=0 \quad \text{otherwise}.
+\]
+
+\subsection*{B.3 Forbidden Transition Predicate}
+
+Define:
+\[
+F(a,b) := \neg T(a,b).
+\]
+
+This predicate is used by the firewall to detect illegal altitude calls.
+
+\subsection*{B.4 Purity Constraint}
+
+Define the purity predicate:
+\[
+P : \mathcal{A} \to \{0,1\}.
+\]
+
+Purity requires that altitude transformations do not generate new structure:
+\[
+P(a) = 1 \quad \forall a \in \mathcal{A}.
+\]
+
+\subsection*{B.5 Non-Generativity Constraint}
+
+Define:
+\[
+N : \mathcal{A} \to \{0,1\}.
+\]
+
+Non-generativity requires that altitude transformations preserve the domain:
+\[
+N(a) = 1 \quad \forall a \in \mathcal{A}.
+\]
+
+\subsection*{B.6 Boundedness Constraint}
+
+Define:
+\[
+B : \mathcal{A} \to \{0,1\}.
+\]
+
+Boundedness requires:
+\[
+B(a) = 1 \quad \forall a \in \mathcal{A}.
+\]
+
+\subsection*{B.7 Violation Theorem}
+
+For all altitudes $a,b$:
+\[
+F(a,b) \implies \neg T(a,b).
+\]
+
+This is the formal statement that forbidden transitions negate the allowed transition predicate.
+
+\subsection*{B.8 Firewall Binding Theorem}
+
+Define the firewall operator:
+\[
+\mathrm{Firewall}(a,b,f) =
+\begin{cases}
+f(), & T(a,b)=1 \land P(b) \land N(b) \land B(b), \\
+\mathrm{Violation}, & \text{otherwise}.
+\end{cases}
+\]
+
+The firewall binding theorem states:
+\[
+\forall a,b \in \mathcal{A},\;
+\mathrm{Firewall}(a,b,f) = f()
+\iff
+T(a,b)=1 \land P(b) \land N(b) \land B(b).
+\]
+
+Otherwise:
+\[
+\mathrm{Firewall}(a,b,f) = \mathrm{Violation}.
+\]
+
+\subsection*{B.9 Altitude Safety Corollary}
+
+If $T(a,b)=0$, then:
+\[
+\mathrm{Firewall}(a,b,f) = \mathrm{Violation}.
+\]
+
+If $P(b)=0$, then:
+\[
+\mathrm{Firewall}(a,b,f) = \mathrm{Violation}.
+\]
+
+If $N(b)=0$, then:
+\[
+\mathrm{Firewall}(a,b,f) = \mathrm{Violation}.
+\]
+
+If $B(b)=0$, then:
+\[
+\mathrm{Firewall}(a,b,f) = \mathrm{Violation}.
+\]
+
+\subsection*{B.10 Collision Invariant Correctness}
+
+The integration altitude $I_1$ produces the collision invariant:
+\[
+\Omega : X \to \{0,1\}.
+\]
+
+Correctness condition:
+\[
+\Omega(x)=1 \iff \text{system is collision-safe}.
+\]
+
+\[
+\Omega(x)=0 \iff \text{violation detected}.
+\]
+
+This completes the formal Lean-style appendix.
