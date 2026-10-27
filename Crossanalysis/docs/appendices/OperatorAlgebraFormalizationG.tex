@@ -1,0 +1,234 @@
+\appendix
+\section*{Appendix G: Operator-Algebraic Formalization of the Altitude System}
+
+\subsection*{G.0 Overview}
+
+This appendix presents the operator-algebraic formalization of the
+altitude architecture used in the Constellation–Manifold Toolkit.
+The purpose is to express:
+\begin{itemize}
+    \item altitudes as operator classes,
+    \item legal transitions as operator homomorphisms,
+    \item purity as algebraic closure,
+    \item non-generativity as identity-only extension,
+    \item boundedness as operator-norm constraints,
+    \item diagnostics as bounded perturbations,
+    \item drift semigroup as a strongly continuous operator semigroup,
+    \item invariant extraction as a projection operator,
+    \item steering as an automorphism,
+    \item collision invariant as a fixed-point operator,
+    \item the Series V firewall as an admissible operator subalgebra.
+\end{itemize}
+
+\subsection*{G.1 Operator Algebra}
+
+Let $X$ be a Banach space representing the system state space.
+
+Define the operator algebra:
+\[
+\mathcal{B}(X) = \{ T : X \to X \mid T \text{ bounded linear operator} \}.
+\]
+
+Each altitude corresponds to a distinguished operator class:
+\[
+\mathcal{O}(A_0), \mathcal{O}(A_1), \dots, \mathcal{O}(I_1)
+\subseteq \mathcal{B}(X).
+\]
+
+\subsection*{G.2 Altitude Operators}
+
+Altitude $A_0$ (Reversible Geometry):
+\[
+G \in \mathcal{O}(A_0),\quad G^{-1} \in \mathcal{O}(A_0).
+\]
+
+Altitude $A_1$ (Conceptual Metric):
+\[
+M \in \mathcal{O}(A_1),\quad M(x,y) \in \mathbb{R}_{\ge 0}.
+\]
+
+Altitude $\Phi_7$ (Curvature Envelope):
+\[
+E \in \mathcal{O}(\Phi_7),\quad E(x) \in \mathbb{R}.
+\]
+
+Diagnostics $D_1, D_2, D_3$:
+\[
+C,S,\Sigma \in \mathcal{O}(D_i).
+\]
+
+Altitude $\Phi_8$ (Drift Semigroup):
+\[
+D_t \in \mathcal{O}(\Phi_8),\quad D_{t+s}=D_t D_s.
+\]
+
+Altitude $\Phi_9$ (Invariant Extraction):
+\[
+I \in \mathcal{O}(\Phi_9),\quad I(x) \in \mathbb{R}^k.
+\]
+
+Altitude $S_1$ (Steering):
+\[
+\Theta \in \mathcal{O}(S_1),\quad \Theta^{-1} \in \mathcal{O}(S_1).
+\]
+
+Altitude $I_1$ (Collision Invariant):
+\[
+\Omega \in \mathcal{O}(I_1),\quad \Omega(x) \in \{0,1\}.
+\]
+
+\subsection*{G.3 Legal Transition Homomorphisms}
+
+Define the altitude transition homomorphism:
+\[
+\phi_{a,b} : \mathcal{O}(a) \to \mathcal{O}(b)
+\]
+such that:
+\[
+\phi_{a,b}(T) = T' \quad \text{if } T \text{ is altitude-safe}.
+\]
+
+Allowed transitions:
+\[
+\phi_{A_0,A_1},\;
+\phi_{A_1,\Phi_7},\;
+\phi_{\Phi_7,D_1},\;
+\phi_{D_1,D_2},\;
+\phi_{D_2,D_3},
+\]
+\[
+\phi_{D_3,\Phi_8},\;
+\phi_{\Phi_8,\Phi_9},\;
+\phi_{\Phi_9,S_1},\;
+\phi_{S_1,I_1}.
+\]
+
+Forbidden transitions:
+\[
+\phi_{a,b} \text{ undefined}.
+\]
+
+\subsection*{G.4 Purity as Algebraic Closure}
+
+Purity constraint:
+\[
+P(a) \iff \mathcal{O}(a) \text{ is closed under composition}.
+\]
+
+Thus:
+\[
+T_1,T_2 \in \mathcal{O}(a) \implies T_1 T_2 \in \mathcal{O}(a).
+\]
+
+\subsection*{G.5 Non-Generativity as Identity-Only Extension}
+
+Non-generativity requires:
+\[
+\mathcal{O}(a) \subseteq \mathcal{B}(X)
+\quad \text{and} \quad
+\mathcal{O}(a) \text{ contains no generative operators}.
+\]
+
+Formally:
+\[
+\mathrm{span}(\mathcal{O}(a)) = \mathrm{span}(\{\mathrm{id}_X\}).
+\]
+
+\subsection*{G.6 Boundedness as Operator-Norm Constraint}
+
+Boundedness requires:
+\[
+\|T\| < C_a \quad \forall T \in \mathcal{O}(a).
+\]
+
+Thus altitude operators are uniformly bounded.
+
+\subsection*{G.7 Diagnostics as Bounded Perturbations}
+
+Diagnostics are bounded perturbations:
+\[
+D_i = \mathrm{id}_X + \Delta_i,
+\]
+where:
+\[
+\|\Delta_i\| < \epsilon.
+\]
+
+\subsection*{G.8 Drift Semigroup as Strongly Continuous Semigroup}
+
+Define:
+\[
+D_t \in \mathcal{O}(\Phi_8)
+\]
+such that:
+\[
+D_{t+s}=D_t D_s,
+\]
+and:
+\[
+\lim_{t\to 0} \|D_t x - x\| = 0.
+\]
+
+Thus $\{D_t\}$ is a strongly continuous semigroup.
+
+\subsection*{G.9 Invariant Extraction as Projection Operator}
+
+Invariant extraction is a projection:
+\[
+I : X \to \mathbb{R}^k,
+\]
+with:
+\[
+I^2 = I.
+\]
+
+\subsection*{G.10 Steering as Automorphism}
+
+Steering is an automorphism of the operator algebra:
+\[
+\Theta : \mathcal{B}(X) \to \mathcal{B}(X),
+\]
+with:
+\[
+\Theta^{-1} \circ \Theta = \mathrm{id}.
+\]
+
+\subsection*{G.11 Collision Invariant as Fixed-Point Operator}
+
+Collision invariant:
+\[
+\Omega : X \to \{0,1\}
+\]
+is a fixed-point operator:
+\[
+\Omega(\Omega(x)) = \Omega(x).
+\]
+
+\subsection*{G.12 Firewall as Admissible Operator Subalgebra}
+
+Define the firewall subalgebra:
+\[
+\mathcal{O}_{\mathrm{safe}} =
+\{ T \in \mathcal{B}(X) \mid T \text{ satisfies altitude constraints} \}.
+\]
+
+Thus:
+\[
+\mathcal{O}_{\mathrm{safe}} \subseteq \mathcal{B}(X)
+\]
+is an admissible operator subalgebra.
+
+\subsection*{G.13 Final Safety Theorem}
+
+\textbf{Theorem.}  
+A state $x$ is altitude-safe if and only if:
+\[
+\Omega(x)=1.
+\]
+
+Equivalently:
+\[
+x \in \mathcal{O}_{\mathrm{safe}}.
+\]
+
+This completes the operator-algebraic formalization.
