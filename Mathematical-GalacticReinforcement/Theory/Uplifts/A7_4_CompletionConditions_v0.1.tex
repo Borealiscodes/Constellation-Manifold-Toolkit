@@ -1,0 +1,134 @@
+% ------------------------------------------------------------
+% A7.4 Completion Conditions (v0.1)
+% Author: Borealis S. Hedling
+% Altitude: A7.4 (Completion Layer)
+% Purpose: Define the completion conditions for the A7 altitude,
+%          certifying dual-compatibility, collapse-surface repair,
+%          reprojection consistency, and kernel-preserving closure.
+% ------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{A7.4 Completion Conditions}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This module defines the completion conditions for the A7 altitude. These
+conditions certify that the A7.1 Dual-Compatibility Transition Operators,
+A7.2 Collapse-Surface Repair Pipeline, and A7.3 Reprojection Algebra form a
+coherent, kernel-preserving, dual-compatible operator stack. A7.4 is the final
+altitude in the A7 chain.
+
+% ------------------------------------------------------------
+\section{Completion Condition 1: Dual-Compatibility Closure}
+
+Let $\mathcal{T}$ be the dual-compatibility operator from A7.1.
+
+\textbf{Condition.}
+\[
+\mathcal{T}(p)(\mathcal{O}(p)) = \mathcal{O}(p).
+\]
+
+\textbf{Theorem (Closure).}
+If the above holds for all $p \in M$, then dual-compatibility is complete.
+
+% ------------------------------------------------------------
+\section{Completion Condition 2: Kernel Preservation}
+
+Let $K(p)$ be the kernel-preserving functional.
+
+\textbf{Condition.}
+\[
+\ker(\mathcal{O}(p)) = \ker(\mathcal{T}(p)(\mathcal{O}(p))).
+\]
+
+\textbf{Theorem (Kernel Stability).}
+If the above holds for all $p$, kernel preservation is complete.
+
+% ------------------------------------------------------------
+\section{Completion Condition 3: Collapse-Surface Repair Stability}
+
+Let $\Sigma$ be the collapse surface and $\mathcal{R}$ the repair operator from
+A7.2.
+
+\textbf{Condition.}
+\[
+\mathcal{R}(p) \in \Sigma \Rightarrow \mathcal{R}(p) = p.
+\]
+
+\textbf{Theorem (Repair Stability).}
+If repaired points remain fixed, collapse-surface repair is complete.
+
+% ------------------------------------------------------------
+\section{Completion Condition 4: Reprojection Consistency}
+
+Let $\mathcal{P}$ be the reprojection operator from A7.3.
+
+\textbf{Condition.}
+\[
+\mathcal{P}(\mathcal{O}(p)) = \mathcal{O}(p).
+\]
+
+\textbf{Theorem (Reprojection Stability).}
+If reprojection preserves composite operators, reprojection is complete.
+
+% ------------------------------------------------------------
+\section{Completion Condition 5: Spectral Closure}
+
+Define:
+\[
+\mathrm{Spec}(\mathcal{O}(p)) = \mathrm{Spec}^\star(\mathcal{T}(p)).
+\]
+
+\textbf{Theorem (Spectral Closure).}
+If the spectra match for all $p$, spectral closure is complete.
+
+% ------------------------------------------------------------
+\section{Completion Condition 6: Modal Closure}
+
+Define:
+\[
+\mu(p) = \mu^\star(p).
+\]
+
+\textbf{Theorem (Modal Closure).}
+If modal truth matches across the dual lift, modal closure is complete.
+
+% ------------------------------------------------------------
+\section{Completion Condition 7: Provenance Closure}
+
+Define:
+\[
+I_{\mathrm{prov}}(p) = I^\star_{\mathrm{prov}}(p).
+\]
+
+\textbf{Theorem (Provenance Closure).}
+If provenance matches across the dual lift, provenance closure is complete.
+
+% ------------------------------------------------------------
+\section{Completion Condition 8: Semantic Closure}
+
+Define:
+\[
+I_{\mathrm{sem}}(p) = I^\star_{\mathrm{sem}}(p).
+\]
+
+\textbf{Theorem (Semantic Closure).}
+If semantic truth matches across the dual lift, semantic closure is complete.
+
+% ------------------------------------------------------------
+\section{Conclusion}
+
+The completion conditions defined here certify the full coherence of the A7
+altitude. When all conditions are satisfied, the A7 operator stack is complete,
+dual-compatible, kernel-preserving, collapse-stable, and reprojection-consistent.
+This module finalizes the A7 altitude and prepares the manifold for verification
+and preprint formalization.
+
+\end{document}
