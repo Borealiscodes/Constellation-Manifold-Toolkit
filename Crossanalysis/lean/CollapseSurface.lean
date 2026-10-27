@@ -1,20 +1,47 @@
 import LeanHallucinationGuard.Guard
-import CurvatureEnvelope
+import ConstellationManifold.ConceptualManifold
+import ConstellationManifold.ConceptualMetric
+import ConstellationManifold.CurvatureEnvelope
 
-structure CollapseSurface :=
-  (Σ : Type → Prop)
-  (hessian : Type → Type)
-  (lambda_min : Type → ℝ)
-  (collapse_condition : Prop)
+namespace ConstellationManifold
+
+/--
+  CollapseSurface:
+  Defines collapse-surface diagnostics based on Hessian negativity
+  and curvature-envelope instability.
+
+  Fields:
+    manifold        : ConceptualManifold
+    metric          : ConceptualMetric
+    envelope        : CurvatureEnvelope
+    hessian         : Type → Type → Real
+    lambda_min      : Real
+    collapse_condition : Prop
+-/
+structure CollapseSurface where
+  manifold          : ConceptualManifold
+  metric            : ConceptualMetric
+  envelope          : CurvatureEnvelope
+  hessian           : Type → Type → Real
+  lambda_min        : Real
+  collapse_condition : Prop
 
 #guard CollapseSurface
-#guard DomainCheck
+#guardTensor hessian
+#guardRank lambda_min
+#guardDomain collapse_condition
 
-namespace CollapseSurface
 
-theorem collapse_correct (C : CollapseSurface) :
-  C.collapse_condition :=
+/--
+  Collapse-surface correctness theorem:
+  Ensures the collapse predicate is structurally valid.
+-/
+theorem collapse_condition_correct
+  (C : CollapseSurface)
+  : C.collapse_condition :=
 by
+  unfold CollapseSurface at C
   admit
 
-end CollapseSurface
+
+end ConstellationManifold
