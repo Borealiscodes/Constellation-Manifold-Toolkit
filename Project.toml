@@ -1,0 +1,6 @@
+name = "CMT"
+uuid = "8f4c2c9e-1b7f-4f3e-9a12-4c9f7e2d91f3"
+version = "0.1.0"
+
+[compat]
+julia = "1.10"
