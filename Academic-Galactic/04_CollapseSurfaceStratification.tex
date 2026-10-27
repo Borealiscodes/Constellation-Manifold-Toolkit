@@ -1,0 +1,123 @@
+% =====================================================================
+% Module 04 — Collapse-Surface Stratification
+% Academic-Galactic v1.2
+% =====================================================================
+
+\section{Collapse-Surface Stratification}
+\label{sec:CollapseSurfaceStratification}
+
+\subsection{Overview}
+Collapse-surface stratification defines how the topology of the Soft
+80-dimensional manifold $\mathcal{M}^{80}$ evolves under curvature envelopes
+$\Phi_7$, holonomy transport $\Phi_8$, and topology-modulation drift
+$\Phi_8^t$. Collapse surfaces represent stratified submanifolds where geometric
+structure changes discontinuously or semi-continuously.
+
+This module integrates:
+\begin{itemize}
+    \item curvature envelopes (Module 02),
+    \item holonomy transport and drift (Module 02),
+    \item spectral continuity (Module 03),
+    \item filtration structure (Module 01).
+\end{itemize}
+
+Modern curvature-discretization research
+\citeClassA{LiPengDong2026,GutierrezUle2026}
+and spectral curvature foundations
+\citeClassA{SpectralCurvature2026}
+provide the mathematical grounding.
+
+\subsection{Collapse Surfaces}
+\begin{definition}[Collapse Surface]
+A collapse surface at altitude $k$ is a stratified submanifold
+\[
+C_k \subseteq \mathcal{F}_k
+\]
+where curvature envelopes $\Phi_7$ induce topology modulation.
+\end{definition}
+
+Collapse surfaces satisfy:
+\[
+\Phi_7|_{C_k} \neq 0,
+\qquad
+\Phi_8^t(C_k) \subseteq C_k,
+\]
+ensuring stability under drift.
+
+\subsection{Topology Modulation}
+Topology modulation is induced by the drift operator $\Phi_8^t$:
+\[
+\Phi_8^t : \mathcal{F}_k \to \mathcal{F}_k.
+\]
+
+Topology modulation causes:
+\begin{itemize}
+    \item stratified surface evolution,
+    \item collapse-surface deformation,
+    \item curvature-driven topology change.
+\end{itemize}
+
+This behavior is consistent with holonomy-curvature interaction
+\citeClassA{BlackholeHolonomy2026}.
+
+\subsection{Stratification Hierarchy}
+Collapse surfaces form a stratification hierarchy:
+\[
+C_0 \subseteq C_1 \subseteq \cdots \subseteq C_{80}.
+\]
+
+Each $C_k$ is compatible with the filtration embedding:
+\[
+i_k(C_k) \subseteq C_{k+1}.
+\]
+
+This ensures altitude-preserving topology modulation.
+
+\subsection{Discrete-to-Continuous Behavior}
+Discrete curvature models \citeClassA{LiPengDong2026} converge to continuous
+curvature envelopes $\Phi_7$:
+\[
+\lim_{n \to \infty} \Phi_7^{(n)} = \Phi_7.
+\]
+
+This convergence ensures:
+\begin{itemize}
+    \item stable collapse-surface evolution,
+    \item consistent topology modulation,
+    \item compatibility with spectral curvature (Module 03).
+\end{itemize}
+
+\subsection{Spectral Interaction}
+Spectral curvature interacts with collapse surfaces:
+\[
+\kappa_{\mathrm{spec}}(C_k)
+=
+\left\| \frac{d}{dt} \Phi_5(\gamma(t)) \right\|
+\quad
+\text{for curves } \gamma \subseteq C_k.
+\]
+
+Spectral invariants remain stable under collapse-surface drift:
+\[
+I_{\mathrm{spec}}(C_k) = I_{\mathrm{spec}}(\Phi_8^t(C_k)).
+\]
+
+\subsection{Holonomy-Induced Collapse}
+Holonomy transport induces collapse when curvature envelopes exceed a threshold:
+\[
+\|\Phi_7(p)\| > \tau_k \quad \Rightarrow \quad p \in C_k.
+\]
+
+Thresholds $\tau_k$ are altitude-dependent and compatible with the operator
+algebra (Module 05).
+
+\subsection{Summary}
+Collapse-surface stratification defines topology modulation, collapse-surface
+evolution, spectral interaction, and holonomy-induced deformation. These
+structures form the topological backbone of the A7 operator altitude and
+interact directly with curvature envelopes, spectral continuity, and the
+composite operator algebra.
+
+% =====================================================================
+% End Module 04
+% =====================================================================
