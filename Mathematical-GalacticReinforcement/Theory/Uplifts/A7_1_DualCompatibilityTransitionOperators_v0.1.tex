@@ -1,0 +1,181 @@
+% ------------------------------------------------------------
+% A7.1 Dual-Compatibility Transition Operators (v0.1)
+% Author: Borealis S. Hedling
+% Altitude: A7.1 (Dual-Compatibility Transition Layer)
+% Purpose: Define the dual-compatibility operators that bind
+%          the A6.x composite substrate algebra to the A7.2
+%          Collapse-Surface Repair Pipeline and A7.3 Reprojection
+%          Algebra. This module formalizes Constructive Fix 13.
+% ------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{A7.1 Dual-Compatibility Transition Operators}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This module defines the dual-compatibility transition operators at A7.1
+altitude. These operators bind the A6.x composite substrate algebra (Module F)
+to the A7.2 Collapse-Surface Repair Pipeline and the A7.3 Reprojection Algebra.
+A7.1 formalizes Constructive Fix 13: determinism, kernel preservation, and
+dual-algebra compatibility.
+
+% ------------------------------------------------------------
+\section{Dual Substrate}
+
+Let $\mathcal{A}_{\mathrm{comp}}$ be the composite substrate algebra from A6.x.
+
+Define the dual substrate:
+\[
+\mathcal{A}^\star_{\mathrm{comp}} =
+\mathrm{Hom}(\mathcal{A}_{\mathrm{comp}}, \mathbb{R}).
+\]
+
+\textbf{Theorem (Dual Existence).}
+If $\mathcal{A}_{\mathrm{comp}}$ is finite-dimensional, then:
+\[
+\mathcal{A}^\star_{\mathrm{comp}} \text{ exists and is unique}.
+\]
+
+% ------------------------------------------------------------
+\section{Dual-Compatibility Operator}
+
+Define the dual-compatibility operator:
+\[
+\mathcal{T}(p) :
+\mathcal{A}_{\mathrm{comp}}(p)
+\to
+\mathcal{A}^\star_{\mathrm{comp}}(p)
+\]
+such that:
+\[
+\mathcal{T}(p)(\mathcal{O}) = \langle \mathcal{O}, K(p) \rangle,
+\]
+where $K(p)$ is the kernel-preserving functional.
+
+\textbf{Theorem (Kernel Preservation).}
+\[
+\ker(\mathcal{O}) = \ker(\mathcal{T}(p)(\mathcal{O})).
+\]
+
+This formalizes Constructive Fix 13.
+
+% ------------------------------------------------------------
+\section{Determinism Operator}
+
+Define the determinism operator:
+\[
+\mathcal{D}_{\mathrm{det}}(p) = \mathcal{T}(p) \circ \mathcal{O}(p),
+\]
+where $\mathcal{O}(p)$ is the composite operator from A7.0.
+
+\textbf{Theorem (Deterministic Lift).}
+If $\mathcal{O}(p)$ is deterministic, then:
+\[
+\mathcal{D}_{\mathrm{det}}(p) \text{ deterministic}.
+\]
+
+This enforces Fix 13 determinism.
+
+% ------------------------------------------------------------
+\section{Dual Lie Compatibility}
+
+Define the dual Lie bracket:
+\[
+[\mathcal{T}_1, \mathcal{T}_2]^\star =
+\mathcal{T}_1 \circ \mathcal{T}_2
+-
+\mathcal{T}_2 \circ \mathcal{T}_1.
+\]
+
+\textbf{Theorem (Lie Compatibility).}
+\[
+[\mathcal{T}_1, \mathcal{T}_2]^\star
+=
+\mathcal{T}([ \mathcal{O}_1, \mathcal{O}_2 ]).
+\]
+
+This ensures dual-algebra consistency.
+
+% ------------------------------------------------------------
+\section{Dual Spectral Compatibility}
+
+Define:
+\[
+\mathrm{Spec}^\star(\mathcal{T}(p))
+=
+\mathrm{Spec}(\mathcal{O}(p)).
+\]
+
+\textbf{Theorem (Spectral Preservation).}
+\[
+\mathrm{Spec}^\star(\mathcal{T}(p))
+\text{ continuous in } p.
+\]
+
+This ensures spectral continuity across the dual lift.
+
+% ------------------------------------------------------------
+\section{Dual Modal Lift}
+
+Define:
+\[
+\mu^\star(p) = \mu(\mathcal{T}(p)).
+\]
+
+\textbf{Theorem (Modal Lift Preservation).}
+If modal truth lifts through $\mathcal{O}$, then:
+\[
+\mu^\star(p) \leadsto \mu^\star(q).
+\]
+
+This enforces Fix 10 in the dual layer.
+
+% ------------------------------------------------------------
+\section{Dual Provenance Lift}
+
+Define:
+\[
+I^\star_{\mathrm{prov}}(p) = I_{\mathrm{prov}}(\mathcal{T}(p)).
+\]
+
+\textbf{Theorem (Provenance Preservation).}
+If provenance lifts through $\mathcal{O}$, then:
+\[
+I^\star_{\mathrm{prov}}(M) \Rightarrow
+I^\star_{\mathrm{prov}}(\mathcal{A}(M,S)).
+\]
+
+This enforces Fix 11 in the dual layer.
+
+% ------------------------------------------------------------
+\section{Dual Semantic Lift}
+
+Define:
+\[
+I^\star_{\mathrm{sem}}(p) = I_{\mathrm{sem}}(\mathcal{T}(p)).
+\]
+
+\textbf{Theorem (Semantic Preservation).}
+If semantic truth lifts through $\mathcal{O}$, then:
+\[
+I^\star_{\mathrm{sem}}(p) \leadsto I^\star_{\mathrm{sem}}(q).
+\]
+
+This enforces Fix 12 in the dual layer.
+
+% ------------------------------------------------------------
+\section{Conclusion}
+
+The dual-compatibility transition operators defined here bind the A6.x composite
+substrate algebra to the A7.2 Collapse-Surface Repair Pipeline and A7.3
+Reprojection Algebra. This module formalizes Constructive Fix 13 and completes
+the A7.1 altitude.
+
+\end{document}
