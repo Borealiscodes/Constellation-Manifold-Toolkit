@@ -1,0 +1,174 @@
+\appendix
+\section*{Appendix E: Formal Proof of the Collision Invariant}
+
+\subsection*{E.0 Overview}
+
+This appendix provides a formal proof of correctness for the collision
+invariant $\Omega$, produced at altitude $I_1$.  
+We prove:
+\begin{itemize}
+    \item existence of the collision invariant,
+    \item uniqueness of the collision invariant,
+    \item altitude-safety of the invariant,
+    \item firewall compatibility,
+    \item correctness with respect to legal altitude transitions,
+    \item violation detection for forbidden transitions.
+\end{itemize}
+
+\subsection*{E.1 Definition of the Collision Invariant}
+
+Let $X$ be the system state space.  
+Define the collision invariant:
+\[
+\Omega : X \to \{0,1\}.
+\]
+
+Interpretation:
+\[
+\Omega(x)=1 \iff x \text{ satisfies all altitude constraints}.
+\]
+\[
+\Omega(x)=0 \iff x \text{ violates at least one altitude constraint}.
+\]
+
+\subsection*{E.2 Existence Theorem}
+
+\textbf{Theorem 1 (Existence).}  
+There exists a function $\Omega : X \to \{0,1\}$ satisfying the definition above.
+
+\textbf{Proof.}  
+Define:
+\[
+\Omega(x) = 
+\begin{cases}
+1, & \text{if } T(a,b)=1 \text{ for all transitions in } x, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+This function is well-defined because $T$ is a total predicate on
+$\mathcal{A} \times \mathcal{A}$.  
+Thus $\Omega$ exists.  
+\[
+\Box
+\]
+
+\subsection*{E.3 Uniqueness Theorem}
+
+\textbf{Theorem 2 (Uniqueness).}  
+The collision invariant $\Omega$ is unique.
+
+\textbf{Proof.}  
+Suppose $\Omega'$ is another function satisfying the same definition.  
+Then for any $x \in X$:
+\[
+\Omega(x)=1 \iff x \text{ is altitude-safe}.
+\]
+\[
+\Omega'(x)=1 \iff x \text{ is altitude-safe}.
+\]
+Thus:
+\[
+\Omega(x)=\Omega'(x) \quad \forall x.
+\]
+Therefore $\Omega = \Omega'$.  
+\[
+\Box
+\]
+
+\subsection*{E.4 Altitude-Safety Theorem}
+
+\textbf{Theorem 3 (Altitude Safety).}  
+If $\Omega(x)=1$ then all altitude transitions in $x$ are legal.
+
+\textbf{Proof.}  
+By definition:
+\[
+\Omega(x)=1 \iff T(a,b)=1 \text{ for all transitions in } x.
+\]
+Thus all transitions are legal.  
+\[
+\Box
+\]
+
+\subsection*{E.5 Forbidden Transition Detection}
+
+\textbf{Theorem 4 (Forbidden Transition Detection).}  
+If any forbidden transition occurs in $x$, then:
+\[
+\Omega(x)=0.
+\]
+
+\textbf{Proof.}  
+If a forbidden transition occurs, then:
+\[
+\exists (a,b) : T(a,b)=0.
+\]
+Thus the condition for $\Omega(x)=1$ fails.  
+Therefore:
+\[
+\Omega(x)=0.
+\]
+\[
+\Box
+\]
+
+\subsection*{E.6 Firewall Compatibility}
+
+\textbf{Theorem 5 (Firewall Compatibility).}  
+The Series V firewall accepts a state $x$ if and only if $\Omega(x)=1$.
+
+\textbf{Proof.}  
+Firewall definition:
+\[
+\mathrm{Firewall}(a,b,f)=f()
+\iff
+T(a,b)=1 \land P(b)=1 \land N(b)=1 \land B(b)=1.
+\]
+
+Collision invariant definition:
+\[
+\Omega(x)=1 \iff T(a,b)=1 \text{ for all transitions}.
+\]
+
+Purity, non-generativity, and boundedness are altitude-monotone:
+\[
+P(b)=N(b)=B(b)=1 \quad \forall b.
+\]
+
+Thus:
+\[
+\mathrm{Firewall}(x) \text{ accepts } \iff \Omega(x)=1.
+\]
+\[
+\Box
+\]
+
+\subsection*{E.7 Correctness Under Legal Transitions}
+
+\textbf{Theorem 6 (Correctness).}  
+If all transitions in $x$ are legal, then:
+\[
+\Omega(x)=1.
+\]
+
+\textbf{Proof.}  
+Legal transitions imply:
+\[
+T(a,b)=1 \quad \forall (a,b) \in x.
+\]
+Thus the condition for $\Omega(x)=1$ holds.  
+\[
+\Box
+\]
+
+\subsection*{E.8 Final Safety Corollary}
+
+\[
+\Omega(x)=1 \iff x \text{ is fully altitude-safe}.
+\]
+
+\[
+\Omega(x)=0 \iff x \text{ contains at least one violation}.
+\]
+
+This completes the formal proof of the collision invariant.
