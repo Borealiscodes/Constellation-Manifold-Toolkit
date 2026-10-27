@@ -1,0 +1,209 @@
+% ------------------------------------------------------------
+% A6.x Substrate Uplift Module F — Composite Substrate Algebra (v0.1)
+% Author: Borealis S. Hedling
+% Altitude: A6.x (Substrate Uplift Layer)
+% Purpose: Define the composite substrate algebra that unifies
+%          Modules A–E (RSVP, TARTAN, Unistochastic, Sheaf-
+%          Cognition, Trajectory Invariants) into a single A6.x
+%          altitude algebra. This is the final A6.x uplift module.
+% ------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{A6.x Substrate Uplift Module F: Composite Substrate Algebra}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This module defines the composite substrate algebra at A6.x altitude. It unifies
+the symplectic RSVP substrate (Module A), the TARTAN projection algebra (Module
+B), the unistochastic emergence substrate (Module C), the sheaf-cognition gluing
+substrate (Module D), and the economic trajectory invariants (Module E) into a
+single algebraic structure. This composite algebra is the final A6.x uplift
+module and prepares the manifold for A7.1 Dual-Compatibility Transition
+Operators.
+
+% ------------------------------------------------------------
+\section{Composite Substrate Space}
+
+Define the composite substrate space:
+\[
+\mathcal{A}_{\mathrm{comp}} =
+\mathcal{A}_{\mathrm{RSVP}}
+\oplus
+\mathcal{A}_{\mathrm{TARTAN}}
+\oplus
+\mathcal{A}_{\mathrm{uni}}
+\oplus
+\mathcal{A}_{\mathrm{sheaf}}
+\oplus
+\mathcal{A}_{\mathrm{traj}}.
+\]
+
+Each component is defined in Modules A–E.
+
+% ------------------------------------------------------------
+\section{Composite Operator}
+
+Define the composite operator:
+\[
+\mathcal{O}(p) =
+\mathcal{C}(p)
+\oplus
+\mathcal{D}(p)
+\oplus
+\mathcal{S}(p)
+\oplus
+\mathcal{X}(p)
+\oplus
+\mathcal{E}(p),
+\]
+where each term is the corresponding operator from A7.0.
+
+\textbf{Theorem (Closure).}
+\[
+\mathcal{O}(p) \in \mathcal{A}_{\mathrm{comp}}.
+\]
+
+Thus the composite operator is closed under the composite substrate algebra.
+
+% ------------------------------------------------------------
+\section{Composite Lie Algebra}
+
+Define the composite Lie bracket:
+\[
+[\mathcal{O}_1, \mathcal{O}_2]
+=
+[\mathcal{C}_1, \mathcal{C}_2]
+\oplus
+[\mathcal{D}_1, \mathcal{D}_2]
+\oplus
+[\mathcal{S}_1, \mathcal{S}_2]
+\oplus
+[\mathcal{X}_1, \mathcal{X}_2]
+\oplus
+[\mathcal{E}_1, \mathcal{E}_2].
+\]
+
+\textbf{Theorem (Lie Compatibility).}
+\[
+[\mathcal{O}_1, \mathcal{O}_2] \in \mathcal{A}_{\mathrm{comp}}.
+\]
+
+This enforces Fix 3 (covariant Lie bracket).
+
+% ------------------------------------------------------------
+\section{Composite Spectral Algebra}
+
+Define:
+\[
+\mathrm{Spec}(\mathcal{O}(p)) =
+\mathrm{Spec}(\mathcal{C}(p))
+\cup
+\mathrm{Spec}(\mathcal{S}(p)).
+\]
+
+\textbf{Theorem (Spectral Continuity).}
+If each component spectrum is continuous, then:
+\[
+\mathrm{Spec}(\mathcal{O}(p)) \text{ continuous in } p.
+\]
+
+This enforces Fix 5 and Fix 6.
+
+% ------------------------------------------------------------
+\section{Composite Modal Algebra}
+
+Define:
+\[
+\mathcal{M}_{\mathrm{comp}}(p) =
+\mu(\Pi_{\mathrm{T}}(p))
+\cup
+\mu(\mathcal{A}_{\mathrm{sheaf}}(p)).
+\]
+
+\textbf{Theorem (Modal Lift).}
+If modal truth lifts through each component, then:
+\[
+\mathcal{M}_{\mathrm{comp}}(p) \leadsto \mathcal{M}_{\mathrm{comp}}(q).
+\]
+
+This enforces Fix 10.
+
+% ------------------------------------------------------------
+\section{Composite Provenance Algebra}
+
+Define:
+\[
+\mathcal{P}_{\mathrm{comp}}(p) =
+I_{\mathrm{prov}}(\Pi_{\mathrm{T}}(p))
+\cup
+I_{\mathrm{prov}}(\mathcal{A}_{\mathrm{sheaf}}(p)).
+\]
+
+\textbf{Theorem (Provenance Lift).}
+If provenance lifts through each component, then:
+\[
+\mathcal{P}_{\mathrm{comp}}(M) \Rightarrow
+\mathcal{P}_{\mathrm{comp}}(\mathcal{A}(M,S)).
+\]
+
+This enforces Fix 11.
+
+% ------------------------------------------------------------
+\section{Composite Semantic Algebra}
+
+Define:
+\[
+\mathcal{V}_{\mathrm{comp}}(p) =
+I_{\mathrm{sem}}(\Pi_{\mathrm{T}}(p))
+\cup
+I_{\mathrm{sem}}(\mathcal{A}_{\mathrm{sheaf}}(p)).
+\]
+
+\textbf{Theorem (Semantic Lift).}
+If semantic truth lifts through each component, then:
+\[
+\mathcal{V}_{\mathrm{comp}}(p) \leadsto \mathcal{V}_{\mathrm{comp}}(q).
+\]
+
+This enforces Fix 12.
+
+% ------------------------------------------------------------
+\section{Collapse-Surface Compatibility}
+
+Define:
+\[
+\Sigma_{\mathrm{comp}} =
+\Sigma_{\mathrm{RSVP}}
+\cup
+\Sigma_{\mathrm{TARTAN}}
+\cup
+\Sigma_{\mathrm{uni}}
+\cup
+\Sigma_{\mathrm{sheaf}}
+\cup
+\Sigma_{\mathrm{traj}}.
+\]
+
+\textbf{Theorem (Local Detectability).}
+If collapse is locally detectable in each component, then:
+\[
+\Sigma_{\mathrm{comp}} \text{ locally detectable}.
+\]
+
+This enforces Fix 8.
+
+% ------------------------------------------------------------
+\section{Conclusion}
+
+The composite substrate algebra defined here unifies all A6.x substrate modules
+into a single algebraic structure. This is the final A6.x uplift module and
+prepares the manifold for A7.1 Dual-Compatibility Transition Operators.
+
+\end{document}
