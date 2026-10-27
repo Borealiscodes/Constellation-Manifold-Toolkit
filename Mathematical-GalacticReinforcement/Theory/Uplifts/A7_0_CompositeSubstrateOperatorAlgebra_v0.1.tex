@@ -1,0 +1,171 @@
+% ------------------------------------------------------------
+% A7.0 Composite Substrate Operator Algebra (v0.1)
+% Author: Borealis S. Hedling
+% Altitude: A7.0 (Composite Operator Layer)
+% Purpose: Define the composite operator algebra built on the
+%          A6.x substrate (RSVP + TARTAN), forming the bridge
+%          between A6 Constructive Fixes and A7.1 Dual-Compatibility.
+% ------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{A7.0 Composite Substrate Operator Algebra}
+\author{Borealis S. Hedling}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Overview}
+
+This module defines the composite operator algebra at A7.0 altitude. These
+operators combine the A6.x symplectic RSVP substrate with the TARTAN projection
+algebra to form the first dual-compatible operator layer. A7.0 prepares the
+substrate for A7.1 Dual-Compatibility Transition Operators and A7.2 Collapse
+Surface Repair Pipeline.
+
+% ------------------------------------------------------------
+\section{Composite Curvature Operator}
+
+Let $K_{\mathrm{RSVP}}$ be the RSVP curvature and $\Pi_{\mathrm{T}}$ the TARTAN
+modal projection.
+
+\textbf{Definition (Composite Curvature Operator).}
+\[
+\mathcal{C}(p) = \Pi_{\mathrm{T}}(p) \cdot K_{\mathrm{RSVP}}(p).
+\]
+
+\textbf{Theorem (Continuity).}
+If both $K_{\mathrm{RSVP}}$ and $\Pi_{\mathrm{T}}$ are continuous, then:
+\[
+\mathcal{C}(p) \text{ continuous in } p.
+\]
+
+This preserves Fix 1 and Fix 5.
+
+% ------------------------------------------------------------
+\section{Composite Drift Operator}
+
+Let $D_{\mathrm{RSVP}}$ be the RSVP drift operator.
+
+\textbf{Definition (Composite Drift).}
+\[
+\mathcal{D}(X) = \Pi_{\mathrm{T}} \circ D_{\mathrm{RSVP}}(X).
+\]
+
+\textbf{Theorem (Lie Compatibility).}
+\[
+[\mathcal{D}(X), \mathcal{D}(Y)] = \mathcal{D}([X,Y]).
+\]
+
+This preserves Fix 3.
+
+% ------------------------------------------------------------
+\section{Composite Spectral Operator}
+
+Define:
+\[
+\mathcal{S}(p) = \mathrm{Spec}(\mathcal{C}(p)).
+\]
+
+\textbf{Theorem (Spectral Continuity).}
+\[
+\mathcal{S}(p) \text{ continuous in } p.
+\]
+
+This preserves Fix 5 and Fix 6.
+
+% ------------------------------------------------------------
+\section{Composite Collapse Operator}
+
+Let $\Sigma$ be the collapse surface.
+
+\textbf{Definition (Composite Collapse Projection).}
+\[
+\mathcal{X}(p) =
+\begin{cases}
+p, & p \in \Sigma \\
+\Pi_{\Sigma}(p), & p \notin \Sigma.
+\end{cases}
+\]
+
+\textbf{Theorem (Local Detectability).}
+\[
+p \in \Sigma \Rightarrow \exists \epsilon > 0 :
+B_\epsilon(p) \cap \Sigma \neq \emptyset.
+\]
+
+This preserves Fix 8.
+
+% ------------------------------------------------------------
+\section{Composite Stability Operator}
+
+Define:
+\[
+\mathcal{E}(p) = \|\mathcal{C}(p)\|.
+\]
+
+\textbf{Theorem (Monotonicity).}
+If $E(p) \le E(q)$, then:
+\[
+\mathcal{E}(p) \le \mathcal{E}(q).
+\]
+
+This preserves Fix 9.
+
+% ------------------------------------------------------------
+\section{Composite Modal Lift Operator}
+
+Define:
+\[
+\mathcal{M}(p) = \mu(\Pi_{\mathrm{T}}(p)).
+\]
+
+\textbf{Theorem (Lift Preservation).}
+If $\Pi_{\mathrm{T}}(p) = \Pi_{\mathrm{T}}(q)$, then:
+\[
+\mathcal{M}(p) = \mathcal{M}(q).
+\]
+
+This preserves Fix 10.
+
+% ------------------------------------------------------------
+\section{Composite Provenance Operator}
+
+Define:
+\[
+\mathcal{P}(M) = I_{\mathrm{prov}}(\Pi_{\mathrm{T}}(M)).
+\]
+
+\textbf{Theorem (Provenance Lift).}
+\[
+I_{\mathrm{prov}}(M) \Rightarrow I_{\mathrm{prov}}(\mathcal{P}(M)).
+\]
+
+This preserves Fix 11.
+
+% ------------------------------------------------------------
+\section{Composite Semantic Operator}
+
+Define:
+\[
+\mathcal{V}(M) = I_{\mathrm{sem}}(\Pi_{\mathrm{T}}(M)).
+\]
+
+\textbf{Theorem (Semantic Lift).}
+\[
+I_{\mathrm{sem}}(M) \Rightarrow I_{\mathrm{sem}}(\mathcal{V}(M)).
+\]
+
+This preserves Fix 12.
+
+% ------------------------------------------------------------
+\section{Conclusion}
+
+The composite operator algebra defined here forms the first A7 altitude layer.
+It integrates the A6.x symplectic and projection substrates into a unified
+operator system, preparing the manifold for A7.1 Dual-Compatibility Transition
+Operators and A7.2 Collapse Surface Repair Pipeline.
+
+\end{document}
