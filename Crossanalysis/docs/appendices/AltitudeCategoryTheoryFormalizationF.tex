@@ -1,0 +1,216 @@
+\appendix
+\section*{Appendix F: Category-Theoretic Formalization of the Altitude System}
+
+\subsection*{F.0 Overview}
+
+This appendix presents a full category-theoretic formalization of the
+altitude architecture used in the Constellation–Manifold Toolkit.
+The purpose is to express:
+\begin{itemize}
+    \item altitudes as objects of a category,
+    \item legal transitions as morphisms,
+    \item purity as monoidal identity constraints,
+    \item non-generativity as morphism closure under identity,
+    \item boundedness as norm-bounded functoriality,
+    \item diagnostics as natural transformations,
+    \item drift semigroup as an endofunctor,
+    \item invariant extraction as a functor into a scalar category,
+    \item steering as an automorphism,
+    \item collision invariant as a terminal object,
+    \item the Series V firewall as an admissible subcategory.
+\end{itemize}
+
+\subsection*{F.1 Altitude Category}
+
+Define the altitude category:
+\[
+\mathcal{C}_{\mathrm{alt}}.
+\]
+
+Objects:
+\[
+\mathrm{Ob}(\mathcal{C}_{\mathrm{alt}}) =
+\{A_0, A_1, \Phi_7, D_1, D_2, D_3, \Phi_8, \Phi_9, S_1, I_1\}.
+\]
+
+Morphisms:
+\[
+\mathrm{Hom}(a,b) =
+\begin{cases}
+\{\tau_{a,b}\}, & T(a,b)=1, \\
+\varnothing, & T(a,b)=0.
+\end{cases}
+\]
+
+Thus the altitude category is a thin category:
+\[
+|\mathrm{Hom}(a,b)| \le 1.
+\]
+
+\subsection*{F.2 Acyclicity as Strict Ranking}
+
+Define a rank functor:
+\[
+r : \mathcal{C}_{\mathrm{alt}} \to \mathbb{N}
+\]
+such that:
+\[
+r(A_0)=0,\; r(A_1)=1,\; r(\Phi_7)=2,\; \dots,\; r(I_1)=9.
+\]
+
+For any morphism $\tau_{a,b}$:
+\[
+r(a) < r(b).
+\]
+
+Thus $\mathcal{C}_{\mathrm{alt}}$ is strictly ranked and acyclic.
+
+\subsection*{F.3 Purity as Monoidal Identity Constraint}
+
+Define a monoidal structure:
+\[
+(\mathcal{C}_{\mathrm{alt}}, \otimes, I)
+\]
+where $I$ is the identity altitude.
+
+Purity constraint:
+\[
+P(a) \iff a \otimes I = a.
+\]
+
+Thus purity is expressed as:
+\[
+\forall a,\; \mathrm{id}_a \text{ is the only generative morphism}.
+\]
+
+\subsection*{F.4 Non-Generativity as Identity Closure}
+
+Non-generativity requires:
+\[
+\mathrm{Hom}(a,a) = \{\mathrm{id}_a\}.
+\]
+
+Thus no altitude may generate new structure:
+\[
+\mathrm{Hom}(a,b) = \varnothing \quad \text{unless } T(a,b)=1.
+\]
+
+\subsection*{F.5 Boundedness as Norm-Bounded Functoriality}
+
+Let $X$ be the system state space.  
+Define a functor:
+\[
+F : \mathcal{C}_{\mathrm{alt}} \to \mathcal{C}_{X}
+\]
+where $\mathcal{C}_{X}$ is the category of bounded transformations on $X$.
+
+Boundedness constraint:
+\[
+B(a) \iff \|F(a)\| < C_a.
+\]
+
+Thus:
+\[
+F(\tau_{a,b}) \text{ is norm-bounded}.
+\]
+
+\subsection*{F.6 Diagnostics as Natural Transformations}
+
+Diagnostics $D_1, D_2, D_3$ form natural transformations between functors:
+\[
+\eta_i : F \Rightarrow F.
+\]
+
+For each altitude morphism $\tau_{a,b}$:
+\[
+F(b) \circ \eta_i(a) = \eta_i(b) \circ F(a).
+\]
+
+Thus diagnostics commute with altitude transitions.
+
+\subsection*{F.7 Drift Semigroup as Endofunctor}
+
+Define the drift semigroup:
+\[
+D : \mathcal{C}_{\mathrm{alt}} \to \mathcal{C}_{\mathrm{alt}}
+\]
+such that:
+\[
+D_t \circ D_s = D_{t+s}.
+\]
+
+Thus $D$ is an endofunctor satisfying semigroup composition.
+
+\subsection*{F.8 Invariant Extraction as Functor}
+
+Define the invariant extraction functor:
+\[
+I : \mathcal{C}_{\mathrm{alt}} \to \mathcal{C}_{\mathbb{R}^k}.
+\]
+
+For each altitude $a$:
+\[
+I(a) : X \to \mathbb{R}^k.
+\]
+
+Thus invariants are functorial scalar projections.
+
+\subsection*{F.9 Steering as Automorphism}
+
+Define steering:
+\[
+\Theta : \mathcal{C}_{\mathrm{alt}} \to \mathcal{C}_{\mathrm{alt}}
+\]
+such that:
+\[
+\Theta \circ \Theta^{-1} = \mathrm{id}.
+\]
+
+Thus steering is an automorphism of the altitude category.
+
+\subsection*{F.10 Collision Invariant as Terminal Object}
+
+Define the terminal object:
+\[
+I_1 \in \mathrm{Ob}(\mathcal{C}_{\mathrm{alt}}).
+\]
+
+For any altitude $a$:
+\[
+\exists !\; \tau_{a,I_1}.
+\]
+
+Thus the collision invariant is the unique terminal altitude.
+
+\subsection*{F.11 Firewall as Admissible Subcategory}
+
+Define the firewall subcategory:
+\[
+\mathcal{C}_{\mathrm{safe}} \subseteq \mathcal{C}_{\mathrm{alt}}
+\]
+such that:
+\[
+\mathrm{Hom}_{\mathrm{safe}}(a,b) =
+\begin{cases}
+\{\tau_{a,b}\}, & T(a,b)=1 \land P(b) \land N(b) \land B(b), \\
+\varnothing, & \text{otherwise}.
+\end{cases}
+\]
+
+Thus:
+\[
+\mathcal{C}_{\mathrm{safe}} \text{ is the admissible morphism category}.
+\]
+
+\subsection*{F.12 Final Safety Theorem}
+
+\textbf{Theorem.}  
+A state $x$ is altitude-safe if and only if its morphisms lie in
+$\mathcal{C}_{\mathrm{safe}}$.
+
+Equivalently:
+\[
+\Omega(x)=1 \iff x \in \mathcal{C}_{\mathrm{safe}}.
+\]
+
+This completes the category-theoretic formalization.
