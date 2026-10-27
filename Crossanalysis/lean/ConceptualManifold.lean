@@ -2,7 +2,7 @@ import LeanHallucinationGuard.Guard
 
 namespace ConstellationManifold
 
-/--
+/-- 
   ConceptualManifold:
   The base reversible geometric structure for the Enhanced
   Conceptual Collision Tracking formal spine.
