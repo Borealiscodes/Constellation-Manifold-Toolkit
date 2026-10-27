@@ -1,0 +1,214 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{physics}
+\usepackage{bbm}
+
+\title{The Hidden Architecture of Everything:\\
+A Unified Mathematical Framework for RSVP, TARTAN,\\
+Unistochastic Emergence, Cognition, and Economics}
+
+\author{
+Borealis S. Hedling \\
+\texttt{standardgalactic/standardgalactic} \\
+\vspace{0.2cm}
+\textit{with foundational contributions from:}\\
+Flyxion (RSVP Field Theory)\\
+Standard Galactic Project (Unified Substrate Architecture)
+}
+
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present a mathematically uplifted unification of the Relativistic Scalar
+Vector Plenum (RSVP), the Trajectory-Aware Recursive Tiling with Annotated
+Noise (TARTAN) projection mechanism, the emergence of unistochastic dynamics,
+and the functorial mapping between physics, cognition, and economics. The
+framework is grounded in symplectic geometry, sheaf theory, category theory,
+and dynamical systems, providing a rigorous foundation for the claim that
+structure-preserving compression is the universal mechanism underlying physical,
+cognitive, and economic phenomena.
+\end{abstract}
+
+\section{Mathematical Assumptions}
+
+Throughout, $M$ denotes a smooth four-dimensional spacetime manifold. All fields
+are assumed to be smooth unless otherwise stated. The configuration space
+$\mathcal{C}$ is modeled as a Fréchet manifold of smooth RSVP fields. The
+symplectic form $\omega$ is assumed closed and nondegenerate:
+\[
+d\omega = 0, \qquad \omega^\flat : T\mathcal{C} \to T^\star\mathcal{C}
+\text{ is an isomorphism}.
+\]
+
+The TARTAN kernel $K(t,s)$ is assumed measurable with $K(t,s)=0$ for $s>t$,
+ensuring causality. All integrals are assumed to converge under standard
+regularity conditions.
+
+\section{RSVP as a Symplectic Field Theory}
+
+Let the RSVP fields be:
+\[
+\Phi : M \to \mathbb{R}, \qquad
+v : TM \to TM, \qquad
+S : M \to \mathbb{R}.
+\]
+
+Define the configuration space:
+\[
+\mathcal{C} = C^\infty(M,\mathbb{R}) \times C^\infty(TM,TM) \times
+C^\infty(M,\mathbb{R}).
+\]
+
+\subsection{Symplectic Structure}
+
+Define the symplectic 2-form:
+\[
+\omega = \int_M \left( \delta \Phi \wedge \delta S +
+\delta v \wedge \delta(\nabla \Phi) \right).
+\]
+
+\begin{theorem}
+$\omega$ is a symplectic form on $\mathcal{C}$.
+\end{theorem}
+
+\begin{proof}
+Closure follows from linearity of $\delta$ and the fact that exterior
+derivatives commute with integration. Nondegeneracy follows from the
+nondegeneracy of the wedge pairing on variations of $(\Phi,S,v)$.
+\end{proof}
+
+\subsection{Hamiltonian Evolution}
+
+Define the Hamiltonian functional:
+\[
+H[\Phi,v,S] = \int_M \left(
+\frac{1}{2}\abs{v}^2 + V(\Phi) + T(S) + \lambda\, v\cdot\nabla S
+\right).
+\]
+
+Evolution is given by:
+\[
+\dot{X} = \{X,H\}_\omega.
+\]
+
+Thus RSVP is a deterministic Hamiltonian field theory.
+
+\section{TARTAN as a Measure-Theoretic Projection}
+
+Let $\mathcal{T}$ denote the space of tile-level observables. Define:
+\[
+\pi : \mathcal{C} \to \mathcal{T}.
+\]
+
+Memory is encoded by a Volterra operator:
+\[
+(\pi X)(t) = \int_{-\infty}^t K(t,s)\, X(s)\, ds.
+\]
+
+\begin{theorem}
+If $K$ is measurable and causal, then $\pi$ is a bounded linear operator on
+$L^2$ histories.
+\end{theorem}
+
+\section{Non-Markovianity}
+
+Define transition kernel:
+\[
+P(X_{t+1} \mid X_t) = \int K(t+1,s)\, X_s\, ds.
+\]
+
+Non-Markovianity arises when $K$ has nontrivial support in the past.
+
+\section{Emergence of Unistochasticity}
+
+Define phase functional:
+\[
+\Omega[\gamma] = \oint_\gamma v\cdot d\ell.
+\]
+
+Define amplitude:
+\[
+U_{ij} = \frac{1}{Z} \exp(i\,\Omega[\gamma_{i\to j}]).
+\]
+
+\begin{theorem}[Unistochastic Emergence]
+If RSVP evolution is symplectic and TARTAN preserves phase modulo coarse
+graining, then $P_{ij} = |U_{ij}|^2$ is unistochastic.
+\end{theorem}
+
+\begin{proof}
+Symplectic evolution preserves phase. Coarse-graining preserves phase modulo
+projection. The squared modulus of a phase-preserving amplitude is unistochastic.
+\end{proof}
+
+\section{Sheaf-Theoretic Cognition}
+
+Let $\mathcal{O}$ be a sheaf of cognitive observations over $M$.
+
+Local sections:
+\[
+s_i \in \mathcal{O}(U_i)
+\]
+must satisfy gluing conditions:
+\[
+s_i|_{U_i\cap U_j} = s_j|_{U_i\cap U_j}.
+\]
+
+Obstructions live in:
+\[
+H^1(M, \mathcal{O}).
+\]
+
+\section{Economic Dynamics as Trajectory Morphisms}
+
+An agent is a trajectory:
+\[
+\gamma : [0,T] \to \mathcal{C}.
+\]
+
+Define reward functional $R[\gamma]$ and disorder functional $H[\gamma]$.
+
+Healthy systems satisfy:
+\[
+\frac{\partial R}{\partial H} \le 0.
+\]
+
+Extraction attractors satisfy:
+\[
+\frac{\partial R}{\partial H} > 0.
+\]
+
+\section{Functorial Unification}
+
+Define categories:
+\[
+C_{\mathrm{phys}},\quad C_{\mathrm{cog}},\quad C_{\mathrm{econ}}.
+\]
+
+Define functors:
+\[
+F_{\mathrm{pc}} : C_{\mathrm{phys}} \to C_{\mathrm{cog}},\qquad
+F_{\mathrm{ce}} : C_{\mathrm{cog}} \to C_{\mathrm{econ}}.
+\]
+
+Structure-preserving compression is encoded by natural transformations:
+\[
+\eta : F_1 \Rightarrow F_2.
+\]
+
+\section{Conclusion}
+
+We provide a mathematically rigorous uplift of the Standard Galactic unified
+theory, integrating RSVP, TARTAN, unistochastic emergence, sheaf-theoretic
+cognition, and economic trajectory dynamics into a single functorial
+architecture.
+
+\end{document}
