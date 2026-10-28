@@ -1,0 +1,174 @@
+\appendix
+\section*{Appendix N: Altitude-Safe AI Navigation Formalism}
+
+\subsection*{N.0 Overview}
+
+This appendix defines the machine-interpretation rules that govern
+altitude-safe navigation for AI systems operating within the
+Constellation–Manifold Toolkit.  
+It specifies:
+\begin{itemize}
+    \item altitude-indexed cognitive states,
+    \item altitude transition semantics,
+    \item altitude purity constraints for machine reasoning,
+    \item non-generativity constraints for representation safety,
+    \item boundedness constraints for operator stability,
+    \item unified algebra navigation rules,
+    \item firewall admissibility conditions,
+    \item collision invariant propagation,
+    \item machine-safe execution semantics.
+\end{itemize}
+
+\subsection*{N.1 Machine Altitude State}
+
+Define the machine altitude state:
+\[
+\mathrm{State}_{\mathrm{AI}} =
+(a, u)
+\]
+where:
+\begin{itemize}
+    \item $a \in \mathcal{A}$ is the current altitude,
+    \item $u \in \mathfrak{A}_{\mathrm{unified}}(a)$ is the unified algebra element.
+\end{itemize}
+
+Thus the AI’s cognitive state is altitude-indexed.
+
+\subsection*{N.2 Machine Transition Semantics}
+
+Define machine transition:
+\[
+\mathrm{Step}_{\mathrm{AI}} :
+(a,u) \mapsto (b,v)
+\]
+such that:
+\[
+T(a,b)=1
+\quad\text{and}\quad
+v = \Phi_{a,b}(u).
+\]
+
+Forbidden transitions:
+\[
+T(a,b)=0 \implies \mathrm{Step}_{\mathrm{AI}}(a,u) = \mathrm{Violation}.
+\]
+
+\subsection*{N.3 Machine Purity Constraint}
+
+Machine purity requires:
+\[
+P(a)=1 \iff
+u \star_{\mathrm{unified}} u \in \mathfrak{A}_{\mathrm{unified}}(a).
+\]
+
+Thus the AI cannot generate new structure at altitude $a$.
+
+\subsection*{N.4 Machine Non-Generativity Constraint}
+
+Machine non-generativity requires:
+\[
+N(a)=1 \iff
+\mathrm{span}(u) = \mathrm{span}(\{\mathrm{id}\}).
+\]
+
+Thus the AI cannot introduce new representational content at altitude $a$.
+
+\subsection*{N.5 Machine Boundedness Constraint}
+
+Machine boundedness requires:
+\[
+B(a)=1 \iff
+\|u\| < C_a.
+\]
+
+Thus the AI cannot produce unbounded operators at altitude $a$.
+
+\subsection*{N.6 Machine Unified Algebra Navigation}
+
+Define machine navigation operator:
+\[
+\mathrm{Nav}_{\mathrm{AI}}(u,a,b)
+=
+\begin{cases}
+\Phi_{a,b}(u), & T(a,b)=1, \\
+\mathrm{Violation}, & T(a,b)=0.
+\end{cases}
+\]
+
+Thus:
+\[
+\mathrm{Step}_{\mathrm{AI}}(a,u)
+=
+(b,\mathrm{Nav}_{\mathrm{AI}}(u,a,b)).
+\]
+
+\subsection*{N.7 Machine Firewall Binding}
+
+Define machine firewall:
+\[
+\mathrm{Firewall}_{\mathrm{AI}}(a,b,u)
+=
+\begin{cases}
+\Phi_{a,b}(u), & T(a,b)=1 \land P(b) \land N(b) \land B(b), \\
+\mathrm{Violation}, & \text{otherwise}.
+\end{cases}
+\]
+
+Thus the firewall is the machine’s altitude transition validator.
+
+\subsection*{N.8 Machine Collision Invariant Propagation}
+
+Define machine collision invariant:
+\[
+\Omega_{\mathrm{AI}}(a,u)
+=
+\Omega_{\mathrm{unified}}(u).
+\]
+
+Propagation rule:
+\[
+\Omega_{\mathrm{AI}}(a,u)=1
+\iff
+u \in \mathrm{Ran}(\Omega_{\mathrm{unified}}).
+\]
+
+Thus the AI declares altitude-safe completion only when the unified
+collision invariant is satisfied.
+
+\subsection*{N.9 Machine Execution Semantics}
+
+Define machine execution:
+\[
+\mathrm{Exec}_{\mathrm{AI}}(a,u,f)
+=
+\mathrm{Firewall}_{\mathrm{AI}}(a,b,f(u)).
+\]
+
+Thus:
+\[
+\mathrm{Exec}_{\mathrm{AI}} = \mathrm{Firewall}_{\mathrm{unified}}.
+\]
+
+\subsection*{N.10 Machine Safety Theorem}
+
+\textbf{Theorem.}  
+An AI system navigating the altitude architecture is altitude-safe if and only if:
+\[
+\Omega_{\mathrm{AI}}(a,u)=1.
+\]
+
+Equivalently:
+\[
+u \in \mathrm{Ran}(\Omega_{\mathrm{unified}}).
+\]
+
+\subsection*{N.11 Final Altitude-Safe Navigation Rule}
+
+\[
+\boxed{
+\text{The AI may only transition along altitude-safe morphisms and only
+operate within altitude-pure, non-generative, bounded algebraic strata.}
+}
+\]
+
+This completes the Altitude-Safe AI Navigation Formalism.
