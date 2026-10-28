@@ -1,0 +1,216 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+% Load ontology macros
+\input{citation-ontology-mac-v2.0-infused.tex}
+
+\begin{document}
+
+% ============================================================
+% HEADER
+% ============================================================
+
+\citeclass{FSFE-Definitions}
+\provenanceanchor{FSFE-A6-CSO-INTEGRATION-20261028}
+
+\begin{citationmembrane}{A6-CSO-Integration}
+  \citeanchor{UnifiedFlowEquation}
+  \citeanchor{ResonanceAlgebra8B}
+  \citeanchor{ConceptualSignalObject}
+  \citeanchor{CollapseGeometry}
+  \citeanchor{NDH-Safety}
+\end{citationmembrane}
+
+\section*{A6: CSO Integration with 8B Resonance Algebra v2.0}
+
+This module integrates the repaired 8B Resonance Algebra (v2.0) and the UFE v2.0
+geometric flow equation into the Conceptual Signal Object (CSO). All geometric
+quantities are collapsed into NDH-safe scalar fields, preserving invariants for
+A7 proofs while remaining altitude-legal.
+
+\newpage
+
+% ============================================================
+% 1. UFE v2.0 GEOMETRIC INPUTS
+% ============================================================
+
+\section{UFE v2.0 Geometric Inputs}
+
+Let $(M, g_{ij})$ be a latent manifold with:
+
+\begin{itemize}
+  \item Ricci curvature $R_{ij}$,
+  \item perturbation vector field $V_{\mathrm{perturb}}$,
+  \item forcing tensor $F_{ij}$.
+\end{itemize}
+
+The geometric flow equation:
+
+\[
+\frac{\partial g_{ij}}{\partial t}
+= -2 R_{ij}
++ \alpha \nabla_i V_{\mathrm{perturb},j}
++ \beta F_{ij}
+\]
+
+is collapsed into scalar contributions:
+
+\[
+\Phi_{\mathrm{ufe}} := \| R \| + \alpha \| \nabla V_{\mathrm{perturb}} \|
++ \beta \| F \|.
+\]
+
+This scalar is NDH-safe and becomes part of the CSO.
+
+\newpage
+
+% ============================================================
+% 2. 8B RESONANCE ALGEBRA INPUTS
+% ============================================================
+
+\section{8B Resonance Algebra Inputs}
+
+The repaired resonance field:
+
+\[
+R(p) = (f(p), A(p), \phi(p))
+\]
+
+provides:
+
+\begin{itemize}
+  \item spectral continuity,
+  \item temporal stability envelope,
+  \item spectral tear magnitude,
+  \item modal adjacency,
+  \item kernel invariants,
+  \item holonomy bounds,
+  \item collapse surfaces,
+  \item collapse geometry,
+  \item collapse repair,
+  \item dual-compatible reprojection.
+\end{itemize}
+
+All of these are collapsed into scalar invariants:
+
+\[
+\Phi_{\mathrm{spec}} := \| R(p,t) - R(p,t-1) \|,
+\]
+\[
+\Phi_{\mathrm{stab}} := |E(p,t) - E(p,t-1)|,
+\]
+\[
+\Phi_{\mathrm{hol}} := \left| \oint_\gamma R \, dp \right|,
+\]
+\[
+\Phi_{\mathrm{kernel}} := \| \mathrm{Spec}(R(p)) \|.
+\]
+
+These scalars are NDH-safe and altitude-legal.
+
+\newpage
+
+% ============================================================
+% 3. COLLAPSE GEOMETRY
+% ============================================================
+
+\section{Collapse Geometry}
+
+Define collapse geometry:
+
+\[
+\Gamma(p) = ( \Phi_{\mathrm{spec}}, \Phi_{\mathrm{stab}},
+              \Phi_{\mathrm{kernel}}, \Phi_{\mathrm{hol}} ).
+\]
+
+Collapse surfaces:
+
+\[
+\Sigma = \{ p : \Phi_{\mathrm{spec}} > \epsilon_{\mathrm{tear}} \}.
+\]
+
+All collapse geometry is reduced to scalar form for inclusion in the CSO.
+
+\newpage
+
+% ============================================================
+% 4. CSO INTEGRATION
+% ============================================================
+
+\section{CSO Integration}
+
+The full Conceptual Signal Object is now:
+
+\begin{verbatim}
+CSO := {
+  S_sum     : ℝ,
+  O_sum     : ℝ,
+  W_sum     : ℝ,
+
+  chi_s     : ℝ,
+  chi_o     : ℝ,
+  chi_w     : ℝ,
+
+  phase     : ℝ,
+  braid     : ℝ,
+
+  composite : ℝ,
+
+  ufe_geom  : ℝ,   (* collapsed UFE v2.0 geometry *)
+  spec_geom : ℝ,   (* collapsed spectral invariants *)
+  stab_geom : ℝ,   (* collapsed stability envelope *)
+  hol_geom  : ℝ,   (* collapsed holonomy bounds *)
+  kern_geom : ℝ    (* collapsed kernel invariants *)
+}
+\end{verbatim}
+
+All fields are NDH-safe scalars.
+
+\newpage
+
+% ============================================================
+% 5. ALTITUDE COMPATIBILITY
+% ============================================================
+
+\section{Altitude Compatibility}
+
+\begin{verbatim}
+AltitudeCompatible(A6, A5)
+AltitudeCompatible(A7, A6)
+AltitudeCompatible(A8, A6)
+\end{verbatim}
+
+This integration is altitude-legal because:
+
+- all geometry is collapsed to scalars,
+- no manifold semantics are preserved,
+- invariants remain available for A7 proofs,
+- runtime correspondence (A8) uses only collapsed fields.
+
+\newpage
+
+% ============================================================
+% PROVENANCE
+% ============================================================
+
+\section*{Provenance}
+
+\begin{verbatim}
+Provenance:
+  Artifact: A6-CSO-IntegrationWith8B.tex
+  Altitude: A6
+  Compiler: Microsoft Copilot
+  Maintainer: Borealis S. Hedling
+  Location: Dublin, Ireland
+  Timestamp: 2026-10-28T10:32:00Z
+  Lineage:
+    - Integrates UFE v2.0 and 8B Resonance Algebra v2.0 into CSO
+    - Collapses all geometry into NDH-safe scalar fields
+    - Provides invariant structure for A7 proofs
+    - Supports A8 runtime correspondence and A9/A10 telemetry
+  Governance Anchor: FSFE-GOV-A6-CSO-INTEGRATION-20261028
+\end{verbatim}
+
+\end{document}
