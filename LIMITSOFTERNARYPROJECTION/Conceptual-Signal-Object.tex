@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+% Load ontology macros
+\input{citation-ontology-mac-v2.0-infused.tex}
+
+\begin{document}
+
+% ============================================================
+% HEADER
+% ============================================================
+
+\citeclass{FSFE-Definitions}
+\provenanceanchor{FSFE-A6-CSO-20261028}
+
+\begin{citationmembrane}{A6-ConceptualSignalObject}
+  \citeanchor{UnifiedFlowEquation}
+  \citeanchor{PrismaticChannels}
+  \citeanchor{ChromaticWeights}
+  \citeanchor{ManifoldPhase}
+  \citeanchor{BraidLayer}
+\end{citationmembrane}
+
+\section*{A6: Conceptual Signal Object Definition}
+
+This module defines the Conceptual Signal Object (CSO) at the A6 altitude.
+The CSO is the final altitude where conceptual geometry is represented before
+being collapsed into runtime-safe ternary signals by TernaryProjection.
+
+\newpage
+
+% ============================================================
+% 1. PRISMATIC-CHROMATIC COLLAPSE
+% ============================================================
+
+\section{Prismatic-Chromatic Collapse}
+
+\begin{verbatim}
+S_sum : ℝ    (* prismatic structural contribution *)
+O_sum : ℝ    (* prismatic orbital contribution *)
+W_sum : ℝ    (* prismatic weave contribution *)
+\end{verbatim}
+
+These values are produced by the prismatic summation Σ after chromatic weighting.
+
+\newpage
+
+% ============================================================
+% 2. CHROMATIC WEIGHTS
+% ============================================================
+
+\section{Chromatic Weights}
+
+\begin{verbatim}
+chi_s : ℝ    (* chromatic stability weight *)
+chi_o : ℝ    (* chromatic rotation weight *)
+chi_w : ℝ    (* chromatic braid-flow weight *)
+\end{verbatim}
+
+These weights originate from the chromatic manifold and encode conceptual tone.
+
+\newpage
+
+% ============================================================
+% 3. MANIFOLD PHASE COLLAPSE
+% ============================================================
+
+\section{Manifold Phase}
+
+\begin{verbatim}
+phase : ℝ    (* collapsed Φ(θ,r) manifold phase *)
+\end{verbatim}
+
+The manifold phase Φ(θ,r) is collapsed to a scalar to remain NDH-safe.
+
+\newpage
+
+% ============================================================
+% 4. BRAID-LAYER COLLAPSE
+% ============================================================
+
+\section{Braid-Layer Contribution}
+
+\begin{verbatim}
+braid : ℝ    (* collapsed Λ(b) braid-layer contribution *)
+\end{verbatim}
+
+The braid-layer operator Λ(b) is collapsed to a scalar to preserve altitude
+compatibility and NDH constraints.
+
+\newpage
+
+% ============================================================
+% 5. COMPOSITE UFE COLLAPSE
+% ============================================================
+
+\section{Composite UFE Collapse}
+
+\begin{verbatim}
+composite : ℝ    (* full UFE scalar collapse *)
+\end{verbatim}
+
+This scalar represents the complete Unified Flow Equation:
+
+UFE = Σ( Sᵢ·χₛ + Oᵢ·χₒ + Wᵢ·χ𝑤 ) · Φ(θ, r) · Λ(b)
+
+collapsed into a single NDH-safe value.
+
+\newpage
+
+% ============================================================
+% 6. FULL CSO STRUCTURE
+% ============================================================
+
+\section{Full CSO Structure}
+
+\begin{verbatim}
+CSO := {
+  S_sum     : ℝ,
+  O_sum     : ℝ,
+  W_sum     : ℝ,
+
+  chi_s     : ℝ,
+  chi_o     : ℝ,
+  chi_w     : ℝ,
+
+  phase     : ℝ,
+  braid     : ℝ,
+
+  composite : ℝ
+}
+\end{verbatim}
+
+This is the altitude-complete conceptual signal object.
+
+\newpage
+
+% ============================================================
+% 7. ALTITUDE COMPATIBILITY
+% ============================================================
+
+\section{Altitude Compatibility}
+
+\begin{verbatim}
+AltitudeCompatible(A6, A5)
+AltitudeCompatible(A7, A6)
+AltitudeCompatible(A8, A6)
+\end{verbatim}
+
+The CSO is altitude-legal because:
+
+- it collapses all geometry to NDH-safe scalars,
+- it preserves conceptual structure for A7 proofs,
+- it provides the domain for TernaryProjection at A6,
+- it supports runtime correspondence at A8.
+
+\newpage
+
+% ============================================================
+% PROVENANCE
+% ============================================================
+
+\section*{Provenance}
+
+\begin{verbatim}
+Provenance:
+  Artifact: A6-ConceptualSignalObject.tex
+  Altitude: A6
+  Compiler: Microsoft Copilot
+  Maintainer: Borealis S. Hedling
+  Location: Dublin, Ireland
+  Timestamp: 2026-10-28T08:30:00Z
+  Lineage:
+    - Defines the full Conceptual Signal Object (CSO)
+    - Preserves conceptual geometry in NDH-safe scalar form
+    - Required for TernaryProjection and A7 invariant proofs
+    - Supports A8 runtime correspondence and A9/A10 telemetry
+  Governance Anchor: FSFE-GOV-A6-CSO-20261028
+\end{verbatim}
+
+\end{document}
