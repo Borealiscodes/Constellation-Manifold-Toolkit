@@ -1,0 +1,191 @@
+\appendix
+\section*{Appendix R7: Commutative Diagrams for the NDH Operator Algebra}
+
+\subsection*{R7.0 Overview}
+
+This appendix provides commutative diagrams demonstrating that the NDH
+interpretation operator
+\[
+I_p : X_{42} \to \{c\}
+\]
+commutes with all admissible operators in the NDH algebra, including
+dimensional motion operators, field operators, tensor operators, and the
+full transformation stack. These diagrams certify the fixed-point
+invariance established in Appendix R6.
+
+\subsection*{R7.1 Preliminaries}
+
+Let $X_{42}$ be the 42-dimensional smooth manifold defined in Appendix
+R4.
+
+Let $\mathcal{O}(X_{42})$ be the class of admissible smooth operators:
+\[
+\mathcal{O}(X_{42}) = \{ A : X_{42} \to X_{42} \mid A \text{ smooth} \}.
+\]
+
+Let $E$ be the interpretive-field bundle defined in Appendix R5.
+
+Let $\mathcal{I}_{\Omega} \in \Gamma(E)$ be an interpretive-field
+section.
+
+Let $T$ be the transformation stack defined in Appendix R3.
+
+\subsection*{R7.2 Commutativity with Admissible Operators}
+
+For any $A \in \mathcal{O}(X_{42})$, the following diagram commutes:
+
+\[
+\begin{CD}
+X_{42} @>A>> X_{42} \\
+@V I_p VV @VV I_p V \\
+\{c\} @= \{c\}
+\end{CD}
+\]
+
+\textbf{Explanation.}  
+Since $I_p$ is constant:
+\[
+I_p(A(x)) = c = I_p(x),
+\]
+so the diagram commutes.
+
+\subsection*{R7.3 Commutativity with Dimensional Motion}
+
+For any dimensional motion operator $d_k : X_{42} \to X_{42}$:
+
+\[
+\begin{CD}
+X_{42} @>d_k>> X_{42} \\
+@V I_p VV @VV I_p V \\
+\{c\} @= \{c\}
+\end{CD}
+\]
+
+\textbf{Explanation.}  
+Dimensional motion does not affect interpretation:
+\[
+I_p(d_k(x)) = I_p(x).
+\]
+
+\subsection*{R7.4 Commutativity with Field Operators}
+
+For orientation, frame, context, and semantic operators:
+\[
+\mathcal{R}_{\theta},\;
+\mathcal{F}_{\Theta},\;
+\mathcal{E}_{\Phi},\;
+\mathcal{C}_{\Psi},\;
+\mathcal{S}_{\Xi} : X_{42} \to X_{42},
+\]
+each diagram commutes:
+
+\[
+\begin{CD}
+X_{42} @>A>> X_{42} \\
+@V I_p VV @VV I_p V \\
+\{c\} @= \{c\}
+\end{CD}
+\]
+where $A$ is any of the above operators.
+
+\textbf{Explanation.}  
+Field transformations preserve interpretive identity:
+\[
+I_p(A(x)) = I_p(x).
+\]
+
+\subsection*{R7.5 Commutativity with Tensor Operators}
+
+For any tensor operator $A$:
+\[
+I_p \otimes A : X_{42} \to \{c\},
+\]
+the diagram:
+
+\[
+\begin{CD}
+X_{42} @>A>> X_{42} \\
+@V I_p VV @VV I_p V \\
+\{c\} @= \{c\}
+\end{CD}
+\]
+
+commutes because:
+\[
+(I_p \otimes A)(x) = I_p(x).
+\]
+
+\subsection*{R7.6 Commutativity with Manifold Integration}
+
+For the manifold integration operator:
+\[
+I_{\mathrm{man}} : X_{42} \to X_{42},
+\]
+the diagram:
+
+\[
+\begin{CD}
+X_{42} @>I_{\mathrm{man}}>> X_{42} \\
+@V I_p VV @VV I_p V \\
+\{c\} @= \{c\}
+\end{CD}
+\]
+
+commutes because:
+\[
+I_p(I_{\mathrm{man}}(x)) = I_p(x).
+\]
+
+\subsection*{R7.7 Commutativity with the Transformation Stack}
+
+For the full transformation stack:
+\[
+T = 
+\mathcal{S}_{\Xi} \circ
+\mathcal{C}_{\Psi} \circ
+\mathcal{E}_{\Phi} \circ
+\mathcal{F}_{\Theta} \circ
+\mathcal{R}_{\theta} \circ
+I_{\mathrm{man}},
+\]
+the diagram:
+
+\[
+\begin{CD}
+X_{42} @>T>> X_{42} \\
+@V I_p VV @VV I_p V \\
+\{c\} @= \{c\}
+\end{CD}
+\]
+
+commutes because each operator in the stack commutes with $I_p$.
+
+\subsection*{R7.8 Commutativity with Interpretive Fields}
+
+For interpretive-field sections:
+\[
+\mathcal{I}_{\Omega} : X_{42} \to E,
+\]
+the diagram:
+
+\[
+\begin{CD}
+X_{42} @>T>> X_{42} @>\mathcal{I}_{\Omega}>> E \\
+@V I_p VV @. @VV I_p V \\
+\{c\} @= \{c\} @>>> \{c\}
+\end{CD}
+\]
+
+commutes because:
+\[
+I_p(\mathcal{I}_{\Omega}(T(x))) = I_p(x).
+\]
+
+\subsection*{R7.9 Summary}
+
+All admissible NDH operators commute with the interpretation operator
+$I_p$. The full operator algebra collapses to the fixed point $c$ under
+interpretation. These commutative diagrams certify the fixed-point
+invariance proven in Appendix R6.
+
+This completes Appendix R7.
