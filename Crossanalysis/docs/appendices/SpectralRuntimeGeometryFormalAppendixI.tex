@@ -1,0 +1,195 @@
+\appendix
+\section*{Appendix I: Spectral Runtime Geometry in the Altitude System}
+
+\subsection*{I.0 Overview}
+
+This appendix presents the spectral-geometric formalization of the
+altitude architecture used in the Constellation–Manifold Toolkit.
+The purpose is to express:
+\begin{itemize}
+    \item reversible geometry via spectral isometries,
+    \item curvature envelopes via spectral curvature operators,
+    \item diagnostics via spectral projections,
+    \item drift semigroup via spectral flow,
+    \item invariant extraction via spectral projectors,
+    \item steering via spectral automorphisms,
+    \item collision invariant via spectral fixed points,
+    \item altitude transitions as spectrum-preserving maps.
+\end{itemize}
+
+\subsection*{I.1 Spectral Framework}
+
+Let $X$ be a Hilbert space.
+
+Let $\mathcal{B}(X)$ denote the bounded linear operators on $X$.
+
+Let $\sigma(T)$ denote the spectrum of operator $T$.
+
+\subsection*{I.2 Altitude Spectral Operators}
+
+Altitude $A_0$ (Reversible Geometry):
+\[
+G \in \mathcal{B}(X),\quad G^{-1} \in \mathcal{B}(X),\quad
+\sigma(G^{-1}) = \sigma(G)^{-1}.
+\]
+
+Altitude $A_1$ (Conceptual Metric):
+\[
+M \in \mathcal{B}(X),\quad M = M^*,\quad \sigma(M) \subseteq \mathbb{R}_{\ge 0}.
+\]
+
+Altitude $\Phi_7$ (Curvature Envelope):
+\[
+E \in \mathcal{B}(X),\quad E = E^*,\quad E(x) = \langle Kx, x \rangle.
+\]
+
+Diagnostics $D_1, D_2, D_3$:
+\[
+C,S,\Sigma \in \mathcal{B}(X)
+\]
+are spectral projections or bounded perturbations.
+
+Altitude $\Phi_8$ (Drift Semigroup):
+\[
+D_t = e^{tA},\quad A \text{ generates a } C^0\text{-semigroup}.
+\]
+
+Altitude $\Phi_9$ (Invariant Extraction):
+\[
+I = P_{\sigma_0},
+\]
+projection onto spectral subset $\sigma_0$.
+
+Altitude $S_1$ (Steering):
+\[
+\Theta \in \mathcal{B}(X),\quad \Theta^{-1} \in \mathcal{B}(X),\quad
+\sigma(\Theta T \Theta^{-1}) = \sigma(T).
+\]
+
+Altitude $I_1$ (Collision Invariant):
+\[
+\Omega = P_{\mathrm{fix}},
+\]
+projection onto spectral fixed-point subspace.
+
+\subsection*{I.3 Spectrum-Preserving Transitions}
+
+Define altitude transition map:
+\[
+\phi_{a,b} : \mathcal{O}(a) \to \mathcal{O}(b)
+\]
+such that:
+\[
+\sigma(\phi_{a,b}(T)) = \sigma(T).
+\]
+
+Allowed transitions preserve spectrum.
+
+Forbidden transitions alter spectrum.
+
+\subsection*{I.4 Spectral Curvature Envelope}
+
+Curvature envelope operator:
+\[
+E = K,
+\]
+where $K$ is curvature operator.
+
+Purity:
+\[
+P(\Phi_7) \iff \sigma(E) \subseteq \mathbb{R}.
+\]
+
+\subsection*{I.5 Spectral Diagnostics}
+
+Diagnostics are spectral projections:
+\[
+C = P_{\mathcal{S}},\quad S = P_{\mathcal{D}},\quad
+\Sigma = P_{\mathcal{S}_{\mathrm{safe}}}.
+\]
+
+Thus:
+\[
+C^2 = C,\quad S^2 = S,\quad \Sigma^2 = \Sigma.
+\]
+
+\subsection*{I.6 Drift Semigroup as Spectral Flow}
+
+Drift semigroup:
+\[
+D_t = e^{tA}
+\]
+has spectral flow:
+\[
+\sigma(D_t) = e^{t\sigma(A)}.
+\]
+
+Semigroup property:
+\[
+D_{t+s} = D_t D_s.
+\]
+
+\subsection*{I.7 Invariant Extraction as Spectral Projector}
+
+Invariant extraction:
+\[
+I = P_{\sigma_0}
+\]
+is projection onto invariant spectral subset.
+
+Thus:
+\[
+I^2 = I.
+\]
+
+\subsection*{I.8 Steering as Spectral Automorphism}
+
+Steering:
+\[
+\Theta T \Theta^{-1}
+\]
+is a spectral automorphism:
+\[
+\sigma(\Theta T \Theta^{-1}) = \sigma(T).
+\]
+
+\subsection*{I.9 Collision Invariant as Spectral Fixed Point}
+
+Collision invariant:
+\[
+\Omega = P_{\mathrm{fix}}
+\]
+projects onto fixed-point spectral subspace:
+\[
+\Omega(\Omega(x)) = \Omega(x).
+\]
+
+\subsection*{I.10 Firewall as Spectrum-Safe Subalgebra}
+
+Define:
+\[
+\mathcal{O}_{\mathrm{safe}} =
+\{ T \in \mathcal{B}(X) \mid \sigma(T) \text{ altitude-safe} \}.
+\]
+
+Firewall:
+\[
+\phi_{a,b}(T) \in \mathcal{O}_{\mathrm{safe}}
+\iff
+T(a,b)=1.
+\]
+
+\subsection*{I.11 Final Safety Theorem}
+
+\textbf{Theorem.}  
+A state $x$ is altitude-safe if and only if:
+\[
+x \in \mathrm{Ran}(\Omega).
+\]
+
+Equivalently:
+\[
+\Omega(x)=1.
+\]
+
+This completes the spectral runtime geometry formal appendix.
