@@ -1,0 +1,175 @@
+\appendix
+\section*{Appendix R3: Operator Domain and Codomain Definitions}
+
+\subsection*{R3.0 Overview}
+
+This appendix provides formal domain and codomain specifications for all
+operators appearing in the 42D Interpretation Algebra. These definitions
+ensure that each operator is mathematically well-formed, smooth, and
+compatible with the structure of the 42-dimensional interpretation
+manifold $X_{42}$ and its associated bundle $E$.
+
+\subsection*{R3.1 The 42D Interpretation Manifold}
+
+Let $X_{42}$ be a smooth manifold of dimension $42$ with atlas
+$\mathcal{A} = \{(U_i, \varphi_i)\}$.
+
+Let $\mathrm{Diff}(X_{42})$ denote the group of diffeomorphisms on
+$X_{42}$.
+
+\subsection*{R3.2 The Interpretive Field Bundle}
+
+Let
+\[
+\pi : E \to X_{42}
+\]
+be a smooth fiber bundle whose fibers encode interpretive-field values.
+
+Sections of this bundle form:
+\[
+\Gamma(E) = \{ s : X_{42} \to E \mid \pi \circ s = \mathrm{id}_{X_{42}} \}.
+\]
+
+\subsection*{R3.3 The Interpretation Operator}
+
+Define:
+\[
+I_p : X_{42} \to \{c\},
+\]
+where $c$ is a distinguished constant.
+
+Since $\{c\}$ is a singleton, $I_p$ is smooth and trivially continuous.
+
+\subsection*{R3.4 Dimensional Motion Operators}
+
+For each coordinate axis $k \in \{1,\dots,42\}$ define:
+\[
+d_k : X_{42} \to X_{42}
+\]
+as a smooth map representing motion along axis $k$.
+
+Properties:
+\[
+d_k \in \mathrm{Diff}(X_{42}),\qquad d_k \text{ smooth}.
+\]
+
+\subsection*{R3.5 Vector Field Family}
+
+Let $\{d_{\alpha}\}$ be a family of smooth vector fields:
+\[
+d_{\alpha} : X_{42} \to TX_{42}.
+\]
+
+\subsection*{R3.6 Manifold Integration Operator}
+
+Define:
+\[
+I_{\mathrm{man}} : X_{42} \to X_{42}
+\]
+by:
+\[
+I_{\mathrm{man}}(x) = \int_{\Omega'} d_{\alpha}(x)\, d\Omega',
+\]
+where $\Omega'$ is a measurable subset of $X_{42}$.
+
+\subsection*{R3.7 Orientation Operator}
+
+Define:
+\[
+\mathcal{R}_{\theta} : X_{42} \to X_{42}
+\]
+as a smooth map parameterized by $\theta \in \Theta$, where $\Theta$ is a
+parameter space of orientations.
+
+\subsection*{R3.8 Frame Operator}
+
+Define:
+\[
+\mathcal{E}_{\Phi} : X_{42} \to X_{42}
+\]
+as a smooth map parameterized by $\Phi \in \PhiSpace$, representing frame
+transformations.
+
+\subsection*{R3.9 Context Operator}
+
+Define:
+\[
+\mathcal{C}_{\Psi} : X_{42} \to X_{42}
+\]
+as a smooth map parameterized by $\Psi \in \PsiSpace$, representing
+context-field transformations.
+
+\subsection*{R3.10 Semantic Operator}
+
+Define:
+\[
+\mathcal{S}_{\Xi} : X_{42} \to X_{42}
+\]
+as a smooth map parameterized by $\Xi \in \XiSpace$, representing
+semantic-field transformations.
+
+\subsection*{R3.11 Interpretive Field Operator}
+
+Let:
+\[
+\mathcal{I}_{\Omega} \in \Gamma(E)
+\]
+be a section of the interpretive-field bundle.
+
+Define:
+\[
+\mathcal{I}_{\Omega} : X_{42} \to E.
+\]
+
+\subsection*{R3.12 Tensor Operators}
+
+Let:
+\[
+A : X_{42} \to X_{42}
+\]
+be any smooth operator.
+
+Define the tensor product:
+\[
+I_p \otimes A : X_{42} \to \{c\}
+\]
+by:
+\[
+(I_p \otimes A)(x) = I_p(x).
+\]
+
+\subsection*{R3.13 Composition Operator}
+
+Let:
+\[
+K = A_n \circ \cdots \circ A_2 \circ A_1
+\]
+where each $A_k : X_{42} \to X_{42}$ is smooth.
+
+\subsection*{R3.14 Transformation Stack}
+
+Define:
+\[
+T = 
+\mathcal{S}_{\Xi} \circ
+\mathcal{C}_{\Psi} \circ
+\mathcal{E}_{\Phi} \circ
+\mathcal{F}_{\Theta} \circ
+\mathcal{R}_{\theta} \circ
+I_{\mathrm{man}}.
+\]
+
+All operators in the stack are smooth maps:
+\[
+T : X_{42} \to X_{42}.
+\]
+
+\subsection*{R3.15 Fixed-Point Invariance Condition}
+
+The interpretation operator satisfies:
+\[
+I_p(\mathcal{I}_{\Omega}(T(x))) = I_p(x)
+\]
+for all $x \in X_{42}$.
+
+This completes Appendix R3.
