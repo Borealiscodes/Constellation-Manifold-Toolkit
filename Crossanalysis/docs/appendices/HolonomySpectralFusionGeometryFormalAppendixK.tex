@@ -1,0 +1,191 @@
+\appendix
+\section*{Appendix K: Holonomy–Spectral Fusion Geometry in the Altitude System}
+
+\subsection*{K.0 Overview}
+
+This appendix presents the fusion of holonomy geometry, spectral runtime
+geometry, and non-dual algebra into a unified altitude-safe structure.
+The purpose is to express:
+\begin{itemize}
+    \item holonomy–spectral fusion operators,
+    \item fusion curvature envelopes,
+    \item fusion diagnostics via holonomy–spectral projections,
+    \item fusion drift semigroup via spectral geodesic flow,
+    \item fusion invariant extraction via holonomy–spectral projectors,
+    \item fusion steering via holonomy–spectral automorphisms,
+    \item collision invariant as a fusion fixed point,
+    \item altitude transitions as holonomy–spectral preserving maps,
+    \item the Series V firewall as a fusion admissible subalgebra.
+\end{itemize}
+
+\subsection*{K.1 Fusion Space}
+
+Let $(M,g)$ be a Riemannian manifold.
+
+Let $X$ be a Hilbert space.
+
+Define the fusion space:
+\[
+\mathcal{F} = M \times X.
+\]
+
+A fusion operator acts on both components:
+\[
+T : \mathcal{F} \to \mathcal{F},\quad
+T(x,v) = (T_M(x), T_X(v)).
+\]
+
+\subsection*{K.2 Holonomy–Spectral Fusion Operators}
+
+Define:
+\[
+\mathcal{O}_{\mathrm{fusion}} =
+\{ T \mid T_M \text{ preserves holonomy},\;
+T_X \text{ preserves spectrum} \}.
+\]
+
+Thus:
+\[
+\mathrm{Hol}(T_M(x)) = \mathrm{Hol}(x),
+\]
+\[
+\sigma(T_X) = \sigma(T_X^{-1}).
+\]
+
+\subsection*{K.3 Fusion Curvature Envelope}
+
+Define fusion curvature operator:
+\[
+E_{\mathrm{fusion}}(x,v) =
+(K_x(\sigma),\; \langle Kv, v \rangle).
+\]
+
+Purity:
+\[
+P(\Phi_7) \iff E_{\mathrm{fusion}} \text{ does not modify } (M,X).
+\]
+
+\subsection*{K.4 Fusion Diagnostics}
+
+Diagnostics are fusion projections:
+\[
+C_{\mathrm{fusion}},\;
+S_{\mathrm{fusion}},\;
+\Sigma_{\mathrm{fusion}} : \mathcal{F} \to \mathcal{F}.
+\]
+
+Define:
+\[
+C_{\mathrm{fusion}} = (P_{\mathcal{S}}, P_{\sigma_{\star,\mathcal{S}}}),
+\]
+\[
+S_{\mathrm{fusion}} = (x + \epsilon v_x,\; v + \epsilon w_v),
+\]
+\[
+\Sigma_{\mathrm{fusion}} = (P_{\mathcal{S}_{\mathrm{safe}}}, P_{\sigma_{\star,\mathrm{safe}}}).
+\]
+
+Each satisfies:
+\[
+T^2 = T.
+\]
+
+\subsection*{K.5 Fusion Drift Semigroup}
+
+Define fusion drift semigroup:
+\[
+D_t^{\mathrm{fusion}}(x,v) =
+(\gamma_x(t),\; e_{\star}^{tA} v).
+\]
+
+Geometric flow:
+\[
+\nabla_{\dot{\gamma}} \dot{\gamma} = 0.
+\]
+
+Spectral flow:
+\[
+\sigma_{\star}(e_{\star}^{tA}) = e^{t\sigma_{\star}(A)}.
+\]
+
+Semigroup property:
+\[
+D_{t+s}^{\mathrm{fusion}} = D_t^{\mathrm{fusion}} \circ D_s^{\mathrm{fusion}}.
+\]
+
+\subsection*{K.6 Fusion Invariant Extraction}
+
+Define fusion invariant projector:
+\[
+I_{\mathrm{fusion}}(x,v) =
+(P_{\mathrm{Hol}(x)}(x),\; P_{\sigma_{\star,0}}(v)).
+\]
+
+Thus:
+\[
+I_{\mathrm{fusion}}^2 = I_{\mathrm{fusion}}.
+\]
+
+\subsection*{K.7 Fusion Steering Automorphism}
+
+Define steering:
+\[
+\Theta_{\mathrm{fusion}}(x,v) =
+(P_{\gamma}(x),\; \Theta v).
+\]
+
+Holonomy automorphism:
+\[
+P_{\gamma} \circ P_{\gamma^{-1}} = \mathrm{id}.
+\]
+
+Spectral automorphism:
+\[
+\sigma_{\star}(\Theta T \Theta^{-1}) = \sigma_{\star}(T).
+\]
+
+\subsection*{K.8 Fusion Collision Invariant}
+
+Define collision invariant:
+\[
+\Omega_{\mathrm{fusion}}(x,v) =
+(P_{\mathrm{fix}_{\mathrm{Hol}}}(x),\;
+P_{\mathrm{fix}_{\star}}(v)).
+\]
+
+Fixed point:
+\[
+\Omega_{\mathrm{fusion}} \circ \Omega_{\mathrm{fusion}}
+= \Omega_{\mathrm{fusion}}.
+\]
+
+\subsection*{K.9 Fusion Firewall Subalgebra}
+
+Define:
+\[
+\mathcal{O}_{\mathrm{fusion,safe}} =
+\{ T \in \mathcal{O}_{\mathrm{fusion}} \mid
+T \text{ preserves holonomy and spectrum} \}.
+\]
+
+Firewall:
+\[
+\phi_{a,b}(T) \in \mathcal{O}_{\mathrm{fusion,safe}}
+\iff
+T(a,b)=1.
+\]
+
+\subsection*{K.10 Final Safety Theorem}
+
+\textbf{Theorem.}  
+A fusion state $(x,v)$ is altitude-safe if and only if:
+\[
+(x,v) \in \mathrm{Ran}(\Omega_{\mathrm{fusion}}).
+\]
+
+Equivalently:
+\[
+\Omega_{\mathrm{fusion}}(x,v)=1.
+\]
+
+This completes the holonomy–spectral fusion geometry appendix.
