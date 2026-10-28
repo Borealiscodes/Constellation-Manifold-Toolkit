@@ -1,0 +1,161 @@
+\appendix
+\section*{Appendix R8: NDH Resonance Visualization Formalism}
+
+\subsection*{R8.0 Overview}
+
+This appendix formalizes the geometric and algebraic mechanisms by which
+the NDH 42D interpretation manifold $X_{42}$ produces stable, coherent,
+oscillatory structures when projected into ternary visualization engines.
+These resonance artifacts arise from the fixed-point invariance of the
+interpretation operator $I_p$ and the ternary-closed structure of the
+NDH operator algebra.
+
+\subsection*{R8.1 Resonance Fields on the 42D Manifold}
+
+Let $X_{42}$ be the 42-dimensional interpretation manifold defined in
+Appendix R4.
+
+Let $\mathfrak{X}(X_{42})$ denote the space of smooth vector fields on
+$X_{42}$.
+
+Define the resonance-field family:
+\[
+\mathcal{R} = \{ r_{\alpha} \in \mathfrak{X}(X_{42}) \mid \alpha \in A \},
+\]
+where each $r_{\alpha}$ satisfies:
+
+\begin{enumerate}
+    \item smoothness: $r_{\alpha}$ is $C^\infty$,
+    \item boundedness: $\|r_{\alpha}(x)\| < K$ for some constant $K$,
+    \item ternary closure:
+    \[
+    r_{\alpha} \otimes r_{\beta} \otimes r_{\gamma} \in \mathcal{R}.
+    \]
+\end{enumerate}
+
+These fields generate resonance trajectories on $X_{42}$.
+
+\subsection*{R8.2 Resonance Flow}
+
+Define the resonance flow $\Phi_{\alpha} : X_{42} \times \mathbb{R} \to X_{42}$ by:
+\[
+\frac{d}{dt} \Phi_{\alpha}(x,t) = r_{\alpha}(\Phi_{\alpha}(x,t)),
+\qquad \Phi_{\alpha}(x,0) = x.
+\]
+
+The flow is well-defined because $r_{\alpha}$ is smooth and bounded.
+
+\subsection*{R8.3 Projection into Ternary Visualization Space}
+
+Let $V_3$ be a ternary visualization space (e.g., a 3D or 4D rendering
+engine with ternary tensor collapse).
+
+Define a projection:
+\[
+\Pi : X_{42} \to V_3
+\]
+satisfying:
+
+\begin{enumerate}
+    \item smoothness,
+    \item surjectivity onto the rendered domain,
+    \item ternary compatibility:
+    \[
+    \Pi(x \otimes y \otimes z) = \Pi(x) \otimes_3 \Pi(y) \otimes_3 \Pi(z).
+    \]
+\end{enumerate}
+
+\subsection*{R8.4 Resonance Visualization Map}
+
+Define the resonance visualization map:
+\[
+\mathcal{V}_{\alpha}(x,t) = \Pi(\Phi_{\alpha}(x,t)).
+\]
+
+This map produces the rendered geometry.
+
+\subsection*{R8.5 Fixed-Point Collapse Under Interpretation}
+
+From Appendix R6, the interpretation operator satisfies:
+\[
+I_p(\Phi_{\alpha}(x,t)) = c.
+\]
+
+Thus the resonance flow collapses to the fixed point under interpretation.
+
+However, the projection $\Pi$ is applied \emph{before} interpretation in
+visualization engines, so the rendered geometry is:
+\[
+\mathcal{V}_{\alpha}(x,t) = \Pi(\Phi_{\alpha}(x,t)),
+\]
+which is nontrivial.
+
+\subsection*{R8.6 Stability of Resonance Geometry}
+
+Let $A \in \mathcal{O}(X_{42})$ be any admissible operator.
+
+Then:
+\[
+\Phi_{\alpha}(A(x),t) = A(\Phi_{\alpha}(x,t)).
+\]
+
+Applying $\Pi$:
+\[
+\mathcal{V}_{\alpha}(A(x),t)
+= \Pi(A(\Phi_{\alpha}(x,t)))
+= \Pi(\Phi_{\alpha}(x,t)).
+\]
+
+Thus resonance geometry is invariant under all NDH operators.
+
+\subsection*{R8.7 Oscillatory Behavior}
+
+Define the resonance frequency:
+\[
+\omega_{\alpha}(x) = \| r_{\alpha}(x) \|.
+\]
+
+Since $r_{\alpha}$ is bounded:
+\[
+0 < \omega_{\alpha}(x) < K,
+\]
+the resonance flow produces bounded oscillatory motion in $V_3$.
+
+This yields:
+
+\begin{itemize}
+    \item pulsing nodes,
+    \item coherent oscillation,
+    \item stable attractors,
+    \item energy spreading,
+    \item constellation formation.
+\end{itemize}
+
+\subsection*{R8.8 Ternary Collapse and Visualization}
+
+Ternary visualization engines apply a collapse operator:
+\[
+C_3 : V_3 \to V_3,
+\]
+satisfying:
+\[
+C_3(u \otimes_3 v \otimes_3 w) = C_3(u).
+\]
+
+Thus:
+\[
+C_3(\mathcal{V}_{\alpha}(x,t)) = C_3(\Pi(\Phi_{\alpha}(x,t)))
+\]
+produces stable ternary resonance artifacts.
+
+\subsection*{R8.9 Summary}
+
+The NDH 42D interpretation manifold supports smooth, bounded, ternary-
+closed resonance fields. Their flows, when projected into ternary
+visualization spaces, produce stable oscillatory structures. These
+structures appear as pulsing spheres, shimmering nodes, and coherent
+constellations. Interpretation collapses the resonance to the fixed point
+$c$, but visualization occurs prior to collapse, yielding the observed
+geometry.
+
+This completes Appendix R8.
