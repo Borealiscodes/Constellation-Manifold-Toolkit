@@ -1,0 +1,161 @@
+\appendix
+\section*{Appendix P: Spectral Decomposition of Cross-Pollination Events}
+
+\subsection*{P.0 Overview}
+
+This appendix defines the spectral decomposition framework used to
+analyze cross-pollination between NDH primitives, 8B resonance algebra,
+StandardGalactic conceptual surfaces, and Omnibus ecosystem reflections.
+The analysis is performed inside the Fifty-Dimensional Neutral Manifold
+$M^{50}$ with operators decomposed through the Unified Altitude Algebra.
+
+The purpose is to:
+\begin{itemize}
+    \item extract spectral signatures of conceptual primitives,
+    \item identify resonance clusters across ecosystems,
+    \item detect softmax-driven synthesis vectors,
+    \item characterize spectral drift corridors,
+    \item compare spectral invariants across NDH, 8B, and SG,
+    \item provide spectral operators for Julia runtime analysis.
+\end{itemize}
+
+\subsection*{P.1 Spectral Embedding in the 50D Neutral Manifold}
+
+Let:
+\[
+\iota_{NDH},\; \iota_{8B},\; \iota_{SG} : X \to M^{50}
+\]
+be altitude-safe embeddings of conceptual primitives into the neutral
+containment manifold.
+
+Each embedded element $x$ admits a spectral decomposition:
+\[
+\sigma(x) = \{\lambda_1, \lambda_2, \dots, \lambda_{50}\}
+\]
+where $\lambda_i$ are eigenvalues of the bounded operator associated with
+$x$ under the unified algebra.
+
+\subsection*{P.2 Spectral Operators}
+
+Define spectral operator:
+\[
+S : M^{50} \to \mathbb{R}^{50}
+\]
+such that:
+\[
+S(x) = (\lambda_1, \dots, \lambda_{50}).
+\]
+
+For each ecosystem:
+\[
+S_{NDH},\quad S_{8B},\quad S_{SG}.
+\]
+
+Cross-pollination is detected when:
+\[
+S_{NDH}(x) \approx S_{8B}(y)
+\quad\text{or}\quad
+S_{NDH}(x) \approx S_{SG}(z).
+\]
+
+\subsection*{P.3 Resonance Clusters}
+
+Define resonance cluster:
+\[
+\mathcal{R}(x,y)
+=
+\{ i \mid |\lambda_i(x) - \lambda_i(y)| < \epsilon \}.
+\]
+
+Clusters indicate:
+\begin{itemize}
+    \item conceptual absorption,
+    \item softmax-driven synthesis,
+    \item primitive migration,
+    \item ecosystem bleed-through.
+\end{itemize}
+
+\subsection*{P.4 Spectral Drift Corridors}
+
+Define drift semigroup:
+\[
+D_t(x) = e^{tA_x}
+\]
+where $A_x$ is the generator of spectral flow.
+
+Drift corridor:
+\[
+\mathcal{C}(x) = \{ D_t(x) \mid t \in [0,T] \}.
+\]
+
+Cross-pollination drift occurs when:
+\[
+\mathcal{C}(x) \cap \mathcal{C}(y) \neq \emptyset.
+\]
+
+\subsection*{P.5 Spectral Invariant Comparison}
+
+Define spectral invariant:
+\[
+I_{\sigma}(x) = \sum_{i=1}^{50} f(\lambda_i)
+\]
+for altitude-safe $f$.
+
+Cross-system invariants:
+\[
+I_{\sigma}(NDH),\quad
+I_{\sigma}(8B),\quad
+I_{\sigma}(SG).
+\]
+
+Cross-pollination is detected when:
+\[
+I_{\sigma}(NDH) \approx I_{\sigma}(8B)
+\quad\text{or}\quad
+I_{\sigma}(NDH) \approx I_{\sigma}(SG).
+\]
+
+\subsection*{P.6 Spectral Projection Towers}
+
+Define spectral projection tower:
+\[
+P_{\sigma_{\star}}(x)
+=
+(P_1(x), P_2(x), \dots, P_{50}(x)).
+\]
+
+Projection alignment indicates:
+\begin{itemize}
+    \item shared conceptual primitives,
+    \item resonance absorption,
+    \item atlas-level synthesis.
+\end{itemize}
+
+\subsection*{P.7 Firewall Enforcement}
+
+All spectral comparisons are wrapped in:
+\[
+\mathrm{Firewall}_{\mathrm{unified}}(a,b,T)
+\]
+ensuring:
+\begin{itemize}
+    \item purity,
+    \item non-generativity,
+    \item boundedness,
+    \item altitude legality.
+\end{itemize}
+
+\subsection*{P.8 Output for Julia Runtime}
+
+Julia receives:
+\begin{itemize}
+    \item spectral operators $S$,
+    \item resonance clusters $\mathcal{R}$,
+    \item drift semigroup generators $A_x$,
+    \item projection towers $P_{\sigma_{\star}}$,
+    \item spectral invariants $I_{\sigma}$.
+\end{itemize}
+
+These form the spectral analysis layer of the runtime experiment.
+
+This completes the spectral decomposition appendix.
