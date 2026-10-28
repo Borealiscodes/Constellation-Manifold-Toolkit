@@ -1,0 +1,224 @@
+\appendix
+\section*{Appendix H: Holonomy and Projection Geometry in the Altitude System}
+
+\subsection*{H.0 Overview}
+
+This appendix presents the geometric-topological formalization of the
+altitude architecture used in the Constellation–Manifold Toolkit.
+The purpose is to express:
+\begin{itemize}
+    \item reversible geometry via holonomy groups,
+    \item curvature envelopes via sectional curvature,
+    \item diagnostics via geometric projections,
+    \item drift semigroup via geodesic flow,
+    \item invariant extraction via holonomy-invariant projections,
+    \item steering via parallel transport automorphisms,
+    \item collision invariant via geometric fixed points,
+    \item altitude transitions as holonomy-preserving maps.
+\end{itemize}
+
+\subsection*{H.1 Manifold Structure}
+
+Let $(M,g)$ be a smooth Riemannian manifold with metric $g$.
+
+Let $\nabla$ denote the Levi-Civita connection.
+
+Let $\mathrm{Hol}(p)$ denote the holonomy group at point $p \in M$.
+
+\subsection*{H.2 Altitude Geometry}
+
+Altitude $A_0$ (Reversible Geometry):
+\[
+G : M \to M,\quad G \text{ is a diffeomorphism},\quad G^{-1} \text{ exists}.
+\]
+
+Altitude $A_1$ (Conceptual Metric):
+\[
+M(x,y) = g_x(v,w) \quad \text{for } v,w \in T_x M.
+\]
+
+Altitude $\Phi_7$ (Curvature Envelope):
+\[
+E(x) = K_x(\sigma),
+\]
+where $K_x(\sigma)$ is sectional curvature of plane $\sigma \subset T_x M$.
+
+Diagnostics $D_1, D_2, D_3$:
+\[
+C,S,\Sigma : M \to M
+\]
+are geometric projections or deformations.
+
+Altitude $\Phi_8$ (Drift Semigroup):
+\[
+D_t(x) = \gamma_x(t),
+\]
+where $\gamma_x$ is a geodesic with initial condition $x$.
+
+Altitude $\Phi_9$ (Invariant Extraction):
+\[
+I(x) = \pi_{\mathrm{Hol}(x)}(x),
+\]
+a projection onto holonomy-invariant quantities.
+
+Altitude $S_1$ (Steering):
+\[
+\Theta(x) = P_{\gamma}(x),
+\]
+parallel transport along curve $\gamma$.
+
+Altitude $I_1$ (Collision Invariant):
+\[
+\Omega(x) \in \{0,1\}
+\]
+is a fixed point of a holonomy-invariant projection.
+
+\subsection*{H.3 Holonomy-Preserving Transitions}
+
+Define altitude transition map:
+\[
+\phi_{a,b} : \mathcal{O}(a) \to \mathcal{O}(b)
+\]
+such that:
+\[
+\phi_{a,b}(T) \text{ preserves holonomy}.
+\]
+
+Allowed transitions satisfy:
+\[
+\mathrm{Hol}(x) = \mathrm{Hol}(\phi_{a,b}(x)).
+\]
+
+Forbidden transitions violate holonomy preservation.
+
+\subsection*{H.4 Curvature Envelope Formalism}
+
+Curvature envelope:
+\[
+E(x) = K_x(\sigma)
+\]
+is altitude-pure because:
+\[
+E : M \to \mathbb{R}
+\]
+does not modify $M$.
+
+Purity:
+\[
+P(\Phi_7) \iff E \text{ is curvature-only}.
+\]
+
+\subsection*{H.5 Projection Geometry for Diagnostics}
+
+Diagnostics are geometric projections:
+\[
+C,S,\Sigma : M \to M.
+\]
+
+Collapse:
+\[
+C(x) = \pi_{\mathcal{S}}(x)
+\]
+onto a submanifold $\mathcal{S}$.
+
+Soft deformation:
+\[
+S(x) = x + \epsilon v_x
+\]
+for small $\epsilon$.
+
+Safety:
+\[
+\Sigma(x) = 
+\begin{cases}
+1, & x \in \mathcal{S}_{\mathrm{safe}}, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+\subsection*{H.6 Drift Semigroup as Geodesic Flow}
+
+Define geodesic flow:
+\[
+D_t(x) = \gamma_x(t),
+\]
+where:
+\[
+\nabla_{\dot{\gamma}} \dot{\gamma} = 0.
+\]
+
+Semigroup property:
+\[
+D_{t+s}(x) = D_t(D_s(x)).
+\]
+
+\subsection*{H.7 Holonomy-Invariant Projection}
+
+Invariant extraction:
+\[
+I(x) = \pi_{\mathrm{Hol}(x)}(x)
+\]
+is a projection onto holonomy-invariant quantities.
+
+Thus:
+\[
+I(I(x)) = I(x).
+\]
+
+\subsection*{H.8 Steering as Parallel Transport Automorphism}
+
+Steering:
+\[
+\Theta(x) = P_{\gamma}(x)
+\]
+is parallel transport along curve $\gamma$.
+
+Automorphism:
+\[
+\Theta^{-1} \circ \Theta = \mathrm{id}.
+\]
+
+\subsection*{H.9 Collision Invariant as Fixed Point}
+
+Collision invariant:
+\[
+\Omega(x) = 
+\begin{cases}
+1, & x \text{ is holonomy-safe}, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+Fixed point:
+\[
+\Omega(\Omega(x)) = \Omega(x).
+\]
+
+\subsection*{H.10 Firewall as Holonomy-Safe Submanifold}
+
+Define:
+\[
+M_{\mathrm{safe}} = \{ x \in M \mid \Omega(x)=1 \}.
+\]
+
+Firewall:
+\[
+\phi_{a,b}(x) \in M_{\mathrm{safe}}
+\iff
+T(a,b)=1.
+\]
+
+\subsection*{H.11 Final Safety Theorem}
+
+\textbf{Theorem.}  
+A state $x$ is altitude-safe if and only if:
+\[
+x \in M_{\mathrm{safe}}.
+\]
+
+Equivalently:
+\[
+\Omega(x)=1.
+\]
+
+This completes the holonomy and projection geometry formal appendix.
