@@ -1,0 +1,188 @@
+\appendix
+\section*{Appendix J: Non-Dual Algebra and Holonomy-Based Projection Geometry}
+
+\subsection*{J.0 Overview}
+
+This appendix presents the non-dual algebraic formalization of the
+altitude architecture used in the Constellation–Manifold Toolkit.
+The purpose is to express:
+\begin{itemize}
+    \item non-dual operator algebra,
+    \item holonomy-indexed projection towers,
+    \item altitude-indexed algebraic strata,
+    \item non-dual drift semigroup,
+    \item non-dual invariant extraction,
+    \item non-dual steering automorphisms,
+    \item collision invariant as a non-dual fixed point,
+    \item altitude transitions as holonomy-preserving non-dual homomorphisms,
+    \item the Series V firewall as a non-dual admissible subalgebra.
+\end{itemize}
+
+\subsection*{J.1 Non-Dual Algebra}
+
+Let $X$ be a Hilbert space.
+
+Define the non-dual algebra:
+\[
+\mathcal{A}_{\mathrm{nd}}(X)
+\]
+with binary operation $\star$ satisfying:
+\[
+T_1 \star T_2 \neq T_2 \star T_1,
+\]
+\[
+T_1 \star T_2 \neq T_1 T_2,
+\]
+\[
+(T_1 \star T_2)^\dagger \neq T_2^\dagger \star T_1^\dagger.
+\]
+
+Thus $\mathcal{A}_{\mathrm{nd}}$ is:
+\begin{itemize}
+    \item non-commutative,
+    \item non-associative,
+    \item non-dual (adjoint does not reverse order),
+    \item holonomy-indexed.
+\end{itemize}
+
+\subsection*{J.2 Holonomy-Indexed Projection Tower}
+
+Let $(M,g)$ be a Riemannian manifold with holonomy group $\mathrm{Hol}(p)$.
+
+Define projection tower:
+\[
+\mathcal{P}_{\mathrm{Hol}} =
+\{ P_{\mathrm{Hol}(p)}, P_{\mathrm{Hol}^2(p)}, \dots \}.
+\]
+
+Each projection satisfies:
+\[
+P_{\mathrm{Hol}^k}^2 = P_{\mathrm{Hol}^k}.
+\]
+
+Altitude transitions preserve holonomy index:
+\[
+\phi_{a,b}(P_{\mathrm{Hol}^k}) = P_{\mathrm{Hol}^k}.
+\]
+
+\subsection*{J.3 Altitude Algebraic Strata}
+
+Define altitude-indexed strata:
+\[
+\mathcal{A}_{\mathrm{nd}}(A_0),\;
+\mathcal{A}_{\mathrm{nd}}(A_1),\;
+\dots,\;
+\mathcal{A}_{\mathrm{nd}}(I_1)
+\subseteq \mathcal{A}_{\mathrm{nd}}(X).
+\]
+
+Each stratum satisfies:
+\[
+\mathcal{A}_{\mathrm{nd}}(a) \star \mathcal{A}_{\mathrm{nd}}(a)
+\subseteq \mathcal{A}_{\mathrm{nd}}(a).
+\]
+
+Purity:
+\[
+P(a) \iff \mathcal{A}_{\mathrm{nd}}(a) \text{ is closed under } \star.
+\]
+
+Non-generativity:
+\[
+N(a) \iff \mathrm{span}(\mathcal{A}_{\mathrm{nd}}(a))
+= \mathrm{span}(\{\mathrm{id}_X\}).
+\]
+
+Boundedness:
+\[
+B(a) \iff \|T\| < C_a \quad \forall T \in \mathcal{A}_{\mathrm{nd}}(a).
+\]
+
+\subsection*{J.4 Non-Dual Drift Semigroup}
+
+Define non-dual drift semigroup:
+\[
+D_t = e_{\star}^{tA}
+\]
+where $e_{\star}$ is the non-dual exponential:
+\[
+e_{\star}^{tA} = \sum_{n=0}^{\infty} \frac{t^n}{n!} A^{\star n}.
+\]
+
+Semigroup property:
+\[
+D_{t+s} = D_t \star D_s.
+\]
+
+Spectral flow:
+\[
+\sigma_{\star}(D_t) = e^{t\sigma_{\star}(A)}.
+\]
+
+\subsection*{J.5 Non-Dual Invariant Extraction}
+
+Invariant extraction:
+\[
+I = P_{\sigma_{\star,0}}
+\]
+is projection onto non-dual invariant spectral subset.
+
+Thus:
+\[
+I \star I = I.
+\]
+
+\subsection*{J.6 Non-Dual Steering Automorphism}
+
+Steering:
+\[
+\Theta T \Theta^{-1}
+\]
+is a non-dual automorphism:
+\[
+\sigma_{\star}(\Theta T \Theta^{-1}) = \sigma_{\star}(T).
+\]
+
+\subsection*{J.7 Collision Invariant as Non-Dual Fixed Point}
+
+Collision invariant:
+\[
+\Omega = P_{\mathrm{fix}_{\star}}
+\]
+projects onto non-dual fixed-point spectral subspace.
+
+Fixed point:
+\[
+\Omega \star \Omega = \Omega.
+\]
+
+\subsection*{J.8 Non-Dual Firewall Subalgebra}
+
+Define:
+\[
+\mathcal{A}_{\mathrm{nd,safe}} =
+\{ T \in \mathcal{A}_{\mathrm{nd}}(X) \mid
+\sigma_{\star}(T) \text{ altitude-safe} \}.
+\]
+
+Firewall:
+\[
+\phi_{a,b}(T) \in \mathcal{A}_{\mathrm{nd,safe}}
+\iff
+T(a,b)=1.
+\]
+
+\subsection*{J.9 Final Safety Theorem}
+
+\textbf{Theorem.}  
+A state $x$ is altitude-safe if and only if:
+\[
+x \in \mathrm{Ran}(\Omega).
+\]
+
+Equivalently:
+\[
+\Omega(x)=1.
+\]
+
+This completes the non-dual algebra and holonomy-based projection geometry appendix.
