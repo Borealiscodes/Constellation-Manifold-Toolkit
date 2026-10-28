@@ -1,0 +1,212 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+% Load ontology macros
+\input{citation-ontology-mac-v2.0-infused.tex}
+
+\begin{document}
+
+% ============================================================
+% HEADER
+% ============================================================
+
+\citeclass{FSFE-Correspondence}
+\provenanceanchor{FSFE-A8-RUNTIMEOPCORRESPONDENCE-20261028}
+
+\begin{citationmembrane}{A8-RuntimeOperatorCorrespondence}
+  \citeanchor{ConceptualSignalObject}
+  \citeanchor{TernaryProjection}
+  \citeanchor{OperatorDynamics}
+  \citeanchor{NDH-Safety}
+  \citeanchor{RuntimeCorrespondence}
+\end{citationmembrane}
+
+\section*{A8: Runtime Operator Correspondence}
+
+This module defines the A8 correspondence between conceptual operators
+(derived from the CSO and UFE v2.0 geometry) and runtime operators that act
+on NDH-safe ternary signals. No geometric semantics are preserved; only
+operator-level behavior is reconstructed.
+
+\newpage
+
+% ============================================================
+% 1. RUNTIME SIGNAL INPUT
+% ============================================================
+
+\section{Runtime Signal Input}
+
+Let:
+
+\begin{verbatim}
+TernarySignal := (T1, T2, T3)
+\end{verbatim}
+
+where:
+
+\begin{verbatim}
+(T1, T2, T3) = TernaryProjection(CSO)
+\end{verbatim}
+
+This is the only input available at runtime.  
+All conceptual geometry has already been collapsed at A6 and proven safe at A7.
+
+\newpage
+
+% ============================================================
+% 2. RUNTIME OPERATOR STATE
+% ============================================================
+
+\section{Runtime Operator State}
+
+Let:
+
+\begin{verbatim}
+RuntimeOp := {
+  mode      : ModeState,
+  stability : ℝ,
+  bias      : ℝ
+}
+\end{verbatim}
+
+This state evolves according to ternary signals and operator dynamics.
+
+\newpage
+
+% ============================================================
+% 3. CORRESPONDENCE OPERATOR
+% ============================================================
+
+\section{Correspondence Operator}
+
+Define the runtime correspondence operator:
+
+\begin{verbatim}
+Corr(TernarySignal, RuntimeOp) : RuntimeOp :=
+{
+  mode      := ModeUpdate(T1, T2, T3, RuntimeOp.mode),
+  stability := StabilityUpdate(T1, T2, T3, RuntimeOp.stability),
+  bias      := BiasUpdate(T1, T2, T3, RuntimeOp.bias)
+}.
+\end{verbatim}
+
+This operator reconstructs behavior from ternary signals without referencing
+any conceptual geometry.
+
+\newpage
+
+% ============================================================
+% 4. MODE UPDATE
+% ============================================================
+
+\section{Mode Update}
+
+\begin{verbatim}
+ModeUpdate(T1, T2, T3, m) :=
+  match (T1, T2, T3) with
+  | (POS, _, _) => ModeStructural(m)
+  | (_, POS, _) => ModeOrbital(m)
+  | (_, _, POS) => ModeWeave(m)
+  | _           => ModeNeutral(m)
+  end.
+\end{verbatim}
+
+This corresponds to conceptual operator activation without preserving geometry.
+
+\newpage
+
+% ============================================================
+% 5. STABILITY UPDATE
+% ============================================================
+
+\section{Stability Update}
+
+\begin{verbatim}
+StabilityUpdate(T1, T2, T3, s) :=
+  s + α1·Indicator(T1 = POS)
+      + α2·Indicator(T2 = POS)
+      + α3·Indicator(T3 = POS).
+\end{verbatim}
+
+This is the runtime analogue of susceptibility coefficients (α, β) in UFE v2.0.
+
+\newpage
+
+% ============================================================
+% 6. BIAS UPDATE
+% ============================================================
+
+\section{Bias Update}
+
+\begin{verbatim}
+BiasUpdate(T1, T2, T3, b) :=
+  b + β1·Indicator(T1 = NEG)
+      + β2·Indicator(T2 = NEG)
+      + β3·Indicator(T3 = NEG).
+\end{verbatim}
+
+This corresponds to external forcing (F_{ij}) in UFE v2.0, collapsed to runtime.
+
+\newpage
+
+% ============================================================
+% 7. ALTITUDE COMPATIBILITY
+% ============================================================
+
+\section{Altitude Compatibility}
+
+\begin{verbatim}
+AltitudeCompatible(A8, A7)
+AltitudeCompatible(A8, A6)
+AltitudeCompatible(A9, A8)
+\end{verbatim}
+
+A8 is allowed to reference:
+
+- A6 definitions (CSO, TernaryProjection)
+- A7 proofs (collapse-safety, NDH-safety)
+
+and is required by A9/A10 telemetry.
+
+\newpage
+
+% ============================================================
+% 8. NO GEOMETRIC SEMANTICS PRESERVED
+% ============================================================
+
+\section{Semantic Non-Preservation}
+
+\begin{verbatim}
+∀ c : CSO,
+  ¬ SemanticPreserved(c, TernaryProjection(c)).
+\end{verbatim}
+
+This enforces the LIMITS OF TERNARY PROJECTION constraint.
+
+\newpage
+
+% ============================================================
+% PROVENANCE
+% ============================================================
+
+\section*{Provenance}
+
+\begin{verbatim}
+Provenance:
+  Artifact: A8-RuntimeOperatorCorrespondence.tex
+  Altitude: A8
+  Compiler: Microsoft Copilot
+  Maintainer: Borealis S. Hedling
+  Location: Dublin, Ireland
+  Timestamp: 2026-10-28T08:50:00Z
+  Lineage:
+    - Defines runtime correspondence operator
+    - Maps ternary signals to runtime operator evolution
+    - Respects NDH constraints and semantic non-preservation
+    - Bridges A6/A7 conceptual geometry to A9/A10 telemetry
+  Governance Anchor: FSFE-GOV-A8-RUNTIMEOPCORRESPONDENCE-20261028
+\end{verbatim}
+
+\end{document}
