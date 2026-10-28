@@ -1,0 +1,271 @@
+\appendix
+\section*{Appendix M: Runtime Binding Specification (Lean ↔ Julia ↔ Unified Algebra)}
+
+\subsection*{M.0 Overview}
+
+This appendix presents the full runtime binding specification connecting:
+\begin{itemize}
+    \item Lean altitude proofs (Appendix B),
+    \item Julia runtime enforcement (Appendix C),
+    \item Unified Altitude Algebra (Appendix L).
+\end{itemize}
+
+The purpose is to define:
+\begin{itemize}
+    \item altitude-indexed runtime types,
+    \item proof-to-runtime binding,
+    \item unified algebra execution semantics,
+    \item firewall admissibility conditions,
+    \item runtime invariant propagation,
+    \item altitude-safe execution pipeline.
+\end{itemize}
+
+\subsection*{M.1 Runtime Altitude Types}
+
+Define runtime altitude type:
+\[
+\mathrm{Alt}_{\mathrm{rt}} =
+\{A_0, A_1, \Phi_7, D_1, D_2, D_3, \Phi_8, \Phi_9, S_1, I_1\}.
+\]
+
+Each altitude has:
+\begin{itemize}
+    \item Lean proof object $a_{\mathrm{lean}}$,
+    \item Julia runtime object $a_{\mathrm{jl}}$,
+    \item unified algebra stratum $\mathfrak{A}_{\mathrm{unified}}(a)$.
+\end{itemize}
+
+Binding:
+\[
+a_{\mathrm{lean}} \leftrightarrow a_{\mathrm{jl}} \leftrightarrow
+\mathfrak{A}_{\mathrm{unified}}(a).
+\]
+
+\subsection*{M.2 Proof-to-Runtime Binding}
+
+Lean defines:
+\[
+T(a,b)=1 \iff \text{transition allowed}.
+\]
+
+Julia enforces:
+\[
+\mathrm{allowed\_transition}(a,b)=\mathrm{true}.
+\]
+
+Unified algebra requires:
+\[
+\Phi_{a,b} \text{ defined}.
+\]
+
+Binding rule:
+\[
+T(a,b)=1
+\iff
+\mathrm{allowed\_transition}(a,b)
+\iff
+\Phi_{a,b} \text{ exists}.
+\]
+
+Forbidden transitions:
+\[
+T(a,b)=0
+\iff
+\mathrm{allowed\_transition}(a,b)=\mathrm{false}
+\iff
+\Phi_{a,b} \text{ undefined}.
+\]
+
+\subsection*{M.3 Unified Execution Semantics}
+
+Define unified runtime execution:
+\[
+\mathrm{Exec}_{\mathrm{unified}}(T,a,b)
+=
+\begin{cases}
+\Phi_{a,b}(T), & T(a,b)=1, \\
+\mathrm{Violation}, & T(a,b)=0.
+\end{cases}
+\]
+
+Julia runtime:
+\[
+\mathrm{firewall\_call}(a,b,f)
+=
+\mathrm{Exec}_{\mathrm{unified}}(f,a,b).
+\]
+
+Lean proof:
+\[
+\mathrm{Firewall}(a,b,f)=f()
+\iff
+T(a,b)=1.
+\]
+
+Thus:
+\[
+\mathrm{Exec}_{\mathrm{unified}}
+\text{ is the runtime realization of Lean proofs}.
+\]
+
+\subsection*{M.4 Unified Purity Enforcement}
+
+Lean purity:
+\[
+P(a)=1.
+\]
+
+Julia purity:
+\[
+\mathrm{enforce\_purity}(a,f).
+\]
+
+Unified algebra purity:
+\[
+\mathfrak{A}_{\mathrm{unified}}(a)
+\text{ closed under }
+\star_{\mathrm{unified}}.
+\]
+
+Binding:
+\[
+P(a)=1
+\iff
+\mathrm{enforce\_purity}(a,f)
+\iff
+\mathfrak{A}_{\mathrm{unified}}(a)
+\text{ is pure}.
+\]
+
+\subsection*{M.5 Unified Non-Generativity Enforcement}
+
+Lean:
+\[
+N(a)=1.
+\]
+
+Julia:
+\[
+\mathrm{enforce\_non\_generativity}(a,f).
+\]
+
+Unified algebra:
+\[
+\mathrm{span}(\mathfrak{A}_{\mathrm{unified}}(a))
+=
+\mathrm{span}(\{\mathrm{id}\}).
+\]
+
+Binding:
+\[
+N(a)=1
+\iff
+\mathrm{enforce\_non\_generativity}(a,f)
+\iff
+\mathfrak{A}_{\mathrm{unified}}(a)
+\text{ is non-generative}.
+\]
+
+\subsection*{M.6 Unified Boundedness Enforcement}
+
+Lean:
+\[
+B(a)=1.
+\]
+
+Julia:
+\[
+\mathrm{enforce\_boundedness}(a,f).
+\]
+
+Unified algebra:
+\[
+\|T\| < C_a.
+\]
+
+Binding:
+\[
+B(a)=1
+\iff
+\mathrm{enforce\_boundedness}(a,f)
+\iff
+\mathfrak{A}_{\mathrm{unified}}(a)
+\text{ is norm-bounded}.
+\]
+
+\subsection*{M.7 Unified Invariant Propagation}
+
+Lean invariant:
+\[
+\Omega(x)=1.
+\]
+
+Julia invariant:
+\[
+\mathrm{collision\_invariant}(x)=1.
+\]
+
+Unified algebra invariant:
+\[
+\Omega_{\mathrm{unified}}(u)=1.
+\]
+
+Binding:
+\[
+\Omega(x)=1
+\iff
+\mathrm{collision\_invariant}(x)=1
+\iff
+\Omega_{\mathrm{unified}}(u)=1.
+\]
+
+\subsection*{M.8 Unified Firewall Binding}
+
+Define unified firewall:
+\[
+\mathrm{Firewall}_{\mathrm{unified}}(a,b,T)
+=
+\begin{cases}
+\Phi_{a,b}(T), & T(a,b)=1, \\
+\mathrm{Violation}, & T(a,b)=0.
+\end{cases}
+\]
+
+Lean:
+\[
+\mathrm{Firewall}(a,b,f)=f().
+\]
+
+Julia:
+\[
+\mathrm{firewall\_call}(a,b,f).
+\]
+
+Unified algebra:
+\[
+\Phi_{a,b}(T).
+\]
+
+Binding:
+\[
+\mathrm{Firewall}_{\mathrm{unified}}
+=
+\mathrm{Firewall}
+=
+\mathrm{firewall\_call}.
+\]
+
+\subsection*{M.9 Final Runtime Safety Theorem}
+
+\textbf{Theorem.}  
+A runtime state $u$ is altitude-safe if and only if:
+\[
+u \in \mathrm{Ran}(\Omega_{\mathrm{unified}}).
+\]
+
+Equivalently:
+\[
+\Omega_{\mathrm{unified}}(u)=1.
+\]
+
+This completes the runtime binding specification.
