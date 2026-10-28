@@ -112,3 +112,13 @@ https://github.com/Borealiscodes/NDH-Platforms/tree/main/Emergent
 
 This is not an exhaustive list and is mainly tracked manually via NDH Primitives versus 8b Project Research Trajectories. It is meant to be a potential preliminary proto coordinate Atlas Human assembled for potential Geometric AI assisted analysis, spectral decomposition 
 
+---
+Manual Vectors and Node Preliminary Analysis
+Author: Borealis S. Hedling
+Mode: Human-assembled, no AI assistance
+Purpose: Establish temporal provenance, ecosystem nodes, and cross-pollination vectors
+Context: NDH ↔ 8B ↔ StandardGalactic ↔ Omnibus Ecosystems
+Location: Dublin, Ireland
+Timestamp: 28 October 2026 — 00:59 IST
+
+---
