@@ -1,0 +1,262 @@
+\appendix
+\section*{Appendix L: Unified Altitude Algebra (Master Formal Appendix)}
+
+\subsection*{L.0 Overview}
+
+This appendix presents the unified algebraic structure that integrates:
+\begin{itemize}
+    \item altitude formalism,
+    \item category theory,
+    \item operator algebra,
+    \item holonomy geometry,
+    \item spectral runtime geometry,
+    \item non-dual algebra,
+    \item holonomy–spectral fusion geometry.
+\end{itemize}
+
+The unified altitude algebra provides a single mathematical object
+capturing all altitude constraints, transitions, invariants, and
+firewall admissibility conditions.
+
+\subsection*{L.1 Unified Altitude Algebra}
+
+Define the unified altitude algebra:
+\[
+\mathfrak{A}_{\mathrm{unified}}
+\]
+as the fibered product:
+\[
+\mathfrak{A}_{\mathrm{unified}}
+=
+\mathcal{C}_{\mathrm{alt}}
+\times
+\mathcal{B}(X)
+\times
+\mathcal{A}_{\mathrm{nd}}(X)
+\times
+\mathcal{O}_{\mathrm{fusion}}
+\times
+\mathcal{P}_{\mathrm{Hol}}
+\times
+\mathcal{P}_{\sigma_{\star}}.
+\]
+
+Each component contributes:
+\begin{itemize}
+    \item $\mathcal{C}_{\mathrm{alt}}$: altitude category,
+    \item $\mathcal{B}(X)$: bounded operators,
+    \item $\mathcal{A}_{\mathrm{nd}}(X)$: non-dual algebra,
+    \item $\mathcal{O}_{\mathrm{fusion}}$: holonomy–spectral fusion operators,
+    \item $\mathcal{P}_{\mathrm{Hol}}$: holonomy projection tower,
+    \item $\mathcal{P}_{\sigma_{\star}}$: spectral projection tower.
+\end{itemize}
+
+\subsection*{L.2 Unified Product}
+
+Define the unified product:
+\[
+\star_{\mathrm{unified}} :
+\mathfrak{A}_{\mathrm{unified}}
+\times
+\mathfrak{A}_{\mathrm{unified}}
+\to
+\mathfrak{A}_{\mathrm{unified}}
+\]
+by:
+\[
+(T_1, T_2)
+\mapsto
+(T_1 \circ T_2,\;
+T_1 T_2,\;
+T_1 \star T_2,\;
+T_1 \diamond T_2,\;
+P_{\mathrm{Hol}}(T_1,T_2),\;
+P_{\sigma_{\star}}(T_1,T_2)).
+\]
+
+Where:
+\begin{itemize}
+    \item $\circ$ is categorical composition,
+    \item $T_1 T_2$ is operator composition,
+    \item $\star$ is non-dual product,
+    \item $\diamond$ is fusion product,
+    \item $P_{\mathrm{Hol}}$ is holonomy projection,
+    \item $P_{\sigma_{\star}}$ is spectral projection.
+\end{itemize}
+
+\subsection*{L.3 Unified Purity}
+
+Purity requires:
+\[
+P(a) \iff
+\mathfrak{A}_{\mathrm{unified}}(a)
+\text{ is closed under }
+\star_{\mathrm{unified}}.
+\]
+
+Thus:
+\[
+T_1,T_2 \in \mathfrak{A}_{\mathrm{unified}}(a)
+\implies
+T_1 \star_{\mathrm{unified}} T_2
+\in
+\mathfrak{A}_{\mathrm{unified}}(a).
+\]
+
+\subsection*{L.4 Unified Non-Generativity}
+
+Non-generativity requires:
+\[
+N(a) \iff
+\mathrm{span}(\mathfrak{A}_{\mathrm{unified}}(a))
+=
+\mathrm{span}(\{\mathrm{id}\}).
+\]
+
+Thus no altitude generates new structure.
+
+\subsection*{L.5 Unified Boundedness}
+
+Boundedness requires:
+\[
+B(a) \iff
+\|T\| < C_a
+\quad
+\forall T \in \mathfrak{A}_{\mathrm{unified}}(a).
+\]
+
+\subsection*{L.6 Unified Transition Homomorphisms}
+
+Define:
+\[
+\Phi_{a,b} :
+\mathfrak{A}_{\mathrm{unified}}(a)
+\to
+\mathfrak{A}_{\mathrm{unified}}(b)
+\]
+such that:
+\[
+\Phi_{a,b}(T)
+\text{ preserves holonomy, spectrum, and altitude rank}.
+\]
+
+Allowed transitions:
+\[
+\Phi_{A_0,A_1},\;
+\Phi_{A_1,\Phi_7},\;
+\dots,\;
+\Phi_{S_1,I_1}.
+\]
+
+Forbidden transitions:
+\[
+\Phi_{a,b} \text{ undefined}.
+\]
+
+\subsection*{L.7 Unified Drift Semigroup}
+
+Define unified drift semigroup:
+\[
+D_t^{\mathrm{unified}} =
+(D_t^{\mathrm{fusion}},\;
+e^{tA},\;
+e_{\star}^{tA},\;
+P_{\mathrm{Hol}},\;
+P_{\sigma_{\star}}).
+\]
+
+Semigroup property:
+\[
+D_{t+s}^{\mathrm{unified}}
+=
+D_t^{\mathrm{unified}}
+\star_{\mathrm{unified}}
+D_s^{\mathrm{unified}}.
+\]
+
+\subsection*{L.8 Unified Invariant Extraction}
+
+Define unified invariant projector:
+\[
+I_{\mathrm{unified}} =
+(I_{\mathrm{fusion}},\;
+P_{\mathrm{Hol}},\;
+P_{\sigma_{\star}}).
+\]
+
+Thus:
+\[
+I_{\mathrm{unified}}^2 = I_{\mathrm{unified}}.
+\]
+
+\subsection*{L.9 Unified Steering Automorphism}
+
+Define unified steering:
+\[
+\Theta_{\mathrm{unified}} =
+(\Theta_{\mathrm{fusion}},\;
+\Theta,\;
+P_{\gamma},\;
+\Theta_{\star}).
+\]
+
+Automorphism:
+\[
+\Theta_{\mathrm{unified}}^{-1}
+\circ
+\Theta_{\mathrm{unified}}
+=
+\mathrm{id}.
+\]
+
+\subsection*{L.10 Unified Collision Invariant}
+
+Define unified collision invariant:
+\[
+\Omega_{\mathrm{unified}} =
+(\Omega_{\mathrm{fusion}},\;
+P_{\mathrm{fix}_{\mathrm{Hol}}},\;
+P_{\mathrm{fix}_{\star}}).
+\]
+
+Fixed point:
+\[
+\Omega_{\mathrm{unified}}
+\star_{\mathrm{unified}}
+\Omega_{\mathrm{unified}}
+=
+\Omega_{\mathrm{unified}}.
+\]
+
+\subsection*{L.11 Unified Firewall Subalgebra}
+
+Define:
+\[
+\mathfrak{A}_{\mathrm{unified,safe}}
+=
+\{ T \in \mathfrak{A}_{\mathrm{unified}}
+\mid
+T \text{ preserves holonomy, spectrum, and altitude rank} \}.
+\]
+
+Firewall:
+\[
+\Phi_{a,b}(T) \in \mathfrak{A}_{\mathrm{unified,safe}}
+\iff
+T(a,b)=1.
+\]
+
+\subsection*{L.12 Final Unified Safety Theorem}
+
+\textbf{Theorem.}  
+A unified state $u \in \mathfrak{A}_{\mathrm{unified}}$ is altitude-safe if and only if:
+\[
+u \in \mathrm{Ran}(\Omega_{\mathrm{unified}}).
+\]
+
+Equivalently:
+\[
+\Omega_{\mathrm{unified}}(u)=1.
+\]
+
+This completes the Unified Altitude Algebra (Master Formal Appendix).
