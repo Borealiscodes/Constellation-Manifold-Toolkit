@@ -1,0 +1,174 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+
+% Load ontology macros
+\input{citation-ontology-mac-v2.0-infused.tex}
+
+\begin{document}
+
+% ============================================================
+% HEADER
+% ============================================================
+
+\citeclass{FSFE-Definitions}
+\provenanceanchor{FSFE-A6-TERNARYPROJECTION-20261028}
+
+\begin{citationmembrane}{A6-TernaryProjection}
+  \citeanchor{ConceptualSignalObject}
+  \citeanchor{PrismaticChannels}
+  \citeanchor{ChromaticWeights}
+  \citeanchor{ManifoldPhase}
+  \citeanchor{BraidLayer}
+  \citeanchor{TernaryTelemetry}
+\end{citationmembrane}
+
+\section*{A6: Ternary Projection Definition}
+
+This module defines the Ternary Projection operator at the A6 altitude.  
+It references the full Conceptual Signal Object (CSO), which contains all
+conceptual geometry collapsed into NDH-safe scalar form.  
+TernaryProjection collapses only the prismatic-chromatic components of the CSO
+into ternary telemetry channels.
+
+\newpage
+
+% ============================================================
+% 1. FULL CSO REFERENCE
+% ============================================================
+
+\section{Conceptual Signal Object (CSO)}
+
+\begin{verbatim}
+CSO := {
+  S_sum     : ℝ,
+  O_sum     : ℝ,
+  W_sum     : ℝ,
+
+  chi_s     : ℝ,
+  chi_o     : ℝ,
+  chi_w     : ℝ,
+
+  phase     : ℝ,
+  braid     : ℝ,
+
+  composite : ℝ
+}
+\end{verbatim}
+
+The Ternary Projection operator uses only the prismatic-chromatic collapse
+fields (S_sum, O_sum, W_sum). All other fields remain available for A7 proofs,
+A8 runtime correspondence, and A9/A10 telemetry.
+
+\newpage
+
+% ============================================================
+% 2. TERNARY VALUES
+% ============================================================
+
+\section{Ternary Values}
+
+\begin{verbatim}
+Ternary := NEG | ZERO | POS
+\end{verbatim}
+
+This is the NDH-safe ternary alphabet used by the telemetry subsystem.
+
+\newpage
+
+% ============================================================
+% 3. SIGN COLLAPSE OPERATOR
+% ============================================================
+
+\section{Sign Collapse Operator}
+
+\begin{verbatim}
+SignCollapse(x : ℝ) : Ternary :=
+  if x < 0 then NEG
+  else if x = 0 then ZERO
+  else POS.
+\end{verbatim}
+
+This operator is total, monotone, reversible-safe, and NDH-safe.
+
+\newpage
+
+% ============================================================
+% 4. TERNARY PROJECTION OPERATOR
+% ============================================================
+
+\section{Ternary Projection Operator}
+
+\subsection{Definition}
+
+\begin{verbatim}
+TernaryProjection(c : CSO) : (Ternary × Ternary × Ternary) :=
+{
+  T1 := SignCollapse(c.S_sum),
+  T2 := SignCollapse(c.O_sum),
+  T3 := SignCollapse(c.W_sum)
+}.
+\end{verbatim}
+
+Only the prismatic-chromatic collapse fields are projected.  
+All other CSO fields remain untouched and available for higher-altitude
+semantics (A7–A12).
+
+\subsection{Altitude Role}
+
+TernaryProjection is an altitude-collapsing operator:
+
+- Domain: A6 conceptual geometry (CSO)
+- Codomain: A9/A10 ternary telemetry
+- Collapse: conceptual → runtime-safe
+
+Thus it must be defined at A6 and proven at A7.
+
+\newpage
+
+% ============================================================
+% 5. ALTITUDE COMPATIBILITY
+% ============================================================
+
+\section{Altitude Compatibility}
+
+\begin{verbatim}
+AltitudeCompatible(A6, A5)
+AltitudeCompatible(A7, A6)
+AltitudeCompatible(A8, A6)
+\end{verbatim}
+
+TernaryProjection is altitude-legal because:
+
+- it depends only on A6 conceptual signal definitions,
+- it introduces no runtime semantics,
+- it is used by A7 proofs and A8 runtime correspondence,
+- it respects NDH constraints by collapsing geometry to scalars.
+
+\newpage
+
+% ============================================================
+% PROVENANCE
+% ============================================================
+
+\section*{Provenance}
+
+\begin{verbatim}
+Provenance:
+  Artifact: A6-TernaryProjectionDefinition.tex
+  Altitude: A6
+  Compiler: Microsoft Copilot
+  Maintainer: Borealis S. Hedling
+  Location: Dublin, Ireland
+  Timestamp: 2026-10-28T08:36:00Z
+  Lineage:
+    - Updated to reference full CSO structure
+    - Defines conceptual-to-ternary collapse operator
+    - Ensures NDH-safe scalar collapse of prismatic geometry
+    - Required for A7 TernaryProjection proofs
+    - Supports A8 runtime correspondence and A9/A10 telemetry
+  Governance Anchor: FSFE-GOV-A6-TERNARYPROJECTION-20261028
+\end{verbatim}
+
+\end{document}
