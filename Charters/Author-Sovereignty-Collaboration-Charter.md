@@ -1,4 +1,4 @@
-# 🌿 General Author Sovereignty & Collaboration Ecosystem Charter
+# 🌿 General Author Sovereignty & Collaboration Ecosystem Charter 
 
 Version 1.1 — NDH / ANIMA / Shared‑Horizon Lineage
 
