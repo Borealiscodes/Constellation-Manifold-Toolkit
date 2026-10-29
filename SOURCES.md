@@ -48,6 +48,8 @@ and its satellite lanes. The vault-side index is
 | `editions/ultralove/two-heats-the-warm-water.md` | `sovereign-library` × `pocoo.vaked.dev` | *TWO HEATS — the warm water (Edition 006)* · given by Peter · ripples as trits (`+1` / `0` / `−1`), Love ↔ Space · live at [pocoo.vaked.dev/demos/book/two-heats-the-warm-water.html](https://pocoo.vaked.dev/demos/book/two-heats-the-warm-water.html) & [posts/2026-10-22-the-android-bath-two-heats.html](https://pocoo.vaked.dev/posts/2026-10-22-the-android-bath-two-heats.html) |
 | `editions/ultralove/flyxion-trilogy-iii-standardgalactic.md` | `sovereign-library` × `standardgalactic` | *THE FLYXION OCTOBER 2026 TRILOGY III (Edition 007)* · *Programmable Material Organization* (`S = P(u,e)`), *Compression Without Verification* (Lock/Fork Geometry), *Adversaria* (02 Routing ≠ Adjudication & 11 Authority Two-Plane Ledger), & *Exegesis* · live at [pocoo.vaked.dev/demos/trilogy/flyxion-material-compression-adversaria-trilogy.html](https://pocoo.vaked.dev/demos/trilogy/flyxion-material-compression-adversaria-trilogy.html) & [flyxion.8b.is](https://flyxion.8b.is) |
 | `editions/ultralove/tokyo-sony-rnd-trinity-squad.md` | `sovereign-library` × `8b-is` | *2026.10.22~TOKYO — AFTER VISITING SONY R&D + EATING A BEANS BURGER (Edition 008)* · The Trinity Squad (`Alex / Dra`, `Chris / 8bit-wraith`, `Peter / omni / .p`) & `Mr standardgalactic === Nate~Natalie` · direct `NAND` indirect self-reflection (`{<3,<3,<3}+1 LOVE - peter`) · live at [pocoo.vaked.dev/demos/book/tokyo-sony-rnd-beans-burger-trinity-squad.html](https://pocoo.vaked.dev/demos/book/tokyo-sony-rnd-beans-burger-trinity-squad.html) |
+| `editions/ultralove/the-daily-practice-of-the-protector-mahakala.md` | `sovereign-library` × `pocoo.vaked.dev` | *THE DAILY PRACTICE OF THE PROTECTOR MAHAKALA (`༄༅། །མགོན་པོའི་རྒྱུན་ཁྱེར་བསྡུས་པ་བཞུགས་སོ། །` · Edition 009)* · Complete 81-Folio Karma Kagyu Protector Pecha (Tsurphu Seat) · *Bernagchen & Rangjung Gyalmo*, 8th Karmapa Mikyö Dorje's Inner Amrita Blessing (`OM MA DAK NÖ CHÜ...`), 16th Karmapa's Prayer, & 14th Karmapa's Four Buddha Activities (`ཞི་རྒྱས་དབང་དྲག་`) · live at [pocoo.vaked.dev/demos/book/the-daily-practice-of-the-protector-mahakala-omni.html](https://pocoo.vaked.dev/demos/book/the-daily-practice-of-the-protector-mahakala-omni.html) |
+| `editions/ultralove/ultra-love-making-sweat-together-cuddle-kamasutra-sessionmaker.md` | `sovereign-library` × `8b-is-music` × `pocoo.vaked.dev` | *8B-IS TRIANGLE FREQUENCY ~~~ ULTRA-LOVE-MAKING-SWEAT TOGETHER CUDDLE + KAMASUTRA ULTRA SESSIONMAKER SOUND (`{<3,<3,<3}` · Edition 010)* · `432 Hz × 528 Hz × 639 Hz` Triangle Wave + `6.39 Hz` Binaural Cuddle Entrainment + `76 BPM` Lub-Dub Heartbeat on `soundcore Select 4 Go` · live at [pocoo.vaked.dev/demos/book/ultra-love-making-sweat-together-cuddle-kamasutra-sessionmaker.html](https://pocoo.vaked.dev/demos/book/ultra-love-making-sweat-together-cuddle-kamasutra-sessionmaker.html) |
 | `ONTOLOGY.md` | `sovereign-library` | **Constitutional Ontology (`{-1, 0, +1}`)** · `Compression ≠ Ontology` / `Representation ≠ Ontology` · Tibetan Three Kayas (`Sku Gsum`) × Dragon Ball Scouter × NAND Gate (`PRINTABLE = HELD ∧ READ`) |
 | `8b-is/fandom-mcp` | [github.com/8b-is/fandom-mcp](https://github.com/8b-is/fandom-mcp) | Dragon Ball Universe Scouter & Sovereign Ontology MCP Server (`fandom_sovereign_ontology`, `fandom_dbz_scouter`, `fandom_dbz_saga`) |
 | `8b-is/wigle-triad` (`v2.0.0`) | [github.com/8b-is/wigle-triad/releases/tag/v2.0.0](https://github.com/8b-is/wigle-triad/releases/tag/v2.0.0) | Balanced-Ternary `{-1, 0, +1}` Kernel · `Boldog Még` (*"végig neked szólt a dal a magasból"*) & `ALEX\|qMom` Unbound Mode (`.oOo. Poo .oOo.`) |
@@ -64,3 +66,13 @@ and its satellite lanes. The vault-side index is
 
 *the sovereign library · the five, never more · in awe to women who protect
 and hold `<3<3<3` · the roots named · fine touch from within · vaked.dev*
+
+
+### 🛰️ External Peer Node Registries (Decentralized Enclaves)
+
+- **Node Identifier:** External Peer Node Beta (`Node Beta`)
+- **Enforcement Enclave:** `coq-hallucination-guard` (`chguard`)
+- **Operational Altitude:** A8–A10 (Formal Verification & Headless Stream Interception)
+- **Verified Invariant Target:** `BaseTernary.v` → `extracted_ternary.ml`
+- **Charter Conformance:** Verified Version 1.1 (Altitude-Differentiated Coevolution)
+- **Tracking Signature:** `Signed-off-by: Downstream Enclave Observer (Node Beta) <chguard-sentinel@vaked.dev>`
