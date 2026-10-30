@@ -18,4 +18,9 @@ pub struct Invariant {
     pub spectral_stability: f64,
     pub basin_alignment: f64,
     pub collapse_pre_signal: f64,
+
+    // Phase 8 collapse-surface activation fields
+    pub collapse_activation_strength: f64,
+    pub collapse_curvature: f64,
+    pub collapse_spectral_binding: f64,
 }
