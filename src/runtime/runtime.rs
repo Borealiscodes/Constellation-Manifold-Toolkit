@@ -8,6 +8,7 @@ use crate::adapter::ternary_adapter::TernaryAdapter;
 use crate::adapter::transport_adapter::TransportAdapter;
 use crate::geometry::fsfe_manifold::FsfePoint;
 use crate::invariant::Invariant;
+use crate::invariant::populator::InvariantPopulator;
 
 /// Unified runtime coordinator.
 /// Combines ternary and transport flows into a single runtime step.
@@ -40,12 +41,16 @@ impl<T, U> Runtime<T, U> {
         let (transport_out, inv_u) = self.transport.transport(&ternary_out);
 
         // Merge invariants (Phase 3: simple additive merge)
-        let merged = Invariant {
+        let mut merged = Invariant {
             curvature: inv_t.curvature + inv_u.curvature,
             spectral_energy: inv_t.spectral_energy + inv_u.spectral_energy,
             slack: [inv_t.slack, inv_u.slack].concat(),
             ndh_displacement: [inv_t.ndh_displacement, inv_u.ndh_displacement].concat(),
         };
+
+        // Phase 4: invariant population
+        let populator = InvariantPopulator;
+        populator.populate(&mut merged);
 
         (transport_out, merged)
     }
