@@ -28,4 +28,9 @@ pub struct Invariant {
     pub projection_seed_energy: f64,
     pub projection_seed_curvature: f64,
     pub projection_seed_binding: f64,
-    }
+
+    // Phase 10 collapse-surface ecology fields
+    pub collapse_ecology_energy: f64,
+    pub collapse_ecology_curvature: f64,
+    pub collapse_ecology_binding: f64,
+}
