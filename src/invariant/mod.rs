@@ -38,4 +38,9 @@ pub struct Invariant {
     pub routing_ecology_vector_x: f64,
     pub routing_ecology_vector_y: f64,
     pub routing_ecology_strength: f64,
+
+    // Phase 12 projection-holonomy routing fields
+    pub projection_holonomy_vector_x: f64,
+    pub projection_holonomy_vector_y: f64,
+    pub projection_holonomy_strength: f64,
 }
