@@ -8,6 +8,8 @@
 //! Phase 4: invariant population (stabilization + initial derived values)
 //! Phase 5: spectral ecology + membrane interaction + collapse-surface stub
 //! Phase 6: derived-field alignment (struct expansion)
+//! Phase 7: spectral stability (drift correction + basin alignment +
+//!          collapse-surface pre-activation)
 
 use crate::adapter::ternary_adapter::TernaryAdapter;
 use crate::adapter::transport_adapter::TransportAdapter;
@@ -17,6 +19,9 @@ use crate::invariant::populator::InvariantPopulator;
 use crate::spectral::ecology::SpectralEcology;
 use crate::spectral::membrane_interaction::SpectralMembraneInteraction;
 use crate::spectral::collapse_surface_stub::CollapseSurfaceSpectralStub;
+
+// Phase 7 coordinator
+use crate::spectral::stability::spectral_stability::SpectralStability;
 
 /// Unified runtime coordinator.
 /// Combines ternary and transport flows into a single runtime step.
@@ -55,12 +60,17 @@ impl<T, U> Runtime<T, U> {
             slack: [inv_t.slack, inv_u.slack].concat(),
             ndh_displacement: [inv_t.ndh_displacement, inv_u.ndh_displacement].concat(),
 
-            // Phase 6 fields will be populated later
+            // Phase 6 fields (populated later)
             curvature_energy: 0.0,
             spectral_coupling: 0.0,
             slack_stability: 0.0,
             ndh_smoothing: 0.0,
             membrane_tension: None,
+
+            // Phase 7 fields (populated later)
+            spectral_stability: 0.0,
+            basin_alignment: 0.0,
+            collapse_pre_signal: 0.0,
         };
 
         // Phase 4: invariant population (historical stabilization)
@@ -71,7 +81,7 @@ impl<T, U> Runtime<T, U> {
         let ecology = SpectralEcology;
         ecology.apply(&mut merged);
 
-        // Phase 5: spectral membrane interaction (optional but recommended)
+        // Phase 5: spectral membrane interaction
         let membrane = SpectralMembraneInteraction;
         membrane.apply(&mut merged);
 
@@ -82,6 +92,10 @@ impl<T, U> Runtime<T, U> {
         // Phase 6: derived-field alignment (struct expansion)
         populator.populate_phase6(&mut merged);
 
+        // Phase 7: spectral stability (operator triad)
+        let stability = SpectralStability;
+        stability.apply(&mut merged);
+
         (transport_out, merged)
     }
-}
+            }
