@@ -11,6 +11,8 @@
 //! Phase 7: spectral stability (drift correction + basin alignment +
 //!          collapse-surface pre-activation)
 //! Phase 8: collapse-surface activation (curvature + spectral coupling)
+//! Phase 9: projection-seed geometry activation (seed generation + curvature +
+//!          collapse-seed coupling)
 
 use crate::adapter::ternary_adapter::TernaryAdapter;
 use crate::adapter::transport_adapter::TransportAdapter;
@@ -26,6 +28,9 @@ use crate::spectral::stability::spectral_stability::SpectralStability;
 
 // Phase 8 coordinator
 use crate::collapse::activation::collapse_activation::CollapseActivation;
+
+// Phase 9 coordinator
+use crate::projection_seed::activation::projection_seed_activation::ProjectionSeedActivation;
 
 /// Unified runtime coordinator.
 /// Combines ternary and transport flows into a single runtime step.
@@ -80,6 +85,11 @@ impl<T, U> Runtime<T, U> {
             collapse_activation_strength: 0.0,
             collapse_curvature: 0.0,
             collapse_spectral_binding: 0.0,
+
+            // Phase 9 fields (populated later)
+            projection_seed_energy: 0.0,
+            projection_seed_curvature: 0.0,
+            projection_seed_binding: 0.0,
         };
 
         // Phase 4: invariant population (historical stabilization)
@@ -109,6 +119,10 @@ impl<T, U> Runtime<T, U> {
         let collapse = CollapseActivation;
         collapse.apply(&mut merged);
 
+        // Phase 9: projection-seed geometry activation (operator triad)
+        let projection = ProjectionSeedActivation;
+        projection.apply(&mut merged);
+
         (transport_out, merged)
     }
-    }
+        }
