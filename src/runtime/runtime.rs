@@ -10,6 +10,7 @@ use crate::geometry::fsfe_manifold::FsfePoint;
 use crate::invariant::Invariant;
 use crate::invariant::populator::InvariantPopulator;
 use crate::spectral::ecology::SpectralEcology;
+use crate::spectral::membrane_interaction::SpectralMembraneInteraction;
 use crate::spectral::collapse_surface_stub::CollapseSurfaceSpectralStub;
 
 /// Unified runtime coordinator.
@@ -57,6 +58,10 @@ impl<T, U> Runtime<T, U> {
         // Phase 5: spectral ecology
         let ecology = SpectralEcology;
         ecology.apply(&mut merged);
+
+        // Phase 5: spectral membrane interaction (optional but recommended)
+        let membrane = SpectralMembraneInteraction;
+        membrane.apply(&mut merged);
 
         // Phase 5: collapse-surface spectral stub
         let collapse_stub = CollapseSurfaceSpectralStub;
