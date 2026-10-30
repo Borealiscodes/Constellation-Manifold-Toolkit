@@ -127,6 +127,10 @@ projection.apply(&mut merged);
 let ecology = CollapseEcologyActivation;
 ecology.apply(&mut merged);
 
+// Phase 11: projection-routing ecology activation (operator triad)
+let routing_ecology = RoutingEcologyActivation;
+routing_ecology.apply(&mut merged);
+
 (transport_out, merged)
     }
         }
