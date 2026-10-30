@@ -33,4 +33,9 @@ pub struct Invariant {
     pub collapse_ecology_energy: f64,
     pub collapse_ecology_curvature: f64,
     pub collapse_ecology_binding: f64,
+
+    // Phase 11 routing-ecology fields
+    pub routing_ecology_vector_x: f64,
+    pub routing_ecology_vector_y: f64,
+    pub routing_ecology_strength: f64,
 }
