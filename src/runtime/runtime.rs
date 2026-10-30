@@ -10,6 +10,7 @@
 //! Phase 6: derived-field alignment (struct expansion)
 //! Phase 7: spectral stability (drift correction + basin alignment +
 //!          collapse-surface pre-activation)
+//! Phase 8: collapse-surface activation (curvature + spectral coupling)
 
 use crate::adapter::ternary_adapter::TernaryAdapter;
 use crate::adapter::transport_adapter::TransportAdapter;
@@ -22,6 +23,9 @@ use crate::spectral::collapse_surface_stub::CollapseSurfaceSpectralStub;
 
 // Phase 7 coordinator
 use crate::spectral::stability::spectral_stability::SpectralStability;
+
+// Phase 8 coordinator
+use crate::collapse::activation::collapse_activation::CollapseActivation;
 
 /// Unified runtime coordinator.
 /// Combines ternary and transport flows into a single runtime step.
@@ -71,6 +75,11 @@ impl<T, U> Runtime<T, U> {
             spectral_stability: 0.0,
             basin_alignment: 0.0,
             collapse_pre_signal: 0.0,
+
+            // Phase 8 fields (populated later)
+            collapse_activation_strength: 0.0,
+            collapse_curvature: 0.0,
+            collapse_spectral_binding: 0.0,
         };
 
         // Phase 4: invariant population (historical stabilization)
@@ -96,6 +105,10 @@ impl<T, U> Runtime<T, U> {
         let stability = SpectralStability;
         stability.apply(&mut merged);
 
+        // Phase 8: collapse-surface activation (operator triad)
+        let collapse = CollapseActivation;
+        collapse.apply(&mut merged);
+
         (transport_out, merged)
     }
-            }
+    }
