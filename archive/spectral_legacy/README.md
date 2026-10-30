@@ -7,3 +7,4 @@ spectral integration.
 
 None of these modules are used in the active runtime. They are retained for
 research provenance and historical operator reference.
+ 
