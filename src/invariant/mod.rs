@@ -1,0 +1,16 @@
+pub struct Invariant {
+    // Existing Phase 4/5 fields
+    pub curvature: f64,
+    pub spectral_energy: f64,
+    pub slack: f64,
+    pub ndh_displacement: f64,
+
+    // Phase 6 derived fields
+    pub curvature_energy: f64,
+    pub spectral_coupling: f64,
+    pub slack_stability: f64,
+    pub ndh_smoothing: f64,
+
+    // Optional: only present if membrane interaction is enabled
+    pub membrane_tension: Option<f64>,
+}
