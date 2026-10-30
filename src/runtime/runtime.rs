@@ -119,10 +119,14 @@ impl<T, U> Runtime<T, U> {
         let collapse = CollapseActivation;
         collapse.apply(&mut merged);
 
-        // Phase 9: projection-seed geometry activation (operator triad)
-        let projection = ProjectionSeedActivation;
-        projection.apply(&mut merged);
+// Phase 9: projection-seed geometry activation (operator triad)
+let projection = ProjectionSeedActivation;
+projection.apply(&mut merged);
 
-        (transport_out, merged)
+// Phase 10: collapse-surface ecology activation (operator triad)
+let ecology = CollapseEcologyActivation;
+ecology.apply(&mut merged);
+
+(transport_out, merged)
     }
         }
