@@ -13,4 +13,9 @@ pub struct Invariant {
 
     // Optional: only present if membrane interaction is enabled
     pub membrane_tension: Option<f64>,
+
+    // Phase 7 spectral stability fields
+    pub spectral_stability: f64,
+    pub basin_alignment: f64,
+    pub collapse_pre_signal: f64,
 }
