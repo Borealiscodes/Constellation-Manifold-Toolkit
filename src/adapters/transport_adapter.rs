@@ -1,8 +1,7 @@
-//! Phase 2: Transport Adapter Integration Stub
+//! Phase 3: Full Transport Adapter Logic
 //! Constellation-Manifold-Toolkit · Research Fork
-//! This file introduces the second adapter layer that connects the Phase 2
-//! geometry operators to the transport runtime. Full transport logic arrives
-//! in Phase 3.
+//! This file upgrades the Phase 2 transport adapter stub into a fully operational
+//! routing layer between geometry operators and the transport runtime.
 
 use crate::geometry::{
     fsfe_manifold::FsfePoint,
@@ -14,8 +13,10 @@ use crate::geometry::{
     ndh::{NdH, NdHLoop},
 };
 
-/// Transport adapter stub.
-/// Provides minimal routing between geometry operators and the transport layer.
+use crate::invariant::Invariant;
+
+/// Full transport adapter.
+/// Applies geometry operators in a transport-aware sequence and updates invariants.
 pub struct TransportAdapter<G> {
     pub geometry: G,
 }
@@ -29,17 +30,18 @@ where
         + SpectralAntiDrift<Point = FsfePoint>
         + NdH<Point = FsfePoint>,
 {
-    /// Phase 2 stub: apply geometry operators in a transport-oriented sequence.
-    /// Real transport logic arrives in Phase 3.
-    pub fn transport(&self, p: &FsfePoint) -> FsfePoint {
+    /// Execute a full transport routing pass.
+    /// This is the second operational runtime behavior in the system.
+    pub fn transport(&self, p: &FsfePoint) -> (FsfePoint, Invariant) {
         // Holonomy transport
         let h = self.geometry.holonomy(p);
 
-        // Slack modulation
-        let s = self.geometry.apply_slack(&h, &[0.05, -0.02, 0.1]);
+        // Slack modulation (transport-specific profile)
+        let slack_vec = vec![0.08, -0.03, 0.11];
+        let s = self.geometry.apply_slack(&h, &slack_vec);
 
-        // Curvature adjustment
-        let c = self.geometry.adjust_curvature(&s, 0.005);
+        // Curvature adjustment (transport-specific gain)
+        let c = self.geometry.adjust_curvature(&s, 0.009);
 
         // Collapse-surface routing
         let cs = self.geometry.transport_on_surface(&c);
@@ -47,9 +49,28 @@ where
         // Spectral anti-drift
         let sp = self.geometry.antidrift(&cs);
 
-        // NDH loop placeholder
+        // NDH loop selection (transport heuristic)
         let loop_stub = NdHLoop {
-            segments: vec![(0, 0.02), (2, -0.01)],
+            segments: vec![
+                (0, sp.curvature * 0.012),
+                (2, -sp.spectral_energy * 0.006),
+            ],
         };
 
-        self.geometry.ndh(&sp, &loop_stub
+        let ndh_out = self.geometry.ndh(&sp, &loop_stub);
+
+        // Build invariant
+        let invariant = Invariant {
+            curvature: ndh_out.curvature,
+            spectral_energy: ndh_out.spectral_energy,
+            slack: slack_vec.clone(),
+            ndh_displacement: loop_stub
+                .segments
+                .iter()
+                .map(|(_, d)| *d)
+                .collect(),
+        };
+
+        (ndh_out, invariant)
+    }
+}
