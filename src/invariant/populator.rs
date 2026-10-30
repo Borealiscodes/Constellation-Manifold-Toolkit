@@ -69,7 +69,7 @@ impl InvariantPopulator {
         inv.spectral_coupling = compute_spectral_coupling(
             inv.spectral_energy,
             inv.curvature,
-            inv.slack_value(), // helper for scalar slack
+            inv.slack_value(),
         );
 
         // --- slack_stability ---
@@ -93,7 +93,7 @@ impl InvariantPopulator {
 }
 
 // -------------------------------------------------------------------------
-// Phase 6 Compute Functions (Scaffolds — formulas added incrementally)
+// Phase 6 Compute Functions (Fully Implemented)
 // -------------------------------------------------------------------------
 
 fn compute_curvature_energy(
@@ -101,9 +101,10 @@ fn compute_curvature_energy(
     spectral_energy: f64,
     membrane_tension: Option<f64>,
 ) -> f64 {
-    // Placeholder Phase 6 formula (to be refined)
-    curvature.abs() * spectral_energy * 0.1
-        + membrane_tension.unwrap_or(0.0) * 0.05
+    // Phase 6: curvature–spectral–membrane interaction (altitude-safe)
+    let base = curvature.abs() * (0.5 + 0.1 * spectral_energy);
+    let membrane = membrane_tension.unwrap_or(0.0) * 0.05;
+    base + membrane
 }
 
 fn compute_spectral_coupling(
@@ -111,18 +112,22 @@ fn compute_spectral_coupling(
     curvature: f64,
     slack_scalar: f64,
 ) -> f64 {
-    // Placeholder Phase 6 formula (to be refined)
-    spectral_energy * curvature * (1.0 + slack_scalar)
+    // Phase 6: stabilized spectral–curvature coupling
+    spectral_energy * curvature * (1.0 + 0.25 * slack_scalar.abs())
 }
 
 fn compute_slack_stability(slack_scalar: f64, spectral_energy: f64) -> f64 {
-    // Placeholder Phase 6 formula (to be refined)
-    (slack_scalar.abs() + spectral_energy * 0.01).max(0.0)
+    // Phase 6: slack stability influenced by spectral energy
+    let base = slack_scalar.abs() * 0.5;
+    let spectral_term = spectral_energy * 0.02;
+    (base + spectral_term).max(0.0)
 }
 
 fn compute_ndh_smoothing(ndh: Vec<f64>) -> f64 {
-    // Placeholder Phase 6 formula (to be refined)
-    ndh.iter().map(|d| d.abs()).sum::<f64>() * 0.1
+    // Phase 6: NDH smoothing as normalized displacement magnitude
+    let sum = ndh.iter().map(|d| d.abs()).sum::<f64>();
+    let norm = ndh.len().max(1) as f64;
+    sum / norm
 }
 
 fn compute_membrane_tension(
@@ -130,6 +135,11 @@ fn compute_membrane_tension(
     slack_scalar: f64,
     curvature: f64,
 ) -> Option<f64> {
-    // Placeholder Phase 6 formula (to be refined)
-    Some(spectral_energy * 0.05 + slack_scalar * 0.02 + curvature.abs() * 0.01)
+    // Phase 6: membrane tension derived from stabilized invariants
+    let tension =
+        spectral_energy * 0.05 +
+        slack_scalar.abs() * 0.03 +
+        curvature.abs() * 0.01;
+
+    Some(tension)
 }
