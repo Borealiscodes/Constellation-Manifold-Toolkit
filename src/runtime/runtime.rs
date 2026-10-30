@@ -9,6 +9,8 @@ use crate::adapter::transport_adapter::TransportAdapter;
 use crate::geometry::fsfe_manifold::FsfePoint;
 use crate::invariant::Invariant;
 use crate::invariant::populator::InvariantPopulator;
+use crate::spectral::ecology::SpectralEcology;
+use crate::spectral::collapse_surface_stub::CollapseSurfaceSpectralStub;
 
 /// Unified runtime coordinator.
 /// Combines ternary and transport flows into a single runtime step.
@@ -51,6 +53,14 @@ impl<T, U> Runtime<T, U> {
         // Phase 4: invariant population
         let populator = InvariantPopulator;
         populator.populate(&mut merged);
+
+        // Phase 5: spectral ecology
+        let ecology = SpectralEcology;
+        ecology.apply(&mut merged);
+
+        // Phase 5: collapse-surface spectral stub
+        let collapse_stub = CollapseSurfaceSpectralStub;
+        collapse_stub.apply(&mut merged);
 
         (transport_out, merged)
     }
