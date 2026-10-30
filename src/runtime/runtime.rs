@@ -1,8 +1,13 @@
 //! Phase 3: Runtime Coordinator
-//! Constellation-Manifold-Toolkit · Research Fork
-//! This file introduces the first unified runtime layer. It coordinates the
-//! ternary and transport adapters, manages invariant propagation, and exposes
-//! a public runtime API.
+//! Constellation-Manifold-Toolkit · Runtime Layer
+//!
+//! This file introduces the unified runtime layer. It coordinates the
+//! ternary and transport adapters, manages invariant propagation, and
+//! exposes the public runtime API.
+//!
+//! Phase 4: invariant population (stabilization + initial derived values)
+//! Phase 5: spectral ecology + membrane interaction + collapse-surface stub
+//! Phase 6: derived-field alignment (struct expansion)
 
 use crate::adapter::ternary_adapter::TernaryAdapter;
 use crate::adapter::transport_adapter::TransportAdapter;
@@ -49,11 +54,18 @@ impl<T, U> Runtime<T, U> {
             spectral_energy: inv_t.spectral_energy + inv_u.spectral_energy,
             slack: [inv_t.slack, inv_u.slack].concat(),
             ndh_displacement: [inv_t.ndh_displacement, inv_u.ndh_displacement].concat(),
+
+            // Phase 6 fields will be populated later
+            curvature_energy: 0.0,
+            spectral_coupling: 0.0,
+            slack_stability: 0.0,
+            ndh_smoothing: 0.0,
+            membrane_tension: None,
         };
 
-        // Phase 4: invariant population
+        // Phase 4: invariant population (historical stabilization)
         let populator = InvariantPopulator;
-        populator.populate(&mut merged);
+        populator.populate_phase4(&mut merged);
 
         // Phase 5: spectral ecology
         let ecology = SpectralEcology;
@@ -66,6 +78,9 @@ impl<T, U> Runtime<T, U> {
         // Phase 5: collapse-surface spectral stub
         let collapse_stub = CollapseSurfaceSpectralStub;
         collapse_stub.apply(&mut merged);
+
+        // Phase 6: derived-field alignment (struct expansion)
+        populator.populate_phase6(&mut merged);
 
         (transport_out, merged)
     }
