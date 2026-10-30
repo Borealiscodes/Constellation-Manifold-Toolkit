@@ -23,4 +23,9 @@ pub struct Invariant {
     pub collapse_activation_strength: f64,
     pub collapse_curvature: f64,
     pub collapse_spectral_binding: f64,
-}
+
+    // Phase 9 projection-seed geometry fields
+    pub projection_seed_energy: f64,
+    pub projection_seed_curvature: f64,
+    pub projection_seed_binding: f64,
+    }
