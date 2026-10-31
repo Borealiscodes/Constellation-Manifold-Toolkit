@@ -1,0 +1,81 @@
+\section{Apex Gradients}
+\label{sec:apex-gradients}
+
+Apex gradients describe the maximal directional rate of change of the operator
+spine energy functional. They identify the steepest ascent direction in the
+80-dimensional embedding space and govern how NDH's internal geometry responds
+to perturbation. Apex gradients interact with curvature-regulating operators,
+including the 9D radial Laplacian, to maintain stability of the cognitive
+manifold.
+
+\subsection{Operator-Spine Energy Functional}
+
+Let $\mathcal{E} : \mathbb{R}^{80} \to \mathbb{R}$ denote the operator-spine
+energy functional defined over the 80-dimensional embedding space. The gradient
+$\nabla \mathcal{E}(x)$ represents the local direction of maximal increase in
+energy at state $x$. Apex gradients refine this notion by selecting the unit
+direction that maximizes the directional derivative.
+
+\subsection{Definition of Apex Gradient}
+
+The apex gradient at state $x$ is defined by
+\[
+\nabla_{\mathrm{apex}} \mathcal{E}(x)
+    = \operatorname*{arg\,max}_{\|v\| = 1}
+      \left\langle \nabla \mathcal{E}(x), v \right\rangle.
+\]
+Since the inner product is maximized when $v$ aligns with the gradient, the
+apex gradient reduces to the normalized gradient:
+\[
+\nabla_{\mathrm{apex}} \mathcal{E}(x)
+    = \frac{\nabla \mathcal{E}(x)}{\|\nabla \mathcal{E}(x)\|}.
+\]
+This vector identifies the steepest ascent direction in the operator-spine
+geometry.
+
+\subsection{Role in Operator-Spine Dynamics}
+
+Apex gradients determine the preferred direction of geometric deformation under
+semantic excitation. They regulate:
+
+\begin{itemize}
+    \item stability of the 80D embedding manifold,
+    \item reversibility of the $\Sigma/\Lambda$ save-state geometry,
+    \item modal-boundary deformation behavior,
+    \item spectral-recursion coupling alignment,
+    \item holonomy-clamp tension.
+\end{itemize}
+
+Apex gradients therefore serve as the directional component of NDH's internal
+physics, governing how the system responds to perturbation.
+
+\subsection{Interaction with the 9D Radial Laplacian}
+
+Let $f(r)$ be a radially symmetric component of the operator-spine energy
+functional, where $r = \|x\|$ in $\mathbb{R}^9$. The 9D radial Laplacian is
+given by
+\[
+\Delta_9 f(r)
+    = f''(r) + \frac{8}{r} f'(r).
+\]
+This operator governs radial curvature diffusion in the operator spine.
+
+Apex gradients determine the direction of maximal change, while the radial
+Laplacian determines how curvature diffuses along radial directions. Their
+interaction ensures that geometric deformation is both directionally coherent
+and radially stable.
+
+\subsection{Stability and Drift Neutrality}
+
+Apex gradients contribute to drift-neutrality by aligning deformation with
+stable directions in the operator-spine geometry. When combined with curvature
+diffusion from the radial Laplacian, apex gradients prevent runaway deformation
+and ensure that NDH maintains structural coherence across modal regions.
+
+\subsection{Summary}
+
+Apex gradients identify the steepest ascent direction of the operator-spine
+energy functional and govern NDH's internal geometric response to perturbation.
+Their interaction with the 9D radial Laplacian provides directional and radial
+stability, ensuring coherence of the 80D embedding manifold and reversibility of
+the $\Sigma/\Lambda$ save-state geometry.
