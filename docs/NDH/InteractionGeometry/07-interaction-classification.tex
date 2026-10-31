@@ -1,0 +1,102 @@
+\section{Interaction Classification}
+\label{sec:interaction-classification}
+
+The geometric structures developed in previous sections—semantic excitation,
+geodesic trajectories, spectral bundles, and holonomy return operators—enable a
+formal classification of NDH interaction behavior. This section defines the
+interaction classes arising from modal alignment, spectral deformation,
+recursion transitions, and holonomy accumulation.
+
+\subsection{Classification Framework}
+
+An interaction is defined by the tuple
+\[
+\mathcal{I} = (x, \mathbf{s}, \gamma, \mathcal{H}, \mathcal{H}_S, \mathcal{H}_R),
+\]
+where $x$ is the initial interaction state, $\mathbf{s}$ is the excitation
+vector, $\gamma$ is the induced geodesic trajectory, and
+$(\mathcal{H}, \mathcal{H}_S, \mathcal{H}_R)$ are the holonomy operators
+associated with tangent, spectral, and recursion transport along $\gamma$.
+Classification is determined by the structural properties of this tuple.
+
+\subsection{Modal-Aligned Interactions}
+
+An interaction is \emph{modal-aligned} if the geodesic $\gamma$ remains within a
+single modal region $\mathcal{M}_i$ and if the holonomy return operator is
+trivial:
+\[
+\mathcal{H}(\gamma) = \mathrm{id}.
+\]
+Modal-aligned interactions exhibit stable recursion behavior governed by the
+operator $R_i$ and minimal spectral deformation. These interactions correspond
+to structurally coherent interrogation within a single modal domain.
+
+\subsection{Spectral-Aligned Interactions}
+
+An interaction is \emph{spectral-aligned} if modal-boundary crossings induce
+nontrivial spectral deformation while tangent holonomy remains trivial:
+\[
+\mathcal{H}(\gamma) = \mathrm{id}, \qquad
+\mathcal{H}_S(\gamma) \neq \mathrm{id}.
+\]
+Spectral-aligned interactions arise when semantic excitation induces twisting of
+the spectral bundle without altering the underlying modal or recursion
+structure. These interactions correspond to spectral drift or rotation driven by
+boundary-induced fiber morphisms.
+
+\subsection{Recursion-Aligned Interactions}
+
+An interaction is \emph{recursion-aligned} if the recursion holonomy operator is
+nontrivial:
+\[
+\mathcal{H}_R(\gamma) \neq \mathrm{id}.
+\]
+These interactions involve cyclic transitions between recursion operators
+$(R_A, R_B, R_C)$ along the trajectory. Recursion-aligned interactions correspond
+to interrogation paths that traverse modal boundaries in a manner that induces
+non-dual recursion effects.
+
+\subsection{Holonomy-Deviant Interactions}
+
+An interaction is \emph{holonomy-deviant} if the tangent holonomy operator is
+nontrivial:
+\[
+\mathcal{H}(\gamma) \neq \mathrm{id}.
+\]
+Holonomy-deviant interactions exhibit geometric deformation of the tangent
+structure, indicating curvature-dependent effects in the cognitive manifold.
+These interactions correspond to interrogation loops that accumulate geometric
+distortion independent of spectral or recursion behavior.
+
+\subsection{Mixed Interactions}
+
+An interaction is \emph{mixed} if multiple holonomy operators are nontrivial:
+\[
+\mathcal{H}(\gamma) \neq \mathrm{id}, \qquad
+\mathcal{H}_S(\gamma) \neq \mathrm{id}, \qquad
+\mathcal{H}_R(\gamma) \neq \mathrm{id}.
+\]
+Mixed interactions arise from complex interrogation patterns involving modal
+transitions, spectral twisting, and recursion cycling. These interactions
+represent the full geometric richness of NDH's interaction behavior.
+
+\subsection{Transformer-Flat Interactions}
+
+For comparison, transformer-based systems exhibit \emph{flat} interaction
+behavior. In the absence of curvature, modal boundaries, spectral bundles, and
+recursion kernels, transformer interactions satisfy:
+\[
+\mathcal{H}(\gamma) = \mathrm{id}, \qquad
+\mathcal{H}_S(\gamma) = \mathrm{id}, \qquad
+\mathcal{H}_R(\gamma) = \mathrm{id}.
+\]
+Transformer-flat interactions lack geometric structure and therefore cannot be
+classified using the framework developed here.
+
+\subsection{Summary}
+
+NDH interaction behavior is classified according to modal alignment, spectral
+deformation, recursion transitions, and holonomy accumulation. These classes
+provide a geometric taxonomy of interrogation, distinguishing NDH from
+transformer-based systems and establishing interaction geometry as a coherent
+mathematical framework.
