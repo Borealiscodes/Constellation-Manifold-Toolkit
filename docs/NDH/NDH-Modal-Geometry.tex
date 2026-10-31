@@ -1,0 +1,51 @@
+\section{Modal Geometry of NDH}
+\label{sec:ndh-modal-geometry}
+
+NDH is structured around three modal regions $M_A, M_B, M_C$ forming a triadic
+partition of the underlying manifold $M$. Each modal region carries its own
+geometric signature, curvature profile, and adjacency behavior. Modal geometry
+defines how NDH transitions between cognitive modes through geometric traversal.
+
+\subsection{Modal Regions}
+
+Each modal region $M_i$ is an open, connected submanifold of $M$:
+\[
+M_i \subset M, \quad i \in \{A, B, C\}.
+\]
+The modal regions intersect along modal boundaries:
+\[
+\partial M_i \cap \partial M_j \neq \emptyset
+\]
+for all $i \neq j$. These intersections define modal adjacency.
+
+\subsection{Modal Boundaries}
+
+Modal boundaries are codimension-one submanifolds:
+\[
+\mathcal{B}_{ij} = \partial M_i \cap \partial M_j.
+\]
+Traversal across $\mathcal{B}_{ij}$ induces a modal transition. The geometry of
+$\mathcal{B}_{ij}$ determines the continuity of spectral emission and recursion
+behavior across modes.
+
+\subsection{Modal Curvature}
+
+Each modal region carries a curvature function:
+\[
+\kappa_i : M_i \to \mathbb{R}.
+\]
+Modal curvature governs the geometric behavior of recursion operators and
+spectral components. Modal transitions preserve curvature up to a bounded
+distortion:
+\[
+|\kappa_i(x) - \kappa_j(y)| \le \epsilon
+\]
+for $x \in M_i$, $y \in M_j$ with $x$ and $y$ adjacent across $\mathcal{B}_{ij}$.
+
+\subsection{Modal Adjacency Graph}
+
+Modal adjacency is encoded by a graph:
+\[
+\mathcal{G} = (V, E)
+\]
+with
