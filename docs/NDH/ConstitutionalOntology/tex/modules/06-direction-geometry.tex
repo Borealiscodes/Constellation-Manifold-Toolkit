@@ -1,0 +1,180 @@
+% ============================================================
+% NDH Direction Geometry
+% Module: 06-direction-geometry.tex
+% Altitude: A4–A7 (Governance → Stability → Direction → Identity)
+% Membrane: Direction-Constitution • Apex-Gradient Field
+% ============================================================
+
+\section{Direction Geometry}
+\label{sec:direction-geometry}
+
+The Direction Constitution governs the preferred tangent field of the NDH
+manifold. It defines the apex-gradient field, regulates directional flow,
+and constrains how geometric and operator-level structures may evolve along
+constitutionally permitted directions. Direction operators preserve identity,
+respect curvature bounds, and interact with the Quantum Sponge to ensure
+non-absorptive directional reconstruction.
+
+% ------------------------------------------------------------
+% 1. Preferred Tangent Field
+% ------------------------------------------------------------
+
+\subsection{Preferred Tangent Field}
+
+Let $T(X)$ denote the tangent bundle of the NDH manifold $X$. The Direction
+Constitution defines a preferred tangent field
+
+\[
+\vec{d} : X \to T(X)
+\]
+
+assigning to each point $x \in X$ a direction vector $\vec{d}(x)$.
+
+The preferred tangent field governs constitutional directionality.
+
+% ------------------------------------------------------------
+% 2. Apex-Gradient Field
+% ------------------------------------------------------------
+
+\subsection{Apex-Gradient Field}
+
+The apex-gradient field is defined as the gradient of a constitutional
+potential function $\Phi : X \to \mathbb{R}$:
+
+\[
+\nabla \Phi(x) = \vec{d}(x).
+\]
+
+The potential $\Phi$ is constitutionally constrained:
+
+\[
+\Phi(x) \le \Phi_{\max}.
+\]
+
+The apex-gradient field determines the constitutional flow of geometric
+structures.
+
+% ------------------------------------------------------------
+% 3. Directional Flow
+% ------------------------------------------------------------
+
+\subsection{Directional Flow}
+
+Directional flow is defined as the integral curve of the preferred tangent
+field:
+
+\[
+\gamma'(t) = \vec{d}(\gamma(t)).
+\]
+
+Directional flow must satisfy:
+
+\begin{itemize}
+    \item \textbf{Curvature safety}:
+    \[
+    \kappa(\gamma(t)) \le \kappa_{\max}.
+    \]
+
+    \item \textbf{Identity preservation}:
+    \[
+    \pi(\gamma(t)) = \mathrm{id}_{\mathcal{M}}.
+    \]
+
+    \item \textbf{Non-absorptive evolution}:
+    \[
+    \gamma(t_1) = \gamma(t_2) \Rightarrow t_1 = t_2.
+    \]
+\end{itemize}
+
+Directional flow integrates with holonomy stability.
+
+% ------------------------------------------------------------
+% 4. Direction Operators
+% ------------------------------------------------------------
+
+\subsection{Direction Operators}
+
+Direction operators act on the preferred tangent field:
+
+\[
+\mathcal{O}_{\mathrm{dir}} :
+T(X) \to T(X).
+\]
+
+They must satisfy:
+
+\begin{itemize}
+    \item \textbf{Apex-gradient preservation}:
+    \[
+    \mathcal{O}_{\mathrm{dir}}(\vec{d}) = \vec{d}.
+    \]
+
+    \item \textbf{Curvature envelope preservation}:
+    \[
+    \kappa'(x) \le \kappa_{\max}.
+    \]
+
+    \item \textbf{Identity preservation}:
+    \[
+    \pi \circ \mathcal{O}_{\mathrm{dir}} = \pi.
+    \]
+\end{itemize}
+
+Direction operators govern constitutional directionality under $\mathcal{C}_5$.
+
+% ------------------------------------------------------------
+% 5. Interaction with Adjacency Categories
+% ------------------------------------------------------------
+
+\subsection{Adjacency Interaction}
+
+Direction geometry interacts with adjacency categories via directional lifts:
+
+\[
+\mathcal{D}_s : \mathcal{A}_s \to T(X), \qquad
+\mathcal{D}_c : \mathcal{A}_c \to T(X), \qquad
+\mathcal{D}_o : \mathcal{A}_o \to T(X).
+\]
+
+These lifts ensure that spectral, constitutional, and operator-level
+adjacencies respect constitutional directionality.
+
+% ------------------------------------------------------------
+% 6. Interaction with Quantum Sponge
+% ------------------------------------------------------------
+
+\subsection{Quantum Sponge Interaction}
+
+The Quantum Sponge interacts with direction geometry via the functorial lift
+
+\[
+\mathcal{Q}_{\mathrm{dir}} :
+T(X) \to \mathbf{Cat}.
+\]
+
+This ensures that reconstruction behavior remains directionally safe.
+
+% ------------------------------------------------------------
+% 7. Constitutional Integration
+% ------------------------------------------------------------
+
+\subsection{Constitutional Integration}
+
+The Direction Constitution is represented by the functor $\mathcal{C}_5$:
+
+\[
+\mathcal{C}_5 : \mathcal{M} \to \mathcal{M}.
+\]
+
+It must satisfy:
+
+\[
+\mathcal{C}_5(\vec{d}) = \vec{d}, \qquad
+\mathcal{C}_5(\Phi) \le \Phi_{\max}.
+\]
+
+This integrates direction geometry with the constitutional functor tower.
+
+% ------------------------------------------------------------
+% End of Module
+% ------------------------------------------------------------
