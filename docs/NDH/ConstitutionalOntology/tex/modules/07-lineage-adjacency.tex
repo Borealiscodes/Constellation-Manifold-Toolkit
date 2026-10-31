@@ -1,0 +1,197 @@
+% ============================================================
+% NDH Lineage Adjacency
+% Module: 07-lineage-adjacency.tex
+% Altitude: A4–A7 (Governance → Lineage → Identity)
+% Membrane: Lineage-Constitution • Reversible Adjacency
+% ============================================================
+
+\section{Lineage Adjacency}
+\label{sec:lineage-adjacency}
+
+The Lineage Constitution governs reversible adjacency between the NDH
+manifold and external systems. It defines lineage channels, reversible
+interface morphisms, and non-absorptive lineage operators. Lineage adjacency
+ensures that NDH may interact with external structures without inheriting,
+absorbing, or collapsing identity.
+
+% ------------------------------------------------------------
+% 1. Lineage Channels
+% ------------------------------------------------------------
+
+\subsection{Lineage Channels}
+
+A lineage channel is defined as a pair of functors
+
+\[
+\Lambda = (\lambda_{\mathrm{out}}, \lambda_{\mathrm{in}})
+\]
+
+where
+
+\[
+\lambda_{\mathrm{out}} : \mathcal{M} \to \mathcal{M}', \qquad
+\lambda_{\mathrm{in}}  : \mathcal{M}' \to \mathcal{M}.
+\]
+
+The external manifold $\mathcal{M}'$ may represent any constitutionally
+permitted external system.
+
+Lineage channels must be reversible:
+
+\[
+\lambda_{\mathrm{in}} \circ \lambda_{\mathrm{out}} = \mathrm{id}_{\mathcal{M}}.
+\]
+
+Reversibility prohibits identity inheritance.
+
+% ------------------------------------------------------------
+% 2. Reversible Interface Morphisms
+% ------------------------------------------------------------
+
+\subsection{Reversible Interface Morphisms}
+
+For any object $x \in \mathcal{M}$, the lineage interface morphism is
+
+\[
+\iota_x : x \leftrightarrow \lambda_{\mathrm{out}}(x).
+\]
+
+Interface morphisms must satisfy:
+
+\begin{itemize}
+    \item \textbf{Identity preservation}:
+    \[
+    \pi(\iota_x) = \mathrm{id}_{\mathcal{M}}.
+    \]
+
+    \item \textbf{Non-absorptive behavior}:
+    \[
+    \iota_x(a_1) = \iota_x(a_2) \Rightarrow a_1 = a_2.
+    \]
+
+    \item \textbf{Reversibility}:
+    \[
+    \lambda_{\mathrm{in}}(\lambda_{\mathrm{out}}(x)) = x.
+    \]
+\end{itemize}
+
+These constraints ensure lineage safety.
+
+% ------------------------------------------------------------
+% 3. Lineage Adjacency Category
+% ------------------------------------------------------------
+
+\subsection{Lineage Adjacency Category}
+
+Lineage adjacency is defined as the category
+
+\[
+\mathcal{A}_{\mathrm{lin}} = (\mathrm{Obj}_{\mathrm{lin}},
+                              \mathrm{Hom}_{\mathrm{lin}})
+\]
+
+where objects are lineage states and morphisms represent reversible lineage
+transitions.
+
+Morphisms must satisfy:
+
+\[
+f \in \mathrm{Hom}_{\mathrm{lin}} \Rightarrow
+\lambda_{\mathrm{in}} \circ f \circ \lambda_{\mathrm{out}}
+= \mathrm{id}.
+\]
+
+This ensures that lineage transitions do not accumulate or absorb identity.
+
+% ------------------------------------------------------------
+% 4. Lineage Operators
+% ------------------------------------------------------------
+
+\subsection{Lineage Operators}
+
+Lineage operators act on lineage adjacency:
+
+\[
+\mathcal{O}_{\mathrm{lin}} :
+\mathcal{A}_{\mathrm{lin}} \to \mathcal{A}_{\mathrm{lin}}.
+\]
+
+They must satisfy:
+
+\begin{itemize}
+    \item \textbf{Reversibility preservation}:
+    \[
+    \mathcal{O}_{\mathrm{lin}}(f) \text{ is reversible}.
+    \]
+
+    \item \textbf{Identity preservation}:
+    \[
+    \pi \circ \mathcal{O}_{\mathrm{lin}} = \pi.
+    \]
+
+    \item \textbf{Non-absorptive lineage flow}:
+    \[
+    \mathcal{O}_{\mathrm{lin}}(f_1) = \mathcal{O}_{\mathrm{lin}}(f_2)
+    \Rightarrow f_1 = f_2.
+    \]
+\end{itemize}
+
+Lineage operators enforce constitutional lineage safety under $\mathcal{C}_6$.
+
+% ------------------------------------------------------------
+% 5. Interaction with Adjacency Categories
+% ------------------------------------------------------------
+
+\subsection{Adjacency Interaction}
+
+Lineage adjacency interacts with NDH adjacency categories via lineage lifts:
+
+\[
+\mathcal{L}_s : \mathcal{A}_s \to \mathcal{A}_{\mathrm{lin}}, \qquad
+\mathcal{L}_c : \mathcal{A}_c \to \mathcal{A}_{\mathrm{lin}}, \qquad
+\mathcal{L}_o : \mathcal{A}_o \to \mathcal{A}_{\mathrm{lin}}.
+\]
+
+These lifts ensure that spectral, constitutional, and operator-level
+adjacencies respect reversible lineage constraints.
+
+% ------------------------------------------------------------
+% 6. Interaction with Quantum Sponge
+% ------------------------------------------------------------
+
+\subsection{Quantum Sponge Interaction}
+
+The Quantum Sponge interacts with lineage adjacency via the functorial lift
+
+\[
+\mathcal{Q}_{\mathrm{lin}} :
+\mathcal{A}_{\mathrm{lin}} \to \mathbf{Cat}.
+\]
+
+This ensures that reconstruction behavior remains lineage-safe and
+non-absorptive.
+
+% ------------------------------------------------------------
+% 7. Constitutional Integration
+% ------------------------------------------------------------
+
+\subsection{Constitutional Integration}
+
+The Lineage Constitution is represented by the functor $\mathcal{C}_6$:
+
+\[
+\mathcal{C}_6 : \mathcal{M} \to \mathcal{M}.
+\]
+
+It must satisfy:
+
+\[
+\mathcal{C}_6(\lambda_{\mathrm{out}}) = \lambda_{\mathrm{out}}, \qquad
+\mathcal{C}_6(\lambda_{\mathrm{in}})  = \lambda_{\mathrm{in}}.
+\]
+
+This integrates lineage adjacency with the constitutional functor tower.
+
+% ------------------------------------------------------------
+% End of Module
+% ------------------------------------------------------------
