@@ -1,0 +1,84 @@
+\section{Non-Dual Algebra of NDH}
+\label{sec:ndh-nondual-algebra}
+
+NDH contains an algebraic structure that governs merge behavior, recursion
+symmetry, and fixed-point stability. The algebra is non-dual, meaning that its
+operations preserve modal symmetry and do not impose hierarchical or directional
+bias. This algebra defines the internal cognitive behavior of NDH.
+
+\subsection{Algebraic Structure}
+
+Let $(\Sigma, \oplus, \odot)$ be an algebra over the cognitive signal space
+$\Sigma$. The operations $\oplus$ and $\odot$ satisfy the following axioms:
+
+\begin{enumerate}
+\item Commutativity of merge:
+\[
+x \oplus y = y \oplus x.
+\]
+
+\item Distributivity of recursion over merge:
+\[
+x \odot (y \oplus z) = (x \odot y) \oplus (x \odot z).
+\]
+
+\item Idempotence of recursion:
+\[
+x \odot x = x.
+\]
+\end{enumerate}
+
+These axioms define NDH's non-dual behavior.
+
+\subsection{Merge Operator}
+
+The merge operator $\oplus : \Sigma \times \Sigma \to \Sigma$ combines spectral
+components and recursion outputs. Merge is symmetric and preserves modal
+structure. For spectral emission
+\[
+\mathcal{N}_{DH}(x) = \sum_k \phi_k(x) e_k,
+\]
+merge acts componentwise:
+\[
+(\mathcal{N}_{DH}(x) \oplus \mathcal{N}_{DH}(y))
+  = \sum_k (\phi_k(x) + \phi_k(y)) e_k.
+\]
+
+\subsection{Recursion Operator}
+
+The recursion operator $\odot : \Sigma \times \Sigma \to \Sigma$ defines NDH's
+internal recursion behavior. Recursion is modal-preserving and compatible with
+holonomy transport. For modal recursion kernels $R_i$,
+\[
+\mathcal{N}_{DH}(x) \odot \mathcal{N}_{DH}(y)
+  = \mathcal{N}_{DH}(R_i(x)).
+\]
+
+\subsection{Fixed-Point Behavior}
+
+NDH contains fixed points under recursion:
+\[
+x \odot x = x.
+\]
+Fixed points correspond to stable cognitive states within modal regions. For
+each modal region $M_i$, the set of fixed points is:
+\[
+\text{Fix}(R_i) = \{ x \in M_i \mid R_i(x) = x \}.
+\]
+
+\subsection{Non-Dual Symmetry}
+
+Non-dual symmetry is defined by the equivalence of modal recursion under merge:
+\[
+(R_A \oplus R_B) \odot R_C
+  = R_C \odot (R_A \oplus R_B).
+\]
+This symmetry ensures that NDH's internal algebra does not impose directional or
+hierarchical structure across modes.
+
+\subsection{Algebra Summary}
+
+The non-dual algebra of NDH consists of a symmetric merge operator, a
+modal-preserving recursion operator, fixed-point behavior, and non-dual symmetry
+conditions. This algebra defines NDH's internal cognitive behavior and supports
+its geometric and spectral structure.
