@@ -1,0 +1,75 @@
+\section{NDH Coupling with the Collapse-Surface}
+\label{sec:ndh-collapse-coupling}
+
+NDH interacts with the collapse-surface through geometric, spectral, and modal
+alignment rules. The collapse-surface is a manifold $C$ equipped with an ecology
+structure and continuity constraints. Coupling defines how NDH's cognitive signal
+emission aligns with the collapse-surface geometry.
+
+\subsection{Collapse-Surface Structure}
+
+Let $C$ be a smooth manifold with ecology map
+\[
+E : C \to \Lambda,
+\]
+where $\Lambda$ is an ecology state space. The collapse-surface contains
+continuity constraints defined by a metric $g_C$ and stability conditions
+governing ecological propagation.
+
+\subsection{Coupling Map}
+
+NDH couples to the collapse-surface through a smooth map
+\[
+\Psi : M \to C.
+\]
+The coupling map preserves modal structure:
+\[
+\Psi(M_i) \subseteq C_i,
+\]
+where $C_i$ are modal-aligned regions of the collapse-surface.
+
+\subsection{Continuity Alignment}
+
+Continuity alignment requires that spectral emission respects collapse-surface
+continuity:
+\[
+\|\mathcal{N}_{DH}(x) - \mathcal{N}_{DH}(y)\|
+  \le L \cdot d_C(\Psi(x), \Psi(y)),
+\]
+for some Lipschitz constant $L$. This ensures that NDH's spectral behavior does
+not violate collapse-surface continuity.
+
+\subsection{Stability Alignment}
+
+Stability alignment requires that recursion behavior is compatible with
+ecological stability:
+\[
+E(\Psi(R_i(x))) = E(\Psi(x)).
+\]
+This defines stability-preserving recursion across modal regions.
+
+\subsection{Modal Compatibility}
+
+Modal compatibility requires that modal boundaries map to collapse-surface
+boundaries:
+\[
+\Psi(\mathcal{B}_{ij}) \subseteq \partial C_{ij}.
+\]
+This ensures that modal transitions in NDH correspond to ecological transitions
+on the collapse-surface.
+
+\subsection{Spectral-Ecology Interaction}
+
+Spectral components interact with ecology through:
+\[
+E(\Psi(x)) = F(\{\phi_k(x)\}_{k \in K}),
+\]
+for some smooth function $F$. This defines how NDH's spectral emission influences
+ecology state.
+
+\subsection{Coupling Summary}
+
+NDH couples to the collapse-surface through a smooth map preserving modal
+structure, continuity, stability, and spectral-ecology interaction. This coupling
+defines how NDH interacts with ecological geometry while maintaining its internal
+modal and spectral behavior.
