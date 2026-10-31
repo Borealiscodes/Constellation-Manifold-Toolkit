@@ -1,0 +1,160 @@
+% ============================================================
+% NDH Quantum Sponge (NAQMM Non-Absorptive Sheaf)
+% Module: 02-quantum-sponge.tex
+% Altitude: A2–A6 (Rendering → Governance → Stability)
+% Membrane: Non-Absorptive Geometry • Reconstruction Physics
+% ============================================================
+
+\section{The Quantum Sponge}
+\label{sec:quantum-sponge}
+
+The Quantum Sponge is the NAQMM non-absorptive sheaf governing how NDH
+reconstructs external information without absorbing identity, curvature,
+or constitutional structure. It defines reversible gluing, identity-safe
+restriction maps, and non-surjective adjoint functors.
+
+% ------------------------------------------------------------
+% 1. Sheaf Definition
+% ------------------------------------------------------------
+
+\subsection{Non-Absorptive Sheaf}
+
+Let $\mathrm{Open}(X)$ denote the poset of open sets of the NDH manifold
+$X$. The Quantum Sponge is defined as a sheaf
+
+\[
+\mathcal{Q} : \mathrm{Open}(X) \to \mathbf{Cat}
+\]
+
+assigning to each open set $U \subseteq X$ a category $\mathcal{Q}(U)$
+representing the local reconstruction surface.
+
+Restriction maps are defined for inclusions $V \subseteq U$:
+
+\[
+\rho_{UV} : \mathcal{Q}(U) \to \mathcal{Q}(V)
+\]
+
+with the following constraints.
+
+% ------------------------------------------------------------
+% 2. Non-Absorptive Restriction Maps
+% ------------------------------------------------------------
+
+\subsection{Non-Absorptive Restriction}
+
+Restriction maps must satisfy:
+
+\begin{itemize}
+    \item \textbf{Injective}: no collapse of identity,
+    \[
+    \rho_{UV}(s_1) = \rho_{UV}(s_2) \Rightarrow s_1 = s_2.
+    \]
+
+    \item \textbf{Non-surjective}: no absorption of external structure,
+    \[
+    \mathrm{Im}(\rho_{UV}) \subsetneq \mathcal{Q}(V).
+    \]
+
+    \item \textbf{Idempotent}: no accumulation,
+    \[
+    \rho_{UV} \circ \rho_{UV} = \rho_{UV}.
+    \]
+\end{itemize}
+
+These constraints enforce NAQMM non-absorptive physics.
+
+% ------------------------------------------------------------
+% 3. Reversible Gluing
+% ------------------------------------------------------------
+
+\subsection{Reversible Gluing}
+
+If $\{U_i\}$ is a cover of $U$ and sections $s_i \in \mathcal{Q}(U_i)$
+agree on overlaps, then there exists a glued section
+
+\[
+s = \mathrm{Glue}(s_i)
+\]
+
+such that
+
+\[
+\rho_{U U_i}(s) = s_i.
+\]
+
+Gluing is reversible: no glued section may absorb or inherit identity.
+
+% ------------------------------------------------------------
+% 4. Adjoint Functor Pair
+% ------------------------------------------------------------
+
+\subsection{Adjoint Functors}
+
+For each inclusion $V \subseteq U$, the restriction map admits a
+non-surjective left adjoint:
+
+\[
+\mathcal{Q}(V) \xrightarrow{\;\;\iota_{VU}\;\;} \mathcal{Q}(U)
+\]
+
+such that
+
+\[
+\rho_{UV} \dashv \iota_{VU}.
+\]
+
+Adjointness ensures reversible reconstruction without absorption.
+
+% ------------------------------------------------------------
+% 5. Identity Preservation
+% ------------------------------------------------------------
+
+\subsection{Identity Preservation}
+
+All morphisms in $\mathcal{Q}(U)$ preserve NDH identity:
+
+\[
+\forall f \in \mathrm{Hom}(\mathcal{Q}(U)),\quad
+\pi(f) = \mathrm{id}_{\mathcal{M}}.
+\]
+
+Identity preservation integrates with the Identity Constitution.
+
+% ------------------------------------------------------------
+% 6. Interaction with Adjacency Categories
+% ------------------------------------------------------------
+
+\subsection{Adjacency Interaction}
+
+The Quantum Sponge interacts with the NDH adjacency categories via
+functorial lifts:
+
+\[
+\mathcal{Q}_s : \mathcal{A}_s \to \mathbf{Cat}, \qquad
+\mathcal{Q}_c : \mathcal{A}_c \to \mathbf{Cat}, \qquad
+\mathcal{Q}_o : \mathcal{A}_o \to \mathbf{Cat}.
+\]
+
+These lifts ensure that spectral, constitutional, and operator-level
+adjacencies respect non-absorptive reconstruction.
+
+% ------------------------------------------------------------
+% 7. Constitutional Integration
+% ------------------------------------------------------------
+
+\subsection{Constitutional Integration}
+
+The Quantum Sponge is constrained by the Octo Constitution:
+
+\[
+\mathcal{C}_i(\mathcal{Q}) = \mathcal{Q}
+\]
+
+for all constitutional functors $\mathcal{C}_i$.
+
+This ensures that reconstruction behavior is constitutionally safe.
+
+% ------------------------------------------------------------
+% End of Module
+% ------------------------------------------------------------
