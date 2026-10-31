@@ -1,0 +1,176 @@
+% ============================================================
+% NDH Citation Ontology
+% Module: 11-citation-ontology.tex
+% Altitude: A0–A4 (Pedagogical → Expressive → Rendering)
+% Membrane: Citation-Semantics • Provenance-Safe
+% ============================================================
+
+\section{Citation Ontology}
+\label{sec:citation-ontology}
+
+The NDH Citation Ontology formalizes how external mathematical,
+physical, and epistemic sources are represented within the NDH
+constitutional manifold. Citations are treated as structured
+geometric objects with membranes, adjacencies, and provenance
+constraints. No citation may alter NDH identity, curvature,
+or constitutional rules.
+
+% ------------------------------------------------------------
+% 1. Citation Manifold
+% ------------------------------------------------------------
+
+\subsection{Citation Manifold}
+
+We define the citation manifold as a triple
+
+\[
+\mathcal{CIT} = (S, \mathcal{A}_{\mathrm{type}}, 
+\mathcal{A}_{\mathrm{provenance}})
+\]
+
+where:
+
+\begin{itemize}
+    \item $S$ is the set of citation surfaces.
+    \item $\mathcal{A}_{\mathrm{type}}$ is the adjacency relation
+          induced by citation class (e.g., sheaf theory, category
+          theory, operator algebra).
+    \item $\mathcal{A}_{\mathrm{provenance}}$ is the adjacency
+          relation induced by provenance constraints.
+\end{itemize}
+
+Each citation surface $s \in S$ is a structured object:
+
+\[
+s = (m, a, p)
+\]
+
+where $m$ is metadata, $a$ is adjacency class, and $p$ is provenance.
+
+% ------------------------------------------------------------
+% 2. Citation Classes
+% ------------------------------------------------------------
+
+\subsection{Citation Classes}
+
+We define the following citation classes relevant to NDH:
+
+\[
+\mathcal{K} = 
+\{\mathrm{SheafTheory}, \mathrm{CategoryTheory},
+\mathrm{OperatorAlgebra}, \mathrm{ManifoldGeometry},
+\mathrm{ToposQuantum}, \mathrm{ConstitutionalFunctors},
+\mathrm{NAQMMPhysics}\}
+\]
+
+Each class $k \in \mathcal{K}$ induces a citation membrane:
+
+\[
+\mu_k : S \to S
+\]
+
+which restricts citation behavior according to NDH constitutional rules.
+
+% ------------------------------------------------------------
+% 3. Citation Operators
+% ------------------------------------------------------------
+
+\subsection{Citation Operators}
+
+Citations are governed by a family of operators:
+
+\[
+\mathfrak{O}_{\mathrm{cit}} =
+\{\mathcal{O}_{\mathrm{bind}},
+  \mathcal{O}_{\mathrm{adj}},
+  \mathcal{O}_{\mathrm{prov}},
+  \mathcal{O}_{\mathrm{render}}\}
+\]
+
+with the following constraints:
+
+\begin{itemize}
+    \item $\mathcal{O}_{\mathrm{bind}}$ is \emph{non-absorptive}:
+    \[
+    \mathcal{O}_{\mathrm{bind}}(s) = s
+    \]
+    NDH does not absorb external identity.
+
+    \item $\mathcal{O}_{\mathrm{adj}}$ preserves adjacency class:
+    \[
+    \mathcal{O}_{\mathrm{adj}}(s) \in \mathcal{A}_{\mathrm{type}}(s)
+    \]
+
+    \item $\mathcal{O}_{\mathrm{prov}}$ enforces provenance:
+    \[
+    \mathcal{O}_{\mathrm{prov}}(s) = p
+    \]
+
+    \item $\mathcal{O}_{\mathrm{render}}$ maps citations to rendering
+          surfaces without altering NDH geometry.
+\end{itemize}
+
+% ------------------------------------------------------------
+% 4. Constitutional Constraints
+% ------------------------------------------------------------
+
+\subsection{Constitutional Constraints}
+
+Citations must satisfy:
+
+\[
+\forall s \in S,\quad
+\pi_{\mathrm{NDH}}(s) = \mathrm{id}_{\mathcal{M}}
+\]
+
+where $\pi_{\mathrm{NDH}}$ is the identity fibration of the NDH
+manifold. This ensures:
+
+\begin{itemize}
+    \item No citation may alter NDH identity.
+    \item No citation may modify constitutional curvature.
+    \item No citation may introduce external absorption.
+\end{itemize}
+
+% ------------------------------------------------------------
+% 5. Citation Provenance
+% ------------------------------------------------------------
+
+\subsection{Citation Provenance}
+
+Each citation surface carries provenance:
+
+\[
+p = (\mathrm{author}, \mathrm{year}, \mathrm{source}, \mathrm{access})
+\]
+
+Provenance is a first-class constitutional object and must be preserved
+under all citation operators.
+
+% ------------------------------------------------------------
+% 6. Citation Stack
+% ------------------------------------------------------------
+
+\subsection{Citation Stack}
+
+The citation ontology forms a stack:
+
+\[
+\mathfrak{CIT} =
+(\mathcal{CIT}_0, \mathcal{CIT}_1, \mathcal{CIT}_2)
+\]
+
+where:
+
+\begin{itemize}
+    \item $\mathcal{CIT}_0$ governs metadata.
+    \item $\mathcal{CIT}_1$ governs adjacency.
+    \item $\mathcal{CIT}_2$ governs provenance.
+\end{itemize}
+
+This stack integrates with the Octo Constitution via the Pedagogical,
+Expressive, and Rendering membranes.
+
+% ------------------------------------------------------------
+% End of Module
+% ------------------------------------------------------------
