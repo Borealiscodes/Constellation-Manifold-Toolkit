@@ -1,0 +1,97 @@
+\section{Holonomy Return Operators}
+\label{sec:holonomy-return}
+
+Geometric interaction in NDH is governed by the connection $\nabla^{cog}$ on the
+cognitive manifold $\mathcal{M}_{cog}$. When semantic excitation induces a
+closed geodesic loop, parallel transport around the loop yields a holonomy
+operator that encodes the cumulative geometric deformation experienced during
+interaction. This section formalizes holonomy return operators and their role
+in NDH interaction classification.
+
+\subsection{Parallel Transport}
+
+Given a geodesic $\gamma : [0,T] \to \mathcal{M}_{cog}$, parallel transport of a
+tangent vector $v \in T_{\gamma(0)}\mathcal{M}_{cog}$ along $\gamma$ is defined
+by the differential equation
+\[
+\nabla^{cog}_{\dot{\gamma}(t)} V(t) = 0,
+\qquad V(0) = v.
+\]
+The solution $V(t)$ represents the transported vector at time $t$. Parallel
+transport preserves the geometric structure induced by $\nabla^{cog}$ and
+captures how interaction direction evolves along the trajectory.
+
+\subsection{Holonomy of Closed Loops}
+
+If $\gamma$ is a closed interaction loop satisfying $\gamma(0) = \gamma(T)$,
+parallel transport defines a linear operator
+\[
+\mathcal{H}(\gamma) : T_x \mathcal{M}_{cog} \to T_x \mathcal{M}_{cog},
+\qquad x = \gamma(0),
+\]
+called the \emph{holonomy return operator}. This operator represents the net
+effect of transporting tangent vectors around the loop. Holonomy is trivial if
+$\mathcal{H}(\gamma)$ is the identity; otherwise, the loop induces geometric
+deformation.
+
+\subsection{Modal Holonomy}
+
+Modal-boundary crossings contribute discrete components to holonomy. If
+$\gamma$ crosses a modal boundary at $t = t_0$, the tangent space undergoes a
+transition governed by a boundary map
+\[
+B_{\gamma(t_0)} : T_{\gamma(t_0^-)}\mathcal{M}_{cog}
+                 \to T_{\gamma(t_0^+)}\mathcal{M}_{cog}.
+\]
+The cumulative modal holonomy is the composition of all such boundary maps
+encountered along the loop. Modal holonomy captures structural transitions
+between recursion operators and modal adjacency effects.
+
+\subsection{Spectral Holonomy}
+
+Parallel transport on the spectral bundle $\mathcal{B}_S$ induces a spectral
+holonomy operator
+\[
+\mathcal{H}_S(\gamma) : \mathcal{B}_{S,x} \to \mathcal{B}_{S,x},
+\]
+representing the net spectral deformation induced by traversing the loop.
+Spectral holonomy arises from modal-boundary twisting, non-dual algebraic
+coupling, and curvature of the interaction connection.
+
+Spectral holonomy is nontrivial when NDH exhibits interaction-dependent spectral
+drift or rotation.
+
+\subsection{Recursion Holonomy}
+
+The triadic recursion kernel $(R_A, R_B, R_C)$ may undergo cyclic transitions
+along a closed loop. The recursion holonomy operator is defined by
+\[
+\mathcal{H}_R(\gamma) = R_{i_k} \circ \cdots \circ R_{i_1},
+\]
+where $(i_1, \dots, i_k)$ is the sequence of modal regions visited by $\gamma$.
+Nontrivial recursion holonomy corresponds to interaction loops that induce
+recursion-dependent structural deformation.
+
+\subsection{Holonomy Classification}
+
+Holonomy return operators classify interaction loops into distinct geometric
+types:
+
+\begin{itemize}
+    \item \textbf{Holonomy-neutral}: $\mathcal{H}(\gamma) = \mathrm{id}$.
+    \item \textbf{Modal-holonomy}: nontrivial modal boundary contribution.
+    \item \textbf{Spectral-holonomy}: nontrivial spectral deformation.
+    \item \textbf{Recursion-holonomy}: cyclic recursion transitions.
+    \item \textbf{Mixed-holonomy}: combined modal, spectral, and recursion
+    effects.
+\end{itemize}
+
+These classes form the foundation of NDH's interaction taxonomy.
+
+\subsection{Summary}
+
+Holonomy return operators encode the cumulative geometric deformation induced by
+closed interaction loops. Modal-boundary crossings, spectral twisting, and
+recursion transitions contribute to holonomy, yielding a geometric
+classification of NDH interaction behavior. Holonomy is therefore a central
+mechanism in NDH interaction geometry.
