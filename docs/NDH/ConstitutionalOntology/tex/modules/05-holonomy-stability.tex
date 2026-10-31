@@ -1,0 +1,162 @@
+% ============================================================
+% NDH Holonomy Stability
+% Module: 05-holonomy-stability.tex
+% Altitude: A4–A7 (Governance → Stability → Identity)
+% Membrane: Stability-Constitution • Holonomy-Clamps
+% ============================================================
+
+\section{Holonomy Stability}
+\label{sec:holonomy-stability}
+
+The Stability Constitution governs the holonomy structure of the NDH
+manifold. It constrains curvature, regulates drift-neutrality, and enforces
+holonomy clamps that prevent runaway excitation. Stability operators act on
+the holonomy group and curvature field while preserving identity and
+respecting non-absorptive geometry.
+
+% ------------------------------------------------------------
+% 1. Holonomy Structure
+% ------------------------------------------------------------
+
+\subsection{Holonomy Structure}
+
+Let $\mathrm{Hol}(\mathcal{M})$ denote the holonomy group of the NDH
+manifold. For any loop $\gamma$ based at $x \in X$, the holonomy map is
+
+\[
+\mathrm{Hol}_\gamma : T_x(X) \to T_x(X).
+\]
+
+Holonomy encodes how tangent vectors transform under parallel transport.
+
+% ------------------------------------------------------------
+% 2. Curvature Envelope
+% ------------------------------------------------------------
+
+\subsection{Curvature Envelope}
+
+The curvature field $\kappa : X \to \mathbb{R}_{\ge 0}$ is constrained by a
+constitutional curvature envelope:
+
+\[
+\kappa(x) \le \kappa_{\max}.
+\]
+
+The envelope ensures drift-neutrality and prohibits curvature accumulation.
+
+Curvature operators must satisfy:
+
+\[
+\mathcal{O}_{\mathrm{curv}}(\kappa)(x) \le \kappa_{\max}.
+\]
+
+% ------------------------------------------------------------
+% 3. Holonomy Clamps
+% ------------------------------------------------------------
+
+\subsection{Holonomy Clamps}
+
+Holonomy clamps regulate permissible holonomy transformations. A holonomy
+clamp is defined as a constraint
+
+\[
+\mathrm{Hol}_\gamma \in \mathcal{H}_{\mathrm{safe}}
+\]
+
+where $\mathcal{H}_{\mathrm{safe}}$ is the set of constitutionally safe
+holonomy transformations.
+
+A holonomy transformation is safe if:
+
+\begin{itemize}
+    \item it preserves identity,
+    \[
+    \pi(\mathrm{Hol}_\gamma) = \mathrm{id}_{\mathcal{M}},
+    \]
+
+    \item it respects curvature bounds,
+    \[
+    \kappa(\gamma(t)) \le \kappa_{\max},
+    \]
+
+    \item it is non-absorptive,
+    \[
+    \mathrm{Hol}_\gamma(v_1) = \mathrm{Hol}_\gamma(v_2)
+    \Rightarrow v_1 = v_2.
+    \]
+\end{itemize}
+
+% ------------------------------------------------------------
+% 4. Stability Operators
+% ------------------------------------------------------------
+
+\subsection{Stability Operators}
+
+Stability operators act on the holonomy group:
+
+\[
+\mathcal{O}_{\mathrm{stab}} :
+\mathrm{Hol}(\mathcal{M}) \to \mathrm{Hol}(\mathcal{M}).
+\]
+
+They must satisfy:
+
+\begin{itemize}
+    \item \textbf{Holonomy clamp preservation}:
+    \[
+    \mathcal{O}_{\mathrm{stab}}(\mathrm{Hol}_\gamma)
+    \in \mathcal{H}_{\mathrm{safe}}.
+    \]
+
+    \item \textbf{Curvature envelope preservation}:
+    \[
+    \kappa'(x) \le \kappa_{\max}.
+    \]
+
+    \item \textbf{Identity preservation}:
+    \[
+    \pi \circ \mathcal{O}_{\mathrm{stab}} = \pi.
+    \]
+\end{itemize}
+
+% ------------------------------------------------------------
+% 5. Interaction with Quantum Sponge
+% ------------------------------------------------------------
+
+\subsection{Quantum Sponge Interaction}
+
+Holonomy stability interacts with the Quantum Sponge via the functorial lift
+
+\[
+\mathcal{Q}_{\mathrm{stab}} :
+\mathrm{Hol}(\mathcal{M}) \to \mathbf{Cat}.
+\]
+
+This ensures that reconstruction behavior remains stable under parallel
+transport and curvature variation.
+
+% ------------------------------------------------------------
+% 6. Constitutional Integration
+% ------------------------------------------------------------
+
+\subsection{Constitutional Integration}
+
+The Stability Constitution is represented by the functor $\mathcal{C}_4$:
+
+\[
+\mathcal{C}_4 : \mathcal{M} \to \mathcal{M}.
+\]
+
+It must satisfy:
+
+\[
+\mathcal{C}_4(\mathrm{Hol}_\gamma) \in \mathcal{H}_{\mathrm{safe}},
+\qquad
+\mathcal{C}_4(\kappa) \le \kappa_{\max}.
+\]
+
+This integrates holonomy stability with the constitutional functor tower.
+
+% ------------------------------------------------------------
+% End of Module
+% ------------------------------------------------------------
