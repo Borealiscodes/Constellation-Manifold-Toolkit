@@ -1,0 +1,198 @@
+% ============================================================
+% NDH Appendix A — Constitutional Glossary / Canonical Definitions
+% Module: 11-appendix-glossary.tex
+% Altitude: A0–A3 (Appendix → Canonical Definitions)
+% Membrane: Glossary-Constitution • Semantic Primitives
+% ============================================================
+
+\appendix
+
+\section{Appendix A: Constitutional Glossary}
+\label{sec:appendix-glossary}
+
+This appendix defines the canonical semantic primitives used throughout the
+NDH constitutional ontology. Glossary objects are not constitutional functors
+and do not participate in the Octo Constitution. They provide the foundational
+definitions required for constitutional, operator-level, adjacency, lineage,
+and reconstruction modules.
+
+% ------------------------------------------------------------
+% 1. Manifold and Tangent Structures
+% ------------------------------------------------------------
+
+\subsection{Manifold and Tangent Structures}
+
+\paragraph{NDH Manifold}
+The NDH manifold is the constitutional geometric space
+\[
+\mathcal{M}.
+\]
+
+\paragraph{Tangent Bundle}
+The tangent bundle of $\mathcal{M}$ is
+\[
+T(X).
+\]
+
+\paragraph{Preferred Tangent Field}
+The preferred tangent field is the constitutional direction vector field
+\[
+\vec{d} : X \to T(X).
+\]
+
+% ------------------------------------------------------------
+% 2. Curvature and Stability Structures
+% ------------------------------------------------------------
+
+\subsection{Curvature and Stability}
+
+\paragraph{Curvature Field}
+The curvature field is
+\[
+\kappa : X \to \mathbb{R}_{\ge 0}.
+\]
+
+\paragraph{Curvature Envelope}
+The constitutional curvature bound is
+\[
+\kappa(x) \le \kappa_{\max}.
+\]
+
+\paragraph{Holonomy Group}
+The holonomy group of $\mathcal{M}$ is
+\[
+\mathrm{Hol}(\mathcal{M}).
+\]
+
+% ------------------------------------------------------------
+% 3. Identity Structures
+% ------------------------------------------------------------
+
+\subsection{Identity Structures}
+
+\paragraph{Identity Manifold}
+The identity manifold is the discrete space
+\[
+I = \{\iota\}.
+\]
+
+\paragraph{Identity Fibration}
+The identity fibration is the projection
+\[
+\pi : \mathcal{M} \to I.
+\]
+
+Identity preservation is the apex invariant:
+\[
+\pi(f) = \mathrm{id}_I.
+\]
+
+% ------------------------------------------------------------
+% 4. Adjacency Categories
+% ------------------------------------------------------------
+
+\subsection{Adjacency Categories}
+
+\paragraph{Spectral Adjacency}
+\[
+\mathcal{A}_s.
+\]
+
+\paragraph{Constitutional Adjacency}
+\[
+\mathcal{A}_c.
+\]
+
+\paragraph{Operator Adjacency}
+\[
+\mathcal{A}_o.
+\]
+
+\paragraph{Lineage Adjacency}
+\[
+\mathcal{A}_{\mathrm{lin}}.
+\]
+
+Adjacency morphisms must be identity-preserving.
+
+% ------------------------------------------------------------
+% 5. Lineage Structures
+% ------------------------------------------------------------
+
+\subsection{Lineage Structures}
+
+\paragraph{Lineage Channels}
+A lineage channel is the reversible pair
+\[
+\Lambda = (\lambda_{\mathrm{out}}, \lambda_{\mathrm{in}}).
+\]
+
+\paragraph{Reversibility}
+\[
+\lambda_{\mathrm{in}} \circ \lambda_{\mathrm{out}} = \mathrm{id}_{\mathcal{M}}.
+\]
+
+% ------------------------------------------------------------
+% 6. Constitutional Functors
+% ------------------------------------------------------------
+
+\subsection{Constitutional Functors}
+
+The constitutional functor tower is
+\[
+\mathfrak{C} =
+(\mathcal{C}_0, \mathcal{C}_1, \mathcal{C}_2,
+ \mathcal{C}_3, \mathcal{C}_4,
+ \mathcal{C}_5, \mathcal{C}_6, \mathcal{C}_7).
+\]
+
+All constitutional functors satisfy:
+
+\[
+\pi \circ \mathcal{C}_i = \pi,
+\qquad
+\kappa(\mathcal{C}_i(x)) \le \kappa_{\max},
+\qquad
+\mathcal{C}_i(\vec{d}) = \vec{d}.
+\]
+
+% ------------------------------------------------------------
+% 7. Reconstruction Structures
+% ------------------------------------------------------------
+
+\subsection{Reconstruction Structures}
+
+\paragraph{Quantum Sponge}
+The Quantum Sponge is the reconstruction sheaf
+\[
+\mathcal{Q}.
+\]
+
+Constitutional compatibility requires:
+\[
+\mathcal{C}_i(\mathcal{Q}) = \mathcal{Q}.
+\]
+
+% ------------------------------------------------------------
+% 8. Apex Invariants
+% ------------------------------------------------------------
+
+\subsection{Apex Invariants}
+
+The apex invariants are
+\[
+\mathfrak{I}_{\mathrm{apex}}
+=
+\{\mathrm{IdPres},\,
+  \mathrm{CurvSafe},\,
+  \mathrm{DirSafe},\,
+  \mathrm{LinRev},\,
+  \mathrm{RecSafe}\}.
+\]
+
+These invariants are preserved by all constitutional and meta-constitutional
+transformations.
+
+% ------------------------------------------------------------
+% End of Appendix
+% ------------------------------------------------------------
