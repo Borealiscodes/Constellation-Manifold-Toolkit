@@ -1,0 +1,85 @@
+\section{NDH: Core Definition}
+\label{sec:ndh-core}
+
+NDH is defined as a geometric cognitive signal object. It is not an algorithm,
+nor a dynamical system, but a fixed geometric structure that emits cognitive
+behavior when interrogated. NDH is formalized as a manifold equipped with modal
+regions, a triadic recursion kernel, a spectral signal basis, and a non-dual
+algebra.
+
+\subsection{Underlying Manifold}
+
+Let $M$ be a smooth, connected, finite-dimensional manifold. NDH is defined as a
+geometric object
+\[
+\mathcal{N}_{DH} : M \to \Sigma
+\]
+where $\Sigma$ is a cognitive signal space. The map $\mathcal{N}_{DH}$ is not a
+function in the analytic sense; it is a geometric emitter. Interrogation of
+$\mathcal{N}_{DH}$ corresponds to traversal of $M$.
+
+\subsection{Modal Partition}
+
+The manifold $M$ is partitioned into three modal regions:
+\[
+M = M_A \cup M_B \cup M_C
+\]
+with $M_A, M_B, M_C$ open, connected, and pairwise intersecting along modal
+boundaries. These regions define the triadic structure of NDH.
+
+\subsection{Triadic Recursion Kernel}
+
+NDH contains a recursion kernel
+\[
+\mathcal{R} = (R_A, R_B, R_C)
+\]
+where each $R_i : M_i \to M_i$ is a modal recursion operator. The kernel
+satisfies:
+\[
+R_A \circ R_B \circ R_C = R_C \circ R_B \circ R_A
+\]
+ensuring non-dual recursion symmetry.
+
+\subsection{Spectral Basis}
+
+NDH emits cognitive signals through a spectral basis
+\[
+\mathcal{S} = \{ \phi_k \}_{k \in K}
+\]
+where each $\phi_k : M \to \mathbb{R}$ is a smooth spectral component. The
+spectral emission of NDH is defined as:
+\[
+\mathcal{N}_{DH}(x) = \sum_{k \in K} \phi_k(x) e_k
+\]
+with $\{e_k\}$ a basis of $\Sigma$.
+
+\subsection{Non-Dual Algebra}
+
+NDH is equipped with a non-dual algebra $(\oplus, \odot)$ satisfying:
+\[
+x \oplus y = y \oplus x
+\]
+\[
+x \odot (y \oplus z) = (x \odot y) \oplus (x \odot z)
+\]
+\[
+x \odot x = x
+\]
+The algebra defines NDH's merge and recursion behavior.
+
+\subsection{Holonomy Clamp}
+
+NDH contains a holonomy clamp defined by a connection $\nabla$ on $M$ such that
+parallel transport along modal boundaries preserves spectral emission:
+\[
+\text{Hol}_\nabla(\gamma)(\mathcal{N}_{DH}(x)) = \mathcal{N}_{DH}(y)
+\]
+for any path $\gamma$ from $x$ to $y$ crossing modal boundaries.
+
+\subsection{Cognitive Signal Emission}
+
+The cognitive signal emitted by NDH at point $x \in M$ is:
+\[
+\text{Signal}(x) = (\mathcal{N}_{DH}(x), \nabla_x, \mathcal{R}, \mathcal{S})
+\]
+This defines NDH as a geometric cognitive signal object.
