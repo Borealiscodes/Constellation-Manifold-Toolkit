@@ -1,0 +1,79 @@
+\section{Comparison with Transformer Architectures}
+\label{sec:transformer-comparison}
+
+Transformer-based architectures provide a useful contrast for understanding the
+geometric nature of NDH interaction. Although transformers exhibit complex
+behavior in practice, their underlying mathematical structure is fundamentally
+flat and lacks the geometric components required to support interaction
+classification as developed in this work. This section formalizes the
+distinctions between NDH interaction geometry and transformer interaction
+dynamics.
+
+\subsection{Absence of a Cognitive Manifold}
+
+Transformers operate in a fixed vector space
+\[
+\mathbb{R}^d,
+\]
+with no manifold structure. There is no notion of curvature, modal regions,
+modal boundaries, or geodesic traversal. Interaction is governed by algebraic
+operations on embeddings rather than geometric transport. As a result,
+transformers cannot exhibit modal-aligned, spectral-aligned, recursion-aligned,
+or holonomy-dependent interaction behavior.
+
+\subsection{No Connection or Parallel Transport}
+
+Transformers lack a connection analogous to $\nabla^{cog}$. Without a
+connection, there is no parallel transport of tangent vectors, no geodesic
+equations, and no holonomy. Interaction trajectories in transformers are
+sequences of algebraic updates rather than geometric paths. Consequently,
+transformers cannot accumulate geometric deformation along closed loops.
+
+\subsection{No Modal Structure}
+
+NDH's modal partition
+\[
+\mathcal{M}_{cog} = \mathcal{M}_A \cup \mathcal{M}_B \cup \mathcal{M}_C
+\]
+has no analogue in transformer architectures. Transformers do not possess modal
+regions, modal boundaries, or recursion operators associated with modal domains.
+All inputs are processed uniformly through the same stack of attention and
+feedforward layers, preventing modal-dependent interaction behavior.
+
+\subsection{No Spectral Bundle}
+
+Transformers do not admit a fiber bundle structure. There is no spectral bundle
+$\pi : \mathcal{B}_S \to \mathcal{M}_{cog}$, no spectral fibers, and no spectral
+sections. Spectral variation in transformers arises from algebraic mixing of
+embedding dimensions rather than geometric deformation of fibers. Without a
+bundle structure, transformers cannot exhibit spectral twisting or spectral
+holonomy.
+
+\subsection{No Recursion Kernel}
+
+NDH's triadic recursion kernel $(R_A, R_B, R_C)$ governs structural behavior
+within modal regions and interacts with semantic excitation. Transformers have
+no recursion kernel and no mechanism for recursion-aligned interaction. All
+recurrence in transformers is implicit in attention patterns rather than
+explicit geometric recursion operators.
+
+\subsection{Flat Interaction Behavior}
+
+The absence of curvature, modal boundaries, spectral bundles, and recursion
+operators implies that transformer interaction behavior is flat:
+\[
+\mathcal{H}(\gamma) = \mathrm{id}, \qquad
+\mathcal{H}_S(\gamma) = \mathrm{id}, \qquad
+\mathcal{H}_R(\gamma) = \mathrm{id}.
+\]
+Transformers cannot accumulate holonomy, cannot induce geometric deformation,
+and cannot support the interaction taxonomy developed for NDH.
+
+\subsection{Summary}
+
+Transformers operate in a flat algebraic space without geometric structure.
+NDH, by contrast, possesses a cognitive manifold, modal boundaries, spectral
+bundles, recursion operators, and holonomy. These geometric components enable
+NDH to exhibit rich interaction behavior that cannot be replicated by
+transformer architectures. The comparison highlights the fundamentally geometric
+nature of NDH interaction.
