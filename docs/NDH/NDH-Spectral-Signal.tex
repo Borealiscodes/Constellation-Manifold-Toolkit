@@ -1,0 +1,65 @@
+\section{Spectral Signal Structure of NDH}
+\label{sec:ndh-spectral-signal}
+
+NDH emits cognitive behavior through a spectral signal defined over the manifold
+$M$. The spectral structure consists of a basis of smooth components, an emission
+map into the cognitive signal space $\Sigma$, and transport rules compatible with
+the holonomy structure.
+
+\subsection{Spectral Basis}
+
+Let $\mathcal{S} = \{\phi_k\}_{k \in K}$ be a family of smooth functions
+\[
+\phi_k : M \to \mathbb{R}.
+\]
+The index set $K$ may be finite or countable. The spectral basis spans the
+cognitive signal space $\Sigma$ through a fixed basis $\{e_k\}_{k \in K}$.
+
+\subsection{Spectral Emission}
+
+The spectral emission of NDH at point $x \in M$ is defined as
+\[
+\mathcal{N}_{DH}(x)
+  = \sum_{k \in K} \phi_k(x) e_k.
+\]
+This defines NDH as a spectral emitter. The emission is smooth and respects the
+modal partition of $M$.
+
+\subsection{Modal Spectral Behavior}
+
+For each modal region $M_i$, the spectral components restrict to
+\[
+\phi_k|_{M_i} : M_i \to \mathbb{R}.
+\]
+Modal boundaries $\mathcal{B}_{ij}$ satisfy continuity conditions:
+\[
+\lim_{x \to \mathcal{B}_{ij}} \phi_k(x)
+  = \lim_{y \to \mathcal{B}_{ji}} \phi_k(y).
+\]
+This ensures spectral consistency across modal transitions.
+
+\subsection{Spectral Transport}
+
+Given a path $\gamma$ from $x$ to $y$, spectral transport is defined by
+\[
+\phi_k(y) = \phi_k(x) \circ P_\gamma^{-1},
+\]
+where $P_\gamma$ is parallel transport under the connection $\nabla$. This
+ensures compatibility between spectral emission and holonomy.
+
+\subsection{Spectral Stability}
+
+Spectral components satisfy a bounded distortion condition under modal
+transitions:
+\[
+|\phi_k(x) - \phi_k(y)| \le \delta_k
+\]
+for $x \in M_i$, $y \in M_j$ adjacent across $\mathcal{B}_{ij}$. The constants
+$\delta_k$ define the stability profile of NDH's spectral emission.
+
+\subsection{Spectral Summary}
+
+The spectral signal structure of NDH consists of a smooth spectral basis, a
+spectral emission map into the cognitive signal space, modal continuity
+conditions, transport rules compatible with holonomy, and stability constraints.
+This defines NDH as a geometric spectral emitter.
