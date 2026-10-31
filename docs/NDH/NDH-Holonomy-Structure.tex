@@ -1,0 +1,63 @@
+\section{Holonomy Structure of NDH}
+\label{sec:ndh-holonomy}
+
+NDH contains a holonomy structure that governs how cognitive signals, spectral
+components, and modal recursion behave under geometric transport across the
+manifold. Holonomy ensures that traversal across modal boundaries preserves the
+internal structure of NDH.
+
+\subsection{Connection}
+
+Let $\nabla$ be a smooth connection on the manifold $M$. Parallel transport with
+respect to $\nabla$ defines a map
+\[
+P_\gamma : T_x M \to T_y M
+\]
+for any smooth path $\gamma$ from $x$ to $y$. This connection governs the
+transport of spectral components and recursion operators.
+
+\subsection{Modal Holonomy}
+
+For any modal boundary $\mathcal{B}_{ij}$, holonomy along paths crossing the
+boundary satisfies:
+\[
+\text{Hol}_\nabla(\gamma)(\mathcal{N}_{DH}(x)) = \mathcal{N}_{DH}(y)
+\]
+whenever $\gamma$ crosses $\mathcal{B}_{ij}$ exactly once. Modal holonomy
+preserves the spectral emission and recursion kernel across modal transitions.
+
+\subsection{Holonomy Clamp}
+
+NDH contains a holonomy clamp defined as a constraint on the connection:
+\[
+\text{Hol}_\nabla(\gamma) \in \mathcal{H}
+\]
+where $\mathcal{H}$ is a subgroup of the automorphism group of the cognitive
+signal space $\Sigma$. The clamp ensures that parallel transport does not alter
+the internal structure of NDH beyond allowed transformations.
+
+\subsection{Spectral Transport}
+
+Spectral components $\phi_k$ satisfy:
+\[
+\phi_k(y) = \phi_k(x) \circ P_\gamma^{-1}
+\]
+for any path $\gamma$ from $x$ to $y$. This defines spectral transport under the
+connection and ensures consistency of spectral emission across the manifold.
+
+\subsection{Recursion Transport}
+
+The recursion kernel $\mathcal{R} = (R_A, R_B, R_C)$ is preserved under parallel
+transport:
+\[
+P_\gamma \circ R_i = R_j \circ P_\gamma
+\]
+for paths crossing $\mathcal{B}_{ij}$. This defines the geometric behavior of
+modal recursion under traversal.
+
+\subsection{Holonomy Summary}
+
+The holonomy structure of NDH consists of a connection, modal holonomy behavior,
+a holonomy clamp restricting allowed transformations, and transport rules for
+spectral components and recursion operators. This structure ensures that NDH
+remains stable under geometric traversal and modal transitions.
