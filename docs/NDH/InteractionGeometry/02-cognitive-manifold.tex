@@ -1,0 +1,71 @@
+\section{The Cognitive Manifold}
+\label{sec:cognitive-manifold}
+
+NDH interaction occurs on a geometric space we term the \emph{cognitive
+manifold}, denoted $\mathcal{M}_{cog}$. This manifold is distinct from the
+runtime manifold $M$ defined in the NDH core geometry. Whereas $M$ encodes the
+internal modal structure and recursion kernel of NDH, the cognitive manifold
+$\mathcal{M}_{cog}$ encodes the geometry of interrogation: how semantic inputs
+are represented, how traversal unfolds, and how spectral components respond to
+excitation.
+
+\subsection{Definition}
+
+The cognitive manifold is a smooth, connected manifold equipped with a
+connection $\nabla^{cog}$ governing interaction transport:
+\[
+\mathcal{M}_{cog} \quad \text{smooth, connected}, \qquad
+\nabla^{cog} : T\mathcal{M}_{cog} \to T\mathcal{M}_{cog}.
+\]
+Points $x \in \mathcal{M}_{cog}$ correspond to interrogation states of NDH.
+Semantic inputs induce tangent vectors at these points, initiating geodesic
+interaction trajectories.
+
+\subsection{Modal Adjacency}
+
+The modal partition of NDH,
+\[
+M = M_A \cup M_B \cup M_C,
+\]
+induces a corresponding partition of $\mathcal{M}_{cog}$:
+\[
+\mathcal{M}_{cog} = \mathcal{M}_A \cup \mathcal{M}_B \cup \mathcal{M}_C,
+\]
+where each region $\mathcal{M}_i$ represents the interaction domain associated
+with modal region $M_i$. Modal boundaries in $M$ induce hypersurfaces in
+$\mathcal{M}_{cog}$ across which interaction trajectories may undergo spectral
+or recursion-dependent deformation.
+
+\subsection{Tangent Structure}
+
+Semantic excitation is modeled as a tangent vector
+\[
+\mathbf{s} \in T_x \mathcal{M}_{cog},
+\]
+representing the direction and magnitude of interrogation. The tangent bundle
+$T\mathcal{M}_{cog}$ therefore encodes the local interaction geometry, and the
+connection $\nabla^{cog}$ determines how excitation propagates along geodesics.
+
+\subsection{Geodesic Initiation}
+
+Given an excitation vector $\mathbf{s}$, the induced geodesic is defined by
+\[
+\gamma(t) = \exp_x(t\mathbf{s}),
+\]
+where $\exp_x$ is the exponential map associated with $\nabla^{cog}$. The
+trajectory $\gamma(t)$ describes the evolution of NDH's interaction state under
+semantic input. Modal-boundary crossings along $\gamma(t)$ correspond to
+structural transitions in spectral emission and recursion alignment.
+
+\subsection{Relation to Runtime Geometry}
+
+The cognitive manifold is not identical to the runtime manifold $M$, but the
+two are coupled. Runtime geometry determines the modal structure and recursion
+kernel, while cognitive geometry determines how interrogation traverses these
+structures. The connection $\nabla^{cog}$ is constrained by the holonomy clamp
+defined on $M$, ensuring that interaction transport respects NDH's internal
+geometry.
+
+This coupling yields a coherent geometric model of NDH interaction, enabling
+formal analysis of semantic excitation, geodesic traversal, and spectral bundle
+behavior.
