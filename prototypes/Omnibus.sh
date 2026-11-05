@@ -1,61 +1,100 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# OMNIBUS COMPILER PATCH & HOT-SWAP SCRIPT
-# Target: 8b-is Legacy Infrastructure (Flix / Rust v1)
-# Action: Forced removal of .flx scheduling layers and replacement with v3 engine
+# NDH-SURREALISM: UNIFIED ARCHITECTURAL EXECUTION ORCHESTRATOR
+# Document ID: NDH-SUR-OMNIBUS-SHELL
+# Purpose: Compiles Rust primitives, runs Julia/Python tests, bakes G-code, 
+#          and generates toolpath visual traces in a single execution tree.
 # ==============================================================================
 
 set -euo pipefail
 
-# --- Configuration & Path Setup ---
-TARGET_DIR="./8b-is-repository"
-PROTOTYPES_DIR="./prototypes"
-LOG_FILE="./omnibus_patch.log"
+# --- Color Output Triggers ---
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
 
-echo "=== [OMNIBUS] Beginning automated system override ===" | tee -a "$LOG_FILE"
+log_info() { echo -e "${CYAN}[OMNIBUS_INFO]$(date +'%H:%M:%S')${NC} $1"; }
+log_succ() { echo -e "${GREEN}[OMNIBUS_PASS]$(date +'%H:%M:%S')${NC} $1"; }
+log_warn() { echo -e "${YELLOW}[OMNIBUS_WARN]$(date +'%H:%M:%S')${NC} $1"; }
+log_err()  { echo -e "${RED}[OMNIBUS_FAIL]$(date +'%H:%M:%S')${NC} $1"; exit 1; }
 
-# 1. Verification of v3 Primitives
-if [ ! -f "$PROTOTYPES_DIR/ultrafold_v3.rs" ] || [ ! -f "$PROTOTYPES_DIR/spherepopfold_v3.rs" ]; then
-    echo "[-] CRITICAL ERROR: v3 engine primitives missing in $PROTOTYPES_DIR" | tee -a "$LOG_FILE"
-    exit 1
-fi
+# --- Step 1: Enforce Workspace Structure ---
+log_info "Initializing workspace environment verification matrix..."
+mkdir -p target/release
 
-# 2. Decommission Legacy Flix Orchestration
-echo "[*] Decommissioning async task scheduling bottlenecks..." | tee -a "$LOG_FILE"
-if [ -f "$TARGET_DIR/03_aurora_dyad_genesis.flx" ]; then
-    mv "$TARGET_DIR/03_aurora_dyad_genesis.flx" "$TARGET_DIR/03_aurora_dyad_genesis.flx.bak"
-    echo "[+] Disabled legacy Flix channel coordinator (preventing GC stutters)." | tee -a "$LOG_FILE"
+# --- Step 2: Compile Zero-Allocation Rust Engine ---
+log_info "Compiling low-latency Rust v3 FFI primitive modules..."
+if [ -f "prototypes/mod.rs" ]; then
+    # Compile directly into a C-compatible dynamic library asset crossing the FFI border
+    rustc --crate-type=cdylib prototypes/mod.rs -o target/release/libconstellation_manifold_toolkit.so
+    log_succ "Bare-metal Rust compilation successful: target/release/libconstellation_manifold_toolkit.so"
+elif [ -f "mod.rs" ]; then
+    rustc --crate-type=cdylib mod.rs -o target/release/libconstellation_manifold_toolkit.so
+    log_succ "Bare-metal Rust compilation successful: target/release/libconstellation_manifold_toolkit.so"
 else
-    echo "[!] Warning: 03_aurora_dyad_genesis.flx not found in target path. Skipping bypass." | tee -a "$LOG_FILE"
-fi
-
-# 3. Patch Mathematical Singularity (Injected soft-threshold cushion ψ(r))
-echo "[*] Injecting scale-invariant soft-threshold cushion..." | tee -a "$LOG_FILE"
-# Locating unmitigated 8.0/r patterns in legacy files and wrapping them safely
-if [ -d "$TARGET_DIR" ]; then
-    # Injecting a macro or helper function to mitigate division by zero at absolute rest
-    find "$TARGET_DIR" -type f -name "*.rs" -o -name "*.tex" | while read -r file; do
-        if grep -q "8.0 / r" "$file"; then
-            echo "[+] Mitigating division-by-zero singularity in: $file" | tee -a "$LOG_FILE"
-            # Inplace substitution of raw division with soft-threshold function psi(r)
-            sed -i.bak 's|8.0 / r|8.0 / (r + 1e-9)|g' "$file" 2>/dev/null || true
-        fi
-     Varsity done
-fi
-
-# 4. Enforce Low-Level v3 Engine Integration
-echo "[*] Injecting clean v3 engine primitives into core build matrix..." | tee -a "$LOG_FILE"
-cp "$PROTOTYPES_DIR/ultrafold_v3.rs" "$TARGET_DIR/src/ultrafold.rs"
-cp "$PROTOTYPES_DIR/spherepopfold_v3.rs" "$TARGET_DIR/src/spherepopfold.rs"
-echo "[+] Clean v3 execution blocks successfully hot-swapped." | tee -a "$LOG_FILE"
-
-# 5. Overriding Cargo Configuration to enforce hard deterministic aborts
-echo "[*] Enforcing DETERMINISTIC_ABORT parameters in Build Profile..." | tee -a "$LOG_FILE"
-if [ -f "$TARGET_DIR/Cargo.toml" ]; then
-    if ! grep -q "panic = \"abort\"" "$TARGET_DIR/Cargo.toml"; then
-        echo -e "\n[profile.release]\npanic = \"abort\"\nopt-level = 3" >> "$TARGET_DIR/Cargo.toml"
-        echo "[+] Safety brakes (DETERMINISTIC_ABORT) appended to Cargo configuration." | tee -a "$LOG_FILE"
+    log_warn "mod.rs namespace entry missing in path root. Attempting standard cargo release compilation..."
+    if command -v cargo &> /dev/null; then
+        cargo build --release
+        log_succ "Cargo workspace assembly compilation completed."
+    else
+        log_err "Rust toolchain compiler targets unavailable. Aborting validation sequence."
     fi
 fi
 
-echo "=== [OMNIBUS] Override patch completed successfully ===" | tee -a "$LOG_FILE"
+# --- Step 3: Run High-Performance Julia Benchmark Mode Toggle ---
+log_info "Invoking Julia low-level CPU cycle profiling harness..."
+if command -v julia &> /dev/null; then
+    if [ -f "test_sigma_delta.jl" ]; then
+        julia test_sigma_delta.jl
+        log_succ "Julia high-frequency optimization assertions passed."
+    elif [ -f "prototypes/test_sigma_delta.jl" ]; then
+        julia prototypes/test_sigma_delta.jl
+        log_succ "Julia high-frequency optimization assertions passed."
+    else
+        log_warn "Julia micro-benchmark validation scripts absent. Skipping profile trace."
+    fi
+else
+    log_warn "Julia runtime environment not detected. Skipping multi-dispatch profile checks."
+fi
+
+# --- Step 4: Run Python Signal Enclave Validation Tests ---
+log_info "Executing Python First-Order Sigma-Delta noise-shaping verification loop..."
+if [ -f "test_sigma_delta.py" ]; then
+    python3 test_sigma_delta.py
+    log_succ "Python quantization and signal guard assertions verified."
+elif [ -f "prototypes/test_sigma_delta.py" ]; then
+    python3 prototypes/test_sigma_delta.py
+    log_succ "Python quantization and signal guard assertions verified."
+else
+    log_err "Critical error: Python validation suite test_sigma_delta.py missing."
+fi
+
+# --- Step 5: Compile Balanced Ternary G-Code Instructions ---
+log_info "Invoking G-code translation layer to compile toolpath trajectories..."
+if [ -f "ternary_to_gcode.py" ]; then
+    python3 ternary_to_gcode.py
+    log_succ "Industrial step-motor instructions successfully baked to output_deposition_paths.gcode."
+elif [ -f "prototypes/ternary_to_gcode.py" ]; then
+    python3 prototypes/ternary_to_gcode.py
+    log_succ "Industrial step-motor instructions successfully baked to output_deposition_paths.gcode."
+else
+    log_err "Critical error: G-code compilation engine script ternary_to_gcode.py missing."
+fi
+
+# --- Step 6: Render Spatial Toolpath Visualizations ---
+log_info "Parsing G-code instructions to render spatial path chart maps..."
+if [ -f "plot_deposition_paths.py" ]; then
+    python3 plot_deposition_paths.py
+    log_succ "Spatial chart rendered: gcode_toolpath_visualization.png"
+elif [ -f "prototypes/plot_deposition_paths.py" ]; then
+    python3 prototypes/plot_deposition_paths.py
+    log_succ "Spatial chart rendered: gcode_toolpath_visualization.png"
+else
+    log_warn "Visualization engine plot_deposition_paths.py absent. Skipping PNG rendering."
+fi
+
+echo -e "\n================================================================================"
+log_succ "🌌 NDH-SURREALISM: UNIFIED COMPILER PIPELINE RUN COMPLETED SUCCESSFULLY"
+echo -e "================================================================================"
