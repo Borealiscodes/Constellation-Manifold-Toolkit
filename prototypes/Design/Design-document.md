@@ -1,7 +1,7 @@
 
 A Unified Dual-Enclave Blueprint for Generative Latent Ingest and Multi-Axis Fused Filament Deposition: From Symplectic Trajectory Invariance to Hard Real-Time G-Code Extrusion
 
-Author: [Your Name / Pseudonym]
+Author: Borealis S Hedling 
 Affiliation: Independent Studio for Generative Artifacts / Bureau of Algorithmic Irony
 Date: November 5, 2026
 Registry: Conceptual Systems Art Specification / BCI-3D-Print Sandbox Protocol
