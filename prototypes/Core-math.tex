@@ -1,0 +1,12 @@
+\documentclass[11pt,preview,varwidth]{standalone}
+\usepackage{amsmath, amsfonts, amssymb}
+\begin{document}
+\section*{Core Mathematical Specification}
+\begin{align}
+g_{ij}^{(t+1)} &= g_{ij}^{(t)} + \alpha (\xi_i \xi_j), \quad \alpha = 0.01 \\
+\omega &= \sum_{i=1}^{40} dq_i \wedge dp_i, \quad \mathcal{L}_{\Phi} \omega = 0 \\
+\Delta_9 f(r) &= f''(r) + \frac{8}{r} f'(r), \quad \psi(r) = \eta \ln\left(1 + e^{r/\epsilon}\right) \\
+\nabla_{\text{apex}} E(x) &= \frac{\nabla E(x)}{\|\nabla E(x)\|} \quad (\|\nabla E(x)\| \ge \epsilon) \\
+\text{If } &\kappa_2 > 4.5 \implies \text{DETERMINISTIC\_ABORT}
+\end{align}
+\end{document}
