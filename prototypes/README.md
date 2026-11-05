@@ -1,3 +1,31 @@
+# 🚨 Systemic Engineering Disclaimers, Legacy Failure Modes, & Remediations
+
+This directory contains the core Rust primitives (mod.rs, ultrafold_v4.rs) and Python codecs (ternary_to_gcode.py) designed to interface continuous generative latent vectors with hard real-time physical actuators.
+Before compiling, deploying, or testing this code against any industrial mechanical gantries, FFF 3D printers, or fluid deposition hardware, you must review the critical failure matrix discovered during testing of the legacy (v1–v3) architectures.
+
+1. The Core Architectural Conflict: Quantization-Induced Matrix Collapse
+
+The legacy pipeline contained an invisible, destructive interaction between the Ternary Quantization Loop and the Matrix Condition Circuit Breaker.
+1. The System Intention: To process 80-dimensional continuous floating-point variables efficiently without electrical sensor latency, data is compressed into a 3-state alphabet (-1.0, 0.0, 1.0). To protect physical hardware from structural damage or collisions, an automated circuit breaker audits the \(L_{2}\) matrix condition number and forces a hard shutdown if spatial transformations distort past a safety ceiling (\(\kappa_2 > 4.5\)).
+2. The Legacy Failure Mode: Forcibly slicing a smooth, continuous matrix down into rough ternary blocks introduces high-frequency, systematic quantization error. In a high-dimensional state space (\(A \in \mathbb{R}^{80 \times 80}\)), this correlated step noise destroys the linear independence of adjacent coordinate tracks. The minimum singular value (\(\sigma _{\min }\)) drops instantly toward zero, causing the computed condition number to experience an artificial spike:
+\(\kappa _{2}=\frac{\sigma _{\max }}{\sigma _{\min }}\gg 4.5\)
+3. The Industrial Consequence: Running the unmitigated legacy stack on a physical machine results in immediate operational deadlock. Within microseconds of beginning interpolation, the noise trips the DETERMINISTIC_ABORT mechanism, completely cutting current to the stepper motors and killing fluid backpressure while the hotend or nozzle is stationary and energized. This creates immediate gravimetric pooling, mechanical freezing, and severe fire hazards.
+
+2. Patches & Structural Fixes Implemented in v4.0
+
+The files in this directory update the framework to version 4.0, resolving the operational deadlock through dual-layered numerical linear algebra modifications:
+• Stochastic Triangular Dithering (mod.rs): The quantization loop now super-samples a high-frequency, symmetric triangular dither signal (\(\pm 0.5\) step amplitude) into the data stream prior to the mid-tread quantization gate. This effectively decorrelates the quantization error matrix from the underlying trajectory signal, converting systematic structural distortion into uniform white noise and preventing singular value collapse.
+• Tikhonov Regularized Safety Checks (ultrafold_v4.rs): The matrix circuit breaker no longer evaluates the raw, unconditioned system matrix. It now applies Tikhonov regularization (ridge regression) by introducing a non-vanishing identity scaling factor (\(\lambda = 0.0015 \cdot I_{80}\)) to the spectrum eigenvalues. This clamps the mathematical minimum bound of the evaluated condition number, making the safety monitor completely immune to micro-scale quantization noise while preserving its ability to detect macro-scale mechanical hardware collisions.
+
+3. Safety Operational Manual & Remaining Limitations
+
+• Do Not Disable Dithering: Disabling the Xorshift PRNG or modifying the dither distribution will immediately trigger a condition number breach and emergency abort.
+• Strict 64-Byte Cache Alignment: The FFI boundary entries strictly require data structures crossing over from the Python bridge to be 64-byte cache-aligned (#[repr(C, align(64))]). Passing unaligned pointer blocks will bypass the regularized safety systems and trigger an instantaneous SIGSEGV segmentation fault at the hardware level.
+• Instruction Pipeline Latency: Due to the mathematical requirements of calculating regularized power iterations over an 80-dimensional matrix natively within a #![no_std] environment, this pipeline introduces a distinct CPU bottleneck. It is highly optimized for mechanical safety, but it will significantly throttle the maximum token throughput of pure digital AI simulation tasks.
+
+Hedling, B. S. (2026). A Unified Dual-Enclave Architecture for High-Dimensional Latent Ingest and Multi-Axis Fused Filament Deposition: From Symplectic Trajectory Invariance to Tikhonov-Regularized Ternary Actuation [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23990320 
+
+
 🎨 How the Code Controls the Painting Hardware
 
 The specific algorithms you have deployed serve distinct roles in keeping the physical spray and mechanical sub-systems stable:
