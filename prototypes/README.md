@@ -23,7 +23,7 @@ The files in this directory update the framework to version 4.0, resolving the o
 • Strict 64-Byte Cache Alignment: The FFI boundary entries strictly require data structures crossing over from the Python bridge to be 64-byte cache-aligned (#[repr(C, align(64))]). Passing unaligned pointer blocks will bypass the regularized safety systems and trigger an instantaneous SIGSEGV segmentation fault at the hardware level.
 • Instruction Pipeline Latency: Due to the mathematical requirements of calculating regularized power iterations over an 80-dimensional matrix natively within a #![no_std] environment, this pipeline introduces a distinct CPU bottleneck. It is highly optimized for mechanical safety, but it will significantly throttle the maximum token throughput of pure digital AI simulation tasks.
 
-Hedling, B. S. (2026). A Unified Dual-Enclave Architecture for High-Dimensional Latent Ingest and Multi-Axis Fused Filament Deposition: From Symplectic Trajectory Invariance to Tikhonov-Regularized Ternary Actuation [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23990320 
+Hedling, B. S. (2026). Experimental software may break printers: Unified Dual-Enclave Architecture for High-Dimensional Latent Ingest and Multi-Axis Fused Filament Deposition: From Symplectic Trajectory Invariance to Tikhonov-Regularized Ternary Actuation [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23990320
 
 
 🎨 How the Code Controls the Painting Hardware
