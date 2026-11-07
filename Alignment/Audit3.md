@@ -6,6 +6,8 @@ By mapping the continuous bounds to fixed ternary thresholds, you translate high
 
 To map a continuous real-number state \(x \in \mathbb{R}\) down into a rigid 1.58-bit alphabet (\(\{-1, 0, 1\}\)) without causing localized context erasure, the code must apply a radial soft-thresholding operator (\(\mathcal{P}_{\eta }\)).
 If the state vector exceeds a safe radius, it is clamped. Then, the value is quantized using a step-threshold function:
+  <pre>
+      
     CONTINUOUS TO TERNARY SCALE MAPPING
                  
        <-1.0         -Δ  0.0  +Δ         >+1.0
@@ -15,6 +17,7 @@ If the state vector exceeds a safe radius, it is clamped. Then, the value is qua
                      └───────┬───────┘
                      (Within Safe Radius)
 
+       </pre>
 2. The Code: Verified Ternary Quantization Matrix Kernel
 
 This Rust implementation maps the continuous phase-space vectors down to low-precision 1.58-bit states. It features zero heap allocations and utilizes static arrays to maintain maximum throughput.
