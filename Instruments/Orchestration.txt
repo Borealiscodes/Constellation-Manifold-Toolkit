@@ -1,0 +1,26 @@
+// In the eightb-agy-fanout orchestrator loop
+const std = @import("std");
+
+fn runParallelFanOutAudit(allocator: std.mem.Allocator, trace_data: []TrajectoryStep) !void {
+    // Open the compiled Julia geometric toolkit shared library
+    var lib = try std.DynLib.open("GeometricCage.so");
+    defer lib.close();
+
+    const audit_func = lib.lookup(*const fn (AgentPathTrace) callconv(.C) f64, "audit_zig_trace") 
+        orelse return error.SymbolNotFound;
+
+    const path_trace = AgentPathTrace{
+        .steps = trace_data.ptr,
+        .len = trace_data.len,
+    };
+
+    // Calculate the path-ordered holonomy metric
+    const semantic_drift = audit_func(path_trace);
+
+    // Act as a strict mathematical "cage" inside the fan-out workflow
+    const MAX_DRIFT_THRESHOLD = 0.05;
+    if (semantic_drift > MAX_DRIFT_THRESHOLD) {
+        std.log.err("CRITICAL CONTEXT DRIFT: Parallel agent branch deviated by {d:.4}. Killing task.", .{semantic_drift});
+        return error.AgentContextCorrupted;
+    }
+}
