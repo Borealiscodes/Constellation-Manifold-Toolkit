@@ -10,10 +10,15 @@ Core Architectural Sections
 
 Summary System Matrix
 
+<pre>
+  
 
 Component Layer	Enforced Blueprint Law	Mathematical Mechanism	Systemic Action
 The Substrate (Zig)	Cache-Aligned POSIX Shared Memory Sweep	Single-Cycle 64-bit SWAR XOR-fold Verification	Passive intercept; zeros latency overhead natively.
 The Auditor (Julia)	Un-Rounded Rational Integrator (\(\mathbb{Q}\))	Tikhonov Clamping (\(\lambda=0.0015\)) & Softplus floors	Eliminates singular rank collapse; blocks division-by-zero traps.
 The Enclave (Coq)	Structural Refinement Mapping & List Induction	base243_inductive\_bijection over TritChunk5	Rejects unproved axioms; linearizes complexity bounds down to \(\mathcal{O}(N)\).
 
+</pre>
+
 The complete specification, code implementations, and references (including Barrett et al., Bronstein et al., Earn & Tremaine, AdaCore, and ICLR submissions) are detailed in the project's formal repository logs [10.1010/acm.barrett, 10.1145/bronstein, 10.1086/earn, 10.3254/adacore, 10.5281/zenodo.24024694].
+
